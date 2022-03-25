@@ -1,5 +1,5 @@
 package movement;
 
-public class Stunned {
+public class Stunned implements Movement{
 
 }

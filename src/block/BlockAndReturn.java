@@ -1,5 +1,5 @@
 package block;
 
-public class BlockAndReturn {
+public class BlockAndReturn implements Block{
 
 }

@@ -1,5 +1,5 @@
 package fillmaterial;
 
-public class IncreasedMatter {
+public class IncreasedMatter implements FillMaterial{
 
 }

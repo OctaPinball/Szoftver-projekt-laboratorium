@@ -1,5 +1,5 @@
 package block;
 
-public class NoBlock {
+public class NoBlock implements Block{
 
 }

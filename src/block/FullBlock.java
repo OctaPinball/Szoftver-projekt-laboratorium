@@ -1,5 +1,5 @@
 package block;
 
-public class FullBlock {
+public class FullBlock implements Block{
 
 }

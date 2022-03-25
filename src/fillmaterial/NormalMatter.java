@@ -1,5 +1,5 @@
 package fillmaterial;
 
-public class NormalMatter {
+public class NormalMatter implements FillMaterial{
 
 }

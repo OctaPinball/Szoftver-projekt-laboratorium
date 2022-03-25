@@ -1,5 +1,5 @@
 package movement;
 
-public class NormalMovement {
+public class NormalMovement implements Movement{
 
 }
