@@ -2,6 +2,13 @@ package miscellaneous;
 
 import java.util.Scanner;
 
+import agents.*;
+import block.*;
+import equipment.*;
+import field.*;
+import fillmaterial.*;
+import movement.*;
+
 public class Tester {
 	public void runTest(){
 	Scanner sc = new Scanner(System.in);
@@ -132,15 +139,59 @@ public class Tester {
 	}
 
 	public void virologistStepOnField() {
+		///Inicializáslás
+		Virologist v = new Virologist();
+		Field f1 = new Field();
+		Field f2 = new Field();
+		//f1.addNeighbor(f2);
+		//f2.addNeighbor(f1);
+		v.changeField(f1);
+		//f1.addVirologist(v);
 		
+		///Logger enable and register
+		Logger.enable();
+		Logger.register(v, "v");
+		Logger.register(v.getMovement(), "nm");
+		Logger.register(f1, "f1");
+		Logger.register(f2, "f2");
+		
+		///Test
+		//v.getMovement().move(v,f2);
 	}
 
 	public void selfCast() {
+		///Inicializáslás
+		Virologist v = new Virologist();
+		Protection p = new Protection();
+		
+		///Logger enable and register
+		Logger.enable();
+		Logger.register(v, "v");
+		Logger.register(p, "p");
+		//*** FIGYELEM!!! HIÁNYZIK EGY OSZTÁLY REGELÉSE!!!! PROTECTION COPY ***
+		
+		///Test
+		//p.cast(v, 1);
 		
 	}
 
 	public void pickupItem() {
+		///Inicializáslás
+		Virologist v = new Virologist();
+		Glove g = new Glove();
+		Field f = new Field();
+		//f.addVirologist(v);
+		v.changeField(f);
+		//f.spawnEquipment(g);
 		
+		///Logger enable and register
+		Logger.enable();
+		Logger.register(v, "v");
+		Logger.register(g, "g");
+		Logger.register(f, "f");
+		
+		///Test
+		//g.pickupItem(v);
 	}
 
 	public void doubleBlockAndReturn() {

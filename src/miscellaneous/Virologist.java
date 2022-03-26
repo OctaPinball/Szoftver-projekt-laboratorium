@@ -183,10 +183,12 @@ public class Virologist implements Steppable{
 		this.movement = movement;
 	}
 	
-	public void Step() {
+	public void step() {
+		Logger.enter(this, "step", null);
 		for(Agent a : activeagents)
 		{
 			//a.setEffectTime(a.getEffectTime - 1);
 		}
+		Logger.exit(this, "step", null);
 	}
 }
