@@ -85,14 +85,16 @@ public class Virologist implements Steppable{
 			}
 		}
 		activeagents.add(a);
-		if(!found)
+		if(!found) 
+		{
 			//a.activate();
+		}
 			
 		
 		Logger.exit(this, "addActiveAgent", null);
 	}
 	
-	public void addEquipment(Equipment e) {
+	public boolean addEquipment(Equipment e) {
 		ArrayList<Object> par = new ArrayList<>(); par.add(e);
 		Logger.enter(this, "addEquipment", par);
 		
@@ -101,22 +103,21 @@ public class Virologist implements Steppable{
 		for (Equipment i : equipments)
 		{
 			if (i.getClass() == e.getClass()) 
-			{
-				equipments.remove(i);
 				found = true;
-			}
 		}
-		equipments.add(e);
 		if(!found)
+		{
+			equipments.add(e);
 			//e.getEffect();
+		}
 			
-		
-		Logger.exit(this, "addEquipment", null);
+		Logger.exit(this, "addEquipment", !found);
+		return !found;
 	}
 	
 	public void loseEquipment(Equipment e) {
 		ArrayList<Object> par = new ArrayList<>(); par.add(e);
-		Logger.enter(this, "addEquipment", par);
+		Logger.enter(this, "loseEquipment", par);
 		
 		
 		boolean found = false;
@@ -125,15 +126,12 @@ public class Virologist implements Steppable{
 			if (i.getClass() == e.getClass()) 
 			{
 				equipments.remove(i);
-				found = true;
+				//i.loseEquipment();
 			}
 		}
-		equipments.add(e);
-		if(!found)
-			//e.getEffect();
 			
 		
-		Logger.exit(this, "addEquipment", null);
+		Logger.exit(this, "loseEquipment", null);
 	}
 	
 	public void changeField(Field f) {
