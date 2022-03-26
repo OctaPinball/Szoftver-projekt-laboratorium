@@ -1,5 +1,5 @@
 package field;
 
-public class Storage {
+public class Storage extends Field{
 
 }

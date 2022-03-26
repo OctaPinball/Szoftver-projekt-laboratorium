@@ -1,5 +1,5 @@
 package field;
 
-public class Laboratory {
+public class Laboratory extends Field{
 
 }
