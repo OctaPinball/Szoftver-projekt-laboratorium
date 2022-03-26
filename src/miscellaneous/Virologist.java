@@ -135,7 +135,28 @@ public class Virologist implements Steppable{
 	}
 	
 	public void changeField(Field f) {
+		ArrayList<Object> par = new ArrayList<>(); par.add(f);;
+		Logger.enter(this, "changeField", par);
+		
 		this.field = f;
+		
+		Logger.exit(this, "changeField", null);
+	}
+	
+	public boolean stealEquipment(Equipment e, Virologist v) {
+		ArrayList<Object> par = new ArrayList<>(); par.add(e); par.add(v);
+		Logger.enter(this, "stealEquipment", par);
+		
+		boolean success = true;
+		
+		//e.dropEquipment();
+		
+		if (!v.addEquipment(e))
+			success = false;
+			
+		
+		Logger.exit(this, "stealEquipment", success);
+		return success;
 	}
 
 	public Block getBlock() {
@@ -163,6 +184,9 @@ public class Virologist implements Steppable{
 	}
 	
 	public void Step() {
-		
+		for(Agent a : activeagents)
+		{
+			//a.setEffectTime(a.getEffectTime - 1);
+		}
 	}
 }
