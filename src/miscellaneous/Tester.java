@@ -116,6 +116,20 @@ public class Tester {
 	}
 
 	public void castForgettingAgent() {
+		// Inicializálás
+		Virologist v1 = new Virologist();
+		Virologist v2 = new Virologist();
+		ForgettingAgent fa = new ForgettingAgent();
+		v1.learnAgent(fa);
+		
+		// Logger enable and register
+		Logger.enable();
+		Logger.register(v1, "v1");
+		Logger.register(v2, "v2");
+		Logger.register(fa, "fa");
+		
+		// Tesztelés
+		fa.cast(v2, 1);
 	}
 	
 	public void castStun() {
