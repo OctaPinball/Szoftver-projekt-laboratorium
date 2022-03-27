@@ -1,8 +1,11 @@
 package movement;
 
+import field.Field;
+import miscellaneous.Virologist;
+
 public class NormalMovement implements Movement{
-	
-	public void valami() {
-		System.out.println("Valami");
+
+	public void Move(Virologist v, Field target) {
+		
 	}
 }

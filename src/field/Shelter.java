@@ -5,6 +5,7 @@ import equipment.*;
 
 public class Shelter extends Field{
 	
+	/*
 	public void stepOn(Virologist virologist) {
 		super.stepOn(virologist);
 		
@@ -16,4 +17,5 @@ public class Shelter extends Field{
 			//temp.getEffect();
 		}
 	}
+	*/
 }

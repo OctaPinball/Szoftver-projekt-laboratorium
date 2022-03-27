@@ -6,8 +6,9 @@
     "\\src\\agents",
     "\\src\\equipment",
     "\\src\\field",
-    "\\src\\miscellaneous"
+    "\\src\\miscellaneous",
+    "\\src\\movement"
   ],
-  "SelectedNode": "\\src\\miscellaneous\\Virologist.java",
+  "SelectedNode": "\\src\\miscellaneous\\Tester.java",
   "PreviewInSolutionExplorer": false
 }

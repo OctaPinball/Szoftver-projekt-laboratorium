@@ -35,8 +35,8 @@ public class Virologist implements Steppable{
 		agents = new ArrayList<Agent>();
 		equipments = new ArrayList<Equipment>();
 		
-		aminoacid = 0;
-		nucleotide = 0;
+		setAminoacid(0);
+		setNucleotide(0);
 		actionpoint = 0;
 		
 		field = null;
@@ -190,5 +190,25 @@ public class Virologist implements Steppable{
 			//a.setEffectTime(a.getEffectTime - 1);
 		}
 		Logger.exit(this, "step", null);
+	}
+
+	public int getAminoacid() {
+		return aminoacid;
+	}
+
+	public void setAminoacid(int aminoacid) {
+		this.aminoacid = aminoacid;
+	}
+
+	public int getNucleotide() {
+		return nucleotide;
+	}
+
+	public void setNucleotide(int nucleotide) {
+		this.nucleotide = nucleotide;
+	}
+
+	public Field getField() {
+		return field;
 	}
 }
