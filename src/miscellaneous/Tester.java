@@ -18,10 +18,10 @@ public class Tester {
 	
 	do {
 		System.out.println("Melyik tesztesetet szeretné futtatni?\n\n"
-				+ "1. \n"
-				+ "2. \n"
-				+ "3. \n"
-				+ "4. \n"
+				+ "1. Step on storage with increased matter\n"
+				+ "2. Cast forgetting agent\n"
+				+ "3. Cast stun\n"
+				+ "4. Drop empty field\n"
 				+ "5. \n"
 				+ "6. \n"
 				+ "7. \n"
