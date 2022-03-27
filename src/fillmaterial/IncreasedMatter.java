@@ -1,5 +1,17 @@
 package fillmaterial;
 
-public class IncreasedMatter implements FillMaterial{
+import miscellaneous.Virologist;
 
+public class IncreasedMatter implements FillMaterial{
+	
+	private static int incAminoacid = 100;
+	private static int incNucleotide = 100;
+
+	public void fillMaterial(Virologist v) {
+		
+		v.setAminoacid(incAminoacid);
+		v.setNucleotide(incNucleotide);
+		
+	}
+	
 }
