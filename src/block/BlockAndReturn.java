@@ -1,6 +1,9 @@
 package block;
 
+import java.util.ArrayList;
+
 import agents.Agent;
+import miscellaneous.Logger;
 import miscellaneous.Virologist;
 
 public class BlockAndReturn implements Block{
@@ -14,7 +17,11 @@ public class BlockAndReturn implements Block{
 	
 	@Override
 	public boolean block(Virologist s, Virologist t, Agent a) {
-		// TODO Auto-generated method stub
+		
+		ArrayList<Object> par = new ArrayList<>(); par.add(s); par.add(t); par.add(a);
+		Logger.enter(this, "block", par);
+		
+		boolean result = true;
 		
 		if(bar.counter < 2) {
 			a.cast(t, bar.counter++);
@@ -22,6 +29,9 @@ public class BlockAndReturn implements Block{
 			block(t, s, a);		
 			return true;
 		}
-		else return false;
+		else result = false;
+		
+		Logger.exit(this, "block", result);
+		return result;
 	}
 }

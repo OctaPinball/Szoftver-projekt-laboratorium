@@ -1,5 +1,8 @@
 package fillmaterial;
 
+import java.util.ArrayList;
+
+import miscellaneous.Logger;
 import miscellaneous.Virologist;
 
 public class IncreasedMatter implements FillMaterial{
@@ -9,9 +12,13 @@ public class IncreasedMatter implements FillMaterial{
 
 	public void fillMaterial(Virologist v) {
 		
+		ArrayList<Object> par = new ArrayList<>(); par.add(v);
+		Logger.enter(this, "fillMaterial", par);
+		
 		v.setAminoacid(incAminoacid);
 		v.setNucleotide(incNucleotide);
 		
+		Logger.exit(this, "move", null);
 	}
 	
 }

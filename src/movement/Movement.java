@@ -5,7 +5,6 @@ import miscellaneous.Virologist;
 
 public interface Movement {
 	
-	public abstract void Move(Virologist v, Field target);
-	
-	
+	public abstract void move(Virologist v, Field target);
+		
 }

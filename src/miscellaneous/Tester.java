@@ -174,11 +174,50 @@ public class Tester {
 	}
 
 	public void blockAndReturn() {
+		// Inicializálás
+		Virologist v1 = new Virologist();
+		Virologist v2 = new Virologist();
+		ForgettingAgent fa = new ForgettingAgent();
+		v1.learnAgent(fa);
+		Glove glove = new Glove();
+		glove.pickupEquipment(v2);
+		v2.addEquipment(glove);
+		BlockAndReturn bar = new BlockAndReturn();
+		v1.cast(v1, v2, fa);
 		
+		// Logger enable and register
+		Logger.enable();
+		Logger.register(v1, "v1");
+		Logger.register(v2, "v2");
+		Logger.register(fa, "fa");
+		Logger.register(bar, "bar");
+		Logger.register(glove, "glove");
+		
+		// Tesztelés
+		bar.block(v1, v2, fa);
 	}
 
-	public void partialBlockTrue() {
+	public void partialBlockTrue() {	//?
+		// Inicializálás
+		Virologist v1 = new Virologist();
+		Virologist v2 = new Virologist();
+		ForgettingAgent fa = new ForgettingAgent();
+		v1.learnAgent(fa);
+		Cape cape = new Cape();
+		cape.pickupEquipment(v2);
+		PartialBlock pb = new PartialBlock();
+		v2.addEquipment(cape);
 		
+		// Logger enable and register
+		Logger.enable();
+		Logger.register(v1, "v1");
+		Logger.register(v2, "v2");
+		Logger.register(fa, "fa");
+		Logger.register(pb, "pb");
+		Logger.register(cape, "cape");
+		
+		// Tesztelés
+		pb.block(v1, v2, fa);
 	}
 
 	public void fullBlockTrue() {
@@ -189,16 +228,67 @@ public class Tester {
 		
 	}
 
-	public void partialBlockFalse() {
+	public void partialBlockFalse() {	//?
+		// Inicializálás
+		Virologist v1 = new Virologist();
+		Virologist v2 = new Virologist();
+		ForgettingAgent fa = new ForgettingAgent();
+		v1.learnAgent(fa);
+		Cape cape = new Cape();
+		cape.pickupEquipment(v2);
+		PartialBlock pb = new PartialBlock();
+		v2.addEquipment(cape);
 		
+		// Logger enable and register
+		Logger.enable();
+		Logger.register(v1, "v1");
+		Logger.register(v2, "v2");
+		Logger.register(fa, "fa");
+		Logger.register(pb, "pb");
+		Logger.register(cape, "cape");
+		
+		// Tesztelés
+		pb.block(v1, v2, fa);
 	}
 
 	public void virologistStepOnStorage() {
+		// Inicializáslás
+		Virologist v = new Virologist();
+		Storage storage = new Storage();
+		Field field = new Field();
+		v.changeField(field);
+		field.addVirologist(v);
+		field.addNeighbor(storage);
+		storage.addNeighbor(field);
 		
+		// Logger enable and register
+		Logger.enable();
+		Logger.register(storage, "storage");
+		Logger.register(v, "v");
+		Logger.register(field, "field");
+		
+		// Tesztelés
+		v.getMovement().move(v, storage);
 	}
 
 	public void virologistStepOnShelter() {
+		// Inicializáslás
+		Virologist v = new Virologist();
+		Shelter shelter = new Shelter();
+		Field field = new Field();
+		v.changeField(field);
+		field.addVirologist(v);
+		field.addNeighbor(shelter);
+		shelter.addNeighbor(field);
 		
+		// Logger enable and register
+		Logger.enable();
+		Logger.register(shelter, "shelter");
+		Logger.register(v, "v");
+		Logger.register(field, "field");
+		
+		// Tesztelés
+		v.getMovement().move(v, shelter);
 	}
 
 	public void virologistStepOnField() {

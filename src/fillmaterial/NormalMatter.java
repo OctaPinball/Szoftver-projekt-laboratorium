@@ -1,5 +1,8 @@
 package fillmaterial;
 
+import java.util.ArrayList;
+
+import miscellaneous.Logger;
 import miscellaneous.Virologist;
 
 public class NormalMatter implements FillMaterial{
@@ -9,9 +12,13 @@ public class NormalMatter implements FillMaterial{
 
 	public void fillMaterial(Virologist v) {
 		
-		v.setAminoAcid(normAminoacid);
+		ArrayList<Object> par = new ArrayList<>(); par.add(v);
+		Logger.enter(this, "fillMaterial", par);
+		
+		v.setAminoacid(normAminoacid);
 		v.setNucleotide(normNucleotide);
 		
+		Logger.exit(this, "move", null);
 	}
 	
 }
