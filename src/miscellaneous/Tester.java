@@ -30,9 +30,9 @@ public class Tester {
 				+ "10. \n"
 				+ "11. \n"
 				+ "12. \n"
-				+ "13. \n"
-				+ "14. \n"
-				+ "15. \n"
+				+ "13. Virologist step on field\n"
+				+ "14. Virologist self cast\n"
+				+ "15. Virologist picks up equipment\n"
 				+ "16. \n"
 				+ "17. \n"
 				+ "18. \n"
@@ -116,20 +116,6 @@ public class Tester {
 	}
 
 	public void castForgettingAgent() {
-		// Inicializálás
-		Virologist v1 = new Virologist();
-		Virologist v2 = new Virologist();
-		ForgettingAgent fa = new ForgettingAgent();
-		v1.learnAgent(fa);
-		
-		// Logger enable and register
-		Logger.enable();
-		Logger.register(v1, "v1");
-		Logger.register(v2, "v2");
-		Logger.register(fa, "fa");
-		
-		// Tesztelés
-		fa.cast(v2, 1);
 	}
 	
 	public void castStun() {
