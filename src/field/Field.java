@@ -15,7 +15,7 @@ public class Field {
 		neighbors = new ArrayList<Field>();
 	}
 
-	public void addVirologist(Virologist virologist) { // lehet boollal kéne visszatérni
+	public void addVirologist(Virologist virologist) {
 		virologistOnField = virologist;
 	}
 
@@ -30,7 +30,7 @@ public class Field {
 		return true;
 	}
 
-	public void removeEquipment() { // nem kell átvenni paraméterben
+	public void removeEquipment() {
 		equipmentOnField = null;
 	}
 	
