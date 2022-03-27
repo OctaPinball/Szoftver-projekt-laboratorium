@@ -254,7 +254,7 @@ public class Tester {
 		Logger.register(f, "f");
 		
 		///Test
-		//g.pickupItem(v);
+		//g.pickupEquipment(v);
 	}
 
 	public void doubleBlockAndReturn() {

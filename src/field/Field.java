@@ -93,4 +93,8 @@ public class Field {
 		//Logger.exit(this, "getEquipment", equipmentOnField);
 		return equipmentOnField;
 	}
+	
+	public ArrayList<Field> getNeighbors(){
+		return neighbors;
+	}
 }
