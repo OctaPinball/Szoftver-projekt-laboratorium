@@ -92,17 +92,80 @@ public class Tester {
 	}
 	
 	public void stepOnStorageWithIncreasedMatter() {
-	
+		// Inicializáslás
+		Sack sc = new Sack();
+		Shelter s = new Shelter();
+		Virologist v = new Virologist();
+		Field f = new Field();
+		v.changeField(f);
+		v.addEquipment(sc);
+		sc.getEffect();
+		f.addVirologist(v);
+		f.addNeighbor(s);
+		s.addNeighbor(f);
+		
+		// Logger enable and register
+		Logger.enable();
+		Logger.register(sc, "sc");
+		Logger.register(s, "s");
+		Logger.register(v, "v");
+		Logger.register(f, "f");
+		
+		// Tesztelés
+		v.getMovement().move(v, s);
 	}
 
 	public void castForgettingAgent() {
+		// Inicializálás
+		Virologist v1 = new Virologist();
+		Virologist v2 = new Virologist();
+		ForgettingAgent fa = new ForgettingAgent();
+		v1.learnAgent(fa);
+		
+		// Logger enable and register
+		Logger.enable();
+		Logger.register(v1, "v1");
+		Logger.register(v2, "v2");
+		Logger.register(fa, "fa");
+		
+		// Tesztelés
+		fa.cast(v2, 1);
 	}
 	
 	public void castStun() {
+		// Inicializáslás
+		Virologist v1 = new Virologist();
+		Virologist v2 = new Virologist();
+		Stun s = new Stun();
+		v1.learnAgent(s);
 		
+		// Logger enable and register
+		Logger.enable();
+		Logger.register(v1, "v1");
+		Logger.register(v2, "v2");
+		Logger.register(s, "s");
+		
+		// Tesztelés
+		s.cast(v2, 1);
 	}
 
 	public void dropEmptyField() {
+		// Inicializáslás
+		Virologist v = new Virologist();
+		Field f = new Field();
+		Cape c = new Cape();
+		v.addEquipment(c);
+		v.changeField(f);
+		f.addVirologist(v);
+		
+		// Logger enable and register
+		Logger.enable();
+		Logger.register(v, "v");
+		Logger.register(f, "f");
+		Logger.register(c, "c");
+		
+		// Tesztelés
+		c.dropEquipment();
 		
 	}
 
