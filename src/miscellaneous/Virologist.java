@@ -26,7 +26,7 @@ public class Virologist implements Steppable{
 	private FillMaterial fillmaterial;
 	private Movement movement;
 	
-	Virolo00gist(){
+	Virologist(){
 		setBlock(new NoBlock());
 		setFillMaterial(new NormalMatter());
 		setMovement(new NormalMovement());

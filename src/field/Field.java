@@ -23,7 +23,7 @@ public class Field {
 		virologistOnField = null;
 	}
 
-	public void spawnEquipment(Equipment newEquipment) {
+	public boolean spawnEquipment(Equipment newEquipment) {
 		if(equipmentOnField == null)
 			return false;
 		equipmentOnField = newEquipment;
@@ -35,10 +35,15 @@ public class Field {
 	}
 	
 	public void addNeighbor(Field neighbor) {
-		neighbors.Add(neighbor);
+		neighbors.add(neighbor);
 	}
 
 	public void stepOn(Virologist virologist) {
-
+		addVirologist(virologist);
+		virologist.changeField(this);
+	}
+	
+	public Equipment getEquipment() {
+		return equipmentOnField;
 	}
 }
