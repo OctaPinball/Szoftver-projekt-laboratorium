@@ -12,7 +12,7 @@ public abstract class Equipment {
         if(v.addEquipment(this)) {
             wearer = v;
             this.getEffect();
-            currentField.removeEquipment(this);
+            currentField.removeEquipment();
         }
     }
 
