@@ -6,4 +6,5 @@ public class NormalMovement implements Movement{
 		System.out.println("Valami");
 	}
 	
+	
 }
