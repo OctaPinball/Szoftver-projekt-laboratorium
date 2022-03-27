@@ -18,10 +18,10 @@ public class Tester {
 	
 	do {
 		System.out.println("Melyik tesztesetet szeretné futtatni?\n\n"
-				+ "1. \n"
-				+ "2. \n"
-				+ "3. \n"
-				+ "4. \n"
+				+ "1. Step on storage with increased matter\n"
+				+ "2. Cast forgetting agent\n"
+				+ "3. Cast stun\n"
+				+ "4. Drop empty field\n"
 				+ "5. \n"
 				+ "6. \n"
 				+ "7. \n"
@@ -116,6 +116,20 @@ public class Tester {
 	}
 
 	public void castForgettingAgent() {
+		// Inicializálás
+		Virologist v1 = new Virologist();
+		Virologist v2 = new Virologist();
+		ForgettingAgent fa = new ForgettingAgent();
+		v1.learnAgent(fa);
+		
+		// Logger enable and register
+		Logger.enable();
+		Logger.register(v1, "v1");
+		Logger.register(v2, "v2");
+		Logger.register(fa, "fa");
+		
+		// Tesztelés
+		fa.cast(v2, 1);
 	}
 	
 	public void castStun() {
