@@ -22,4 +22,16 @@ public class Laboratory extends Field{
 		
 		Logger.exit(this, "stepOn", null);
 	}
+
+	public void addAgent(Agent newAgent) {
+		ArrayList<Object> par = new ArrayList<Object>();
+		par.add(newAgent);
+		Logger.enter(this, "addAgent", par);
+
+
+		agentOnField = newAgent;
+
+
+		Logger.exit(this, "addAgent", null);
+	}
 }
