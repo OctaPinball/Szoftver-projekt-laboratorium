@@ -13,7 +13,7 @@ public class BlockAndReturn implements Block{
 	}
 	
 	@Override
-	public boolean block(Virologist s, Virologist t, Agent a) {
+	public boolean block(Virologist s, Virologist t, Agent a) throws CloneNotSupportedException {
 		// TODO Auto-generated method stub
 		
 		if(bar.counter < 2) {

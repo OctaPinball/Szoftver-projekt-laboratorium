@@ -13,7 +13,7 @@ public class Storage extends Field{
 		
 		
 		super.stepOn(virologist);
-		virologist.getFillMaterial().fillMaterial();
+		virologist.getFillMaterial().fillMaterial(virologist);
 		
 		
 		Logger.exit(this, "stepOn", null);

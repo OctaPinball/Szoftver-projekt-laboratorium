@@ -9,7 +9,7 @@ public class IncreasedMatter implements FillMaterial{
 
 	public void fillMaterial(Virologist v) {
 		
-		v.setAminoacid(incAminoacid);
+		v.setAminoAcid(incAminoacid);
 		v.setNucleotide(incNucleotide);
 		
 	}

@@ -5,7 +5,7 @@ import miscellaneous.Virologist;
 
 public class NormalMovement implements Movement{
 
-	public void Move(Virologist v, Field target) {
+	public void move(Virologist v, Field target) {
 		
 	}
 }
