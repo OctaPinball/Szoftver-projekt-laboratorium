@@ -158,30 +158,58 @@ public class Virologist implements Steppable{
 		return success;
 	}
 
+    /**
+     * Getter a virológus blokkolásánakk kiderítésére
+     * @return block
+     */
 	public Block getBlock() {
 		return block;
 	}
 
+    /**
+     * Setter a virológus blokkolásának beállítására
+     * @param block
+     */
 	public void setBlock(Block block) {
 		this.block = block;
 	}
 
+    /**
+     * Getter a virológus maximálisan felvehető anyagmennyisének kiderítésére
+     * @return fillmaterial
+     */
 	public FillMaterial getFillMaterial() {
 		return fillmaterial;
 	}
 
+    /**
+     * Setter a virológus maximálisan felvehető anyagmennyisének beállítására
+     * @param fillmaterial
+     */
 	public void setFillMaterial(FillMaterial fillMaterial) {
 		this.fillmaterial = fillMaterial;
 	}
 
+    /**
+     * Getter a virológus mozgásának kiderítésére
+     * @return movement
+     */
 	public Movement getMovement() {
 		return movement;
 	}
 
+    /**
+     * Setter a virológus mozgásának beállítására
+     * @param movement
+     */
 	public void setMovement(Movement movement) {
 		this.movement = movement;
 	}
 	
+    /**
+     * A steppable interfészt valósítja meg
+     * Meghívásonként adott mennyiséggel csökkenti az aktív ágensek hatásidejét
+     */
 	public void step() {
 		Logger.enter(this, "step", null);
 		for(Agent a : activeagents)
@@ -191,26 +219,50 @@ public class Virologist implements Steppable{
 		Logger.exit(this, "step", null);
 	}
 
+    /**
+     * Getter a virológus aminosavának jelenlegi mennyiségének kiderítésére
+     * @return aminoacid
+     */
 	public int getAminoacid() {
 		return aminoacid;
 	}
 
+    /**
+     * Setter a virológus aminosavának jelenlegi mennyiségének beállítására
+     * @param aminoacid
+     */
 	public void setAminoAcid(int aminoacid) {
 		this.aminoacid = aminoacid;
 	}
 
+    /**
+     * Getter a virológus nukleotidának jelenlegi mennyiségének kiderítésére
+     * @return nucleotide
+     */
 	public int getNucleotide() {
 		return nucleotide;
 	}
 
+    /**
+     * Setter a virológus nukleotidának jelenlegi mennyiségének beállítására
+     * @param nucleotide
+     */
 	public void setNucleotide(int nucleotide) {
 		this.nucleotide = nucleotide;
 	}
 
+    /**
+     * Getter a virológus jelenlegi mezőjének kiderítésére
+     * @return field
+     */
 	public Field getField() {
 		return field;
 	}
 	
+    /**
+     * Getter a virológuson jelenleg hatást kifejtő ágensek kiderítésére
+     * @return activeagents
+     */
 	public ArrayList<Agent> getActiveAgents(){
 		return activeagents;
 	}

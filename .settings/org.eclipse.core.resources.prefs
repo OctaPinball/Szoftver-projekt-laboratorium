@@ -2,6 +2,7 @@ eclipse.preferences.version=1
 encoding//src/miscellaneous/Game.java=UTF-8
 encoding//src/miscellaneous/Main.java=UTF-8
 encoding//src/miscellaneous/Tester.java=UTF-8
+encoding//src/miscellaneous/Virologist.java=UTF-8
 encoding//src/movement/Movement.java=UTF-8
 encoding//src/movement/NormalMovement.java=UTF-8
 encoding//src/movement/RandomMovement.java=UTF-8
