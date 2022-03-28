@@ -173,19 +173,81 @@ public class Tester {
 	}
 
 	public void dropNotEmptyField() {
+		// Inicializáslás
+		Virologist v = new Virologist();
+		Field f = new Field();
+		Cape c = new Cape();
+		Glove g = new Glove();
+		v.addEquipment(c);
+		v.changeField(f);
+		f.addVirologist(v);
+		f.spawnEquipment(g);
 		
+		// Logger enable and register
+		Logger.enable();
+		Logger.register(v, "v");
+		Logger.register(f, "f");
+		Logger.register(c, "c");
+		Logger.register(g, "g");
+		
+		// Tesztelés
+		c.dropEquipment();
 	}
 
-	public void blockAndReturn() {
-		
+	public void blockAndReturn() throws CloneNotSupportedException {
+		///Inicializáslás
+		Virologist v1 = new Virologist();
+		Virologist v2 = new Virologist();
+		Glove g = new Glove();
+		Chorea c = new Chorea();
+		v1.learnAgent(c);
+		g.pickupEquipment(v2);
+
+		///Logger enable and register
+		Logger.enable();
+		Logger.register(v1, "v1");
+		Logger.register(v2, "v2");
+		Logger.register(g, "g");
+		Logger.register(c, "c");
+
+		///Test
+		c.cast(v2,1);
 	}
 
-	public void partialBlockTrue() {
-		
+	public void partialBlockTrue() throws CloneNotSupportedException {
+		///Inicializáslás
+		Virologist v1 = new Virologist();
+		Virologist v2 = new Virologist();
+		Cape c = new Cape();
+		Chorea ch = new Chorea();
+		v1.learnAgent(ch);
+		c.pickupEquipment(v2);
+
+		///Logger enable and register
+		Logger.enable();
+		Logger.register(v1, "v1");
+		Logger.register(v2, "v2");
+		Logger.register(c, "c");
+		Logger.register(ch, "ch");
+
+		///Test
+		ch.cast(v2,1);
 	}
 
-	public void fullBlockTrue() {
+	public void fullBlockTrue() throws CloneNotSupportedException {
+		///Inicializáslás
+		Virologist v1 = new Virologist();
+		Stun st = new Stun();
+		FullBlock b = new FullBlock();
+		v1.setBlock(b);
 
+		///Logger enable and register
+		Logger.enable();
+		Logger.register(v1, "v1");
+		Logger.register(st, "st");
+
+		///Test
+		st.cast(v1,1);
 	}
 
 	public void stealEquipment() {
