@@ -160,8 +160,10 @@ public class Tester {
 		Virologist v = new Virologist();
 		Field f = new Field();
 		Cape c = new Cape();
-		v.addEquipment(c);
 		v.changeField(f);
+		f.addVirologist(v);
+		f.spawnEquipment(c);
+		c.pickupEquipment(v);
 		f.addVirologist(v);
 
 		// Logger enable and register
