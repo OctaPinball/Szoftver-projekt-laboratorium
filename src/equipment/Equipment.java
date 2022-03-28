@@ -32,10 +32,15 @@ public abstract class Equipment {
         par.add(v);
         Logger.enter(this, "pickupEquipment", par);
 
+        Virologist temp = wearer;
+        wearer = v;
+        
         if(v.addEquipment(this)) {
-            wearer = v;
-            this.getEffect();
             currentField.removeEquipment();
+        }
+        else
+        {
+        	wearer = temp;
         }
 
         Logger.exit(this, "pickupEquipment", null);
