@@ -202,9 +202,12 @@ public class Tester {
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
 		Glove g = new Glove();
+		System.out.println("s");
+		BlockAndReturn bar = new BlockAndReturn();
 		Chorea c = new Chorea();
 		v1.learnAgent(c);
 		g.pickupEquipment(v2);
+		v2.setBlock(bar);
 
 		///Logger enable and register
 		Logger.enable();
@@ -212,6 +215,7 @@ public class Tester {
 		Logger.register(v2, "v2");
 		Logger.register(g, "g");
 		Logger.register(c, "c");
+		Logger.register(bar, "bar");
 
 		///Test
 		c.cast(v2,1);
