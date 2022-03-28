@@ -15,7 +15,6 @@ public class BlockAndReturn implements Block{
 	 * Számolja, hogy hanyadjára dobják vissza a kenést.
 	 */
 	private int counter;
-	private BlockAndReturn bar = new BlockAndReturn();
 	
 	public BlockAndReturn() {
 		counter = 0;
@@ -36,9 +35,8 @@ public class BlockAndReturn implements Block{
 		
 		boolean result = true;
 		
-		if(bar.counter <= 2) {
-			a.cast(t, bar.counter++);
-			
+		if(this.counter < 2) {
+			a.cast(t, this.counter++);
 			block(t, s, a);		
 			return true;
 		}

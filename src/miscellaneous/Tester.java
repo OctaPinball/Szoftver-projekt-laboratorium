@@ -205,10 +205,14 @@ public class Tester {
 		///Inicializáslás
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
+		Field f1 = new Field();
 		Glove g = new Glove();
+		BlockAndReturn bar = new BlockAndReturn();
 		Chorea c = new Chorea();
 		v1.learnAgent(c);
+		f1.spawnEquipment(g);
 		g.pickupEquipment(v2);
+		v2.setBlock(bar);
 
 		///Logger enable and register
 		Logger.enable();
@@ -216,6 +220,8 @@ public class Tester {
 		Logger.register(v2, "v2");
 		Logger.register(g, "g");
 		Logger.register(c, "c");
+		Logger.register(bar, "bar");
+		Logger.register(f1, "f1");
 
 		///Test
 		c.cast(v2,1);

@@ -6,6 +6,10 @@ import java.util.ArrayList;
 
 import agents.*;
 
+/**
+ * A Field osztály leszármazottja, az ilyen típusú mezõkre lépve tudnak a virológusok új ágenseket megismerni.
+ * Minden laboratóriumban található egy ágens, amit a mezõre lépõ virológus egybõl megtanul.
+ */
 public class Laboratory extends Field{
 	
 	private Agent agentOnField;

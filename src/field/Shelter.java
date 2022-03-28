@@ -3,6 +3,10 @@ package field;
 import miscellaneous.*;
 import equipment.*;
 
+/**
+ * A Field osztály leszármazottja, az ilyen típusú mezõkön szerezhetõek alap esetben felszerelések.
+ * A játék kezdetekor minden óvóhely tartalmaz egy felszerelést, amit a mezõre lépve a virológus felvehet.
+ */
 public class Shelter extends Field{
 	
 	// még most nincs rá szükség, mert lényegében ugyanúgy viselkedik, mint egy sima mezõ
