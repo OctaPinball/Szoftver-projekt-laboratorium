@@ -11,9 +11,9 @@ import fillmaterial.*;
 import movement.*;
 
 /**
- * Ezek a játékosok által irányított karakterek, ezeken keresztül tud a játékos a játékon belül cselekedni. 
- * Számontartja a virológus anyagkészletét, megtanult genetikai kódjait, a rajta lévõ aktív ágenseket és akciópontjait. 
- * A játékos a virológus osztály segítségével tud ágenst kenni más virológusra, és meg tud tanulni genetikai kódokat, 
+ * Ezek a jï¿½tï¿½kosok ï¿½ltal irï¿½nyï¿½tott karakterek, ezeken keresztï¿½l tud a jï¿½tï¿½kos a jï¿½tï¿½kon belï¿½l cselekedni. 
+ * Szï¿½montartja a virolï¿½gus anyagkï¿½szletï¿½t, megtanult genetikai kï¿½djait, a rajta lï¿½vï¿½ aktï¿½v ï¿½genseket ï¿½s akciï¿½pontjait. 
+ * A jï¿½tï¿½kos a virolï¿½gus osztï¿½ly segï¿½tsï¿½gï¿½vel tud ï¿½genst kenni mï¿½s virolï¿½gusra, ï¿½s meg tud tanulni genetikai kï¿½dokat, 
  * illetve el is tudja azokat felejteni.
  */
 public class Virologist implements Steppable{
@@ -33,7 +33,7 @@ public class Virologist implements Steppable{
 	private Movement movement;
 	
 	/**
-	 * Inicializálja a virológust, azaz beállítja a mozgást, anyaggyûjtõképességet, védekezést, nyersanyagkészletet és az akciópontokat alapállapotokba
+	 * Inicializï¿½lja a virolï¿½gust, azaz beï¿½llï¿½tja a mozgï¿½st, anyaggyï¿½jtï¿½kï¿½pessï¿½get, vï¿½dekezï¿½st, nyersanyagkï¿½szletet ï¿½s az akciï¿½pontokat alapï¿½llapotokba
 	 */
 	Virologist(){
 		setBlock(new NoBlock());
@@ -55,9 +55,9 @@ public class Virologist implements Steppable{
 	}
 	
 	/**
-	 * A virológus megtanulja a paraméterként kapott ágenst, ezzel az bekerül a virológus által megtanult ágensek listájába. 
-	 * Ha a lista teljes, vagyis az összes létezõ ágens genetikai kódját megtanulta, akkor meghívja az EndGame() függvényt és a játék véget ér.
-	 * @param a		a megtanulandó ágens
+	 * A virolï¿½gus megtanulja a paramï¿½terkï¿½nt kapott ï¿½genst, ezzel az bekerï¿½l a virolï¿½gus ï¿½ltal megtanult ï¿½gensek listï¿½jï¿½ba. 
+	 * Ha a lista teljes, vagyis az ï¿½sszes lï¿½tezï¿½ ï¿½gens genetikai kï¿½djï¿½t megtanulta, akkor meghï¿½vja az EndGame() fï¿½ggvï¿½nyt ï¿½s a jï¿½tï¿½k vï¿½get ï¿½r.
+	 * @param a		a megtanulandï¿½ ï¿½gens
 	 */
 	public void learnAgent(Agent a) {
 		ArrayList<Object> par = new ArrayList<>(); par.add(a);
@@ -81,7 +81,7 @@ public class Virologist implements Steppable{
 	}
 	
 	/**
-	 * A virológus elfelejti az összes eddig megtanult ágens genetikai kódját, ezzel kiürül az elkészíthetõ ágensek listája.
+	 * A virolï¿½gus elfelejti az ï¿½sszes eddig megtanult ï¿½gens genetikai kï¿½djï¿½t, ezzel kiï¿½rï¿½l az elkï¿½szï¿½thetï¿½ ï¿½gensek listï¿½ja.
 	 */
 	public void forgetAllAgent() {
 		Logger.enter(this, "forgetAllAgent", null);
@@ -94,9 +94,9 @@ public class Virologist implements Steppable{
 	}
 	
 	/**
-	 * Amennyiben egy virológusra ágenst kennek, és azt nem blokkolja semmi, akkor a paraméterként kapott ágens az “aktív tömbbe” 
-	 * (azok az ágensek kerülnek ide, amikre utána meghívódik az activate() függvény) kerül.
-	 * @param a		az elkészített ágens
+	 * Amennyiben egy virolï¿½gusra ï¿½genst kennek, ï¿½s azt nem blokkolja semmi, akkor a paramï¿½terkï¿½nt kapott ï¿½gens az ï¿½aktï¿½v tï¿½mbbeï¿½ 
+	 * (azok az ï¿½gensek kerï¿½lnek ide, amikre utï¿½na meghï¿½vï¿½dik az activate() fï¿½ggvï¿½ny) kerï¿½l.
+	 * @param a		az elkï¿½szï¿½tett ï¿½gens
 	 */
 	public void addActiveAgent(Agent a) {
 		ArrayList<Object> par = new ArrayList<>(); par.add(a);
@@ -124,9 +124,9 @@ public class Virologist implements Steppable{
 	}
 	
 	/**
-	 * Ha a paraméterként kapott típusú tárggyal még nem rendelkezik a virológus felveszi a gyûjteményébe.
-	 * @param e		a tárgy amit felvesz
-	 * @return		a felvétel sikeressége
+	 * Ha a paramï¿½terkï¿½nt kapott tï¿½pusï¿½ tï¿½rggyal mï¿½g nem rendelkezik a virolï¿½gus felveszi a gyï¿½jtemï¿½nyï¿½be.
+	 * @param e		a tï¿½rgy amit felvesz
+	 * @return		a felvï¿½tel sikeressï¿½ge
 	 */
 	public boolean addEquipment(Equipment e) {
 		ArrayList<Object> par = new ArrayList<>(); par.add(e);
@@ -151,8 +151,8 @@ public class Virologist implements Steppable{
 	}
 	
 	/**
-	 * A paraméterként átvett felszerelést eldobja a virológus, ezzel elveszítve hatását.
-	 * @param e		az eldobott felszerelés
+	 * A paramï¿½terkï¿½nt ï¿½tvett felszerelï¿½st eldobja a virolï¿½gus, ezzel elveszï¿½tve hatï¿½sï¿½t.
+	 * @param e		az eldobott felszerelï¿½s
 	 */
 	public void loseEquipment(Equipment e) {
 		ArrayList<Object> par = new ArrayList<>(); par.add(e);
@@ -167,8 +167,8 @@ public class Virologist implements Steppable{
 	}
 	
 	/**
-	 * Amikor rálépünk egy új mezõre, akkor a virológus a helyzetét beállítja a paraméterként kapott mezõre.
-	 * @param f		a mezõ, amire rálépett a virológus
+	 * Amikor rï¿½lï¿½pï¿½nk egy ï¿½j mezï¿½re, akkor a virolï¿½gus a helyzetï¿½t beï¿½llï¿½tja a paramï¿½terkï¿½nt kapott mezï¿½re.
+	 * @param f		a mezï¿½, amire rï¿½lï¿½pett a virolï¿½gus
 	 */
 	public void changeField(Field f) {
 		ArrayList<Object> par = new ArrayList<>(); par.add(f);;
@@ -180,10 +180,10 @@ public class Virologist implements Steppable{
 	}
 	
 	/**
-	 * A paraméterként átvett virológustól a szintén paraméterként átvett tárgyat ellopjaa virológus.
-	 * @param e		az ellopott felszerelés
-	 * @param v		a kirabolt virológus
-	 * @return		a lopás sikeressége
+	 * A paramï¿½terkï¿½nt ï¿½tvett virolï¿½gustï¿½l a szintï¿½n paramï¿½terkï¿½nt ï¿½tvett tï¿½rgyat ellopjaa virolï¿½gus.
+	 * @param e		az ellopott felszerelï¿½s
+	 * @param v		a kirabolt virolï¿½gus
+	 * @return		a lopï¿½s sikeressï¿½ge
 	 */
 	public boolean stealEquipment(Equipment e, Virologist v) {
 		ArrayList<Object> par = new ArrayList<>(); par.add(e); par.add(v);
@@ -201,30 +201,58 @@ public class Virologist implements Steppable{
 		return success;
 	}
 
+    /**
+     * Getter a virolÃ³gus blokkolÃ¡sÃ¡nakk kiderÃ­tÃ©sÃ©re
+     * @return block
+     */
 	public Block getBlock() {
 		return block;
 	}
 
+    /**
+     * Setter a virolÃ³gus blokkolÃ¡sÃ¡nak beÃ¡llÃ­tÃ¡sÃ¡ra
+     * @param block
+     */
 	public void setBlock(Block block) {
 		this.block = block;
 	}
 
+    /**
+     * Getter a virolÃ³gus maximÃ¡lisan felvehetÅ‘ anyagmennyisÃ©nek kiderÃ­tÃ©sÃ©re
+     * @return fillmaterial
+     */
 	public FillMaterial getFillMaterial() {
 		return fillmaterial;
 	}
 
+    /**
+     * Setter a virolÃ³gus maximÃ¡lisan felvehetÅ‘ anyagmennyisÃ©nek beÃ¡llÃ­tÃ¡sÃ¡ra
+     * @param fillmaterial
+     */
 	public void setFillMaterial(FillMaterial fillMaterial) {
 		this.fillmaterial = fillMaterial;
 	}
 
+    /**
+     * Getter a virolÃ³gus mozgÃ¡sÃ¡nak kiderÃ­tÃ©sÃ©re
+     * @return movement
+     */
 	public Movement getMovement() {
 		return movement;
 	}
 
+    /**
+     * Setter a virolÃ³gus mozgÃ¡sÃ¡nak beÃ¡llÃ­tÃ¡sÃ¡ra
+     * @param movement
+     */
 	public void setMovement(Movement movement) {
 		this.movement = movement;
 	}
 	
+    /**
+     * A steppable interfÃ©szt valÃ³sÃ­tja meg
+     * MeghÃ­vÃ¡sonkÃ©nt adott mennyisÃ©ggel csÃ¶kkenti az aktÃ­v Ã¡gensek hatÃ¡sidejÃ©t
+     */
 	public void step() {
 		Logger.enter(this, "step", null);
 		for(Agent a : activeagents)
@@ -234,26 +262,50 @@ public class Virologist implements Steppable{
 		Logger.exit(this, "step", null);
 	}
 
+    /**
+     * Getter a virolÃ³gus aminosavÃ¡nak jelenlegi mennyisÃ©gÃ©nek kiderÃ­tÃ©sÃ©re
+     * @return aminoacid
+     */
 	public int getAminoacid() {
 		return aminoacid;
 	}
 
+    /**
+     * Setter a virolÃ³gus aminosavÃ¡nak jelenlegi mennyisÃ©gÃ©nek beÃ¡llÃ­tÃ¡sÃ¡ra
+     * @param aminoacid
+     */
 	public void setAminoAcid(int aminoacid) {
 		this.aminoacid = aminoacid;
 	}
 
+    /**
+     * Getter a virolÃ³gus nukleotidÃ¡nak jelenlegi mennyisÃ©gÃ©nek kiderÃ­tÃ©sÃ©re
+     * @return nucleotide
+     */
 	public int getNucleotide() {
 		return nucleotide;
 	}
 
+    /**
+     * Setter a virolÃ³gus nukleotidÃ¡nak jelenlegi mennyisÃ©gÃ©nek beÃ¡llÃ­tÃ¡sÃ¡ra
+     * @param nucleotide
+     */
 	public void setNucleotide(int nucleotide) {
 		this.nucleotide = nucleotide;
 	}
 
+    /**
+     * Getter a virolÃ³gus jelenlegi mezÅ‘jÃ©nek kiderÃ­tÃ©sÃ©re
+     * @return field
+     */
 	public Field getField() {
 		return field;
 	}
 	
+    /**
+     * Getter a virolÃ³guson jelenleg hatÃ¡st kifejtÅ‘ Ã¡gensek kiderÃ­tÃ©sÃ©re
+     * @return activeagents
+     */
 	public ArrayList<Agent> getActiveAgents(){
 		return activeagents;
 	}
