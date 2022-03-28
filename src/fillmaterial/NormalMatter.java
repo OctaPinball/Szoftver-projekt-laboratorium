@@ -9,6 +9,11 @@ public class NormalMatter implements FillMaterial{
 	
 	private static int normAminoacid = 100;
 	private static int normNucleotide = 100;
+	
+    /**
+     * A paraméterként kapott virológus normál nyersanyagkapacitásának maximális feltöltéséhez
+     * @param v, a virológus, aki szeretne nyersanyagot
+     */
 
 	public void fillMaterial(Virologist v) {
 		

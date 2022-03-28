@@ -10,6 +10,11 @@ public class IncreasedMatter implements FillMaterial{
 	private static int incAminoacid = 100;
 	private static int incNucleotide = 100;
 
+    /**
+     * A paraméterként kapott virológus megnövelt nyersanyagkapacitásának maximális feltöltéséhez
+     * @param v, a virológus, aki szeretne nyersanyagot
+     */
+	
 	public void fillMaterial(Virologist v) {
 		
 		ArrayList<Object> par = new ArrayList<>(); par.add(v);
