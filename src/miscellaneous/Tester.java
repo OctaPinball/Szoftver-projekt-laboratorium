@@ -259,6 +259,7 @@ public class Tester {
 		Logger.enable();
 		Logger.register(v1, "v1");
 		Logger.register(st, "st");
+		Logger.register(b, "fb");
 
 		///Test
 		st.cast(v1,1);
@@ -278,6 +279,7 @@ public class Tester {
 		f2.addVirologist(v2);
 		f1.addNeighbor(f2);
 		f2.addNeighbor(f1);
+		f2.spawnEquipment(cape);
 		cape.pickupEquipment(v2);
 		
 		///Logger enable and register

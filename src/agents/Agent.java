@@ -12,6 +12,7 @@ public abstract class Agent {
 	
 	protected Virologist owner;
 	
+
 	Agent(){
 		
 	}
@@ -51,5 +52,8 @@ public abstract class Agent {
 			this.deactivate();
 		
 		Logger.exit(this, "stepEffectTime", null);
+	}
+	public void setOwner(Virologist owner) {
+		this.owner = owner;
 	}
 }
