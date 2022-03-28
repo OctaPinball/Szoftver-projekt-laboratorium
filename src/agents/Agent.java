@@ -47,6 +47,4 @@ public abstract class Agent {
 		
 		Logger.exit(this, "stepEffectTime", null);
 	}
-	
-	
 }

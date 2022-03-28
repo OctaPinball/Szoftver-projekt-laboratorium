@@ -287,7 +287,7 @@ public class Tester {
 		ForgettingAgent fa = new ForgettingAgent();
 		v1.learnAgent(fa);
 		Cape cape = new Cape();
-		//cape.pickupEquipment(v2);
+		cape.pickupEquipment(v2);
 		
 		// Logger enable and register
 		Logger.enable();
