@@ -302,8 +302,11 @@ public class Tester {
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
 		ForgettingAgent fa = new ForgettingAgent();
-		v1.learnAgent(fa);
+		Field f = new Field();
 		Cape cape = new Cape();
+		f.spawnEquipment(cape);
+		f.addVirologist(v2);
+		v1.learnAgent(fa);
 		cape.pickupEquipment(v2);
 		
 		// Logger enable and register
@@ -322,19 +325,21 @@ public class Tester {
 		Virologist v = new Virologist();
 		Storage storage = new Storage();
 		Field field = new Field();
-		v.changeField(field);
-		field.addVirologist(v);
 		field.addNeighbor(storage);
 		storage.addNeighbor(field);
+		field.addVirologist(v);
+		v.changeField(field);
 		
 		// Logger enable and register
 		Logger.enable();
 		Logger.register(storage, "storage");
-		Logger.register(v, "v");
 		Logger.register(field, "field");
+		Logger.register(v, "v");
+		Logger.register(v.getMovement(), "nm");
 		
 		// Tesztelés
 		v.getMovement().move(v, storage);
+		
 	}
 
 	public void virologistStepOnShelter() {
@@ -342,16 +347,17 @@ public class Tester {
 		Virologist v = new Virologist();
 		Shelter shelter = new Shelter();
 		Field field = new Field();
-		v.changeField(field);
-		field.addVirologist(v);
 		field.addNeighbor(shelter);
 		shelter.addNeighbor(field);
+		field.addVirologist(v);
+		v.changeField(field);
 		
 		// Logger enable and register
 		Logger.enable();
 		Logger.register(shelter, "shelter");
-		Logger.register(v, "v");
 		Logger.register(field, "field");
+		Logger.register(v, "v");
+		Logger.register(v.getMovement(), "nm");
 		
 		// Tesztelés
 		v.getMovement().move(v, shelter);
@@ -362,10 +368,10 @@ public class Tester {
 		Virologist v = new Virologist();
 		Field f1 = new Field();
 		Field f2 = new Field();
-		//f1.addNeighbor(f2);
-		//f2.addNeighbor(f1);
+		f1.addNeighbor(f2);
+		f2.addNeighbor(f1);
+		f1.addVirologist(v);
 		v.changeField(f1);
-		//f1.addVirologist(v);
 		
 		///Logger enable and register
 		Logger.enable();
@@ -375,7 +381,7 @@ public class Tester {
 		Logger.register(f2, "f2");
 		
 		///Test
-		//v.getMovement().move(v,f2);
+		v.getMovement().move(v,f2);
 	}
 
 	public void selfCast() throws CloneNotSupportedException {
