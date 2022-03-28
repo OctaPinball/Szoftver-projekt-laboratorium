@@ -8,6 +8,12 @@ import miscellaneous.Virologist;
 
 public class NormalMovement implements Movement{
 
+    /**
+     * A paraméterként kapott virológus szeretne átlépni a paraméterként kapott mezőre
+     * @param v, a virológus, aki szeretne ellépni
+     * @param target, a mező, ahova lépni szeretne
+     */
+	
 	public void move(Virologist v, Field target) {
 		
 		ArrayList<Object> par = new ArrayList<>(); par.add(v); par.add(target);
