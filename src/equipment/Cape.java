@@ -17,6 +17,7 @@ public class Cape extends Equipment{
         Logger.enter(this, "getEffect", null);
 
         wearer.setBlock(new PartialBlock());
+        Logger.register(wearer.getBlock(), "pb");
 
         Logger.exit(this, "getEffect", null);
 

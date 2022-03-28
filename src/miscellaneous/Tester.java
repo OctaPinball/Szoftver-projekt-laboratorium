@@ -223,9 +223,13 @@ public class Tester {
 		///Inicializáslás
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
+		Field f = new Field();
 		Cape c = new Cape();
 		Chorea ch = new Chorea();
+		v2.changeField(f);
+		f.addVirologist(v2);
 		v1.learnAgent(ch);
+		f.spawnEquipment(c);
 		c.pickupEquipment(v2);
 
 		///Logger enable and register
