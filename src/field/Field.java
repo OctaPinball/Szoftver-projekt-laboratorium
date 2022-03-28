@@ -11,10 +11,17 @@ public class Field {
 
 	private ArrayList<Field> neighbors;
 
+	/**
+	 * A Field osztály konstruktora, területet foglal a mezõ szomszédainak
+	 */
 	public Field() {
 		neighbors = new ArrayList<Field>();
 	}
 
+	/**
+	 * Hozzáadja a paraméterként kapott virológust a mezõhöz.
+	 * @param virologist a virológus akit hozzá kell adni a mezõhöz
+	 */
 	public void addVirologist(Virologist virologist) {
 		ArrayList<Object> par = new ArrayList<Object>();
 		par.add(virologist);
@@ -27,6 +34,9 @@ public class Field {
 		Logger.exit(this, "addVirologist", null);
 	}
 
+	/**
+	 * Leveszi a mezõrõl a virológust, amelyik éppen rajta áll.
+	 */
 	public void removeVirologist() {
 		Logger.enter(this, "removeVirologist", null);
 		
@@ -37,6 +47,11 @@ public class Field {
 		Logger.exit(this, "removeVirologist", null);
 	}
 
+	/**
+	 * Hozzáadja a paraméterként kapott felszerelést a mezõhöz, ha még a mezõn nincsen semmilyen felszerelés.
+	 * @param newEquipment	a felszerelés amit hozzá kell adni a mezõhöz
+	 * @return				ha a hozzáadás sikeres volt igaz, ellenkezõ esetben hamis a visszatérési érték
+	 */
 	public boolean spawnEquipment(Equipment newEquipment) {
 		ArrayList<Object> par = new ArrayList<Object>();
 		par.add(newEquipment);
@@ -53,6 +68,9 @@ public class Field {
 		return canDrop;
 	}
 
+	/**
+	 * Leveszi a mezõrõl a felszerelést.
+	 */
 	public void removeEquipment() {
 		Logger.enter(this, "removeEquipment", null);
 		
@@ -63,6 +81,10 @@ public class Field {
 		Logger.exit(this, "removeEquipment", null);
 	}
 	
+	/**
+	 * Hozzáadja a szomszédok tömbjéhez a paraméterként kapott mezõt
+	 * @param neighbor	a mezõ, amit hozzá kell adni a tömbhöz
+	 */
 	public void addNeighbor(Field neighbor) {
 		ArrayList<Object> par = new ArrayList<Object>();
 		par.add(neighbor);
@@ -75,6 +97,11 @@ public class Field {
 		Logger.exit(this, "addNeighbor", null);
 	}
 
+	/**
+	 * Akkor hívódik, ha egy virológus rálép a mezõre, ekkor további függvényhívásokon keresztül
+	 * hozzáadja azt a mezõhöz és a virológus jelenlegi pozícióját is frissíti
+	 * @param virologist		a mezõre lépõ virológus
+	 */
 	public void stepOn(Virologist virologist) {
 		ArrayList<Object> par = new ArrayList<Object>();
 		par.add(virologist);
@@ -88,6 +115,10 @@ public class Field {
 		Logger.exit(this, "stepOn", null);
 	}
 	
+	/**
+	 * Visszaadja a mezõn lévõ felszerelést
+	 * @return		a mezõn lévõ felszerelés, ha nincs rajta semmi, akkor null
+	 */
 	public Equipment getEquipment() {
 		//Logger.enter(this, "getEquipment", null);
 		
@@ -95,6 +126,10 @@ public class Field {
 		return equipmentOnField;
 	}
 	
+	/**
+	 * Visszaadja a mezõ szomszédainak tömbjét
+	 * @return		a mezõ szomszédainak tömbje
+	 */
 	public ArrayList<Field> getNeighbors(){
 		return neighbors;
 	}

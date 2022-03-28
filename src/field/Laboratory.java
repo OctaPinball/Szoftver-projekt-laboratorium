@@ -10,6 +10,11 @@ public class Laboratory extends Field{
 	
 	private Agent agentOnField;
 	
+	/**
+	 * A Field osztály stepOn függvényét kiegészíti, azzal hogy megismerteti a virológussal a laboratóriumban található ágens kódját
+	 * @param virologist		a mezõre lépõ virológus
+	 */
+	@Override
 	public void stepOn(Virologist virologist) {
 		ArrayList<Object> par = new ArrayList<Object>();
 		par.add(virologist);
@@ -23,6 +28,10 @@ public class Laboratory extends Field{
 		Logger.exit(this, "stepOn", null);
 	}
 
+	/**
+	 * Hozzáadja a paraméterben kapott ágenst a laboratóriumhoz.
+	 * @param newAgent		a laboratóriumban megtanulható ágens
+	 */
 	public void addAgent(Agent newAgent) {
 		ArrayList<Object> par = new ArrayList<Object>();
 		par.add(newAgent);

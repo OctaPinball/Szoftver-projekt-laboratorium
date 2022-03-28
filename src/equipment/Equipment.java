@@ -49,7 +49,7 @@ public abstract class Equipment {
 
         Logger.enter(this, "dropEquipment", null);
 
-        if(currentField.spawnEquipment(this)) {
+        if(wearer.getField().spawnEquipment(this)) {
             wearer.loseEquipment(this);
             this.loseEffect();
         }
@@ -62,12 +62,12 @@ public abstract class Equipment {
     /**
      * Aktiválja a felszerelés hatását
      */
-    protected abstract void getEffect();
+    public abstract void getEffect();
 
     /**
      * Megszünteti a felszerelés hatását
      */
-    protected abstract void loseEffect();
+    public abstract void loseEffect();
 
     /**
      * Visszaadja a mezőt amelyen a felszerelés található
@@ -76,6 +76,7 @@ public abstract class Equipment {
     public Field getCurrentField() {
     	return currentField;
     }
+
 
     /**
      * Beállítja az új mezőt, amelyre a felszerelést ledobták
