@@ -18,7 +18,6 @@ public class BlockAndReturn implements Block{
 	
 	public BlockAndReturn() {
 		counter = 0;
-		System.out.println(counter);
 	}
 
 	/**
@@ -34,12 +33,10 @@ public class BlockAndReturn implements Block{
 		ArrayList<Object> par = new ArrayList<>(); par.add(s); par.add(t); par.add(a);
 		Logger.enter(this, "block", par);
 		
-		System.out.println(counter);
 		boolean result = true;
 		
-		if(this.counter <= 2) {
+		if(this.counter < 2) {
 			a.cast(t, this.counter++);
-			System.out.println(counter);
 			
 			block(t, s, a);		
 			return true;

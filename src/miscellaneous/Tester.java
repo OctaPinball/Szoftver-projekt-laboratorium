@@ -203,11 +203,12 @@ public class Tester {
 		///Inicializáslás
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
+		Field f1 = new Field();
 		Glove g = new Glove();
-		System.out.println("s");
 		BlockAndReturn bar = new BlockAndReturn();
 		Chorea c = new Chorea();
 		v1.learnAgent(c);
+		f1.spawnEquipment(g);
 		g.pickupEquipment(v2);
 		v2.setBlock(bar);
 
