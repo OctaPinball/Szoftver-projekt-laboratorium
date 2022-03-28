@@ -3,6 +3,10 @@ package equipment;
 import block.*;
 import miscellaneous.Logger;
 
+/**
+ * Egy olyan felszerelést reprezentál a programban, amelyet ha felvesz egy játékos, akkor megkapja a BlockAndReturn tulajdonságot,
+ * amely megvédi a virológust bármilyen vírustól, és azt vissza is dobja a támadójára.
+ */
 public class Glove extends Equipment{
 
     /**
