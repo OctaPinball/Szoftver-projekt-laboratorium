@@ -458,13 +458,15 @@ public class Tester {
 		Glove g1 = new Glove();
 		Glove g2 = new Glove();
 		Sack s = new Sack();
+		Field f1 = new Field();
 
+		f1.spawnEquipment(c);
 		c.pickupEquipment(v);
-		v.addEquipment(c);
+		f1.spawnEquipment(g1);
 		g1.pickupEquipment(v);
-		v.addEquipment(g1);
+		f1.spawnEquipment(s);
 		s.pickupEquipment(v);
-		v.addEquipment(s);
+		f1.spawnEquipment(g2);
 
 
 		///Logger enable and register
