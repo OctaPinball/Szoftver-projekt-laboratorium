@@ -22,7 +22,7 @@ public class BlockAndReturn implements Block{
 		
 		boolean result = true;
 		
-		if(bar.counter < 2) {
+		if(bar.counter <= 2) {
 			a.cast(t, bar.counter++);
 			
 			block(t, s, a);		
