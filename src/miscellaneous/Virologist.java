@@ -89,9 +89,10 @@ public class Virologist implements Steppable{
 			}
 		}
 		activeagents.add(a);
+		a.setOwner(this);
 		if(!found) 
 		{
-			//a.activate();
+			a.activate();
 		}
 			
 		
@@ -112,7 +113,8 @@ public class Virologist implements Steppable{
 		if(!found)
 		{
 			equipments.add(e);
-			//e.getEffect();
+			
+			e.getEffect();
 		}
 			
 		Logger.exit(this, "addEquipment", !found);
@@ -146,7 +148,7 @@ public class Virologist implements Steppable{
 		
 		boolean success = true;
 		
-		//e.dropEquipment();
+		e.dropEquipment();
 		
 		if (!v.addEquipment(e))
 			success = false;
@@ -184,7 +186,7 @@ public class Virologist implements Steppable{
 		Logger.enter(this, "step", null);
 		for(Agent a : activeagents)
 		{
-			//a.setEffectTime(a.getEffectTime - 1);
+			a.stepEffectTime();
 		}
 		Logger.exit(this, "step", null);
 	}
