@@ -8,6 +8,11 @@ import miscellaneous.Logger;
  * amely megvédi a virológust bármilyen vírustól, és azt vissza is dobja a támadójára.
  */
 public class Glove extends Equipment{
+	private static int i = 0;
+	
+	public Glove(){
+		i++;
+	}
 
     /**
      * Aktiválja a BlockAndReturn hatást a virológuson
@@ -17,6 +22,7 @@ public class Glove extends Equipment{
         Logger.enter(this, "getEffect", null);
 
         wearer.setBlock(new BlockAndReturn());
+        Logger.register(wearer.getBlock(), "bar"+i);
 
         Logger.exit(this, "getEffect", null);
 
