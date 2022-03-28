@@ -3,6 +3,9 @@ package movement;
 import field.Field;
 import miscellaneous.Virologist;
 
+/**
+ * A virológus mozgását jellemző interfész.
+ */
 public interface Movement {
 	
     /**

@@ -6,6 +6,9 @@ import field.Field;
 import miscellaneous.Logger;
 import miscellaneous.Virologist;
 
+/**
+ * A movement interfész leszármazottja, ez az alapvető mozgás, amikor éppen nem aktív semmilyen mozgás befolysoló hatás a virológuson
+ */
 public class NormalMovement implements Movement{
 
     /**

@@ -6,6 +6,9 @@ import field.Field;
 import miscellaneous.Logger;
 import miscellaneous.Virologist;
 
+/**
+ * A movement interfész leszármazottja, amikor aktív a virológus egyáltalán nem képes mozogni.
+ */
 public class Stunned implements Movement{
 
     /**
