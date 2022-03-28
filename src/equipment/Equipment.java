@@ -76,7 +76,6 @@ public abstract class Equipment {
     public Field getCurrentField() {
     	return currentField;
     }
-ű
 
     /**
      * Beállítja az új mezőt, amelyre a felszerelést ledobták
