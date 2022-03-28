@@ -1,6 +1,7 @@
 package miscellaneous;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import agents.*;
 import block.*;
@@ -123,15 +124,8 @@ public class Virologist implements Steppable{
 		Logger.enter(this, "loseEquipment", par);
 		
 		
-		boolean found = false;
-		for (Equipment i : equipments)
-		{
-			if (i.getClass() == e.getClass()) 
-			{
-				equipments.remove(i);
-				//i.loseEquipment();
-			}
-		}
+		if(equipments.remove(e))
+			e.loseEffect();
 			
 		
 		Logger.exit(this, "loseEquipment", null);

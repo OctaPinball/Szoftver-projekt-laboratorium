@@ -181,10 +181,12 @@ public class Tester {
 		Field f = new Field();
 		Cape c = new Cape();
 		Glove g = new Glove();
-		v.addEquipment(c);
 		v.changeField(f);
 		f.addVirologist(v);
+		f.spawnEquipment(c);
+		c.pickupEquipment(v);
 		f.spawnEquipment(g);
+		
 		
 		// Logger enable and register
 		Logger.enable();
