@@ -13,6 +13,10 @@ public class NormalMovement implements Movement{
 		ArrayList<Object> par = new ArrayList<>(); par.add(v); par.add(target);
 		Logger.enter(this, "move", par);
 		
+		v.getField().removeVirologist();
+		target.stepOn(v);
+		target.addVirologist(v);
+		v.changeField(target);
 		
 		Logger.exit(this, "move", null);
 	}
