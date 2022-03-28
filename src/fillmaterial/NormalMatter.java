@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import miscellaneous.Logger;
 import miscellaneous.Virologist;
 
+/**
+ * A FillMaterial leszármazottja, alapesetben ez aktív és a normál készletet jelenti
+ */
 public class NormalMatter implements FillMaterial{
 	
 	private static int normAminoacid = 100;

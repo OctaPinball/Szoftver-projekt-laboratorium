@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import miscellaneous.Logger;
 import miscellaneous.Virologist;
 
+/**
+ * A FillMaterial leszármazottja, amikor aktív a virológus megnövelt készlettel rendelkezik, a Sack felszerelés okozza
+ */
 public class IncreasedMatter implements FillMaterial{
 	
 	private static int incAminoacid = 100;

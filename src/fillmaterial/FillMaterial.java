@@ -2,6 +2,10 @@ package fillmaterial;
 
 import miscellaneous.Virologist;
 
+/**
+ * A virológus anyaggyûjtõ képességét jellemzõ interfész
+ */
+
 public interface FillMaterial {
 	
     /**

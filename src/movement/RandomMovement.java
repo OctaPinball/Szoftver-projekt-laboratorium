@@ -7,6 +7,9 @@ import field.Field;
 import miscellaneous.Logger;
 import miscellaneous.Virologist;
 
+/**
+ * A movement interfész leszármazottja, ennél a mozgás típusnál a virológus véletlenszerűen mozog, a Chorea ágens hatása okozza.
+ */
 public class RandomMovement implements Movement{
 
     /**
