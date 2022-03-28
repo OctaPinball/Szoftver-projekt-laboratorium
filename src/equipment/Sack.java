@@ -6,6 +6,9 @@ import miscellaneous.Logger;
 
 public class Sack extends Equipment{
 
+    /**
+     * Aktiválja a IncreasedMatter hatást a virológuson
+     */
     public void getEffect(){
 
         Logger.enter(this, "getEffect", null);
@@ -16,6 +19,9 @@ public class Sack extends Equipment{
 
     }
 
+    /**
+     *  Deaktiválja a IncreasedMatter hatást a virológuson, visszaállítja a NormalMatter hatást
+     */
     public void loseEffect(){
 
         Logger.enter(this, "loseEffect", null);

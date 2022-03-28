@@ -5,6 +5,9 @@ import miscellaneous.Logger;
 
 public class Glove extends Equipment{
 
+    /**
+     * Aktiválja a BlockAndReturn hatást a virológuson
+     */
     public void getEffect(){
 
         Logger.enter(this, "getEffect", null);
@@ -15,6 +18,9 @@ public class Glove extends Equipment{
 
     }
 
+    /**
+     *  Deaktiválja a BlockAndReturn hatást a virológuson, visszaállítja a NoBlock hatást
+     */
     public void loseEffect(){
 
         Logger.enter(this, "loseEffect", null);

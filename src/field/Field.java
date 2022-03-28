@@ -43,8 +43,9 @@ public class Field {
 		Logger.enter(this, "spawnEquipment", par);
 		
 		boolean canDrop = false;
-		if(equipmentOnField != null) {
+		if(equipmentOnField == null) {
 			equipmentOnField = newEquipment;
+			newEquipment.setCurrentField(this);
 			canDrop = true;
 		}
 		
