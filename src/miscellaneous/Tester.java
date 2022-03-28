@@ -383,7 +383,7 @@ public class Tester {
 		v.getMovement().move(v,f2);
 	}
 
-	public void selfCast() {
+	public void selfCast() throws CloneNotSupportedException {
 		///Inicializáslás
 		Virologist v = new Virologist();
 		Protection p = new Protection();
@@ -392,10 +392,9 @@ public class Tester {
 		Logger.enable();
 		Logger.register(v, "v");
 		Logger.register(p, "p");
-		//*** FIGYELEM!!! HIÁNYZIK EGY OSZTÁLY REGELÉSE!!!! PROTECTION COPY ***
 		
 		///Test
-		//p.cast(v, 1);
+		p.cast(v, 1);
 		
 	}
 
@@ -404,9 +403,9 @@ public class Tester {
 		Virologist v = new Virologist();
 		Glove g = new Glove();
 		Field f = new Field();
-		//f.addVirologist(v);
+		f.addVirologist(v);
 		v.changeField(f);
-		//f.spawnEquipment(g);
+		f.spawnEquipment(g);
 		
 		///Logger enable and register
 		Logger.enable();
@@ -415,25 +414,36 @@ public class Tester {
 		Logger.register(f, "f");
 		
 		///Test
-		//g.pickupItem(v);
+		g.pickupEquipment(v);
 	}
 
 	public void doubleBlockAndReturn() throws CloneNotSupportedException {
 		///Inicializáslás
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
-		BlockAndReturn bar_1 = new BlockAndReturn();
-		BlockAndReturn bar_2 = new BlockAndReturn();
+		Field f1 = new Field();
+		Field f2 = new Field();
+		Glove g1 = new Glove();
+		Glove g2 = new Glove();
 		Chorea c = new Chorea();
 
+		f1.addVirologist(v1);
+		v1.changeField(f1);
+		f1.spawnEquipment(g1);
+		g1.pickupEquipment(v1);
+		f2.addVirologist(v2);
+		v2.changeField(f2);
+		f2.spawnEquipment(g2);
+		g2.pickupEquipment(v2);
 		v1.learnAgent(c);
+		
 
 		///Logger enable and register
 		Logger.enable();
 		Logger.register(v1, "v1");
 		Logger.register(v2, "v2");
-		Logger.register(bar_1, "bar_1");
-		Logger.register(bar_2, "bar_2");
+		Logger.register(g1, "g1");
+		Logger.register(g2, "g2");
 		Logger.register(c, "c");
 
 		///Test
