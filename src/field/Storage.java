@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 import miscellaneous.*;
 
+/**
+ * A Field osztály leszármazottja, az ilyen típusú mezõkre lépve tudják a virológusok feltölteni készleteiket.
+ */
 public class Storage extends Field{
 	
 	/**

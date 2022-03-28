@@ -4,6 +4,13 @@ import java.util.ArrayList;
 import miscellaneous.*;
 import equipment.*;
 
+/**
+ * Egy mezõt reprezentál a játékban, ez az õsosztály ebbõl származnak le a különbözõ mezõ típusok
+ * létezik sima mezõ is, így példányosítható az osztály, a mezõkön keresztül mozoghatnak a pályán a virológusok
+ * egyszerre egy mezõn csak egy virológus tartózkodhat, valamint egy felszerelés is ledobható a mezõre.
+ * A mezõk ismerik a szomszédos mezõket, ezeket egy tömbben tárolják.
+ */
+
 public class Field {
 	
 	private Virologist virologistOnField;
