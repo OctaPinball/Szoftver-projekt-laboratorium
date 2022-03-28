@@ -251,30 +251,51 @@ public class Tester {
 	}
 
 	public void stealEquipment() {
+		// Inicializáslás
+		Field f1 = new Field();
+		Field f2 = new Field();
+		Virologist v1 = new Virologist();
+		Virologist v2 = new Virologist();
+		Cape cape = new Cape();
 		
+		v1.changeField(f1);
+		v2.changeField(f2);
+		f1.addVirologist(v1);
+		f2.addVirologist(v2);
+		f1.addNeighbor(f2);
+		f2.addNeighbor(f1);
+		cape.pickupEquipment(v2);
+		
+		///Logger enable and register
+		Logger.enable();
+		Logger.register(v1, "v1");
+		Logger.register(v2, "v2");
+		Logger.register(f1, "f1");
+		Logger.register(f2, "f2");
+		Logger.register(cape, "c");
+
+		///Tesztelés
+		v1.stealEquipment(cape, v2);
 	}
 
-	public void partialBlockFalse() {	//?
+	public void partialBlockFalse() {
 		// Inicializálás
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
 		ForgettingAgent fa = new ForgettingAgent();
 		v1.learnAgent(fa);
 		Cape cape = new Cape();
-		cape.pickupEquipment(v2);
-		PartialBlock pb = new PartialBlock();
-		v2.addEquipment(cape);
+		//cape.pickupEquipment(v2);
 		
 		// Logger enable and register
 		Logger.enable();
 		Logger.register(v1, "v1");
 		Logger.register(v2, "v2");
 		Logger.register(fa, "fa");
-		Logger.register(pb, "pb");
 		Logger.register(cape, "cape");
 		
 		// Tesztelés
-		pb.block(v1, v2, fa);
+		fa.cast(v2, 1);
 	}
 
 	public void virologistStepOnStorage() {
