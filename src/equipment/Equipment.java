@@ -8,6 +8,10 @@ public abstract class Equipment {
     protected Virologist wearer;
     private Field currentField;
 
+    /**
+     * A paraméterként kapott virológus felveszi az adott felszerelést, ha még nem érte el a maximális felszerelés kapacitást
+     * @param v a virológus aki felveszi a felszerelést
+     */
     public void pickupEquipment(Virologist v){
         if(v.addEquipment(this)) {
             wearer = v;
@@ -16,6 +20,9 @@ public abstract class Equipment {
         }
     }
 
+    /**
+     * A virológus eldobja a felszerelést, arra a mezőre amin éppen áll, ezzel elveszítve az adott felszerelés hatását
+     */
     public void dropEquipment(){
         if(currentField.spawnEquipment(this)) {
             wearer.loseEquipment(this);
