@@ -1,17 +1,18 @@
 package agents;
 
+import block.FullBlock;
 import block.NoBlock;
 import block.PartialBlock;
 import miscellaneous.Logger;
 
 
 /**
- * Az Agent osztály leszármazottja, a használója védelem alá kerül, azaz elhárít minden rákent ágenst.
+ * Az Agent osztï¿½ly leszï¿½rmazottja, a hasznï¿½lï¿½ja vï¿½delem alï¿½ kerï¿½l, azaz elhï¿½rï¿½t minden rï¿½kent ï¿½genst.
  */
 public class Protection extends Agent{
 
 	/**
-	 * Aktiválja az ágens hatását a virológuson, azaz megvédi minden ellenséges ágens hatásától.
+	 * Aktivï¿½lja az ï¿½gens hatï¿½sï¿½t a virolï¿½guson, azaz megvï¿½di minden ellensï¿½ges ï¿½gens hatï¿½sï¿½tï¿½l.
 	 */
 	public void activate() {
 		Logger.enter(this, "activate", null);
@@ -22,7 +23,7 @@ public class Protection extends Agent{
 	}
 	
 	/**
-	 * Deaktiválja az ágens hatását a virológuson, azaz elveszti az ágens nyújtotta védelmet.
+	 * Deaktivï¿½lja az ï¿½gens hatï¿½sï¿½t a virolï¿½guson, azaz elveszti az ï¿½gens nyï¿½jtotta vï¿½delmet.
 	 */
 	public void deactivate() {
 		Logger.enter(this, "deactivate", null);
@@ -34,8 +35,8 @@ public class Protection extends Agent{
 	}
 	
 	/**
-	 * Másolatot készít az ágensrõl
-	 * @return		az ágens másolata
+	 * Mï¿½solatot kï¿½szï¿½t az ï¿½gensrï¿½l
+	 * @return		az ï¿½gens mï¿½solata
 	 */
 	public Agent makeCopy() {
 		return (Agent) new Protection();
