@@ -8,7 +8,8 @@ public abstract class Equipment {
     protected Virologist wearer;
     private Field currentField;
 
-    public void pickupEquipment(Virologist v){
+
+	public void pickupEquipment(Virologist v){
         if(v.addEquipment(this)) {
             wearer = v;
             this.getEffect();
@@ -27,5 +28,13 @@ public abstract class Equipment {
     protected abstract void getEffect();
 
     protected abstract void loseEffect();
+
+    public Field getCurrentField() {
+    	return currentField;
+    }
+    
+    public void setCurrentField(Field currentField) {
+    	this.currentField = currentField;
+    }
 
 }
