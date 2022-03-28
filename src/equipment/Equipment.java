@@ -35,4 +35,12 @@ public abstract class Equipment {
 
     protected abstract void loseEffect();
 
+    public Field getCurrentField() {
+    	return currentField;
+    }
+
+    public void setCurrentField(Field currentField) {
+    	this.currentField = currentField;
+    }
+
 }

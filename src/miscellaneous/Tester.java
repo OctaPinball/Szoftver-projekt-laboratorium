@@ -101,7 +101,9 @@ public class Tester {
 		Virologist v = new Virologist();
 		Field f = new Field();
 		v.changeField(f);
-		v.addEquipment(sc);
+		f.spawnEquipment(sc);
+		sc.pickupEquipment(v);
+		//v.addEquipment(sc);
 		sc.getEffect();
 		f.addVirologist(v);
 		f.addNeighbor(s);
