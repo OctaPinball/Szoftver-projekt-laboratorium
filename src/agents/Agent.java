@@ -19,15 +19,18 @@ public abstract class Agent {
 	public void cast(Virologist target, int i) throws CloneNotSupportedException {
 		ArrayList<Object> par = new ArrayList<>(); par.add(target); par.add(i);
 		Logger.enter(this, "cast", par);
-		
-		if(owner.getAminoacid() - acidcost < 0 || owner.getNucleotide() - nucleotidecost < 0)
-			return;
-		owner.setAminoAcid(owner.getAminoacid() - acidcost);
-		owner.setNucleotide(owner.getNucleotide() - nucleotidecost);
+		if(owner != null)
+		{
+			if(owner.getAminoacid() - acidcost < 0 || owner.getNucleotide() - nucleotidecost < 0)
+				return;
+			owner.setAminoAcid(owner.getAminoacid() - acidcost);
+			owner.setNucleotide(owner.getNucleotide() - nucleotidecost);
+		}
 		
 		if(!target.getBlock().block(owner, target, this))
 		{
-			Agent copy = (Agent) this.clone();
+			Agent copy = this.makeCopy();
+			Logger.register(copy, "agent_copy");
 			target.addActiveAgent(copy);
 		}
 		
@@ -37,6 +40,8 @@ public abstract class Agent {
 	public abstract void activate();
 	
 	public abstract void deactivate();
+	
+	public abstract Agent makeCopy();
 	
 	public void stepEffectTime() {
 		Logger.enter(this, "stepEffectTime", null);

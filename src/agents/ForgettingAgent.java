@@ -19,4 +19,8 @@ public class ForgettingAgent extends Agent{
 		
 		Logger.exit(this, "deactivate", null);
 	}
+	
+	public Agent makeCopy() {
+		return (Agent) new ForgettingAgent();
+	}
 }

@@ -115,6 +115,7 @@ public class Tester {
 		Logger.register(s, "s");
 		Logger.register(v, "v");
 		Logger.register(f, "f");
+		Logger.register(v.getMovement(), "nm");
 
 		// Tesztelés
 		v.getMovement().move(v, s);

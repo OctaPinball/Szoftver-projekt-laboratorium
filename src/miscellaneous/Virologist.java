@@ -30,6 +30,9 @@ public class Virologist implements Steppable{
 		setBlock(new NoBlock());
 		setFillMaterial(new NormalMatter());
 		setMovement(new NormalMovement());
+		Logger.register(this.getBlock(), "nob");
+		Logger.register(this.getFillMaterial(), "nma");
+		Logger.register(this.getMovement(), "nmo");
 		
 		activeagents = new ArrayList<Agent>();
 		agents = new ArrayList<Agent>();

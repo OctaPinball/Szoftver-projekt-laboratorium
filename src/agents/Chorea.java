@@ -21,4 +21,8 @@ public class Chorea extends Agent{
 		
 		Logger.exit(this, "deactivate", null);
 	}
+	
+	public Agent makeCopy() {
+		return (Agent) new Chorea();
+	}
 }
