@@ -89,6 +89,7 @@ public class Virologist implements Steppable{
 			}
 		}
 		activeagents.add(a);
+		a.setOwner(this);
 		if(!found) 
 		{
 			a.activate();
