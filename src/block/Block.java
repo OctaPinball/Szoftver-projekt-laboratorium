@@ -5,6 +5,6 @@ import miscellaneous.Virologist;
 
 public interface Block {
 
-	public abstract boolean block(Virologist s, Virologist t, Agent a);
+	public abstract boolean block(Virologist s, Virologist t, Agent a) throws CloneNotSupportedException;
 	
 }

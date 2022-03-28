@@ -13,7 +13,7 @@ public class Stunned implements Movement{
 		ArrayList<Object> par = new ArrayList<>(); par.add(v); par.add(target);
 		Logger.enter(this, "move", par);
 		
+		
 		Logger.exit(this, "move", null);
 	}
-	
 }

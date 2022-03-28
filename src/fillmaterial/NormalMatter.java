@@ -15,7 +15,7 @@ public class NormalMatter implements FillMaterial{
 		ArrayList<Object> par = new ArrayList<>(); par.add(v);
 		Logger.enter(this, "fillMaterial", par);
 		
-		v.setAminoacid(normAminoacid);
+		v.setAminoAcid(normAminoacid);
 		v.setNucleotide(normNucleotide);
 		
 		Logger.exit(this, "move", null);

@@ -14,6 +14,7 @@ public class FullBlock implements Block{
 		ArrayList<Object> par = new ArrayList<>(); par.add(s); par.add(t); par.add(a);
 		Logger.enter(this, "block", par);
 		
+		
 		Logger.exit(this, "block", true);
 		return true;
 	}

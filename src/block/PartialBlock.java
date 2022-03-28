@@ -17,6 +17,7 @@ public class PartialBlock implements Block{
 		boolean result = true;
 		
 		double rnd = Math.random();
+		
 		if(rnd < 0.823);
 		else result = false;
 		

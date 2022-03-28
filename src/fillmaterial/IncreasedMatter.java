@@ -15,7 +15,7 @@ public class IncreasedMatter implements FillMaterial{
 		ArrayList<Object> par = new ArrayList<>(); par.add(v);
 		Logger.enter(this, "fillMaterial", par);
 		
-		v.setAminoacid(incAminoacid);
+		v.setAminoAcid(incAminoacid);
 		v.setNucleotide(incNucleotide);
 		
 		Logger.exit(this, "move", null);

@@ -14,10 +14,9 @@ public class BlockAndReturn implements Block{
 	public BlockAndReturn() {
 		counter = 0;
 	}
-	
-	@Override
-	public boolean block(Virologist s, Virologist t, Agent a) {
 		
+	public boolean block(Virologist s, Virologist t, Agent a) throws CloneNotSupportedException {
+
 		ArrayList<Object> par = new ArrayList<>(); par.add(s); par.add(t); par.add(a);
 		Logger.enter(this, "block", par);
 		
