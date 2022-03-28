@@ -207,6 +207,10 @@ public class Virologist implements Steppable{
 	public void setNucleotide(int nucleotide) {
 		this.nucleotide = nucleotide;
 	}
+
+	public Field getField() {
+		return field;
+	}
 	
 	public ArrayList<Agent> getActiveAgents(){
 		return activeagents;

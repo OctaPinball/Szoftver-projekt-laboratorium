@@ -278,7 +278,7 @@ public class Tester {
 		v1.stealEquipment(cape, v2);
 	}
 
-	public void partialBlockFalse() {
+	public void partialBlockFalse() throws CloneNotSupportedException {
 		// Inicializálás
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
