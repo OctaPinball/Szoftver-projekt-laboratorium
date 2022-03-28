@@ -14,10 +14,8 @@ public class BlockAndReturn implements Block{
 	/**
 	 * Számolja, hogy hanyadjára dobják vissza a kenést.
 	 */
-	private int counter;
 	
 	public BlockAndReturn() {
-		counter = 0;
 	}
 
 	/**
@@ -33,16 +31,11 @@ public class BlockAndReturn implements Block{
 		ArrayList<Object> par = new ArrayList<>(); par.add(s); par.add(t); par.add(a);
 		Logger.enter(this, "block", par);
 		
-		boolean result = true;
-		
-		if(this.counter < 2) {
-			a.cast(t, this.counter++);
-			block(t, s, a);		
-			return true;
+		if(!s.equals(t)) {
+			a.cast(s, 2);
 		}
-		else result = false;
 		
-		Logger.exit(this, "block", result);
-		return result;
+		Logger.exit(this, "block", true);
+		return true;
 	}
 }

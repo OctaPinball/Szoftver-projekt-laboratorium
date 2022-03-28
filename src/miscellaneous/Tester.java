@@ -442,7 +442,7 @@ public class Tester {
 		Logger.register(c, "c");
 
 		///Test
-		c.cast(v1,1);
+		c.cast(v2,1);
 	}
 
 	public void cantPickupItem() {
