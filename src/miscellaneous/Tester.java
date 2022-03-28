@@ -339,6 +339,7 @@ public class Tester {
 		
 		// Tesztelés
 		v.getMovement().move(v, storage);
+		
 	}
 
 	public void virologistStepOnShelter() {
