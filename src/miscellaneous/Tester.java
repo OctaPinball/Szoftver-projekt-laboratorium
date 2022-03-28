@@ -219,6 +219,7 @@ public class Tester {
 		Logger.register(g, "g");
 		Logger.register(c, "c");
 		Logger.register(bar, "bar");
+		Logger.register(f1, "f1");
 
 		///Test
 		c.cast(v2,1);

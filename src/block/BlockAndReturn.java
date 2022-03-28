@@ -37,7 +37,6 @@ public class BlockAndReturn implements Block{
 		
 		if(this.counter < 2) {
 			a.cast(t, this.counter++);
-			
 			block(t, s, a);		
 			return true;
 		}
