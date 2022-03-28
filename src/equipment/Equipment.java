@@ -10,7 +10,7 @@ public abstract class Equipment {
 
     /**
      * A paraméterként kapott virológus felveszi az adott felszerelést, ha még nem érte el a maximális felszerelés kapacitást
-     * @param v a virológus aki felveszi a felszerelést
+     * @param v, a virológus aki felveszi a felszerelést
      */
     public void pickupEquipment(Virologist v){
         if(v.addEquipment(this)) {
