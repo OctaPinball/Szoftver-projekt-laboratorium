@@ -168,10 +168,11 @@ public class Control {
 				move(cmd);
 			}
 		}
-		else if (cmd[3].equals("list")) {
+		else if (cmd[3].equals("list") || cmd[2].equals("list") )
+		{
 			if(checkExistingObject(cmd[2]))
 			{
-				if(cmd[3].equals("list"))
+				if(cmd[2].equals("list"))
 				{
 					if(getHashMap(cmd[1]) == null && !cmd[1].equals("all"))
 					{
@@ -212,41 +213,49 @@ public class Control {
 						}
 						else if(cmd[3].equals("detailed"))
 						{
-							for(String s : (String[])virologists.keySet().toArray())
+							System.out.println(cmd[2] + "\n");
+							for(Object o : virologists.values().toArray())
 							{
-								System.out.println(s + "\n");
+								System.out.println(o.toString() + "\n");
 							}
-							for(String s : (String[])agents.keySet().toArray())
+							for(Object o : agents.values().toArray())
 							{
-								System.out.println(s + "\n");
+								System.out.println(o.toString() + "\n");
 							}
-							for(String s : (String[])equipments.keySet().toArray())
+							for(Object o : equipments.values().toArray())
 							{
-								System.out.println(s + "\n");
+								System.out.println(o.toString() + "\n");
 							}
-							for(String s : (String[])fields.keySet().toArray())
+							for(Object o : fields.values().toArray())
 							{
-								System.out.println(s + "\n");
+								System.out.println(o.toString() + "\n");
 							}
 						}
 						
 						else
 						{
+							System.out.println(cmd[2] + "\n");
 							for(Object o : getHashMap(cmd[1]).values().toArray())
 							{
 								System.out.println(o.toString() + "\n");
 							}
 						}
-						}
-						
 					}
-				}
-				else if(cmd[2].equals("list"))
-				{
-					
+						
 				}
 			}
-		
+			else if(cmd[3].equals("list"))
+			{
+				if(getHashMap(cmd[1]) == null || getHashMap(cmd[1]).get(cmd[2]) == null)
+				{
+					System.out.println("Invalid type or name!");
+				}
+				else
+				{
+					System.out.println(getHashMap(cmd[1]).get(cmd[2]).toString() + "\n");
+				}
+			}
+		}
 		else if (cmd[3].equals("removeneighbor") && cmd[1].equals("f")) {
 			if(fields.containsKey(cmd[2]))
 			{
