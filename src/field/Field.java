@@ -97,11 +97,21 @@ public class Field {
 		par.add(neighbor);
 		Logger.enter(this, "addNeighbor", par);
 		
-		
 		neighbors.add(neighbor);
 		
-		
 		Logger.exit(this, "addNeighbor", null);
+	}
+	
+	/**
+	 * A paraméterként megkapott mezõ szomszédait eltávolítja.
+	 * @param neighbor	a mezõ, amit el kell távolítani a tömbbõl
+	 */
+	public void removeNeighbor(Field neighbor) {
+		Logger.enter(this, "removeNeighbor", null);
+		
+		neighbors.remove(neighbor);
+		
+		Logger.exit(this, "removeNeighbor", null);
 	}
 
 	/**
@@ -114,10 +124,8 @@ public class Field {
 		par.add(virologist);
 		Logger.enter(this, "stepOn", par);
 		
-		
 		addVirologist(virologist);
 		virologist.changeField(this);
-		
 		
 		Logger.exit(this, "stepOn", null);
 	}

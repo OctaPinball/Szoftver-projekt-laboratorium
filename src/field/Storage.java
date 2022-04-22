@@ -26,4 +26,29 @@ public class Storage extends Field{
 		
 		Logger.exit(this, "stepOn", null);
 	}
+	
+	/**
+	 * Lemásolja Field-ként a Storage osztályon hívott példányt, lemásolja az összes átruházható attribútumát
+	 */
+	public void copyStorage() {
+		Logger.enter(this, "copyStorage", null);
+		
+		Field copyField = new Field();
+		for(int i = 0; i < this.neighbors.size(); i++) {
+			copyField.neighbors[i] = this.neighbors[i];
+		}	
+		
+		Logger.exit(this, "copyStorage", null);
+	}
+	
+	/**
+	 * Megszünteti a mezõ létezését, a megfelelõ kapcsolatok elvágásával
+	 */
+	public void destroy() {
+		Logger.enter(this, "destroy", null);
+		
+		
+		
+		Logger.exit(this, "destroy", null);
+	}
 }
