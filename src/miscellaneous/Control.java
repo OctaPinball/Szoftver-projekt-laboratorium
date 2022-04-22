@@ -130,11 +130,12 @@ public class Control {
 			}
 			else if(cmd[3].equals("generatemap"))
 			{
-				
+				game.generateFieldMap();
 			}
 			else if(cmd[3].equals("generaterandommap"))
 			{
-				
+				game.generateMap();
+				game.scatterObjects();
 			}
 		}
 		else if (cmd[3].equals("create")) {
@@ -159,10 +160,17 @@ public class Control {
 			}
 		}
 		else if (cmd[3].equals("move")) {
-
+			move(cmd);
 		}
 		else if (cmd[3].equals("list")) {
 
+		}
+	}
+	
+	public void move(String[] cmd) {
+		if(cmd[1].equals("v"))
+		{
+			
 		}
 	}
 	
