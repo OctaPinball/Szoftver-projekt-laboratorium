@@ -116,7 +116,8 @@ public class Control {
 		String cmd[];
 		cmd = cmdline.split(" ");
 		
-		if (cmd[1].equals("g") && cmd[2].equals("game")) {
+		if (cmd[1].equals("g") && cmd[2].equals("game"))
+		{
 			if(cmd[3].equals("random"))
 			{
 				if(cmd[4].equals("enable"))
@@ -141,7 +142,7 @@ public class Control {
 		else if (cmd[3].equals("create")) {
 			if(getHashMap(cmd[1]) != null)
 			{
-				if(safeName(cmd[2]))
+				if(checkSafeName(cmd[2]))
 				{
 					if(cmd[1].equals("v"))
 					{
@@ -150,7 +151,7 @@ public class Control {
 					}
 					else
 					{
-						if(checkSafety(cmd[4], cmd[1]))
+						if(checkSafeInheritence(cmd[4], cmd[1]))
 						{
 							Object o = createObject(cmd[4]);
 							getHashMap(cmd[1]).put(cmd[2], o);
@@ -160,18 +161,90 @@ public class Control {
 			}
 		}
 		else if (cmd[3].equals("move")) {
-			move(cmd);
+			if(checkExistingObject(cmd[2]))
+			{
+				move(cmd);
+			}
 		}
 		else if (cmd[3].equals("list")) {
-
+			if(checkExistingObject(cmd[2]))
+			{
+				move(cmd);
+			}
+		}
+		else if (cmd[3].equals("removeneighbor") && cmd[1].equals("f")) {
+			if(fields.containsKey(cmd[2]))
+			{
+				Field f1 = fields.get(cmd[2]);
+				Field f2 = fields.get(cmd[4]);
+				if(!f1.removeNeighbor(f2) || !f2.removeNeighbor(f1))
+				{
+					System.out.println("Invalid field name! The given fields are not neighbours!");
+				}
+			}
+		}
+		else if (cmd[3].equals("fillmaterial") && cmd[1].equals("v")) {
+			if(virologists.containsKey(cmd[2]))
+			{
+				Virologist v = virologists.get(cmd[2]);
+				v.getFillMaterial().fillMaterial(v);
+			}
 		}
 	}
 	
+
 	public void move(String[] cmd) {
 		if(cmd[1].equals("v"))
 		{
-			
+			if(fields.containsKey(cmd[4]))
+			{
+				virologists.get(cmd[2]).changeField(fields.get(cmd[4]));
+				fields.get(cmd[4]).addVirologist(virologists.get(cmd[2]));
+				return;
+			}
 		}
+		else if(cmd[1].equals("e"))
+		{
+			if(fields.containsKey(cmd[4]))
+			{
+				equipments.get(cmd[2]).setCurrentField(fields.get(cmd[4]));
+				fields.get(cmd[4]).spawnEquipment(equipments.get(cmd[2]));
+				return;
+			}
+			if(virologists.containsKey(cmd[4]))
+			{
+				equipments.get(cmd[2]).pickupEquipment(virologists.get(cmd[4]));
+				return;
+			}
+		}
+		else if(cmd[1].equals("a"))
+		{
+			if(fields.containsKey(cmd[4]) && (fields.get(cmd[4]).getClass().equals(Laboratory.class)))
+			{
+				((Laboratory) fields.get(cmd[4])).addAgent(agents.get(cmd[2]));
+				return;
+			}
+			if(virologists.containsKey(cmd[4]) && cmd[5].equals("learn"))
+			{
+				virologists.get(cmd[4]).learnAgent(agents.get(cmd[2]));
+				return;
+			}
+			if(virologists.containsKey(cmd[4]) && cmd[5].equals("active"))
+			{
+				virologists.get(cmd[4]).addActiveAgent(agents.get(cmd[2]));
+				return;
+			}
+		}
+		System.out.println("Invalid move command! Check the given type and names!");
+	}
+	
+	public boolean checkExistingObject(String name) {
+		if(getObject(name) == null)
+		{
+			System.out.println("Invalid name! The given name does not exist!");
+			return false;
+		}
+		return true;
 	}
 	
 	public Object getObject(String name) {
@@ -183,7 +256,7 @@ public class Control {
 		return null;
 	}
 	
-	public boolean safeName(String input) {
+	public boolean checkSafeName(String input) {
 		if(getObject(input) == null)
 		{
 			System.out.println("Invalid name! The given name is already taken, choose another one!");
@@ -192,7 +265,7 @@ public class Control {
 		return true;
 	}
 	
-	public boolean checkSafety(String key, String value) {
+	public boolean checkSafeInheritence(String key, String value) {
 		if(safety.get(key).equals(value))
 			return true;
 		System.out.println("Invalid command! The given subclass is not inherited from the given class!");

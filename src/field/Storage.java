@@ -26,4 +26,39 @@ public class Storage extends Field{
 		
 		Logger.exit(this, "stepOn", null);
 	}
+	
+	/**
+	 * Lemásolja Field-ként a Storage osztályon hívott példányt, lemásolja az összes átruházható attribútumát
+	 */
+	public void copyStorage() {
+		Logger.enter(this, "copyStorage", null);
+		
+		Field copyField = new Field();
+		copyField.neighbors.addAll(neighbors);
+		
+		for(int i = 0; i < neighbors.size(); i++) {
+			neighbors.get(i).addNeighbor(copyField);
+		}	
+		copyField.addVirologist(virologistOnField);
+		copyField.spawnEquipment(equipmentOnField);
+		
+		this.destroy();
+		
+		Logger.exit(this, "copyStorage", null);
+	}
+	
+	/**
+	 * Megszünteti a mezõ létezését, a megfelelõ kapcsolatok elvágásával
+	 */
+	public void destroy() {
+		Logger.enter(this, "destroy", null);
+		
+		for(int i = 0; i < neighbors.size(); i++) {
+			neighbors.get(i).removeNeighbor(this);
+		}	
+		this.removeEquipment();
+		this.removeVirologist();
+		
+		Logger.exit(this, "destroy", null);
+	}
 }

@@ -16,11 +16,11 @@ public abstract class Equipment {
     /**
      * A felszerelés viselője
      */
-    protected Virologist wearer;
+    protected Virologist wearer = null;
     /**
      * A mező, amelyen a felszerelés található
      */
-    private Field currentField;
+    private Field currentField = null;
 
     /**
      * A paraméterként kapott virológus felveszi az adott felszerelést, ha még nem érte el a maximális felszerelés kapacitást
@@ -36,7 +36,8 @@ public abstract class Equipment {
         wearer = v;
         
         if(v.addEquipment(this)) {
-            currentField.removeEquipment();
+        	if(currentField != null)
+        		currentField.removeEquipment();
         }
         else
         {

@@ -31,6 +31,7 @@ public class Virologist implements Steppable{
 	private Block block;
 	private FillMaterial fillmaterial;
 	private Movement movement;
+	private BearDefense defense;
 	
 	/**
 	 * Inicializ�lja a virol�gust, azaz be�ll�tja a mozg�st, anyaggy�jt�k�pess�get, v�dekez�st, nyersanyagk�szletet �s az akci�pontokat alap�llapotokba
@@ -39,6 +40,7 @@ public class Virologist implements Steppable{
 		setBlock(new NoBlock());
 		setFillMaterial(new NormalMatter());
 		setMovement(new NormalMovement());
+		setDefense(new NoDefense());
 		Logger.register(this.getBlock(), "nob");
 		Logger.register(this.getFillMaterial(), "nma");
 		Logger.register(this.getMovement(), "nmo");
@@ -72,8 +74,9 @@ public class Virologist implements Steppable{
 		}
 		if(!found)
 		{
-			agents.add(a);
-			a.setOwner(this);
+			Agent newAgent = a.makeCopy();
+			agents.add(newAgent);
+			newAgent.setOwner(this);
 		}
 			
 		
@@ -247,6 +250,14 @@ public class Virologist implements Steppable{
      */
 	public void setMovement(Movement movement) {
 		this.movement = movement;
+	}
+	
+	public void getDefense() {
+		return defense;
+	}
+	
+	public void setDefense(BearDefense defense) {
+		this.defense = defense;
 	}
 	
     /**
