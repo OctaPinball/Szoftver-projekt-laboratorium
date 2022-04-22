@@ -4,11 +4,13 @@
     "\\.settings",
     "\\src",
     "\\src\\agents",
+    "\\src\\block",
     "\\src\\equipment",
     "\\src\\field",
+    "\\src\\fillmaterial",
     "\\src\\miscellaneous",
     "\\src\\movement"
   ],
-  "SelectedNode": "\\src\\agents\\Stun.java",
+  "SelectedNode": "\\src\\agents\\Chorea.java",
   "PreviewInSolutionExplorer": false
 }
