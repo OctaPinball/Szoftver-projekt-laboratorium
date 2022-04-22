@@ -121,11 +121,11 @@ public class Control {
 			{
 				if(cmd[4].equals("enable"))
 				{
-				
+					game.setRandomEnabled(true);
 				}
 				else if(cmd[4].equals("disable"))
 				{
-				
+					game.setRandomEnabled(false);
 				}
 			}
 			else if(cmd[3].equals("generatemap"))

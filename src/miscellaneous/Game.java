@@ -1,9 +1,11 @@
 package miscellaneous;
 
 public class Game {
-	
+	private boolean randomEnabled;
+
+
 	Game(){
-		
+		this.setRandomEnabled(true);
 	}
 	
     /**
@@ -32,5 +34,13 @@ public class Game {
      */
 	public void scatterObjects() {
 		
+	}
+
+	public boolean isRandomEnabled() {
+		return randomEnabled;
+	}
+
+	public void setRandomEnabled(boolean randomEnabled) {
+		this.randomEnabled = randomEnabled;
 	}
 }
