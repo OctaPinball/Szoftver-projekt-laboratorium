@@ -3,7 +3,9 @@ package miscellaneous;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.util.HashMap;
+import java.util.Set;
 
 import agents.*;
 import equipment.*;
@@ -169,9 +171,82 @@ public class Control {
 		else if (cmd[3].equals("list")) {
 			if(checkExistingObject(cmd[2]))
 			{
-				move(cmd);
+				if(cmd[3].equals("list"))
+				{
+					if(getHashMap(cmd[1]) == null && !cmd[1].equals("all"))
+					{
+						System.out.println("Invalid type name!");
+						return;
+					}
+					else
+					{
+						if(cmd[3].equals("normal"))
+						{
+							if(cmd[1].equals("all"))
+							{
+								for(String s : (String[])virologists.keySet().toArray())
+								{
+									System.out.println(s + "\n");
+								}
+								for(String s : (String[])agents.keySet().toArray())
+								{
+									System.out.println(s + "\n");
+								}
+								for(String s : (String[])equipments.keySet().toArray())
+								{
+									System.out.println(s + "\n");
+								}
+								for(String s : (String[])fields.keySet().toArray())
+								{
+									System.out.println(s + "\n");
+								}
+							}
+							
+							else
+							{
+								for(String s : (String[])getHashMap(cmd[1]).keySet().toArray())
+								{
+									System.out.println(s + "\n");
+								}
+							}
+						}
+						else if(cmd[3].equals("detailed"))
+						{
+							for(String s : (String[])virologists.keySet().toArray())
+							{
+								System.out.println(s + "\n");
+							}
+							for(String s : (String[])agents.keySet().toArray())
+							{
+								System.out.println(s + "\n");
+							}
+							for(String s : (String[])equipments.keySet().toArray())
+							{
+								System.out.println(s + "\n");
+							}
+							for(String s : (String[])fields.keySet().toArray())
+							{
+								System.out.println(s + "\n");
+							}
+						}
+						
+						else
+						{
+							for(Object o : getHashMap(cmd[1]).values().toArray())
+							{
+								System.out.println(o.toString() + "\n");
+							}
+						}
+						}
+						
+					}
+				}
+				else if(cmd[2].equals("list"))
+				{
+					
+				}
 			}
-		}
+		
 		else if (cmd[3].equals("removeneighbor") && cmd[1].equals("f")) {
 			if(fields.containsKey(cmd[2]))
 			{
