@@ -86,10 +86,34 @@ public class Control {
 			runOperatorCommand(cmdline);
 		}
 		else if (cmd[0].equals("move")) {
-
+			if(fields.containsKey(cmd[1]))
+			{
+				if(!RoundManager.getEntity().getMovement().move(RoundManager.getEntity(), fields.get(cmd[1])))
+				{
+					System.out.println("Invalid target field name!\n");
+				}
+			}
+			else
+			{
+				System.out.println("Invalid field name!\n");
+			}
 		}
 		else if (cmd[0].equals("dropequipment")) {
-
+			if(equipments.containsKey(cmd[1]))
+			{
+				if(RoundManager.getEntity().getEquipments().contains(equipments.get(cmd[1])))
+				{
+					equipments.get(cmd[1]).dropEquipment();
+				}
+				else
+				{
+					System.out.println("Equipment not found in the inventory of the virologist!\n");
+				}
+			}
+			else
+			{
+				System.out.println("Invalid equipment name!\n");
+			}
 		}
 		else if (cmd[0].equals("cast")) {
 
@@ -106,12 +130,13 @@ public class Control {
 		else if (cmd[0].equals("listv")) {
 
 		}
-		else if (cmd[0].equals("next") && cmd[1].equals("turn")) {
-
+		else if (cmd[0].equals("next") && cmd[1].equals("turn"))
+		{
+			RoundManager.nextRound();
 		}
 		else 
 		{
-			System.out.println("Unrecognized command!");
+			System.out.println("Unrecognized command!\n");
 		}
 		
 	}
@@ -181,7 +206,7 @@ public class Control {
 				{
 					if(getHashMap(cmd[1]) == null && !cmd[1].equals("all"))
 					{
-						System.out.println("Invalid type name!");
+						System.out.println("Invalid type name!\n");
 						return;
 					}
 					else
@@ -253,7 +278,7 @@ public class Control {
 			{
 				if(getHashMap(cmd[1]) == null || getHashMap(cmd[1]).get(cmd[2]) == null)
 				{
-					System.out.println("Invalid type or name!");
+					System.out.println("Invalid type or name!\n");
 				}
 				else
 				{
@@ -268,7 +293,7 @@ public class Control {
 				Field f2 = fields.get(cmd[4]);
 				if(!f1.removeNeighbor(f2) || !f2.removeNeighbor(f1))
 				{
-					System.out.println("Invalid field name! The given fields are not neighbours!");
+					System.out.println("Invalid field name! The given fields are not neighbours!\n");
 				}
 			}
 		}
@@ -324,13 +349,13 @@ public class Control {
 				return;
 			}
 		}
-		System.out.println("Invalid move command! Check the given type and names!");
+		System.out.println("Invalid move command! Check the given type and names!\n");
 	}
 	
 	public static boolean checkExistingObject(String name) {
 		if(getObject(name) == null)
 		{
-			System.out.println("Invalid name! The given name does not exist!");
+			System.out.println("Invalid name! The given name does not exist!\n");
 			return false;
 		}
 		return true;
@@ -348,7 +373,7 @@ public class Control {
 	public static boolean checkSafeName(String input) {
 		if(getObject(input) == null)
 		{
-			System.out.println("Invalid name! The given name is already taken, choose another one!");
+			System.out.println("Invalid name! The given name is already taken, choose another one!\n");
 			return false;
 		}
 		return true;
@@ -357,7 +382,7 @@ public class Control {
 	public static boolean checkSafeInheritence(String key, String value) {
 		if(safety.get(key).equals(value))
 			return true;
-		System.out.println("Invalid command! The given subclass is not inherited from the given class!");
+		System.out.println("Invalid command! The given subclass is not inherited from the given class!\n");
 		return false;
 	}
 

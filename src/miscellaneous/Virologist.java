@@ -1,5 +1,6 @@
 package miscellaneous;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -311,6 +312,10 @@ public class Virologist implements Steppable{
      */
 	public Field getField() {
 		return field;
+	}
+	
+	public ArrayList<Equipment> getEquipments(){
+		return equipments;
 	}
 	
     /**

@@ -8,7 +8,7 @@ public class BearDance extends RandomMovement{
 	
 	private final int priority = 3;
 	
-	public void move(Virologist v, Field target) {
+	public boolean move(Virologist v, Field target) {
 		
 		super.move(v, target);
 		
@@ -19,6 +19,7 @@ public class BearDance extends RandomMovement{
 			
 			v.getField().getNeighbors().get(i).BearAttack(v);
 		}
+		return true;
 	}
 	
 	public int getPriority() {
