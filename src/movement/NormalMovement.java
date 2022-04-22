@@ -11,6 +11,8 @@ import miscellaneous.Virologist;
  */
 public class NormalMovement implements Movement{
 
+	private final int priority = 0;
+	
     /**
      * A paraméterként kapott virológus szeretne átlépni a paraméterként kapott mezőre
      * @param v, a virológus, aki szeretne ellépni
@@ -28,5 +30,9 @@ public class NormalMovement implements Movement{
 		v.changeField(target);
 		
 		Logger.exit(this, "move", null);
+	}
+	
+	public int getPriority() {
+		return priority;
 	}
 }

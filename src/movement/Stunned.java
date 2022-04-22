@@ -11,6 +11,8 @@ import miscellaneous.Virologist;
  */
 public class Stunned implements Movement{
 
+	private final int priority = 2;
+	
     /**
      * A paraméterként kapott virológus nem tud megmozdulni a jelenlegi mezőjéről
      * @param v, a virológus, aki szeretne ellépni
@@ -24,5 +26,9 @@ public class Stunned implements Movement{
 		
 		
 		Logger.exit(this, "move", null);
+	}
+	
+	public int getPriority() {
+		return priority;
 	}
 }

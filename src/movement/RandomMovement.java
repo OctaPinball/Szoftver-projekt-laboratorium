@@ -12,6 +12,8 @@ import miscellaneous.Virologist;
  */
 public class RandomMovement implements Movement{
 
+	private final int priority = 1;
+	
     /**
      * A paraméterként kapott virológus átlép egy random sorsolt szomszédos mezőre
      * @param v, a virológus, aki szeretne ellépni
@@ -34,6 +36,10 @@ public class RandomMovement implements Movement{
 		
 		
 		Logger.exit(this, "move", null);
+	}
+	
+	public int getPriority() {
+		return priority;
 	}
 	
 }
