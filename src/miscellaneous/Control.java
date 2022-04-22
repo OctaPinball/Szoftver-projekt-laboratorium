@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Array;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import agents.*;
@@ -397,6 +399,28 @@ public class Control {
 		if(hashmaps.containsKey(s))
 			return hashmaps.get(s);
 		return null;
+	}
+	
+	public static String getName(Object o) {
+		if(o == null)
+			return "";
+		for (HashMap hashmap : hashmaps.values())
+		{
+			if(hashmap.containsValue(o))
+			{
+				return (String)getKey(hashmap, o);
+			}
+		}
+		return "";
+	}
+	
+	public static <K, V> K getKey(Map<K, V> map, V value) {
+	    for (Entry<K, V> entry : map.entrySet()) {
+	        if (entry.getValue().equals(value)) {
+	            return entry.getKey();
+	        }
+	    }
+	    return null;
 	}
 
 	
