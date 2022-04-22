@@ -12,12 +12,12 @@ import equipment.*;
 import field.*;
 
 public class Control {
-	private Game game;
-	private HashMap<String, Virologist> virologists;
-	private HashMap<String, Field> fields;
-	private HashMap<String, Equipment> equipments;
-	private HashMap<String, Agent> agents;
-	private HashMap<String, HashMap> hashmaps;
+	private static Game game;
+	private static HashMap<String, Virologist> virologists;
+	private static HashMap<String, Field> fields;
+	private static HashMap<String, Equipment> equipments;
+	private static HashMap<String, Agent> agents;
+	private static HashMap<String, HashMap> hashmaps;
 	private static HashMap<String, String> safety;
 	
 	static
@@ -37,11 +37,8 @@ public class Control {
 		safety.put("shelter", "f");
 	}
 	
-	private static InputStreamReader isr =	new InputStreamReader(System.in);
-	private static BufferedReader br = new BufferedReader(isr);
-
-	
-	public Control() {
+	static
+	{
 		game = new Game();
 		virologists = new HashMap<String, Virologist>();
 		fields = new HashMap<String, Field>();
@@ -52,10 +49,14 @@ public class Control {
 		hashmaps.put("a", agents);
 		hashmaps.put("e", equipments);
 		hashmaps.put("f", fields);
-		
 	}
 	
-	public void runControl() throws IOException {
+	private static InputStreamReader isr =	new InputStreamReader(System.in);
+	private static BufferedReader br = new BufferedReader(isr);
+
+
+	
+	public static void runControl() throws IOException {
 		while (true) {
 			String line;
 			line = br.readLine();
@@ -67,7 +68,7 @@ public class Control {
 
 	}
 	
-	private void runCommand(String cmdline) {
+	private static void runCommand(String cmdline) {
 		//Ha üres sort kaptunk, ignoráljuk
 		//Emiatt áttekinthetõbb bemeneteket lehet csinálni
 		if (cmdline.equals("")) return;
@@ -83,37 +84,39 @@ public class Control {
 			runOperatorCommand(cmdline);
 		}
 		else if (cmd[0].equals("move")) {
-			spawnWorker(cmd[1],Double.parseDouble(cmd[2]),cmd[3]);
+
 		}
 		else if (cmd[0].equals("dropequipment")) {
-			spawnCrate(cmd[1],cmd[2]);
+
 		}
 		else if (cmd[0].equals("cast")) {
-			setSwitch(cmd[1], cmd[2]);
+
 		}
 		else if (cmd[0].equals("pickupequipment")) {
-			putFluid(cmd[1], cmd[2].charAt(0));
+
 		}
 		else if (cmd[0].equals("stealequipment")) {
-			step(cmd[1],cmd[2]);
+
 		}
 		else if (cmd[0].equals("list")) {
-			stat(cmd[1]);
+
 		}
 		else if (cmd[0].equals("listv")) {
-			script(cmd[1]);
+
 		}
 		else if (cmd[0].equals("next") && cmd[1].equals("turn")) {
-			script(cmd[1]);
+
 		}
 		else 
 		{
-			System.out.println("unrecognized command");
+			System.out.println("Unrecognized command!");
 		}
 		
 	}
 	
-	private void runOperatorCommand(String cmdline) {
+
+	
+	private static void runOperatorCommand(String cmdline) {
 		
 		String cmd[];
 		cmd = cmdline.split(" ");
@@ -277,7 +280,7 @@ public class Control {
 	}
 	
 
-	public void move(String[] cmd) {
+	public static void move(String[] cmd) {
 		if(cmd[1].equals("v"))
 		{
 			if(fields.containsKey(cmd[4]))
@@ -322,7 +325,7 @@ public class Control {
 		System.out.println("Invalid move command! Check the given type and names!");
 	}
 	
-	public boolean checkExistingObject(String name) {
+	public static boolean checkExistingObject(String name) {
 		if(getObject(name) == null)
 		{
 			System.out.println("Invalid name! The given name does not exist!");
@@ -331,7 +334,7 @@ public class Control {
 		return true;
 	}
 	
-	public Object getObject(String name) {
+	public static Object getObject(String name) {
 		for (HashMap hashmap : hashmaps.values())
 		{
 			if(hashmap.containsKey(name))
@@ -340,7 +343,7 @@ public class Control {
 		return null;
 	}
 	
-	public boolean checkSafeName(String input) {
+	public static boolean checkSafeName(String input) {
 		if(getObject(input) == null)
 		{
 			System.out.println("Invalid name! The given name is already taken, choose another one!");
@@ -349,14 +352,14 @@ public class Control {
 		return true;
 	}
 	
-	public boolean checkSafeInheritence(String key, String value) {
+	public static boolean checkSafeInheritence(String key, String value) {
 		if(safety.get(key).equals(value))
 			return true;
 		System.out.println("Invalid command! The given subclass is not inherited from the given class!");
 		return false;
 	}
 
-	public Object createObject(String s) {
+	public static Object createObject(String s) {
 		switch(s)
 		{
 		case "chorea":
@@ -390,7 +393,7 @@ public class Control {
 		return null;
 	}
 	
-	public HashMap getHashMap(String s) {
+	public static HashMap getHashMap(String s) {
 		if(hashmaps.containsKey(s))
 			return hashmaps.get(s);
 		return null;
