@@ -116,7 +116,8 @@ public class Control {
 		String cmd[];
 		cmd = cmdline.split(" ");
 		
-		if (cmd[1].equals("g") && cmd[2].equals("game")) {
+		if (cmd[1].equals("g") && cmd[2].equals("game"))
+		{
 			if(cmd[3].equals("random"))
 			{
 				if(cmd[4].equals("enable"))
@@ -166,7 +167,28 @@ public class Control {
 			}
 		}
 		else if (cmd[3].equals("list")) {
-
+			if(checkExistingObject(cmd[2]))
+			{
+				move(cmd);
+			}
+		}
+		else if (cmd[3].equals("removeneighbor") && cmd[1].equals("f")) {
+			if(fields.containsKey(cmd[2]))
+			{
+				Field f1 = fields.get(cmd[2]);
+				Field f2 = fields.get(cmd[4]);
+				if(!f1.removeNeighbor(f2) || !f2.removeNeighbor(f1))
+				{
+					System.out.println("Invalid field name! The given fields are not neighbours!");
+				}
+			}
+		}
+		else if (cmd[3].equals("fillmaterial") && cmd[1].equals("v")) {
+			if(virologists.containsKey(cmd[2]))
+			{
+				Virologist v = virologists.get(cmd[2]);
+				v.getFillMaterial().fillMaterial(v);
+			}
 		}
 	}
 	

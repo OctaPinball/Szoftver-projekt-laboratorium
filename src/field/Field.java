@@ -106,12 +106,19 @@ public class Field {
 	 * A paraméterként megkapott mezõ szomszédait eltávolítja.
 	 * @param neighbor	a mezõ, amit el kell távolítani a tömbbõl
 	 */
-	public void removeNeighbor(Field neighbor) {
-		Logger.enter(this, "removeNeighbor", null);
+	public boolean removeNeighbor(Field neighbor) {
+		ArrayList<Object> par = new ArrayList<Object>();
+		par.add(neighbor);
+		Logger.enter(this, "removeNeighbor", par);
 		
-		neighbors.remove(neighbor);
+		if(neighbors.remove(neighbor))
+		{
+			Logger.exit(this, "removeNeighbor", true);
+			return true;
+		}
 		
-		Logger.exit(this, "removeNeighbor", null);
+		Logger.exit(this, "removeNeighbor", false);
+		return false;
 	}
 
 	/**
