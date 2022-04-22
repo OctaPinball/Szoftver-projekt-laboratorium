@@ -34,9 +34,15 @@ public class Storage extends Field{
 		Logger.enter(this, "copyStorage", null);
 		
 		Field copyField = new Field();
-		for(int i = 0; i < this.neighbors.size(); i++) {
-			copyField.neighbors[i] = this.neighbors[i];
+		copyField.neighbors.addAll(neighbors);
+		
+		for(int i = 0; i < neighbors.size(); i++) {
+			neighbors.get(i).addNeighbor(copyField);
 		}	
+		copyField.addVirologist(virologistOnField);
+		copyField.spawnEquipment(equipmentOnField);
+		
+		this.destroy();
 		
 		Logger.exit(this, "copyStorage", null);
 	}
@@ -47,7 +53,11 @@ public class Storage extends Field{
 	public void destroy() {
 		Logger.enter(this, "destroy", null);
 		
-		
+		for(int i = 0; i < neighbors.size(); i++) {
+			neighbors.get(i).removeNeighbor(this);
+		}	
+		this.removeEquipment();
+		this.removeVirologist();
 		
 		Logger.exit(this, "destroy", null);
 	}

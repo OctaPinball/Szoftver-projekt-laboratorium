@@ -13,10 +13,10 @@ import equipment.*;
 
 public class Field {
 	
-	private Virologist virologistOnField;
-	private Equipment equipmentOnField;
+	protected Virologist virologistOnField;
+	protected Equipment equipmentOnField;
 
-	private ArrayList<Field> neighbors;
+	protected ArrayList<Field> neighbors;
 
 	/**
 	 * A Field osztály konstruktora, területet foglal a mezõ szomszédainak
