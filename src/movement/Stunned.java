@@ -19,13 +19,14 @@ public class Stunned implements Movement{
      * @param target, a mező, ahova lépni szeretne
      */
 	
-	public void move(Virologist v, Field target) {
+	public boolean move(Virologist v, Field target) {
 		
 		ArrayList<Object> par = new ArrayList<>(); par.add(v); par.add(target);
 		Logger.enter(this, "move", par);
 		
 		
 		Logger.exit(this, "move", null);
+		return true;
 	}
 	
 	public int getPriority() {

@@ -20,7 +20,7 @@ public class RandomMovement implements Movement{
      * @param target, itt nincs jelentősége
      */
 	
-	public void move(Virologist v, Field target) {
+	public boolean move(Virologist v, Field target) {
 		ArrayList<Object> par = new ArrayList<>(); par.add(v); par.add(target);
 		Logger.enter(this, "move", par);
 		
@@ -36,6 +36,7 @@ public class RandomMovement implements Movement{
 		
 		
 		Logger.exit(this, "move", null);
+		return true;
 	}
 	
 	public int getPriority() {

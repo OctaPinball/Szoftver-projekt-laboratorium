@@ -14,6 +14,6 @@ public interface Movement {
      * @param target, a mező, ahova lépni szeretne
      */
 	
-	public abstract void move(Virologist v, Field target);
+	public abstract boolean move(Virologist v, Field target);
 
 }

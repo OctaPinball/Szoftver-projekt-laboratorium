@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Array;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import agents.*;
@@ -12,12 +14,12 @@ import equipment.*;
 import field.*;
 
 public class Control {
-	private Game game;
-	private HashMap<String, Virologist> virologists;
-	private HashMap<String, Field> fields;
-	private HashMap<String, Equipment> equipments;
-	private HashMap<String, Agent> agents;
-	private HashMap<String, HashMap> hashmaps;
+	private static Game game;
+	private static HashMap<String, Virologist> virologists;
+	private static HashMap<String, Field> fields;
+	private static HashMap<String, Equipment> equipments;
+	private static HashMap<String, Agent> agents;
+	private static HashMap<String, HashMap> hashmaps;
 	private static HashMap<String, String> safety;
 	
 	static
@@ -37,11 +39,8 @@ public class Control {
 		safety.put("shelter", "f");
 	}
 	
-	private static InputStreamReader isr =	new InputStreamReader(System.in);
-	private static BufferedReader br = new BufferedReader(isr);
-
-	
-	public Control() {
+	static
+	{
 		game = new Game();
 		virologists = new HashMap<String, Virologist>();
 		fields = new HashMap<String, Field>();
@@ -52,10 +51,14 @@ public class Control {
 		hashmaps.put("a", agents);
 		hashmaps.put("e", equipments);
 		hashmaps.put("f", fields);
-		
 	}
 	
-	public void runControl() throws IOException {
+	private static InputStreamReader isr =	new InputStreamReader(System.in);
+	private static BufferedReader br = new BufferedReader(isr);
+
+
+	
+	public static void runControl() throws IOException {
 		while (true) {
 			String line;
 			line = br.readLine();
@@ -67,7 +70,7 @@ public class Control {
 
 	}
 	
-	private void runCommand(String cmdline) {
+	private static void runCommand(String cmdline) {
 		//Ha üres sort kaptunk, ignoráljuk
 		//Emiatt áttekinthetõbb bemeneteket lehet csinálni
 		if (cmdline.equals("")) return;
@@ -83,37 +86,64 @@ public class Control {
 			runOperatorCommand(cmdline);
 		}
 		else if (cmd[0].equals("move")) {
-			spawnWorker(cmd[1],Double.parseDouble(cmd[2]),cmd[3]);
+			if(fields.containsKey(cmd[1]))
+			{
+				if(!RoundManager.getEntity().getMovement().move(RoundManager.getEntity(), fields.get(cmd[1])))
+				{
+					System.out.println("Invalid target field name!\n");
+				}
+			}
+			else
+			{
+				System.out.println("Invalid field name!\n");
+			}
 		}
 		else if (cmd[0].equals("dropequipment")) {
-			spawnCrate(cmd[1],cmd[2]);
+			if(equipments.containsKey(cmd[1]))
+			{
+				if(RoundManager.getEntity().getEquipments().contains(equipments.get(cmd[1])))
+				{
+					equipments.get(cmd[1]).dropEquipment();
+				}
+				else
+				{
+					System.out.println("Equipment not found in the inventory of the virologist!\n");
+				}
+			}
+			else
+			{
+				System.out.println("Invalid equipment name!\n");
+			}
 		}
 		else if (cmd[0].equals("cast")) {
-			setSwitch(cmd[1], cmd[2]);
+
 		}
 		else if (cmd[0].equals("pickupequipment")) {
-			putFluid(cmd[1], cmd[2].charAt(0));
+
 		}
 		else if (cmd[0].equals("stealequipment")) {
-			step(cmd[1],cmd[2]);
+
 		}
 		else if (cmd[0].equals("list")) {
-			stat(cmd[1]);
+
 		}
 		else if (cmd[0].equals("listv")) {
-			script(cmd[1]);
+
 		}
-		else if (cmd[0].equals("next") && cmd[1].equals("turn")) {
-			script(cmd[1]);
+		else if (cmd[0].equals("next") && cmd[1].equals("turn"))
+		{
+			RoundManager.nextRound();
 		}
 		else 
 		{
-			System.out.println("unrecognized command");
+			System.out.println("Unrecognized command!\n");
 		}
 		
 	}
 	
-	private void runOperatorCommand(String cmdline) {
+
+	
+	private static void runOperatorCommand(String cmdline) {
 		
 		String cmd[];
 		cmd = cmdline.split(" ");
@@ -168,14 +198,15 @@ public class Control {
 				move(cmd);
 			}
 		}
-		else if (cmd[3].equals("list")) {
+		else if (cmd[3].equals("list") || cmd[2].equals("list") )
+		{
 			if(checkExistingObject(cmd[2]))
 			{
-				if(cmd[3].equals("list"))
+				if(cmd[2].equals("list"))
 				{
 					if(getHashMap(cmd[1]) == null && !cmd[1].equals("all"))
 					{
-						System.out.println("Invalid type name!");
+						System.out.println("Invalid type name!\n");
 						return;
 					}
 					else
@@ -212,41 +243,49 @@ public class Control {
 						}
 						else if(cmd[3].equals("detailed"))
 						{
-							for(String s : (String[])virologists.keySet().toArray())
+							System.out.println(cmd[2] + "\n");
+							for(Object o : virologists.values().toArray())
 							{
-								System.out.println(s + "\n");
+								System.out.println(o.toString() + "\n");
 							}
-							for(String s : (String[])agents.keySet().toArray())
+							for(Object o : agents.values().toArray())
 							{
-								System.out.println(s + "\n");
+								System.out.println(o.toString() + "\n");
 							}
-							for(String s : (String[])equipments.keySet().toArray())
+							for(Object o : equipments.values().toArray())
 							{
-								System.out.println(s + "\n");
+								System.out.println(o.toString() + "\n");
 							}
-							for(String s : (String[])fields.keySet().toArray())
+							for(Object o : fields.values().toArray())
 							{
-								System.out.println(s + "\n");
+								System.out.println(o.toString() + "\n");
 							}
 						}
 						
 						else
 						{
+							System.out.println(cmd[2] + "\n");
 							for(Object o : getHashMap(cmd[1]).values().toArray())
 							{
 								System.out.println(o.toString() + "\n");
 							}
 						}
-						}
-						
 					}
-				}
-				else if(cmd[2].equals("list"))
-				{
-					
+						
 				}
 			}
-		
+			else if(cmd[3].equals("list"))
+			{
+				if(getHashMap(cmd[1]) == null || getHashMap(cmd[1]).get(cmd[2]) == null)
+				{
+					System.out.println("Invalid type or name!\n");
+				}
+				else
+				{
+					System.out.println(getHashMap(cmd[1]).get(cmd[2]).toString() + "\n");
+				}
+			}
+		}
 		else if (cmd[3].equals("removeneighbor") && cmd[1].equals("f")) {
 			if(fields.containsKey(cmd[2]))
 			{
@@ -254,7 +293,7 @@ public class Control {
 				Field f2 = fields.get(cmd[4]);
 				if(!f1.removeNeighbor(f2) || !f2.removeNeighbor(f1))
 				{
-					System.out.println("Invalid field name! The given fields are not neighbours!");
+					System.out.println("Invalid field name! The given fields are not neighbours!\n");
 				}
 			}
 		}
@@ -268,7 +307,7 @@ public class Control {
 	}
 	
 
-	public void move(String[] cmd) {
+	public static void move(String[] cmd) {
 		if(cmd[1].equals("v"))
 		{
 			if(fields.containsKey(cmd[4]))
@@ -310,19 +349,19 @@ public class Control {
 				return;
 			}
 		}
-		System.out.println("Invalid move command! Check the given type and names!");
+		System.out.println("Invalid move command! Check the given type and names!\n");
 	}
 	
-	public boolean checkExistingObject(String name) {
+	public static boolean checkExistingObject(String name) {
 		if(getObject(name) == null)
 		{
-			System.out.println("Invalid name! The given name does not exist!");
+			System.out.println("Invalid name! The given name does not exist!\n");
 			return false;
 		}
 		return true;
 	}
 	
-	public Object getObject(String name) {
+	public static Object getObject(String name) {
 		for (HashMap hashmap : hashmaps.values())
 		{
 			if(hashmap.containsKey(name))
@@ -331,23 +370,23 @@ public class Control {
 		return null;
 	}
 	
-	public boolean checkSafeName(String input) {
+	public static boolean checkSafeName(String input) {
 		if(getObject(input) == null)
 		{
-			System.out.println("Invalid name! The given name is already taken, choose another one!");
+			System.out.println("Invalid name! The given name is already taken, choose another one!\n");
 			return false;
 		}
 		return true;
 	}
 	
-	public boolean checkSafeInheritence(String key, String value) {
+	public static boolean checkSafeInheritence(String key, String value) {
 		if(safety.get(key).equals(value))
 			return true;
-		System.out.println("Invalid command! The given subclass is not inherited from the given class!");
+		System.out.println("Invalid command! The given subclass is not inherited from the given class!\n");
 		return false;
 	}
 
-	public Object createObject(String s) {
+	public static Object createObject(String s) {
 		switch(s)
 		{
 		case "chorea":
@@ -381,10 +420,32 @@ public class Control {
 		return null;
 	}
 	
-	public HashMap getHashMap(String s) {
+	public static HashMap getHashMap(String s) {
 		if(hashmaps.containsKey(s))
 			return hashmaps.get(s);
 		return null;
+	}
+	
+	public static String getName(Object o) {
+		if(o == null)
+			return "";
+		for (HashMap hashmap : hashmaps.values())
+		{
+			if(hashmap.containsValue(o))
+			{
+				return (String)getKey(hashmap, o);
+			}
+		}
+		return "";
+	}
+	
+	public static <K, V> K getKey(Map<K, V> map, V value) {
+	    for (Entry<K, V> entry : map.entrySet()) {
+	        if (entry.getValue().equals(value)) {
+	            return entry.getKey();
+	        }
+	    }
+	    return null;
 	}
 
 	
