@@ -3,10 +3,18 @@ package beardefense;
 import miscellaneous.Virologist;
 
 public class NoDefense implements BearDefense{
+	
+	private final int priority = 0;
 
-	public void BearAttack(Virologist bear) {
-		// TODO Auto-generated method stub
+	public void bearAttack(Virologist bear) {
+
+		BearAgent ba;
+		
+		ba.cast(this);
 		
 	}
 
+	public int getPriority() {
+		return priority;
+	}
 }

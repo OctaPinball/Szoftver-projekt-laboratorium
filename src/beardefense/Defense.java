@@ -3,10 +3,17 @@ package beardefense;
 import miscellaneous.Virologist;
 
 public class Defense implements BearDefense{
+	
+	private final int priority = 1;
 
-	public void BearAttack(Virologist bear) {
-		// TODO Auto-generated method stub
+	public void bearAttack(Virologist bear) {
+		
+		this.getEquipment().UsedLife();
+		bear.Die();
 		
 	}
 
+	public int getPriority() {
+		return priority;
+	}
 }

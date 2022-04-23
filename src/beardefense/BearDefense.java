@@ -4,5 +4,5 @@ import miscellaneous.Virologist;
 
 public interface BearDefense {
 
-	public abstract void BearAttack(Virologist bear);
+	public abstract void bearAttack(Virologist bear);
 }
