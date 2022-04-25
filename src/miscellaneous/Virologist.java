@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import agents.*;
+import beardefense.*;
 import block.*;
 import equipment.*;
 import field.*;
@@ -253,7 +254,7 @@ public class Virologist implements Steppable{
 		this.movement = movement;
 	}
 	
-	public void getDefense() {
+	public BearDefense getDefense() {
 		return defense;
 	}
 	
