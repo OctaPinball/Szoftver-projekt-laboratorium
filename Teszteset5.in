@@ -1,6 +1,8 @@
 operator f ffrom create field
-operator f fto create field
+operator f fto create storage
 operator v virologist create
+operator  a bearagent create bearagent
+operator a bearagent move virologist
 operator v virologist move ffrom
 operator f ffrom move fto
 move fto

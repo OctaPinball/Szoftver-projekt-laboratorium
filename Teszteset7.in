@@ -2,6 +2,8 @@ operator f ffrom create field
 operator f fto create field
 operator v virologist create
 operator v virologist move ffrom
+operator a stunnedagent create stun
+operator a stunnedagent move virologist active
 operator f ffrom move fto
 move fto
 list field

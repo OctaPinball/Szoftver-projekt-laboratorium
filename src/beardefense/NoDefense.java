@@ -6,7 +6,7 @@ public class NoDefense implements BearDefense{
 	
 	private final int priority = 0;
 
-	public void bearAttack(Virologist bear) {
+	public void bearAttack(Virologist bear, Virologist target) {
 
 		BearAgent ba;
 		

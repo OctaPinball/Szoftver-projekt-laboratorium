@@ -1,5 +1,5 @@
-operator f ffrom create field
-operator f fto create field
+operator f ffrom create storage
+operator f fto create storage
 operator v virologist create
 operator v virologist move ffrom
 operator f ffrom move fto

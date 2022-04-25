@@ -1,0 +1,6 @@
+operator v v_1 create
+operator a fa_1 create forgettingagent
+operator f lab_1 create laboratory
+operator a fa_1 move lab_1
+move lab_1
+list activeagent

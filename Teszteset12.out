@@ -1,0 +1,10 @@
+equipment
+slot_1: 		glove		glove_4
+slot_2:	
+slot_3:
+
+field
+name: f_1
+type: field
+virologist: virologist
+equipment: glove

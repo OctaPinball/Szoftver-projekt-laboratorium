@@ -1,0 +1,13 @@
+operator v v_1 create
+operator v v_2 create
+operator f f_1 create
+operator f f_2 create
+operator f f_1 move f_2
+operator v v_1 move f_1
+operator v v_2 move f_2
+operator a protection_1 create protection
+operator a protection_1 move v_1 learn
+operator v v_1 fillmaterial
+cast v_2 protection_1 
+next turn
+list activeagent
