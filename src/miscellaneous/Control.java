@@ -153,7 +153,25 @@ public class Control {
 			}
 		}
 		else if (cmd[0].equals("stealequipment")) {
-
+			if(virologists.containsKey(cmd[1]))
+			{
+				Virologist target = virologists.get(cmd[1]);
+				if(equipments.containsKey(cmd[2]) && target.getEquipments().contains(equipments.get(cmd[2])))
+				{
+					if(!RoundManager.getEntity().stealEquipment(equipments.get(cmd[2]), target))
+					{
+						System.out.println("Equipment stealing failed!\n");
+					}
+				}
+				else
+				{
+					System.out.println("Invalid equipment name or the target doesn't possess the equipment!\n");
+				}
+			}
+			else
+			{
+				System.out.println("Invalid target name!\n");
+			}
 		}
 		else if (cmd[0].equals("list")) {
 			if(cmd[1] != null)
