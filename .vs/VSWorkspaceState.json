@@ -2,8 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\agents"
+    "\\src\\agents",
+    "\\src\\block",
+    "\\src\\equipment",
+    "\\src\\field",
+    "\\src\\fillmaterial",
+    "\\src\\miscellaneous",
+    "\\src\\movement"
   ],
-  "SelectedNode": "\\src\\agents\\Chorea.java",
+  "SelectedNode": "\\src\\agents\\Stun.java",
   "PreviewInSolutionExplorer": false
 }

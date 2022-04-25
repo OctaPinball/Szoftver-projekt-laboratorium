@@ -1,4 +1,15 @@
 eclipse.preferences.version=1
+encoding//src/agents/Agent.java=ISO-8859-1
+encoding//src/agents/Protection.java=UTF-8
+encoding//src/block/Block.java=UTF-8
+encoding//src/block/BlockAndReturn.java=UTF-8
+encoding//src/block/FullBlock.java=UTF-8
+encoding//src/block/NoBlock.java=UTF-8
+encoding//src/block/PartialBlock.java=UTF-8
+encoding//src/equipment/Cape.java=UTF-8
+encoding//src/equipment/Equipment.java=UTF-8
+encoding//src/equipment/Glove.java=UTF-8
+encoding//src/equipment/Sack.java=UTF-8
 encoding//src/miscellaneous/Game.java=UTF-8
 encoding//src/miscellaneous/Main.java=UTF-8
 encoding//src/miscellaneous/Tester.java=UTF-8

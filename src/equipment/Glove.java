@@ -8,7 +8,9 @@ import miscellaneous.Logger;
  * amely megvédi a virológust bármilyen vírustól, és azt vissza is dobja a támadójára.
  */
 public class Glove extends Equipment{
+	
 	private static int i = 0;
+	private int life = 3;
 	
 	public Glove(){
 		i++;
@@ -40,4 +42,13 @@ public class Glove extends Equipment{
         Logger.exit(this, "loseEffect", null);
 
     }
+    
+    /**
+     *  Elhasznál egy életet
+     */
+    public void usedLife() {
+		life -= 1;
+		if(life == 0)
+			this.dropEquipment();
+	}
 }

@@ -22,14 +22,14 @@ public class Game {
 		
 	}
 	
-	public void generateFieldMap() {
+	public void generateFieldMap(int x, int y) {
 		
 	}
 	
     /**
      * A pálya legenerálásáért felelős: létrehozza a mezőket és beállítja azok szomszédait
      */
-	public void generateMap() {
+	public void generateMap(int x, int y) {
 		
 	}
 	

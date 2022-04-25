@@ -1,5 +1,6 @@
 package miscellaneous;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -31,6 +32,7 @@ public class Virologist implements Steppable{
 	private Block block;
 	private FillMaterial fillmaterial;
 	private Movement movement;
+	private BearDefense defense;
 	
 	/**
 	 * Inicializ�lja a virol�gust, azaz be�ll�tja a mozg�st, anyaggy�jt�k�pess�get, v�dekez�st, nyersanyagk�szletet �s az akci�pontokat alap�llapotokba
@@ -39,6 +41,7 @@ public class Virologist implements Steppable{
 		setBlock(new NoBlock());
 		setFillMaterial(new NormalMatter());
 		setMovement(new NormalMovement());
+		setDefense(new NoDefense());
 		Logger.register(this.getBlock(), "nob");
 		Logger.register(this.getFillMaterial(), "nma");
 		Logger.register(this.getMovement(), "nmo");
@@ -72,8 +75,9 @@ public class Virologist implements Steppable{
 		}
 		if(!found)
 		{
-			agents.add(a);
-			a.setOwner(this);
+			Agent newAgent = a.makeCopy();
+			agents.add(newAgent);
+			newAgent.setOwner(this);
 		}
 			
 		
@@ -249,6 +253,14 @@ public class Virologist implements Steppable{
 		this.movement = movement;
 	}
 	
+	public void getDefense() {
+		return defense;
+	}
+	
+	public void setDefense(BearDefense defense) {
+		this.defense = defense;
+	}
+	
     /**
      * A steppable interfészt valósítja meg
      * Meghívásonként adott mennyiséggel csökkenti az aktív ágensek hatásidejét
@@ -260,6 +272,21 @@ public class Virologist implements Steppable{
 			a.stepEffectTime();
 		}
 		Logger.exit(this, "step", null);
+	}
+	
+	public void getAllEffect() {
+		for(Agent a : activeagents) {
+			a.activate();
+		}
+		
+		for(Equipment e : equipments) {
+			e.getEffect();
+		}
+	}
+	
+	public void Die() {
+		field.removeVirologist();
+		// TODO steppable tombbol kivenni
 	}
 
     /**
@@ -302,11 +329,27 @@ public class Virologist implements Steppable{
 		return field;
 	}
 	
+	public ArrayList<Equipment> getEquipments(){
+		return equipments;
+	}
+	
+	public ArrayList<Agent> getAgents(){
+		return agents;
+	}
+	
     /**
      * Getter a virológuson jelenleg hatást kifejtő ágensek kiderítésére
      * @return activeagents
      */
 	public ArrayList<Agent> getActiveAgents(){
 		return activeagents;
+	}
+	
+	public String listV() {
+		return "";
+	}
+	
+	public String list(String s) {
+		return "";
 	}
 }
