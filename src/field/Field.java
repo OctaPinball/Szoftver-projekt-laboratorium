@@ -13,6 +13,7 @@ import equipment.*;
 
 public class Field {
 	
+	protected int id;
 	protected Virologist virologistOnField;
 	protected Equipment equipmentOnField;
 
@@ -21,8 +22,9 @@ public class Field {
 	/**
 	 * A Field osztály konstruktora, területet foglal a mezõ szomszédainak
 	 */
-	public Field() {
+	public Field(int id) {
 		neighbors = new ArrayList<Field>();
+		this.id = id;
 	}
 
 	/**
@@ -189,5 +191,9 @@ public class Field {
 		}
 		return "name:\t " + Control.getName(this) + "\n"
 				+ string.toString();
+	}
+	
+	public int getID() {
+		return id;
 	}
 }

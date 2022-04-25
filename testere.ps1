@@ -2,7 +2,7 @@ function test([string]$testfile, [string]$expectedfile) {
     $expResult = cat $expectedfile
 
     $input = cat $testfile
-    $output = echo $input | java -cp .\bin\ killer_sokoban.Main
+    $output = echo $input | java -cp bin miscellaneous.Main
 
     $diff = compare $output $expResult
 

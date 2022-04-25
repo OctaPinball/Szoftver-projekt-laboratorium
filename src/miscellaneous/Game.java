@@ -1,7 +1,16 @@
 package miscellaneous;
 
 import java.util.ArrayList;
+import java.util.Random;
+
+import agents.*;
+import beardefense.*;
+import block.*;
+import equipment.*;
 import field.*;
+import fillmaterial.*;
+import movement.*;
+import beardefense.*;
 
 public class Game {
 	private static boolean randomEnabled = true;
@@ -10,8 +19,9 @@ public class Game {
     /**
      * A játék elindításáért felelős függvény
      */
-	public static void startGame() {
-		
+	public static void startGame(int width, int height) {
+		generateFieldMap(width, height);
+		scatterObjects();
 	}
 	
     /**
@@ -23,7 +33,20 @@ public class Game {
 	
 	public static void generateFieldMap(int width, int height) {
 		for(int i = 0; i < height; i++) {
-			
+			for(int j = 0; j < width; j++) {
+				allFields.add(new Field(i*width + j));
+			}
+		}
+		
+		for(Field f : allFields) {
+			if(0 <= f.getID()-width)
+				f.addNeighbor(allFields.get(f.getID() - width));
+			if(f.getID()+width < width * height)
+				f.addNeighbor(allFields.get(f.getID() + width));
+			if(f.getID() % width == 0)
+				f.addNeighbor(allFields.get(f.getID() - 1));
+			if(0 <= f.getID()-width)
+				f.addNeighbor(allFields.get(f.getID() + 1));
 		}
 	}
 	
@@ -31,14 +54,49 @@ public class Game {
      * A pálya legenerálásáért felelős: létrehozza a mezőket és beállítja azok szomszédait
      */
 	public static void generateMap(int width, int height) {
+		for(int i = 0; i < height; i++) {
+			for(int j = 0; j < width; j++) {
+				
+				allFields.add(new Field(i*width + j));
+			}
+		}
 		
+		for(Field f : allFields) {
+			if(0 <= f.getID()-width)
+				f.addNeighbor(allFields.get(f.getID() - width));
+			if(f.getID()+width < width * height)
+				f.addNeighbor(allFields.get(f.getID() + width));
+			if(f.getID() % width == 0)
+				f.addNeighbor(allFields.get(f.getID() - 1));
+			if(0 <= f.getID()-width)
+				f.addNeighbor(allFields.get(f.getID() + 1));
+		}
 	}
 	
     /**
      * Szétszór mindenféle különböző tárgyat és megtanulható genetikai kódot a játéktér megfelelő mezőire
      */
 	public static void scatterObjects() {
-		
+		for(int i = 0; i < allFields.size(); i++) {
+			if(allFields.get(i).getClass() == Shelter.class) {
+				Random rand = new Random();
+				int equipmentType = rand.nextInt(4);
+				
+				switch(equipmentType) {
+					case 0: allFields.get(i).spawnEquipment(new Axe());
+						break;
+						
+					case 1: allFields.get(i).spawnEquipment(new Cape());
+						break;
+						
+					case 2: allFields.get(i).spawnEquipment(new Glove());
+						break;
+						
+					case 3: allFields.get(i).spawnEquipment(new Sack());
+						break;
+				}
+			}
+		}
 	}
 
 	public static boolean isRandomEnabled() {
