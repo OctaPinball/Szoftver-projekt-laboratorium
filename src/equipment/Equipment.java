@@ -67,8 +67,8 @@ public abstract class Equipment {
     }
 
     /**
-     * Aktiválja a felszerelés hatását
-     */
+     * Aktiválja a felszerelés hatását.
+     **/
     public abstract void getEffect();
 
     /**
@@ -100,5 +100,6 @@ public abstract class Equipment {
     public String toString() {
 		return "equipment:\t " + Control.getName(this);
 	}
+
 
 }

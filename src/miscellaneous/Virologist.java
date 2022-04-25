@@ -70,6 +70,7 @@ public class Virologist implements Steppable{
 		
 		
 		boolean found = false;
+		
 		for (Agent i : agents)
 		{
 			if (i.getClass() == a.getClass())
@@ -81,9 +82,31 @@ public class Virologist implements Steppable{
 			agents.add(newAgent);
 			newAgent.setOwner(this);
 		}
-			
-		
 		Logger.exit(this, "learnAgent", null);
+	}
+	
+	public boolean learnallAgent() {
+		boolean know[] = {false, false, false, false};
+		
+		ArrayList<Object> par = new ArrayList<>(); 
+		
+		for (Agent i : agents)
+		{
+			if (i.getClass() == Stun.class)
+				know[0] = true;
+			if (i.getClass() == Protection.class)
+				know[1] = true;
+			if (i.getClass() == Chorea.class)
+				know[2] = true;
+			if (i.getClass() == ForgettingAgent.class)
+				know[3] = true;
+		}
+		
+		if(know[0] == true && know[0] == true && know[0] == true && know[0] == true)
+		{
+			return true;
+		}
+		return false;
 	}
 	
 	/**

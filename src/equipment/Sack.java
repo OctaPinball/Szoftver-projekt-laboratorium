@@ -18,7 +18,11 @@ public class Sack extends Equipment{
 
         Logger.enter(this, "getEffect", null);
 
-        wearer.setFillMaterial(new IncreasedMatter());
+        IncreasedMatter im = new IncreasedMatter();
+        
+        if(im.getPriority() > wearer.getFillMaterial().getPriority())
+			wearer.setFillMaterial(im);
+        
 
         Logger.exit(this, "getEffect", null);
 

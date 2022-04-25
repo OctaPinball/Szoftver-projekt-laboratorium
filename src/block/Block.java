@@ -18,5 +18,7 @@ public interface Block {
 	 * @throws CloneNotSupportedException
 	 */
 	public abstract boolean block(Virologist s, Virologist t, Agent a) throws CloneNotSupportedException;
+
+	public abstract int getPriority();
 	
 }
