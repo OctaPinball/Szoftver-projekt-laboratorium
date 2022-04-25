@@ -157,6 +157,10 @@ public class Field {
 		return neighbors;
 	}
 	
+	public Virologist getVirologist() {
+		return virologistOnField;
+	}
+	
 	public void copyStorage() {
 		
 	}

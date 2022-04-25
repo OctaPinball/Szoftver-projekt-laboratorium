@@ -2,6 +2,7 @@ package beardefense;
 
 import miscellaneous.Virologist;
 import equipment.*;
+import beardefense.*;
 
 public class Defense implements BearDefense{
 	
