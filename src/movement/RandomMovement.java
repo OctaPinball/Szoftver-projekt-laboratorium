@@ -12,13 +12,15 @@ import miscellaneous.Virologist;
  */
 public class RandomMovement implements Movement{
 
+	private final int priority = 1;
+	
     /**
      * A paraméterként kapott virológus átlép egy random sorsolt szomszédos mezőre
      * @param v, a virológus, aki szeretne ellépni
      * @param target, itt nincs jelentősége
      */
 	
-	public void move(Virologist v, Field target) {
+	public boolean move(Virologist v, Field target) {
 		ArrayList<Object> par = new ArrayList<>(); par.add(v); par.add(target);
 		Logger.enter(this, "move", par);
 		
@@ -34,6 +36,11 @@ public class RandomMovement implements Movement{
 		
 		
 		Logger.exit(this, "move", null);
+		return true;
+	}
+	
+	public int getPriority() {
+		return priority;
 	}
 	
 }

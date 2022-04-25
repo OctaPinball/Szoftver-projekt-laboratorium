@@ -12,6 +12,8 @@ public class IncreasedMatter implements FillMaterial{
 	
 	private static int incAminoacid = 100;
 	private static int incNucleotide = 100;
+	
+	private final int priority = 1;
 
     /**
      * A paraméterként kapott virológus megnövelt nyersanyagkapacitásának maximális feltöltéséhez
@@ -29,4 +31,7 @@ public class IncreasedMatter implements FillMaterial{
 		Logger.exit(this, "move", null);
 	}
 	
+	public int getPriority() {
+		return priority;
+	}
 }

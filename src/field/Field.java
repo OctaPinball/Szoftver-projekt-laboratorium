@@ -13,10 +13,10 @@ import equipment.*;
 
 public class Field {
 	
-	private Virologist virologistOnField;
-	private Equipment equipmentOnField;
+	protected Virologist virologistOnField;
+	protected Equipment equipmentOnField;
 
-	private ArrayList<Field> neighbors;
+	protected ArrayList<Field> neighbors;
 
 	/**
 	 * A Field osztály konstruktora, területet foglal a mezõ szomszédainak
@@ -97,11 +97,28 @@ public class Field {
 		par.add(neighbor);
 		Logger.enter(this, "addNeighbor", par);
 		
-		
 		neighbors.add(neighbor);
 		
-		
 		Logger.exit(this, "addNeighbor", null);
+	}
+	
+	/**
+	 * A paraméterként megkapott mezõ szomszédait eltávolítja.
+	 * @param neighbor	a mezõ, amit el kell távolítani a tömbbõl
+	 */
+	public boolean removeNeighbor(Field neighbor) {
+		ArrayList<Object> par = new ArrayList<Object>();
+		par.add(neighbor);
+		Logger.enter(this, "removeNeighbor", par);
+		
+		if(neighbors.remove(neighbor))
+		{
+			Logger.exit(this, "removeNeighbor", true);
+			return true;
+		}
+		
+		Logger.exit(this, "removeNeighbor", false);
+		return false;
 	}
 
 	/**
@@ -114,10 +131,8 @@ public class Field {
 		par.add(virologist);
 		Logger.enter(this, "stepOn", par);
 		
-		
 		addVirologist(virologist);
 		virologist.changeField(this);
-		
 		
 		Logger.exit(this, "stepOn", null);
 	}
@@ -139,5 +154,20 @@ public class Field {
 	 */
 	public ArrayList<Field> getNeighbors(){
 		return neighbors;
+	}
+	
+	public void copyStorage() {
+		
+	}
+	
+	public void destroy() {
+		
+	}
+
+	public String toString() {
+		return "name:\t " + Control.getName(this)
+				+ "type:\t field"
+				+ "virologist:\t " + Control.getName(virologistOnField)
+				+ "equipment" + Control.getName(equipmentOnField);
 	}
 }

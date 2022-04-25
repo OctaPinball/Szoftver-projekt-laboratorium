@@ -13,6 +13,8 @@ public class NormalMatter implements FillMaterial{
 	private static int normAminoacid = 100;
 	private static int normNucleotide = 100;
 	
+	private final int priority = 0;
+	
     /**
      * A paraméterként kapott virológus normál nyersanyagkapacitásának maximális feltöltéséhez
      * @param v, a virológus, aki szeretne nyersanyagot
@@ -29,4 +31,7 @@ public class NormalMatter implements FillMaterial{
 		Logger.exit(this, "move", null);
 	}
 	
+	public int getPriority() {
+		return priority;
+	}
 }

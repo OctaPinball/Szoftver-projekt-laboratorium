@@ -1,5 +1,6 @@
 package miscellaneous;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -328,11 +329,27 @@ public class Virologist implements Steppable{
 		return field;
 	}
 	
+	public ArrayList<Equipment> getEquipments(){
+		return equipments;
+	}
+	
+	public ArrayList<Agent> getAgents(){
+		return agents;
+	}
+	
     /**
      * Getter a virológuson jelenleg hatást kifejtő ágensek kiderítésére
      * @return activeagents
      */
 	public ArrayList<Agent> getActiveAgents(){
 		return activeagents;
+	}
+	
+	public String listV() {
+		return "";
+	}
+	
+	public String list(String s) {
+		return "";
 	}
 }

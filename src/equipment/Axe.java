@@ -1,0 +1,47 @@
+package equipment;
+
+import block.BlockAndReturn;
+import block.NoBlock;
+import fillmaterial.IncreasedMatter;
+import miscellaneous.Logger;
+
+public class Axe extends Equipment{
+	
+	private int life = 1;
+	
+	
+	/**
+     * Aktiválja a Defense hatást a virológuson
+     */
+	public void getEffect() {
+		Logger.enter(this, "getEffect", null);
+
+        wearer.setBearDefense(new Defense());
+
+        Logger.exit(this, "getEffect", null);
+	}
+
+	
+	/**
+     *  Deaktiválja a Defense hatást a virológuson, visszaállítja a NoDefense hatást
+     */
+	public void loseEffect() {
+		
+		 Logger.enter(this, "loseEffect", null);
+
+		 wearer.setBearDefense(new NoDefense());
+
+		 Logger.exit(this, "loseEffect", null);
+	}
+	
+	/**
+     *  Elhasznál egy életet
+     */
+	public void usedLife() {
+		life -= 1;
+		if(life == 0)
+			this.dropEquipment();
+	}
+	
+
+}
