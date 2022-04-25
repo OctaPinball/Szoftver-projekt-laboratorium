@@ -510,6 +510,7 @@ public class Control {
 		return "";
 	}
 	
+	//code copied from StackOverFlow
 	public static <K, V> K getKey(Map<K, V> map, V value) {
 	    for (Entry<K, V> entry : map.entrySet()) {
 	        if (entry.getValue().equals(value)) {
