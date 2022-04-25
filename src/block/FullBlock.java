@@ -11,6 +11,8 @@ import miscellaneous.Virologist;
  */
 public class FullBlock implements Block{
 
+	private final int priority = 2;
+	
 	/**
 	 *A függvény hatására a felkent vírusnak nincs hatása a virológusra. Igaz értékkel tér vissza, mivel blockolta a vírust.
 	 * @param s, a támadó virológus(sender)
@@ -29,5 +31,8 @@ public class FullBlock implements Block{
 		Logger.exit(this, "block", true);
 		return true;
 	}
-
+	
+	public int getPriority() {
+		return priority;
+	}
 }
