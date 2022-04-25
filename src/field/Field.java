@@ -140,4 +140,5 @@ public class Field {
 	public ArrayList<Field> getNeighbors(){
 		return neighbors;
 	}
+
 }

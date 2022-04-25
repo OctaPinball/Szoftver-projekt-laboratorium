@@ -1,5 +1,6 @@
 package agents;
 
+import block.Block;
 import block.FullBlock;
 import block.NoBlock;
 import block.PartialBlock;
@@ -17,7 +18,10 @@ public class Protection extends Agent{
 	public void activate() {
 		Logger.enter(this, "activate", null);
 		
-		owner.setBlock(new FullBlock());
+		Block block = new FullBlock();
+		
+		if(block.getPriority() > owner.getBlock().getPriority())
+			owner.setBlock(block);
 		
 		Logger.exit(this, "activate", null);
 	}
@@ -40,5 +44,12 @@ public class Protection extends Agent{
 	 */
 	public Agent makeCopy() {
 		return (Agent) new Protection();
+	}
+	
+	/**
+	 * Megtanulja az ágenst.
+	 */
+	public void interact() {
+		owner.learnAgent(this);
 	}
 }

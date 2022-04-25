@@ -37,4 +37,11 @@ public class ForgettingAgent extends Agent{
 	public Agent makeCopy() {
 		return (Agent) new ForgettingAgent();
 	}
+	
+	/**
+	 * Megtanulja az ágenst.
+	 */
+	public void interact() {
+		owner.learnAgent(this);
+	}
 }

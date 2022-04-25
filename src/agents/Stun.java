@@ -1,6 +1,7 @@
 package agents;
 
 import miscellaneous.Logger;
+import movement.Movement;
 import movement.NormalMovement;
 import movement.Stunned;
 
@@ -15,7 +16,10 @@ public class Stun extends Agent{
 	public void activate() {
 		Logger.enter(this, "activate", null);
 		
-		owner.setMovement(new Stunned());
+		Movement movement = new Stunned();
+		
+		if(movement.getPriority() > owner.getMovement().getPriority())
+			owner.setMovement(movement);
 		
 		Logger.exit(this, "activate", null);
 	}
@@ -38,5 +42,12 @@ public class Stun extends Agent{
 	 */
 	public Agent makeCopy() {
 		return (Agent) new Stun();
+	}
+	
+	/**
+	 * Megtanulja az ágenst.
+	 */
+	public void interact() {
+		owner.learnAgent(this);
 	}
 }

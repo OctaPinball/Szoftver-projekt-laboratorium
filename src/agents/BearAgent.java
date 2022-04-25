@@ -1,22 +1,20 @@
 package agents;
 
 import miscellaneous.Logger;
-import movement.Movement;
 import movement.NormalMovement;
-import movement.RandomMovement;
+import movement.Stunned;
+import movement.BearDance;
+import movement.Movement;
 
-/**
- * Az Agent osztály leszármazottja, használata az eleszenvedõjén vitustáncot okoz, azaz kontrollálatlanul kezd el mozogni a mezõk között.
- */
-public class Chorea extends Agent{
-
+public class BearAgent extends Agent{
 	/**
-	 * Aktiválja az ágens hatását a virológuson, ezzel megadva neki a RandomMovement tulajdonságot, amennyiben nagyobb a prioritása.
+	 * Aktiválja az ágens hatását a virológuson, ezzel megadva neki a BearDance tulajdonságot.
 	 */
 	public void activate() {
 		Logger.enter(this, "activate", null);
 		
-		Movement movement = new RandomMovement();
+		Movement movement = new BearDance();
+		
 		if(movement.getPriority() > owner.getMovement().getPriority())
 			owner.setMovement(movement);
 		
@@ -24,7 +22,7 @@ public class Chorea extends Agent{
 	}
 	
 	/**
-	 * Deaktiválja az ágens hatását a virológuson, ezzel elvéve tõle a RandomMovement tulajdonságot.
+	 * Deaktiválja az ágens hatását a virológuson, ezzel elvéve tõle a BearDance tulajdonságot.
 	 */
 	public void deactivate() {
 		Logger.enter(this, "deactivate", null);
@@ -40,13 +38,14 @@ public class Chorea extends Agent{
 	 * @return		az ágens másolata
 	 */
 	public Agent makeCopy() {
-		return (Agent) new Chorea();
+		return (Agent) new BearAgent();
 	}
 	
 	/**
-	 * Megtanulja az ágenst.
+	 * Aktiválódik a BearAgent.
+	 * @throws CloneNotSupportedException 
 	 */
-	public void interact() {
-		owner.learnAgent(this);
+	public void interact() throws CloneNotSupportedException {
+		this.cast(owner);
 	}
 }

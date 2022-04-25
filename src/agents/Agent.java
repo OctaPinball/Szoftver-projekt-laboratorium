@@ -14,7 +14,6 @@ public abstract class Agent {
 	private int acidcost;
 	private int nucleotidecost;
 	private int effecttime;
-	
 	protected Virologist owner;
 	
 
@@ -28,8 +27,8 @@ public abstract class Agent {
 	 * @param target		a célpont virológus
 	 * @param i				az ágens kenésének száma (a visszakenésnél van szerepe, mert csak egyszer lehet visszakenni a kesztyûvel)
 	 */
-	public void cast(Virologist target, int i) throws CloneNotSupportedException {
-		ArrayList<Object> par = new ArrayList<>(); par.add(target); par.add(i);
+	public void cast(Virologist target) throws CloneNotSupportedException {
+		ArrayList<Object> par = new ArrayList<>(); par.add(target);
 		Logger.enter(this, "cast", par);
 		if(owner != null)
 		{
@@ -48,6 +47,7 @@ public abstract class Agent {
 		
 		Logger.exit(this, "cast", null);
 	}
+	
 	/**
 	 * Absztrakt metódus, mely aktiválja az ágens hatását a virológuson, ezzel megváltoztatva valamely tulajdonságát.
 	 */
@@ -82,4 +82,10 @@ public abstract class Agent {
 	public void setOwner(Virologist owner) {
 		this.owner = owner;
 	}
+	
+	/**
+	 * Absztrakt metódus, amely megvizsgálja, hogy medvetánc "megtanulásáról" van-e szó. Azaz a BearAgent egybõl aktiválódik.
+	 * @throws CloneNotSupportedException 
+	 */
+	public abstract void interact() throws CloneNotSupportedException;
 }
