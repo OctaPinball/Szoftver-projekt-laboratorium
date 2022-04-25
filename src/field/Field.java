@@ -171,18 +171,19 @@ public class Field {
 				+ "equipment" + Control.getName(equipmentOnField);
 	}
 	
+	public String printName() {
+		return Control.getName(this);
+	}
+	
 	public String nToString() {
 		int n = this.neighbors.size();
-		String[] string;
+		String[] string = null;
 		int i = 0;
 		for(Field f: neighbors) {
-			string[i] = f.neighbors.get(i).toString();
+			string[i] = "Neighbor " + (i+1) + ": \t" + f.neighbors.get(i).printName() + "\n";
 			i++;
 		}
-		return "name:\t " + Control.getName(this)
-				+ "neighbor1:\t " + Control.getName(this)
-				+ "virologist:\t " + Control.getName(virologistOnField)
-				+ "equipment" + Control.getName(equipmentOnField);
-		
+		return "name:\t " + Control.getName(this) + "\n"
+				+ string.toString();
 	}
 }
