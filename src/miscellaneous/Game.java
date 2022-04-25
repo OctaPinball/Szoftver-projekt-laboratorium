@@ -56,7 +56,22 @@ public class Game {
 	public static void generateMap(int width, int height) {
 		for(int i = 0; i < height; i++) {
 			for(int j = 0; j < width; j++) {
+				Random rand = new Random();
+				int fieldType = rand.nextInt(4);
 				
+				switch(fieldType) {
+					case 0: allFields.add(new Field(i*width + j));
+						break;
+						
+					case 1: allFields.add(new Field(i*width + j));
+						break;
+						
+					case 2: allFields.add(new Field(i*width + j));
+						break;
+						
+					case 3: allFields.add(new Field(i*width + j));
+						break;
+				}
 				allFields.add(new Field(i*width + j));
 			}
 		}

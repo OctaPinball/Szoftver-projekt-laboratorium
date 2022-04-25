@@ -9,6 +9,10 @@ import miscellaneous.*;
  */
 public class Storage extends Field{
 	
+	public Storage(int id) {
+		super(id);
+	}
+
 	/**
 	 * A Field osztály stepOn függvényét kiegészíti, azzal hogy feltölti a virológus összes nyersanyag készletét
 	 * @param virologist		a mezõre lépõ virológus

@@ -24,6 +24,10 @@ public class Shelter extends Field{
 	}
 	*/
 	
+	public Shelter(int id) {
+		super(id);
+	}
+
 	public String toString() {
 		return "name:\t " + Control.getName(this)
 				+ "type:\t shelter"

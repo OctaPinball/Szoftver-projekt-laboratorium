@@ -12,6 +12,10 @@ import agents.*;
  */
 public class Laboratory extends Field{
 	
+	public Laboratory(int id) {
+		super(id);
+	}
+
 	private Agent agentOnField;
 	
 	/**
