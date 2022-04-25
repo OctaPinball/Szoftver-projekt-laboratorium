@@ -13,6 +13,7 @@ import equipment.*;
 
 public class Field {
 	
+	protected int id;
 	protected Virologist virologistOnField;
 	protected Equipment equipmentOnField;
 
@@ -190,5 +191,9 @@ public class Field {
 		}
 		return "name:\t " + Control.getName(this) + "\n"
 				+ string.toString();
+	}
+	
+	public int getID() {
+		return id;
 	}
 }
