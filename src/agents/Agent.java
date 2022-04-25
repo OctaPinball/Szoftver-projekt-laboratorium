@@ -49,6 +49,10 @@ public abstract class Agent {
 		Logger.exit(this, "cast", null);
 	}
 	
+	public int getEffectTime() {
+		return effecttime;
+	}
+	
 	/**
 	 * Absztrakt metódus, mely aktiválja az ágens hatását a virológuson, ezzel megváltoztatva valamely tulajdonságát.
 	 */
@@ -93,4 +97,6 @@ public abstract class Agent {
 	public String toString() {
 		return "agent:\t " + Control.getName(this);
 	}
+
+	
 }
