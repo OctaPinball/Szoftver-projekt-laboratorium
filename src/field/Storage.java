@@ -61,4 +61,11 @@ public class Storage extends Field{
 		
 		Logger.exit(this, "destroy", null);
 	}
+	
+	public String toString() {
+		return "name:\t " + Control.getName(this)
+				+ "type:\t storage"
+				+ "virologist:\t " + Control.getName(virologistOnField)
+				+ "equipment" + Control.getName(equipmentOnField);
+	}
 }

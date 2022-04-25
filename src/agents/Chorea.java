@@ -1,5 +1,6 @@
 package agents;
 
+import miscellaneous.Control;
 import miscellaneous.Logger;
 import movement.Movement;
 import movement.NormalMovement;
@@ -48,5 +49,9 @@ public class Chorea extends Agent{
 	 */
 	public void interact() {
 		owner.learnAgent(this);
+	}
+	
+	public String toString() {
+		return "chorea:\t " + Control.getName(this);
 	}
 }

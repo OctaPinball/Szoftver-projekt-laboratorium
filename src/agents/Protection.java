@@ -4,6 +4,7 @@ import block.Block;
 import block.FullBlock;
 import block.NoBlock;
 import block.PartialBlock;
+import miscellaneous.Control;
 import miscellaneous.Logger;
 
 
@@ -47,9 +48,13 @@ public class Protection extends Agent{
 	}
 	
 	/**
-	 * Megtanulja az ágenst.
+	 * Megtanulja az ï¿½genst.
 	 */
 	public void interact() {
 		owner.learnAgent(this);
+	}
+	
+	public String toString() {
+		return "protection:\t " + Control.getName(this);
 	}
 }

@@ -98,9 +98,7 @@ public abstract class Equipment {
     }
     
     public String toString() {
-		return "slot_1:\t " + Control.getName(this)
-				+ "slot_2:\t field"
-				+ "slot_3:\t " + Control.getName(virologistOnField);
+		return "equipment:\t " + Control.getName(this);
 	}
 
 }
