@@ -11,6 +11,8 @@ import miscellaneous.Virologist;
  */
 public class NoBlock implements Block{
 
+	private final int priority = 0;
+	
 	/**
 	 *A függvény hatására a virológus nem immunis semmilyen vírusra. Hamis értékkel tér vissza, mivel a blockolás nem sikerült.
 	 * @param s, a támadó virológus(sender)
@@ -30,4 +32,7 @@ public class NoBlock implements Block{
 		return false;
 	}
 
+	public int getPriority() {
+		return priority;
+	}
 }

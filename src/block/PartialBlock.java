@@ -11,6 +11,8 @@ import miscellaneous.Virologist;
  */
 public class PartialBlock implements Block{
 
+	private final int priority = 1;
+	
 	/**
 	 *A függvény hatására a felkent vírusnak 82,3%-os eséllyel nem lesz hatása a virológusra.
 	 * Igaz értékkel tér vissza ha a blockolás sikeres, ellenkező esetben hamissal.
@@ -37,4 +39,7 @@ public class PartialBlock implements Block{
 		return result;
 	}
 
+	public int getPriority() {
+		return priority;
+	}
 }
