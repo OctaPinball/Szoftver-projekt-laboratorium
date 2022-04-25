@@ -272,6 +272,21 @@ public class Virologist implements Steppable{
 		}
 		Logger.exit(this, "step", null);
 	}
+	
+	public void getAllEffect() {
+		for(Agent a : activeagents) {
+			a.activate();
+		}
+		
+		for(Equipment e : equipments) {
+			e.getEffect();
+		}
+	}
+	
+	public void Die() {
+		field.removeVirologist();
+		// TODO steppable tombbol kivenni
+	}
 
     /**
      * Getter a virológus aminosavának jelenlegi mennyiségének kiderítésére
