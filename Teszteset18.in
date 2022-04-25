@@ -1,0 +1,14 @@
+operator v v_1 create
+operator f f_1 create field
+operator e axe_1 create axe
+operator e glove_1 create glove
+operator e cape_1 create cape
+operator e sack_1 create sack
+operator v v_1 move f_1
+operator e axe_1 move v_1
+operator e glove_1 move v_1
+operator e cape_1 move v_1
+operator e sack_1 move f_1
+pickupequipment sack_1 
+list equipment
+list field

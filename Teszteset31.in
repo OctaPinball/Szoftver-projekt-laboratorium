@@ -1,0 +1,6 @@
+operator v v_1 create
+operator a c_1 create chorea
+operator f lab_1 create laboratory
+operator a c_1 move lab_1
+move lab_1
+list activeagent
