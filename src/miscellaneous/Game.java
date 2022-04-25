@@ -4,14 +4,8 @@ import java.util.ArrayList;
 import field.*;
 
 public class Game {
-	private static boolean randomEnabled;
-	private static ArrayList<Field> allFields;
-	
-
-	Game(){
-		this.setRandomEnabled(true);
-		allFields = new ArrayList<Field>();
-	}
+	private static boolean randomEnabled = true;
+	private static ArrayList<Field> allFields = new ArrayList<Field>();
 	
     /**
      * A játék elindításáért felelős függvény
@@ -28,7 +22,9 @@ public class Game {
 	}
 	
 	public static void generateFieldMap(int width, int height) {
-		//for(int i = 0; )
+		for(int i = 0; i < height; i++) {
+			
+		}
 	}
 	
     /**
