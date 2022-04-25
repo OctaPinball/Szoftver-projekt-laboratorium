@@ -3,6 +3,7 @@ package equipment;
 import block.BlockAndReturn;
 import block.NoBlock;
 import fillmaterial.IncreasedMatter;
+import miscellaneous.Control;
 import miscellaneous.Logger;
 
 public class Axe extends Equipment{
@@ -41,6 +42,10 @@ public class Axe extends Equipment{
 		life -= 1;
 		if(life == 0)
 			this.dropEquipment();
+	}
+	
+	public String toString() {
+		return "axe:\t " + Control.getName(this);
 	}
 	
 

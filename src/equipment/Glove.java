@@ -1,6 +1,7 @@
 package equipment;
 
 import block.*;
+import miscellaneous.Control;
 import miscellaneous.Logger;
 
 /**
@@ -50,5 +51,9 @@ public class Glove extends Equipment{
 		life -= 1;
 		if(life == 0)
 			this.dropEquipment();
+	}
+    
+    public String toString() {
+		return "glove:\t " + Control.getName(this);
 	}
 }

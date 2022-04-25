@@ -1,0 +1,7 @@
+operator v v_1 create
+operator v v_2 create
+operator a s_1 create stun
+operator a s_1 move v_1 learn
+cast v_2 s_1
+next turn
+list activeagent

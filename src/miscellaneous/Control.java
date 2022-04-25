@@ -3,13 +3,10 @@ package miscellaneous;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
-
 import agents.*;
 import equipment.*;
 import field.*;
@@ -510,6 +507,7 @@ public class Control {
 		return "";
 	}
 	
+	//code copied from StackOverFlow
 	public static <K, V> K getKey(Map<K, V> map, V value) {
 	    for (Entry<K, V> entry : map.entrySet()) {
 	        if (entry.getValue().equals(value)) {

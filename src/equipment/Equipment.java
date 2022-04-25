@@ -3,6 +3,7 @@ package equipment;
 import java.util.ArrayList;
 
 import field.Field;
+import miscellaneous.Control;
 import miscellaneous.Logger;
 import miscellaneous.Virologist;
 
@@ -91,5 +92,9 @@ public abstract class Equipment {
     public void setCurrentField(Field currentField) {
     	this.currentField = currentField;
     }
+    
+    public String toString() {
+		return "equipment:\t " + Control.getName(this);
+	}
 
 }

@@ -1,6 +1,7 @@
 package equipment;
 
 import block.*;
+import miscellaneous.Control;
 import miscellaneous.Logger;
 
 /**
@@ -35,4 +36,8 @@ public class Cape extends Equipment{
         Logger.exit(this, "loseEffect", null);
 
     }
+    
+    public String toString() {
+		return "cape:\t " + Control.getName(this);
+	}
 }

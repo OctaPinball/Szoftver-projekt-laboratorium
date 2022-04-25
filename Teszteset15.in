@@ -1,0 +1,8 @@
+operator v v_1 create
+operator f f_1 create field
+operator e sack_1 create sack
+operator v v_1 move f_1
+operator e sack_1 move v_1
+dropequipment sack_1
+list equipment
+list field

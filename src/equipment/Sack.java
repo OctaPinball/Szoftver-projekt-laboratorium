@@ -2,6 +2,7 @@ package equipment;
 
 import block.PartialBlock;
 import fillmaterial.*;
+import miscellaneous.Control;
 import miscellaneous.Logger;
 
 /**
@@ -35,4 +36,8 @@ public class Sack extends Equipment{
         Logger.exit(this, "loseEffect", null);
 
     }
+    
+    public String toString() {
+		return "sack:\t " + Control.getName(this);
+	}
 }

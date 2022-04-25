@@ -170,4 +170,20 @@ public class Field {
 				+ "virologist:\t " + Control.getName(virologistOnField)
 				+ "equipment" + Control.getName(equipmentOnField);
 	}
+	
+	public String printName() {
+		return Control.getName(this);
+	}
+	
+	public String nToString() {
+		int n = this.neighbors.size();
+		String[] string = null;
+		int i = 0;
+		for(Field f: neighbors) {
+			string[i] = "Neighbor " + (i+1) + ": \t" + f.neighbors.get(i).printName() + "\n";
+			i++;
+		}
+		return "name:\t " + Control.getName(this) + "\n"
+				+ string.toString();
+	}
 }

@@ -1,0 +1,5 @@
+operator v v_1 create
+operator a prot_1 create protection
+operator a prot_1 move v_1 learn
+cast v_1 prot_1
+list activeagent

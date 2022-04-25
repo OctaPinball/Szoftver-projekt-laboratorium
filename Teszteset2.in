@@ -1,0 +1,7 @@
+operator f ffrom create shelter
+operator f fto create shelter
+operator v virologist create
+operator v virologist move ffrom
+operator f ffrom move fto
+move fto
+list field

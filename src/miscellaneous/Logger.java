@@ -8,7 +8,7 @@ import java.util.Map;
 import agents.Agent;
 
 public class Logger {
-	static private Map<Object, String> map=new HashMap<Object, String>();
+	private static Map<Object, String> map=new HashMap<Object, String>();
 	private static int depth=0;
 	private static boolean enabled = false;
 	
