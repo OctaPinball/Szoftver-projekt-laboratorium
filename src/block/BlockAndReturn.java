@@ -11,6 +11,9 @@ import miscellaneous.Virologist;
  * akkor blokkolja a “támadást” és visszafordítja az ágens hatását támadóra.
  */
 public class BlockAndReturn implements Block{
+	
+	private final int priority = 3;
+	
 	/**
 	 * Számolja, hogy hanyadjára dobják vissza a kenést.
 	 */
@@ -32,10 +35,14 @@ public class BlockAndReturn implements Block{
 		Logger.enter(this, "block", par);
 		
 		if(!s.equals(t)) {
-			a.cast(s, 2);
+			a.cast(s);
 		}
 		
 		Logger.exit(this, "block", true);
 		return true;
+	}
+	
+	public int getPriority() {
+		return priority;
 	}
 }
