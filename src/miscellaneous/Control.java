@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -58,7 +59,7 @@ public class Control {
 
 
 	
-	public static void runControl() throws IOException {
+	public static void runControl() throws IOException, CloneNotSupportedException {
 		while (true) {
 			String line;
 			line = br.readLine();
@@ -70,7 +71,7 @@ public class Control {
 
 	}
 	
-	private static void runCommand(String cmdline) {
+	private static void runCommand(String cmdline) throws CloneNotSupportedException {
 		//Ha üres sort kaptunk, ignoráljuk
 		//Emiatt áttekinthetõbb bemeneteket lehet csinálni
 		if (cmdline.equals("")) return;
@@ -116,7 +117,30 @@ public class Control {
 			}
 		}
 		else if (cmd[0].equals("cast")) {
-
+			ArrayList<Field> neighbors = RoundManager.getEntity().getField().getNeighbors();			
+			if(virologists.get(cmd[1]) != null)
+			{
+				Virologist target = virologists.get(cmd[1]);
+				if(neighbors.contains(target.getField()))
+				{
+					if(agents.containsKey(cmd[2]) && RoundManager.getEntity().getAgents().contains(agents.containsKey(cmd[2])))
+					{
+						agents.get(cmd[2]).cast(target);
+					}
+					else
+					{
+						System.out.println("Invalid agent name!\n");
+					}
+				}
+				else
+				{
+					System.out.println("Invalid target name!\n");
+				}
+			}
+			else
+			{
+				System.out.println("Invalid target name!\n");
+			}
 		}
 		else if (cmd[0].equals("pickupequipment")) {
 

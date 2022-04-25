@@ -318,6 +318,10 @@ public class Virologist implements Steppable{
 		return equipments;
 	}
 	
+	public ArrayList<Agent> getAgents(){
+		return agents;
+	}
+	
     /**
      * Getter a virológuson jelenleg hatást kifejtő ágensek kiderítésére
      * @return activeagents

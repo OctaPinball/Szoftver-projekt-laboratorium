@@ -28,8 +28,8 @@ public abstract class Agent {
 	 * @param target		a célpont virológus
 	 * @param i				az ágens kenésének száma (a visszakenésnél van szerepe, mert csak egyszer lehet visszakenni a kesztyûvel)
 	 */
-	public void cast(Virologist target, int i) throws CloneNotSupportedException {
-		ArrayList<Object> par = new ArrayList<>(); par.add(target); par.add(i);
+	public void cast(Virologist target) throws CloneNotSupportedException {
+		ArrayList<Object> par = new ArrayList<>(); par.add(target);
 		Logger.enter(this, "cast", par);
 		if(owner != null)
 		{
