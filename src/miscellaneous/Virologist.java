@@ -255,6 +255,11 @@ public class Virologist implements Steppable{
 		this.movement = movement;
 	}
 	
+	
+	public void setBearDefense(BearDefense bd) {
+		defense = bd;
+	}
+	
 	public BearDefense getDefense() {
 		return defense;
 	}
