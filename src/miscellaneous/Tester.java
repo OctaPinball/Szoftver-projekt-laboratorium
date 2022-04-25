@@ -135,7 +135,7 @@ public class Tester {
 		Logger.register(fa, "fa");
 
 		// Tesztelés
-		fa.cast(v2, 1);
+		fa.cast(v2);
 	}
 	
 	public void castStun() throws CloneNotSupportedException {
@@ -152,7 +152,7 @@ public class Tester {
 		Logger.register(s, "s");
 
 		// Tesztelés
-		s.cast(v2, 1);
+		s.cast(v2);
 	}
 
 	public void dropEmptyField() {
@@ -224,7 +224,7 @@ public class Tester {
 		Logger.register(f1, "f1");
 
 		///Test
-		c.cast(v2,1);
+		c.cast(v2);
 	}
 
 	public void partialBlockTrue() throws CloneNotSupportedException {
@@ -248,7 +248,7 @@ public class Tester {
 		Logger.register(ch, "ch");
 
 		///Test
-		ch.cast(v2,1);
+		ch.cast(v2);
 	}
 
 	public void fullBlockTrue() throws CloneNotSupportedException {
@@ -265,7 +265,7 @@ public class Tester {
 		Logger.register(b, "fb");
 
 		///Test
-		st.cast(v1,1);
+		st.cast(v1);
 	}
 
 	public void stealEquipment() {
@@ -317,7 +317,7 @@ public class Tester {
 		Logger.register(cape, "cape");
 		
 		// Tesztelés
-		fa.cast(v2, 1);
+		fa.cast(v2);
 	}
 
 	public void virologistStepOnStorage() {
@@ -395,7 +395,7 @@ public class Tester {
 		Logger.register(p, "p");
 		
 		///Test
-		p.cast(v, 1);
+		p.cast(v);
 		
 	}
 
@@ -448,7 +448,7 @@ public class Tester {
 		Logger.register(c, "c");
 
 		///Test
-		c.cast(v2,1);
+		c.cast(v2);
 	}
 
 	public void cantPickupItem() {
