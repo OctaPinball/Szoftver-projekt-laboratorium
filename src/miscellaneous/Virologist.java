@@ -353,4 +353,21 @@ public class Virologist implements Steppable{
 	public String list(String s) {
 		return "";
 	}
+	
+	public String agentsToString() {
+		int n = agents.size();
+		String[] agent = null;
+		for(int i = 0; i < agents.size(); i++) {
+			agent[i] = agents.get(i).toString();
+		}
+		return "glove:\t " + Control.getName(this);
+	}
+	
+	public String activeAgentsToString() {
+		return "glove:\t " + Control.getName(this);
+	}
+	
+	public String equipmentsToString() {
+		return "glove:\t " + Control.getName(this);
+	}
 }

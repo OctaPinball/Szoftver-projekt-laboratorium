@@ -2,6 +2,7 @@ package agents;
 
 import java.util.ArrayList;
 
+import miscellaneous.Control;
 import miscellaneous.Logger;
 import miscellaneous.Virologist;
 
@@ -88,4 +89,8 @@ public abstract class Agent {
 	 * @throws CloneNotSupportedException 
 	 */
 	public abstract void interact() throws CloneNotSupportedException;
+	
+	public String toString() {
+		return "agent:\t " + Control.getName(this);
+	}
 }

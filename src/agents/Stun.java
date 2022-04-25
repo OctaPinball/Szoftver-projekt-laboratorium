@@ -1,5 +1,6 @@
 package agents;
 
+import miscellaneous.Control;
 import miscellaneous.Logger;
 import movement.Movement;
 import movement.NormalMovement;
@@ -49,5 +50,9 @@ public class Stun extends Agent{
 	 */
 	public void interact() {
 		owner.learnAgent(this);
+	}
+	
+	public String toString() {
+		return "stun\t " + Control.getName(this);
 	}
 }

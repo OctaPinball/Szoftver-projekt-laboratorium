@@ -47,4 +47,11 @@ public class Laboratory extends Field{
 
 		Logger.exit(this, "addAgent", null);
 	}
+	
+	public String toString() {
+		return "name:\t " + Control.getName(this)
+				+ "type:\t laboratory"
+				+ "virologist:\t " + Control.getName(virologistOnField)
+				+ "equipment" + Control.getName(equipmentOnField);
+	}
 }
