@@ -329,4 +329,12 @@ public class Virologist implements Steppable{
 	public ArrayList<Agent> getActiveAgents(){
 		return activeagents;
 	}
+	
+	public String listV() {
+		return "";
+	}
+	
+	public String list(String s) {
+		return "";
+	}
 }

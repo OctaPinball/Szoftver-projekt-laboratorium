@@ -143,16 +143,37 @@ public class Control {
 			}
 		}
 		else if (cmd[0].equals("pickupequipment")) {
-
+			if(equipments.containsKey(cmd[1]) && RoundManager.getEntity().getEquipments().contains(equipments.get(cmd[1])))
+			{
+				equipments.get(cmd[1]).dropEquipment();
+			}
+			else
+			{
+				System.out.println("Invalid equipment name or the virologist doesn't possess the equipment!\n");
+			}
 		}
 		else if (cmd[0].equals("stealequipment")) {
 
 		}
 		else if (cmd[0].equals("list")) {
-
+			if(cmd[1] != null)
+			{
+				RoundManager.getEntity().list(null);
+			}
+			else
+			{
+				RoundManager.getEntity().list(cmd[1]);
+			}
 		}
 		else if (cmd[0].equals("listv")) {
-
+			if(virologists.containsKey(cmd[1]))
+			{
+				virologists.get(cmd[1]).listV();
+			}
+			else
+			{
+				System.out.println("Invalid virologist name!\n");
+			}
 		}
 		else if (cmd[0].equals("next") && cmd[1].equals("turn"))
 		{
