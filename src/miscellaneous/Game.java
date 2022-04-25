@@ -1,50 +1,55 @@
 package miscellaneous;
 
-public class Game {
-	private boolean randomEnabled;
+import java.util.ArrayList;
+import field.*;
 
+public class Game {
+	private static boolean randomEnabled;
+	private static ArrayList<Field> allFields;
+	
 
 	Game(){
 		this.setRandomEnabled(true);
+		allFields = new ArrayList<Field>();
 	}
 	
     /**
      * A játék elindításáért felelős függvény
      */
-	public void startGame() {
+	public static void startGame() {
 		
 	}
 	
     /**
      * A játék befejezéséért felelős függvény
      */
-	public void endGame() {
+	public static void endGame() {
 		
 	}
 	
-	public void generateFieldMap(int x, int y) {
-		
+	public static void generateFieldMap(int width, int height) {
+		//for(int i = 0; )
 	}
 	
     /**
      * A pálya legenerálásáért felelős: létrehozza a mezőket és beállítja azok szomszédait
      */
-	public void generateMap(int x, int y) {
+	public static void generateMap(int width, int height) {
 		
 	}
 	
     /**
      * Szétszór mindenféle különböző tárgyat és megtanulható genetikai kódot a játéktér megfelelő mezőire
      */
-	public void scatterObjects() {
+	public static void scatterObjects() {
 		
 	}
 
-	public boolean isRandomEnabled() {
+	public static boolean isRandomEnabled() {
 		return randomEnabled;
 	}
 
-	public void setRandomEnabled(boolean randomEnabled) {
-		this.randomEnabled = randomEnabled;
+	public static void setRandomEnabled(boolean newrandomEnabled) {
+		randomEnabled = newrandomEnabled;
 	}
 }
