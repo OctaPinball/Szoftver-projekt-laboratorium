@@ -17,7 +17,7 @@ public class Control {
 	private static HashMap<String, Equipment> equipments;
 	private static HashMap<String, Agent> agents;
 	private static HashMap<String, HashMap> hashmaps;
-	private static HashMap<String, String> safety;
+	private static HashMap<String, String> safety = new HashMap<String, String>();
 	
 	static
 	{
@@ -474,13 +474,13 @@ public class Control {
 		case "glove":
 			return new Glove();
 		case "field":
-			return new Field();
+			return new Field(0);
 		case "laboratory":
-			return new Laboratory();
+			return new Laboratory(0);
 		case "storage":
-			return new Storage();
+			return new Storage(0);
 		case "shelter":
-			return new Shelter();
+			return new Shelter(0);
 			
 		}
 		return null;
