@@ -23,7 +23,13 @@ public class Game {
 	
 	public static void generateFieldMap(int width, int height) {
 		for(int i = 0; i < height; i++) {
-			
+			for(int j = 0; j < width; j++) {
+				allFields.add(new Field(i*width + j));
+			}
+		}
+		
+		for(Field f : allFields) {
+			f.addNeighbor(f.);
 		}
 	}
 	

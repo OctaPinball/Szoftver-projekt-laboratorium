@@ -21,8 +21,9 @@ public class Field {
 	/**
 	 * A Field osztály konstruktora, területet foglal a mezõ szomszédainak
 	 */
-	public Field() {
+	public Field(int id) {
 		neighbors = new ArrayList<Field>();
+		this.id = id;
 	}
 
 	/**
