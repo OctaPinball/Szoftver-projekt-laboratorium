@@ -1,5 +1,7 @@
 package agents;
 
+
+import miscellaneous.Control;
 import miscellaneous.Logger;
 import movement.NormalMovement;
 import movement.Stunned;
@@ -47,5 +49,9 @@ public class BearAgent extends Agent{
 	 */
 	public void interact() throws CloneNotSupportedException {
 		this.cast(owner);
+	}
+	
+	public String toString() {
+		return "bear_agent:\t " + Control.getName(this);
 	}
 }

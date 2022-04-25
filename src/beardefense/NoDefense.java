@@ -1,16 +1,17 @@
 package beardefense;
 
+import agents.BearAgent;
 import miscellaneous.Virologist;
 
 public class NoDefense implements BearDefense{
 	
 	private final int priority = 0;
 
-	public void bearAttack(Virologist bear) {
+	public void bearAttack(Virologist bear, Virologist target) throws CloneNotSupportedException {
 
-		BearAgent ba;
+		BearAgent ba = new BearAgent();
 		
-		ba.cast(this);
+		ba.cast(target);
 		
 	}
 

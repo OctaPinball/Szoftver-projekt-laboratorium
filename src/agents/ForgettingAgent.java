@@ -1,5 +1,6 @@
 package agents;
 
+import miscellaneous.Control;
 import miscellaneous.Logger;
 
 /**
@@ -43,5 +44,9 @@ public class ForgettingAgent extends Agent{
 	 */
 	public void interact() {
 		owner.learnAgent(this);
+	}
+	
+	public String toString() {
+		return "forgetting_agent:\t " + Control.getName(this);
 	}
 }

@@ -8,13 +8,13 @@ public class BearDance extends RandomMovement{
 	
 	private final int priority = 3;
 	
-	public boolean move(Virologist v, Field target) {
+	public boolean move(Virologist v, Field target) throws CloneNotSupportedException {
 		
 		super.move(v, target);
 		
 		for(int i = 0; i < v.getField().getNeighbors().size(); i++) {
 			
-			v.getField().getNeighbors().get(i).getVirologist().bearAttack(v);
+			v.getDefense().bearAttack(v, v.getField().getNeighbors().get(i).getVirologist());
 		}
 		return true;
 	}

@@ -12,7 +12,6 @@ import equipment.*;
 import field.*;
 
 public class Control {
-	private static Game game;
 	private static HashMap<String, Virologist> virologists;
 	private static HashMap<String, Field> fields;
 	private static HashMap<String, Equipment> equipments;
@@ -39,7 +38,6 @@ public class Control {
 	
 	static
 	{
-		game = new Game();
 		virologists = new HashMap<String, Virologist>();
 		fields = new HashMap<String, Field>();
 		equipments = new HashMap<String, Equipment>();
@@ -214,11 +212,11 @@ public class Control {
 			{
 				if(cmd[4].equals("enable"))
 				{
-					game.setRandomEnabled(true);
+					Game.setRandomEnabled(true);
 				}
 				else if(cmd[4].equals("disable"))
 				{
-					game.setRandomEnabled(false);
+					Game.setRandomEnabled(false);
 				}
 			}
 			else if(cmd[3].equals("generatemap"))
@@ -227,7 +225,7 @@ public class Control {
 				xy = cmd[4].split("x");
 				int x = Integer.parseInt(xy[0]);
 				int y = Integer.parseInt(xy[1]);
-				game.generateFieldMap(x,y);
+				Game.generateFieldMap(x,y);
 			}
 			else if(cmd[3].equals("generaterandommap"))
 			{
@@ -235,8 +233,8 @@ public class Control {
 				xy = cmd[4].split("x");
 				int x = Integer.parseInt(xy[0]);
 				int y = Integer.parseInt(xy[1]);
-				game.generateMap(x,y);
-				game.scatterObjects();
+				Game.generateMap(x,y);
+				Game.scatterObjects();
 			}
 		}
 		else if (cmd[3].equals("create")) {
