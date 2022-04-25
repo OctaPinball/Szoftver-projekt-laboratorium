@@ -17,4 +17,6 @@ public interface Movement {
 	
 	public abstract boolean move(Virologist v, Field target) throws CloneNotSupportedException;
 
+	public abstract int getPriority();
+
 }

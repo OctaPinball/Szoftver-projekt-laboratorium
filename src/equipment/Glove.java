@@ -24,7 +24,11 @@ public class Glove extends Equipment{
 
         Logger.enter(this, "getEffect", null);
 
-        wearer.setBlock(new BlockAndReturn());
+        BlockAndReturn bar = new BlockAndReturn();
+        
+        if(bar.getPriority() > wearer.getBlock().getPriority())
+			wearer.setBlock(bar);
+        
         Logger.register(wearer.getBlock(), "bar"+i);
 
         Logger.exit(this, "getEffect", null);

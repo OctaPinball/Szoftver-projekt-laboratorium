@@ -14,5 +14,7 @@ public interface FillMaterial {
      */
 
 	public abstract void fillMaterial(Virologist v);
+
+	public abstract int getPriority();
 	
 }

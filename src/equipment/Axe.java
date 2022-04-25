@@ -18,8 +18,11 @@ public class Axe extends Equipment{
 	public void getEffect() {
 		Logger.enter(this, "getEffect", null);
 
-        wearer.setBearDefense(new Defense());
+		Defense d = new Defense();
 
+        if(d.getPriority() > wearer.getDefense().getPriority())
+			wearer.setDefense(d);
+        
         Logger.exit(this, "getEffect", null);
 	}
 
