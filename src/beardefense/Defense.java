@@ -11,8 +11,13 @@ public class Defense implements BearDefense{
 		
 		target.getEquipments();
 		for(int i = 0; i < target.getEquipments().size(); i++) {
-			if(target.getEquipments().get(i).equals(Axe.class))
-				(Axe)target.getEquipments().get(i).usedLife();
+			if(target.getEquipments().get(i).equals(Axe.class)) {
+				
+				target.getEquipments().get(i).usedLife();
+				target.getEquipments().get(i).loseEffect();
+				bear.Die();
+				
+			}
 		}
 		bear.Die();
 		

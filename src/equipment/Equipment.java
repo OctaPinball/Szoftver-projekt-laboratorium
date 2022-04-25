@@ -93,6 +93,10 @@ public abstract class Equipment {
     	this.currentField = currentField;
     }
     
+    public void usedLife(){
+    	
+    }
+    
     public String toString() {
 		return "equipment:\t " + Control.getName(this);
 	}

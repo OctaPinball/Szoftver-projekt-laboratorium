@@ -1,5 +1,6 @@
 package equipment;
 
+import beardefense.*;
 import block.BlockAndReturn;
 import block.NoBlock;
 import fillmaterial.IncreasedMatter;
