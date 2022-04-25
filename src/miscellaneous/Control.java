@@ -226,11 +226,19 @@ public class Control {
 			}
 			else if(cmd[3].equals("generatemap"))
 			{
-				game.generateFieldMap();
+				String[] xy;
+				xy = cmd[4].split("x");
+				int x = Integer.parseInt(xy[0]);
+				int y = Integer.parseInt(xy[1]);
+				game.generateFieldMap(x,y);
 			}
 			else if(cmd[3].equals("generaterandommap"))
 			{
-				game.generateMap();
+				String[] xy;
+				xy = cmd[4].split("x");
+				int x = Integer.parseInt(xy[0]);
+				int y = Integer.parseInt(xy[1]);
+				game.generateMap(x,y);
 				game.scatterObjects();
 			}
 		}
