@@ -10,6 +10,7 @@ import equipment.*;
 import field.*;
 import fillmaterial.*;
 import movement.*;
+import beardefense.*;
 
 /**
  * Ezek a j�t�kosok �ltal ir�ny�tott karakterek, ezeken kereszt�l tud a j�t�kos a j�t�kon bel�l cselekedni. 
@@ -253,7 +254,7 @@ public class Virologist implements Steppable{
 		this.movement = movement;
 	}
 	
-	public void getDefense() {
+	public BearDefense getDefense() {
 		return defense;
 	}
 	
