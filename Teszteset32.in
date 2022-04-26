@@ -1,6 +1,8 @@
 operator v v_1 create
 operator a p_1 create protection
 operator f lab_1 create laboratory
+operator f f_1 create
+operator f f_1 move lab_1
 operator a p_1 move lab_1
 move lab_1
 list activeagent
