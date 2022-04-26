@@ -173,7 +173,7 @@ public class Control {
 			}
 		}
 		else if (cmd[0].equals("list")) {
-			if(cmd[1] != null)
+			if(cmd[1] == null)
 			{
 				RoundManager.getEntity().list(null);
 			}

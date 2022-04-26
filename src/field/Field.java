@@ -171,10 +171,10 @@ public class Field {
 	}
 
 	public String toString() {
-		return "name:\t " + Control.getName(this)
-				+ "type:\t field"
-				+ "virologist:\t " + Control.getName(virologistOnField)
-				+ "equipment" + Control.getName(equipmentOnField);
+		return "name:\t\t" + Control.getName(this)
+				+ "\ntype:\t\tfield"
+				+ "\nvirologist:\t" + Control.getName(virologistOnField)
+				+ "\nequipment:\t" + Control.getName(equipmentOnField);
 	}
 	
 	public String printName() {
