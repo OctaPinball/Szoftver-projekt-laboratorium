@@ -80,6 +80,7 @@ public class Virologist implements Steppable{
 		{
 			Agent newAgent = a.makeCopy();
 			agents.add(newAgent);
+			Control.getHashMap("a").put(Control.getKey(Control.getHashMap("a"), a) + "_copy", newAgent);
 			newAgent.setOwner(this);
 		}
 		Logger.exit(this, "learnAgent", null);
@@ -389,6 +390,17 @@ public class Virologist implements Steppable{
 
 			String out = RoundManager.getEntity().getField().toString();
 			System.out.println("field");
+			System.out.println(out);
+			return;
+		}
+		if(s.equals("activeagent"))
+		{
+			String out = "";
+			for(Agent a : RoundManager.getEntity().getActiveAgents())
+			{
+				out = a.toStringA() + "\n";
+			}
+			System.out.println("activeagents");
 			System.out.println(out);
 			return;
 		}

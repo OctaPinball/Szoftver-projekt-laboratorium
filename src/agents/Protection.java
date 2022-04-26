@@ -57,4 +57,8 @@ public class Protection extends Agent{
 	public String toString() {
 		return "protection:\t " + Control.getName(this);
 	}
+	
+	public String toStringA() {
+		return "protection:\t " + Control.getName(this) + "\ttimetolive: " + this.effecttime + " round(s)";
+	}
 }

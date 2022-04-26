@@ -14,7 +14,7 @@ import miscellaneous.Virologist;
 public abstract class Agent {
 	private int acidcost;
 	private int nucleotidecost;
-	private int effecttime;
+	protected int effecttime;
 	protected Virologist owner;
 	
 
@@ -96,6 +96,10 @@ public abstract class Agent {
 	
 	public String toString() {
 		return "agent:\t " + Control.getName(this);
+	}
+	
+	public String toStringA() {
+		return "agent:\t " + Control.getName(this) + "\ttimetolive: " + this.effecttime + " round(s)";
 	}
 
 	

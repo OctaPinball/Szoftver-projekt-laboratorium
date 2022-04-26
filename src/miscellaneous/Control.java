@@ -124,7 +124,7 @@ public class Control {
 				Virologist target = virologists.get(cmd[1]);
 				if(neighbors.contains(target.getField()))
 				{
-					if(agents.containsKey(cmd[2]) && RoundManager.getEntity().getAgents().contains(agents.containsKey(cmd[2])))
+					if(agents.containsKey(cmd[2]) && RoundManager.getEntity().getAgents().contains(agents.get(cmd[2])))
 					{
 						agents.get(cmd[2]).cast(target);
 					}
