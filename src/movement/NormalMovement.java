@@ -1,5 +1,6 @@
 package movement;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import field.Field;
@@ -17,9 +18,11 @@ public class NormalMovement implements Movement{
      * A paraméterként kapott virológus szeretne átlépni a paraméterként kapott mezőre
      * @param v, a virológus, aki szeretne ellépni
      * @param target, a mező, ahova lépni szeretne
+     * @throws IOException 
+     * @throws CloneNotSupportedException 
      */
 	
-	public boolean move(Virologist v, Field target) {
+	public boolean move(Virologist v, Field target) throws CloneNotSupportedException, IOException {
 		
 		ArrayList<Object> par = new ArrayList<>(); par.add(v); par.add(target);
 		Logger.enter(this, "move", par);

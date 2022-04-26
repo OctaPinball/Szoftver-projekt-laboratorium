@@ -1,5 +1,6 @@
 package agents;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import miscellaneous.Control;
@@ -27,8 +28,9 @@ public abstract class Agent {
 	 * Elkészítéséhez szükséges a megfelelõ ágens ismerete és a szükséges mennyiségû aminosav/nukleotid.
 	 * @param target		a célpont virológus
 	 * @param i				az ágens kenésének száma (a visszakenésnél van szerepe, mert csak egyszer lehet visszakenni a kesztyûvel)
+	 * @throws IOException 
 	 */
-	public void cast(Virologist target) throws CloneNotSupportedException {
+	public void cast(Virologist target) throws CloneNotSupportedException, IOException {
 		ArrayList<Object> par = new ArrayList<>(); par.add(target);
 		Logger.enter(this, "cast", par);
 		if(owner != null)
@@ -94,8 +96,9 @@ public abstract class Agent {
 	/**
 	 * Absztrakt metódus, amely megvizsgálja, hogy medvetánc "megtanulásáról" van-e szó. Azaz a BearAgent egybõl aktiválódik.
 	 * @throws CloneNotSupportedException 
+	 * @throws IOException 
 	 */
-	public abstract void interact() throws CloneNotSupportedException;
+	public abstract void interact() throws CloneNotSupportedException, IOException;
 	
 	public String toString() {
 		return "agent:\t\t" + Control.getName(this);

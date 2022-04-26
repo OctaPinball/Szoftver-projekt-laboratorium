@@ -1,6 +1,8 @@
 package agents;
 
 
+import java.io.IOException;
+
 import miscellaneous.Control;
 import miscellaneous.Logger;
 import movement.NormalMovement;
@@ -46,8 +48,9 @@ public class BearAgent extends Agent{
 	/**
 	 * Aktiválódik a BearAgent.
 	 * @throws CloneNotSupportedException 
+	 * @throws IOException 
 	 */
-	public void interact() throws CloneNotSupportedException {
+	public void interact() throws CloneNotSupportedException, IOException {
 		this.cast(owner);
 	}
 	

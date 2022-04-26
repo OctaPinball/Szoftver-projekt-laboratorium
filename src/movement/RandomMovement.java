@@ -1,5 +1,6 @@
 package movement;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -19,9 +20,10 @@ public class RandomMovement implements Movement{
      * @param v, a virológus, aki szeretne ellépni
      * @param target, itt nincs jelentősége
      * @throws CloneNotSupportedException 
+     * @throws IOException 
      */
 	
-	public boolean move(Virologist v, Field target) throws CloneNotSupportedException {
+	public boolean move(Virologist v, Field target) throws CloneNotSupportedException, IOException {
 		ArrayList<Object> par = new ArrayList<>(); par.add(v); par.add(target);
 		Logger.enter(this, "move", par);
 		

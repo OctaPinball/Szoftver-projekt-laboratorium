@@ -52,7 +52,15 @@ public class Control {
 	private static InputStreamReader isr =	new InputStreamReader(System.in);
 	private static BufferedReader br = new BufferedReader(isr);
 
-
+	public static boolean getBoolean() throws IOException {
+		String line;
+		line = br.readLine();
+		if(line.equals("true"))
+			return true;
+		if(line.equals("false"))
+			return false;
+		return false;
+	}
 	
 	public static void runControl() throws IOException, CloneNotSupportedException {
 		while (true) {
@@ -66,7 +74,7 @@ public class Control {
 
 	}
 	
-	private static void runCommand(String cmdline) throws CloneNotSupportedException {
+	private static void runCommand(String cmdline) throws CloneNotSupportedException, IOException {
 		//Ha üres sort kaptunk, ignoráljuk
 		//Emiatt áttekinthetõbb bemeneteket lehet csinálni
 		if (cmdline.equals("")) return;

@@ -1,5 +1,6 @@
 package field;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import miscellaneous.*;
 import equipment.*;
@@ -127,8 +128,10 @@ public class Field {
 	 * Akkor hívódik, ha egy virológus rálép a mezõre, ekkor további függvényhívásokon keresztül
 	 * hozzáadja azt a mezõhöz és a virológus jelenlegi pozícióját is frissíti
 	 * @param virologist		a mezõre lépõ virológus
+	 * @throws IOException 
+	 * @throws CloneNotSupportedException 
 	 */
-	public void stepOn(Virologist virologist) {
+	public void stepOn(Virologist virologist) throws CloneNotSupportedException, IOException {
 		ArrayList<Object> par = new ArrayList<Object>();
 		par.add(virologist);
 		Logger.enter(this, "stepOn", par);

@@ -1,11 +1,16 @@
 operator g game random disable
 operator v v_1 create
 operator v v_2 create
+operator f f_1 create
+operator f f_2 create
+operator v v_1 move f_1
+operator v v_2 move f_2
+operator f f_1 move f_2
 operator a s_1 create stun
 operator e c_1 create cape
 operator a s_1 move v_1 learn
-operator a c_1 move v_2
-cast v_2 s_1
+operator e c_1 move v_2
+cast v_2 s_1_copy
 false
 next turn
 list activeagent

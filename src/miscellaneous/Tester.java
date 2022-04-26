@@ -1,5 +1,6 @@
 package miscellaneous;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import agents.*;
@@ -11,7 +12,7 @@ import movement.*;
 
 public class Tester {
 
-	public void runTest() throws CloneNotSupportedException{
+	public void runTest() throws CloneNotSupportedException, IOException{
 		Scanner sc = new Scanner(System.in);
 		int esetszam;
 
@@ -94,7 +95,7 @@ public class Tester {
 
 
 	
-	public void stepOnStorageWithIncreasedMatter() throws CloneNotSupportedException {
+	public void stepOnStorageWithIncreasedMatter() throws CloneNotSupportedException, IOException {
 		// Inicializáslás
 		Sack sc = new Sack();
 		Shelter s = new Shelter(0);
@@ -121,7 +122,7 @@ public class Tester {
 		v.getMovement().move(v, s);
 	}
 
-	public void castForgettingAgent() throws CloneNotSupportedException {
+	public void castForgettingAgent() throws CloneNotSupportedException, IOException {
 		// Inicializálás
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
@@ -138,7 +139,7 @@ public class Tester {
 		fa.cast(v2);
 	}
 	
-	public void castStun() throws CloneNotSupportedException {
+	public void castStun() throws CloneNotSupportedException, IOException {
 		// Inicializáslás
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
@@ -201,7 +202,7 @@ public class Tester {
 		c.dropEquipment();
 	}
 
-	public void blockAndReturn() throws CloneNotSupportedException {
+	public void blockAndReturn() throws CloneNotSupportedException, IOException {
 		///Inicializáslás
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
@@ -227,7 +228,7 @@ public class Tester {
 		c.cast(v2);
 	}
 
-	public void partialBlockTrue() throws CloneNotSupportedException {
+	public void partialBlockTrue() throws CloneNotSupportedException, IOException {
 		///Inicializáslás
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
@@ -251,7 +252,7 @@ public class Tester {
 		ch.cast(v2);
 	}
 
-	public void fullBlockTrue() throws CloneNotSupportedException {
+	public void fullBlockTrue() throws CloneNotSupportedException, IOException {
 		///Inicializáslás
 		Virologist v1 = new Virologist();
 		Stun st = new Stun();
@@ -297,7 +298,7 @@ public class Tester {
 		v1.stealEquipment(cape, v2);
 	}
 
-	public void partialBlockFalse() throws CloneNotSupportedException {
+	public void partialBlockFalse() throws CloneNotSupportedException, IOException {
 		// Inicializálás
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
@@ -320,7 +321,7 @@ public class Tester {
 		fa.cast(v2);
 	}
 
-	public void virologistStepOnStorage() throws CloneNotSupportedException {
+	public void virologistStepOnStorage() throws CloneNotSupportedException, IOException {
 		// Inicializáslás
 		Virologist v = new Virologist();
 		Storage storage = new Storage(0);
@@ -342,7 +343,7 @@ public class Tester {
 		
 	}
 
-	public void virologistStepOnShelter() throws CloneNotSupportedException {
+	public void virologistStepOnShelter() throws CloneNotSupportedException, IOException {
 		// Inicializáslás
 		Virologist v = new Virologist();
 		Shelter shelter = new Shelter(0);
@@ -363,7 +364,7 @@ public class Tester {
 		v.getMovement().move(v, shelter);
 	}
 
-	public void virologistStepOnField() throws CloneNotSupportedException {
+	public void virologistStepOnField() throws CloneNotSupportedException, IOException {
 		///Inicializáslás
 		Virologist v = new Virologist();
 		Field f1 = new Field(0);
@@ -384,7 +385,7 @@ public class Tester {
 		v.getMovement().move(v,f2);
 	}
 
-	public void selfCast() throws CloneNotSupportedException {
+	public void selfCast() throws CloneNotSupportedException, IOException {
 		///Inicializáslás
 		Virologist v = new Virologist();
 		Protection p = new Protection();
@@ -418,7 +419,7 @@ public class Tester {
 		g.pickupEquipment(v);
 	}
 
-	public void doubleBlockAndReturn() throws CloneNotSupportedException {
+	public void doubleBlockAndReturn() throws CloneNotSupportedException, IOException {
 		///Inicializáslás
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
@@ -483,7 +484,7 @@ public class Tester {
 		g2.pickupEquipment(v);
 	}
 
-	public void learnChorea() {
+	public void learnChorea() throws CloneNotSupportedException, IOException {
 		///Inicializáslás
 		Virologist v = new Virologist();
 		Chorea c = new Chorea();

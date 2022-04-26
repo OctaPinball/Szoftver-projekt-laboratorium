@@ -1,5 +1,7 @@
 package block;
 
+import java.io.IOException;
+
 import agents.Agent;
 import miscellaneous.Virologist;
 
@@ -16,8 +18,9 @@ public interface Block {
 	 * @param a, a támadásnál használt ágens
 	 * @return
 	 * @throws CloneNotSupportedException
+	 * @throws IOException 
 	 */
-	public abstract boolean block(Virologist s, Virologist t, Agent a) throws CloneNotSupportedException;
+	public abstract boolean block(Virologist s, Virologist t, Agent a) throws CloneNotSupportedException, IOException;
 
 	public abstract int getPriority();
 	

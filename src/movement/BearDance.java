@@ -1,5 +1,7 @@
 package movement;
 
+import java.io.IOException;
+
 import field.Field;
 import field.Storage;
 import miscellaneous.Virologist;
@@ -8,7 +10,7 @@ public class BearDance extends RandomMovement{
 	
 	private final int priority = 3;
 	
-	public boolean move(Virologist v, Field target) throws CloneNotSupportedException {
+	public boolean move(Virologist v, Field target) throws CloneNotSupportedException, IOException {
 		
 		super.move(v, target);
 		

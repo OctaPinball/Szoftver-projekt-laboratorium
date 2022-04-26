@@ -1,5 +1,6 @@
 package field;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import miscellaneous.*;
@@ -16,9 +17,11 @@ public class Storage extends Field{
 	/**
 	 * A Field osztály stepOn függvényét kiegészíti, azzal hogy feltölti a virológus összes nyersanyag készletét
 	 * @param virologist		a mezõre lépõ virológus
+	 * @throws IOException 
+	 * @throws CloneNotSupportedException 
 	 */
 	@Override
-	public void stepOn(Virologist virologist) {
+	public void stepOn(Virologist virologist) throws CloneNotSupportedException, IOException {
 		ArrayList<Object> par = new ArrayList<Object>();
 		par.add(virologist);
 		Logger.enter(this, "stepOn", par);

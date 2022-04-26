@@ -419,19 +419,19 @@ public class Virologist{
 		}
 		if(s.equals("equipment"))
 		{
-			String out = "";
+			String out = "equipment";
 			int k = 0;
 			for(Equipment e : RoundManager.getEntity().getEquipments())
 			{
 				k++;
-				out += "slot_" + k + ":\t\t" + e.toString() + "\n";
+				out += "\nslot_" + k + ":\t\t" + e.toString();
 			}
 			while(k < 3)
 			{
 				k++;
-				out += "slot_" + k + ":\n";
+				out += "\nslot_" + k + ":";
 			}
-			System.out.println("equipment");
+			out += "\n";
 			System.out.println(out);
 			return;
 		}

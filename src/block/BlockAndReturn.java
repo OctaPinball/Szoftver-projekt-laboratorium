@@ -1,5 +1,6 @@
 package block;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import agents.Agent;
@@ -28,8 +29,9 @@ public class BlockAndReturn implements Block{
 	 * @param a, a támadásnál használt ágens
 	 * @return result
 	 * @throws CloneNotSupportedException
+	 * @throws IOException 
 	 */
-	public boolean block(Virologist s, Virologist t, Agent a) throws CloneNotSupportedException {
+	public boolean block(Virologist s, Virologist t, Agent a) throws CloneNotSupportedException, IOException {
 
 		ArrayList<Object> par = new ArrayList<>(); par.add(s); par.add(t); par.add(a);
 		Logger.enter(this, "block", par);
