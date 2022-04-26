@@ -1,9 +1,4 @@
 block: true/false
 
-<<<<<<< HEAD
- activeagent
- protection:		timetolive:	2
-=======
 activeagent
-protection: 		timetolive: 2
->>>>>>> branch 'main' of https://github.com/OctaPinball/Szoftver-projekt-laboratorium.git
+protection:		timetolive:	2
