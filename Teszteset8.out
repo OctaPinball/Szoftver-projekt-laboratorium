@@ -1,10 +1,10 @@
 f_2/f_3
 
 field
-name: f_2
-type: field
-virologist: v_1
-equipment: none
+name: 		f_2
+type:		field
+virologist: 	v_1
+equipment: 	none
 
 activeagent
-chorea: chorea_2 timetolive: 2 rounds
+chorea: 		chorea_2 timetolive: 2 rounds
