@@ -86,6 +86,7 @@ public class Virologist implements Steppable{
 		Logger.exit(this, "learnAgent", null);
 	}
 	
+	
 	public boolean learnallAgent() {
 		boolean know[] = {false, false, false, false};
 		
