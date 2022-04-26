@@ -145,13 +145,13 @@ public class Control {
 		}
 		}
 		else if (cmd[0].equals("pickupequipment")) {
-			if(equipments.containsKey(cmd[1]) && RoundManager.getEntity().getEquipments().contains(equipments.get(cmd[1])))
+			if(equipments.containsKey(cmd[1]) && RoundManager.getEntity().getField().getEquipment().equals(equipments.get(cmd[1])))
 			{
-				equipments.get(cmd[1]).dropEquipment();
+				equipments.get(cmd[1]).pickupEquipment(RoundManager.getEntity());
 			}
 			else
 			{
-				System.out.println("Invalid equipment name or the virologist doesn't possess the equipment!\n");
+				System.out.println("Invalid equipment name or the field doesn't possess the equipment!\n");
 			}
 		}
 		else if (cmd[0].equals("stealequipment")) {
