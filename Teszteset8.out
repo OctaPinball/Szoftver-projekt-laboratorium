@@ -4,7 +4,7 @@ field
 name: 		f_2
 type:		field
 virologist: 	v_1
-equipment: 	none
+equipment: 	
 
 activeagent
 chorea: 		chorea_2 timetolive: 2 rounds
