@@ -47,7 +47,7 @@ public class ForgettingAgent extends Agent{
 	}
 	
 	public String toString() {
-		return "forgetting_agent:\t " + Control.getName(this);
+		return "forgetting_agent:\t\t " + Control.getName(this);
 	}
 	
 	public String toStringA() {
