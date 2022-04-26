@@ -58,6 +58,6 @@ public class Glove extends Equipment{
 	}
     
     public String toString() {
-		return "glove\t " + Control.getName(this);
+		return "glove\t\t" + Control.getName(this);
 	}
 }

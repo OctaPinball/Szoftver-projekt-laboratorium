@@ -98,7 +98,7 @@ public abstract class Equipment {
     }
     
     public String toString() {
-		return "equipment\t " + Control.getName(this);
+		return "equipment\t\t" + Control.getName(this);
 	}
 
 

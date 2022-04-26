@@ -398,7 +398,7 @@ public class Virologist implements Steppable{
 			String out = "";
 			for(Agent a : RoundManager.getEntity().getActiveAgents())
 			{
-				out = a.toStringA() + "\n";
+				out += a.toStringA() + "\n";
 			}
 			System.out.println("activeagents");
 			System.out.println(out);
@@ -409,7 +409,7 @@ public class Virologist implements Steppable{
 			String out = "";
 			for(Agent a : RoundManager.getEntity().getAgents())
 			{
-				out = a.toString() + "\n";
+				out += a.toString() + "\n";
 			}
 			System.out.println("agent");
 			System.out.println(out);
@@ -422,7 +422,12 @@ public class Virologist implements Steppable{
 			for(Equipment e : RoundManager.getEntity().getEquipments())
 			{
 				k++;
-				out = "slot_" + k + ":\t" + e.toString() + "\n";
+				out += "slot_" + k + ":\t\t" + e.toString() + "\n";
+			}
+			while(k < 3)
+			{
+				k++;
+				out += "slot_" + k + ":\n";
 			}
 			System.out.println("equipment");
 			System.out.println(out);
