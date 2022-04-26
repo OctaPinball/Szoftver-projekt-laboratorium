@@ -76,6 +76,10 @@ public class Control {
 		String cmd[];
 		cmd = cmdline.split(" ");
 		
+		if(RoundManager.getEntity() == null)
+		{
+			RoundManager.nextRound();
+		}
 		
 		//Parancs értelmezés, és a szükséges függvény meghívása
 		if (cmd[0].equals("operator")) {			
@@ -246,6 +250,7 @@ public class Control {
 					{
 						Virologist v = new Virologist();
 						virologists.put(cmd[2], v);
+						RoundManager.addEntity(v);
 					}
 					else
 					{
@@ -415,6 +420,15 @@ public class Control {
 				return;
 			}
 		}
+		else if(cmd[1].equals("f"))
+		{
+			if(fields.containsKey(cmd[2]) && fields.containsKey(cmd[2]))
+			{
+				fields.get(cmd[2]).addNeighbor(fields.get(cmd[4]));
+				fields.get(cmd[4]).addNeighbor(fields.get(cmd[2]));
+				return;
+			}
+		}
 		System.out.println("Invalid move command! Check the given type and names!\n");
 	}
 	
@@ -437,7 +451,7 @@ public class Control {
 	}
 	
 	public static boolean checkSafeName(String input) {
-		if(getObject(input) == null)
+		if(getObject(input) != null)
 		{
 			System.out.println("Invalid name! The given name is already taken, choose another one!\n");
 			return false;

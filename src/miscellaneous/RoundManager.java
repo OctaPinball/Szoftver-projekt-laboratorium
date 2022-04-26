@@ -3,11 +3,20 @@ package miscellaneous;
 import java.util.ArrayList;
 
 public class RoundManager {
-	private static ArrayList<Virologist> entity;
+	private static ArrayList<Virologist> entity = new ArrayList<Virologist>();
 	private static Virologist currentEntity;
 	
 	
 	public static void nextRound() {
+		if(currentEntity == null && !entity.isEmpty())
+		{
+			currentEntity = entity.get(0);
+			return;
+		}
+		if(currentEntity == null)
+		{
+			return;
+		}
 		int currentIndex = entity.indexOf(currentEntity);
 		if(currentIndex == entity.size() - 1)
 		{
