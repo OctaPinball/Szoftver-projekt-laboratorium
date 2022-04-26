@@ -384,7 +384,7 @@ public class Virologist{
 	public void list(String s) {
 		if(s == null)
 		{
-			System.out.println("jezj");
+			System.out.println("jezj"); // ????
 		}
 		if(s.equals("field"))
 		{
@@ -431,6 +431,10 @@ public class Virologist{
 			System.out.println("equipment");
 			System.out.println(out);
 			return;
+		}
+		if(s.equals("material"))
+		{
+			System.out.println("material\naminoacid:\t" + aminoacid + "\nnukleotid:\t" + nucleotide);
 		}
 		return;
 	}

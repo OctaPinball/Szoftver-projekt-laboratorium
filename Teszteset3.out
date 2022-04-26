@@ -3,3 +3,6 @@ name:		fto
 type:		storage
 virologist:	virologist
 equipment:	
+material
+aminoacid:	100
+nukleotid:	100

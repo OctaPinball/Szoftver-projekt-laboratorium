@@ -10,8 +10,8 @@ import miscellaneous.Virologist;
  */
 public class IncreasedMatter implements FillMaterial{
 	
-	private static int incAminoacid = 100;
-	private static int incNucleotide = 100;
+	private static int incAminoacid = 125;
+	private static int incNucleotide = 125;
 	
 	private final int priority = 1;
 
