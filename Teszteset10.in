@@ -3,6 +3,6 @@ operator f f_1 create field
 operator e cape_1 create cape
 operator e cape_1 move f_1
 operator v v_1 move f_1
-pickequipment cape_1
+pickupequipment cape_1
 list equipment
 list field

@@ -38,4 +38,6 @@ if ($args.Count -eq 0) {
 } else {
     echo "Wrong number of arguments!"
 }
+Write-Host "Press any key to continue..."
+$Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 

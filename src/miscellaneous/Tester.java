@@ -94,12 +94,12 @@ public class Tester {
 
 
 	
-	public void stepOnStorageWithIncreasedMatter() {
+	public void stepOnStorageWithIncreasedMatter() throws CloneNotSupportedException {
 		// Inicializáslás
 		Sack sc = new Sack();
-		Shelter s = new Shelter();
+		Shelter s = new Shelter(0);
 		Virologist v = new Virologist();
-		Field f = new Field();
+		Field f = new Field(0);
 		v.changeField(f);
 		f.spawnEquipment(sc);
 		sc.pickupEquipment(v);
@@ -158,7 +158,7 @@ public class Tester {
 	public void dropEmptyField() {
 		// Inicializáslás
 		Virologist v = new Virologist();
-		Field f = new Field();
+		Field f = new Field(0);
 		Cape c = new Cape();
 		v.changeField(f);
 		f.addVirologist(v);
@@ -180,7 +180,7 @@ public class Tester {
 	public void dropNotEmptyField() {
 		// Inicializáslás
 		Virologist v = new Virologist();
-		Field f = new Field();
+		Field f = new Field(0);
 		Cape c = new Cape();
 		Glove g = new Glove();
 		v.changeField(f);
@@ -205,7 +205,7 @@ public class Tester {
 		///Inicializáslás
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
-		Field f1 = new Field();
+		Field f1 = new Field(0);
 		Glove g = new Glove();
 		BlockAndReturn bar = new BlockAndReturn();
 		Chorea c = new Chorea();
@@ -231,7 +231,7 @@ public class Tester {
 		///Inicializáslás
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
-		Field f = new Field();
+		Field f = new Field(0);
 		Cape c = new Cape();
 		Chorea ch = new Chorea();
 		v2.changeField(f);
@@ -270,8 +270,8 @@ public class Tester {
 
 	public void stealEquipment() {
 		// Inicializáslás
-		Field f1 = new Field();
-		Field f2 = new Field();
+		Field f1 = new Field(0);
+		Field f2 = new Field(0);
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
 		Cape cape = new Cape();
@@ -302,7 +302,7 @@ public class Tester {
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
 		ForgettingAgent fa = new ForgettingAgent();
-		Field f = new Field();
+		Field f = new Field(0);
 		Cape cape = new Cape();
 		f.spawnEquipment(cape);
 		f.addVirologist(v2);
@@ -320,11 +320,11 @@ public class Tester {
 		fa.cast(v2);
 	}
 
-	public void virologistStepOnStorage() {
+	public void virologistStepOnStorage() throws CloneNotSupportedException {
 		// Inicializáslás
 		Virologist v = new Virologist();
-		Storage storage = new Storage();
-		Field field = new Field();
+		Storage storage = new Storage(0);
+		Field field = new Field(0);
 		field.addNeighbor(storage);
 		storage.addNeighbor(field);
 		field.addVirologist(v);
@@ -342,11 +342,11 @@ public class Tester {
 		
 	}
 
-	public void virologistStepOnShelter() {
+	public void virologistStepOnShelter() throws CloneNotSupportedException {
 		// Inicializáslás
 		Virologist v = new Virologist();
-		Shelter shelter = new Shelter();
-		Field field = new Field();
+		Shelter shelter = new Shelter(0);
+		Field field = new Field(0);
 		field.addNeighbor(shelter);
 		shelter.addNeighbor(field);
 		field.addVirologist(v);
@@ -363,11 +363,11 @@ public class Tester {
 		v.getMovement().move(v, shelter);
 	}
 
-	public void virologistStepOnField() {
+	public void virologistStepOnField() throws CloneNotSupportedException {
 		///Inicializáslás
 		Virologist v = new Virologist();
-		Field f1 = new Field();
-		Field f2 = new Field();
+		Field f1 = new Field(0);
+		Field f2 = new Field(0);
 		f1.addNeighbor(f2);
 		f2.addNeighbor(f1);
 		f1.addVirologist(v);
@@ -403,7 +403,7 @@ public class Tester {
 		///Inicializáslás
 		Virologist v = new Virologist();
 		Glove g = new Glove();
-		Field f = new Field();
+		Field f = new Field(0);
 		f.addVirologist(v);
 		v.changeField(f);
 		f.spawnEquipment(g);
@@ -422,8 +422,8 @@ public class Tester {
 		///Inicializáslás
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
-		Field f1 = new Field();
-		Field f2 = new Field();
+		Field f1 = new Field(0);
+		Field f2 = new Field(0);
 		Glove g1 = new Glove();
 		Glove g2 = new Glove();
 		Chorea c = new Chorea();
@@ -458,7 +458,7 @@ public class Tester {
 		Glove g1 = new Glove();
 		Glove g2 = new Glove();
 		Sack s = new Sack();
-		Field f1 = new Field();
+		Field f1 = new Field(0);
 
 		f1.spawnEquipment(c);
 		c.pickupEquipment(v);
@@ -487,7 +487,7 @@ public class Tester {
 		///Inicializáslás
 		Virologist v = new Virologist();
 		Chorea c = new Chorea();
-		Laboratory l = new Laboratory();
+		Laboratory l = new Laboratory(0);
 
 		v.changeField(l);
 		l.addAgent(c);
@@ -508,7 +508,7 @@ public class Tester {
 		Virologist v = new Virologist();
 		Stun stun = new Stun();
 		Stunned s = new Stunned();
-		Field target = new Field();
+		Field target = new Field(0);
 
 		v.addActiveAgent(stun);
 

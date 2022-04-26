@@ -1,5 +1,5 @@
 field
-name: fto
-type: storage
-virologist: virologist
-equipment:
+name:		fto
+type:		storage
+virologist:	virologist
+equipment:	

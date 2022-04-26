@@ -53,6 +53,10 @@ public class Stun extends Agent{
 	}
 	
 	public String toString() {
-		return "stun\t " + Control.getName(this);
+		return "stun:\t\t" + Control.getName(this);
+	}
+	
+	public String toStringA() {
+		return "stun:\t" + Control.getName(this) + "\ttimetolive:\t" + this.effecttime + " round(s)";
 	}
 }

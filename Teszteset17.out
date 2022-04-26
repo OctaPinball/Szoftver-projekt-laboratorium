@@ -4,7 +4,7 @@ slot_2:
 slot_3:
 
 field
-name: f_1
-type: field
-virologist: v_1
-equipment: axe_1
+name:		f_1
+type:		field
+virologist:	v_1
+equipment:	axe_1

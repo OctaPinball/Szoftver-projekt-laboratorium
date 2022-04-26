@@ -41,7 +41,8 @@ public class Chorea extends Agent{
 	 * @return		az ágens másolata
 	 */
 	public Agent makeCopy() {
-		return (Agent) new Chorea();
+		Agent a = (Agent) new Chorea();				
+		return a;
 	}
 	
 	/**
@@ -52,6 +53,10 @@ public class Chorea extends Agent{
 	}
 	
 	public String toString() {
-		return "chorea:\t " + Control.getName(this);
+		return "chorea:\t\t" + Control.getName(this);
+	}
+	
+	public String toStringA() {
+		return "chorea:\t" + Control.getName(this) + "\ttimetolive:\t" + this.effecttime + " round(s)";
 	}
 }

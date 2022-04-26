@@ -1,10 +1,10 @@
 equipment
-slot_1: 		axe		axe_4
-slot_2:	
+slot_1:		axe		axe_1
+slot_2:
 slot_3:
 
 field
-name: f_1
-type: field
-virologist: virologist
-equipment: axe
+name:		f_1
+type:		field
+virologist:	v_1
+equipment:	

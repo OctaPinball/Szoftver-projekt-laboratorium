@@ -1,6 +1,9 @@
 operator v v_1 create
 operator a ba_1 create bearagent
 operator f lab_1 create laboratory
+operator f f_1 create 
+operator v v_1 move f_1
+operator f f_1 move lab_1
 operator a ba_1 move lab_1
 move lab_1
 next turn

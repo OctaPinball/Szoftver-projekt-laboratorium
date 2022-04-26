@@ -1,6 +1,6 @@
 cape/sack/glove
 
 equipment
-slot_1: axe axe_1
-slot_2: sack sack_1
-slot_3: glove cape_1
+slot_1: 		axe axe_1
+slot_2: 		sack sack_1
+slot_3: 		glove cape_1

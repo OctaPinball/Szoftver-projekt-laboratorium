@@ -53,9 +53,9 @@ public class Laboratory extends Field{
 	}
 	
 	public String toString() {
-		return "name:\t " + Control.getName(this)
-				+ "type:\t laboratory"
-				+ "virologist:\t " + Control.getName(virologistOnField)
-				+ "equipment" + Control.getName(equipmentOnField);
+		return "name:\t\t" + Control.getName(this)
+		+ "\ntype:\t\tlaboratory"
+		+ "\nvirologist:\t" + Control.getName(virologistOnField)
+		+ "\nequipment:\t" + Control.getName(equipmentOnField);
 	}
 }

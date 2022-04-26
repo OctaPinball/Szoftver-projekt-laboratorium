@@ -14,7 +14,7 @@ import miscellaneous.Virologist;
 public abstract class Agent {
 	private int acidcost;
 	private int nucleotidecost;
-	private int effecttime;
+	protected int effecttime;
 	protected Virologist owner;
 	
 
@@ -95,7 +95,11 @@ public abstract class Agent {
 	public abstract void interact() throws CloneNotSupportedException;
 	
 	public String toString() {
-		return "agent:\t " + Control.getName(this);
+		return "agent:\t\t" + Control.getName(this);
+	}
+	
+	public String toStringA() {
+		return "agent:\t" + Control.getName(this) + "\ttimetolive:\t" + this.effecttime + " round(s)";
 	}
 
 	

@@ -17,7 +17,7 @@ public class Control {
 	private static HashMap<String, Equipment> equipments;
 	private static HashMap<String, Agent> agents;
 	private static HashMap<String, HashMap> hashmaps;
-	private static HashMap<String, String> safety;
+	private static HashMap<String, String> safety = new HashMap<String, String>();
 	
 	static
 	{
@@ -76,6 +76,10 @@ public class Control {
 		String cmd[];
 		cmd = cmdline.split(" ");
 		
+		if(RoundManager.getEntity() == null)
+		{
+			RoundManager.nextRound();
+		}
 		
 		//Parancs értelmezés, és a szükséges függvény meghívása
 		if (cmd[0].equals("operator")) {			
@@ -112,13 +116,15 @@ public class Control {
 			}
 		}
 		else if (cmd[0].equals("cast")) {
-			ArrayList<Field> neighbors = RoundManager.getEntity().getField().getNeighbors();			
+			if(RoundManager.getEntity() != null && RoundManager.getEntity().getField() != null)
+			{
+				ArrayList<Field> neighbors = RoundManager.getEntity().getField().getNeighbors();			
 			if(virologists.get(cmd[1]) != null)
 			{
 				Virologist target = virologists.get(cmd[1]);
 				if(neighbors.contains(target.getField()))
 				{
-					if(agents.containsKey(cmd[2]) && RoundManager.getEntity().getAgents().contains(agents.containsKey(cmd[2])))
+					if(agents.containsKey(cmd[2]) && RoundManager.getEntity().getAgents().contains(agents.get(cmd[2])))
 					{
 						agents.get(cmd[2]).cast(target);
 					}
@@ -137,14 +143,15 @@ public class Control {
 				System.out.println("Invalid target name!\n");
 			}
 		}
+		}
 		else if (cmd[0].equals("pickupequipment")) {
-			if(equipments.containsKey(cmd[1]) && RoundManager.getEntity().getEquipments().contains(equipments.get(cmd[1])))
+			if(equipments.containsKey(cmd[1]) && RoundManager.getEntity().getField().getEquipment().equals(equipments.get(cmd[1])))
 			{
-				equipments.get(cmd[1]).dropEquipment();
+				equipments.get(cmd[1]).pickupEquipment(RoundManager.getEntity());
 			}
 			else
 			{
-				System.out.println("Invalid equipment name or the virologist doesn't possess the equipment!\n");
+				System.out.println("Invalid equipment name or the field doesn't possess the equipment!\n");
 			}
 		}
 		else if (cmd[0].equals("stealequipment")) {
@@ -169,7 +176,7 @@ public class Control {
 			}
 		}
 		else if (cmd[0].equals("list")) {
-			if(cmd[1] != null)
+			if(cmd[1] == null)
 			{
 				RoundManager.getEntity().list(null);
 			}
@@ -246,10 +253,16 @@ public class Control {
 					{
 						Virologist v = new Virologist();
 						virologists.put(cmd[2], v);
+						RoundManager.addEntity(v);
 					}
 					else
 					{
-						if(checkSafeInheritence(cmd[4], cmd[1]))
+						if(cmd.length < 5)
+						{
+							Object o = createObject(cmd[1]);
+							getHashMap(cmd[1]).put(cmd[2], o);
+						}
+						else if(cmd.length >= 5 && checkSafeInheritence(cmd[4], cmd[1]))
 						{
 							Object o = createObject(cmd[4]);
 							getHashMap(cmd[1]).put(cmd[2], o);
@@ -404,14 +417,23 @@ public class Control {
 				((Laboratory) fields.get(cmd[4])).addAgent(agents.get(cmd[2]));
 				return;
 			}
-			if(virologists.containsKey(cmd[4]) && cmd[5].equals("learn"))
+			if(cmd.length >= 6 && virologists.containsKey(cmd[4]) && cmd[5].equals("learn"))
 			{
 				virologists.get(cmd[4]).learnAgent(agents.get(cmd[2]));
 				return;
 			}
-			if(virologists.containsKey(cmd[4]) && cmd[5].equals("active"))
+			if(cmd.length >= 6 && virologists.containsKey(cmd[4]) && cmd[5].equals("active"))
 			{
 				virologists.get(cmd[4]).addActiveAgent(agents.get(cmd[2]));
+				return;
+			}
+		}
+		else if(cmd[1].equals("f"))
+		{
+			if(fields.containsKey(cmd[2]) && fields.containsKey(cmd[2]))
+			{
+				fields.get(cmd[2]).addNeighbor(fields.get(cmd[4]));
+				fields.get(cmd[4]).addNeighbor(fields.get(cmd[2]));
 				return;
 			}
 		}
@@ -437,7 +459,7 @@ public class Control {
 	}
 	
 	public static boolean checkSafeName(String input) {
-		if(getObject(input) == null)
+		if(getObject(input) != null)
 		{
 			System.out.println("Invalid name! The given name is already taken, choose another one!\n");
 			return false;
@@ -474,14 +496,17 @@ public class Control {
 		case "glove":
 			return new Glove();
 		case "field":
-			return new Field();
+			return new Field(0);
 		case "laboratory":
-			return new Laboratory();
+			return new Laboratory(0);
 		case "storage":
-			return new Storage();
+			return new Storage(0);
 		case "shelter":
-			return new Shelter();
-			
+			return new Shelter(0);
+		case "v":
+			return new Virologist();
+		case "f":
+			return new Field(0);
 		}
 		return null;
 	}

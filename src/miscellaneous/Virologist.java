@@ -80,10 +80,12 @@ public class Virologist implements Steppable{
 		{
 			Agent newAgent = a.makeCopy();
 			agents.add(newAgent);
+			Control.getHashMap("a").put(Control.getKey(Control.getHashMap("a"), a) + "_copy", newAgent);
 			newAgent.setOwner(this);
 		}
 		Logger.exit(this, "learnAgent", null);
 	}
+	
 	
 	public boolean learnallAgent() {
 		boolean know[] = {false, false, false, false};
@@ -102,7 +104,7 @@ public class Virologist implements Steppable{
 				know[3] = true;
 		}
 		
-		if(know[0] == true && know[0] == true && know[0] == true && know[0] == true)
+		if(know[0] == true && know[1] == true && know[2] == true && know[3] == true)
 		{
 			return true;
 		}
@@ -379,8 +381,60 @@ public class Virologist implements Steppable{
 		return "";
 	}
 	
-	public String list(String s) {
-		return "";
+	public void list(String s) {
+		if(s == null)
+		{
+			System.out.println("jezj");
+		}
+		if(s.equals("field"))
+		{
+
+			String out = RoundManager.getEntity().getField().toString();
+			System.out.println("field");
+			System.out.println(out);
+			return;
+		}
+		if(s.equals("activeagent"))
+		{
+			String out = "";
+			for(Agent a : RoundManager.getEntity().getActiveAgents())
+			{
+				out += a.toStringA() + "\n";
+			}
+			System.out.println("activeagents");
+			System.out.println(out);
+			return;
+		}
+		if(s.equals("agent"))
+		{
+			String out = "";
+			for(Agent a : RoundManager.getEntity().getAgents())
+			{
+				out += a.toString() + "\n";
+			}
+			System.out.println("agent");
+			System.out.println(out);
+			return;
+		}
+		if(s.equals("equipment"))
+		{
+			String out = "";
+			int k = 0;
+			for(Equipment e : RoundManager.getEntity().getEquipments())
+			{
+				k++;
+				out += "slot_" + k + ":\t\t" + e.toString() + "\n";
+			}
+			while(k < 3)
+			{
+				k++;
+				out += "slot_" + k + ":\n";
+			}
+			System.out.println("equipment");
+			System.out.println(out);
+			return;
+		}
+		return;
 	}
 	
 	public String agentsToString() {

@@ -43,10 +43,10 @@ public class Game {
 				f.addNeighbor(allFields.get(f.getID() - width));
 			if(f.getID()+width < width * height)
 				f.addNeighbor(allFields.get(f.getID() + width));
-			if(f.getID() % width == 0)
+			if(f.getID() % (width + 1) == 0)
 				f.addNeighbor(allFields.get(f.getID() - 1));
-			if(0 <= f.getID()-width)
-				f.addNeighbor(allFields.get(f.getID() + 1));
+			if(f.getID() + 1 % (width + 1) == 1)
+					f.addNeighbor(allFields.get(f.getID() + 1));
 		}
 	}
 	
@@ -63,13 +63,13 @@ public class Game {
 					case 0: allFields.add(new Field(i*width + j));
 						break;
 						
-					case 1: allFields.add(new Field(i*width + j));
+					case 1: allFields.add(new Laboratory(i*width + j));
 						break;
 						
-					case 2: allFields.add(new Field(i*width + j));
+					case 2: allFields.add(new Shelter(i*width + j));
 						break;
 						
-					case 3: allFields.add(new Field(i*width + j));
+					case 3: allFields.add(new Storage(i*width + j));
 						break;
 				}
 				allFields.add(new Field(i*width + j));
@@ -81,10 +81,10 @@ public class Game {
 				f.addNeighbor(allFields.get(f.getID() - width));
 			if(f.getID()+width < width * height)
 				f.addNeighbor(allFields.get(f.getID() + width));
-			if(f.getID() % width == 0)
+			if(f.getID() % (width + 1) == 0)
 				f.addNeighbor(allFields.get(f.getID() - 1));
-			if(0 <= f.getID()-width)
-				f.addNeighbor(allFields.get(f.getID() + 1));
+			if(f.getID() + 1 % (width + 1) == 1)
+					f.addNeighbor(allFields.get(f.getID() + 1));
 		}
 	}
 	

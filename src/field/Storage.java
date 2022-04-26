@@ -37,7 +37,7 @@ public class Storage extends Field{
 	public void copyStorage() {
 		Logger.enter(this, "copyStorage", null);
 		
-		Field copyField = new Field();
+		Field copyField = new Field(this.getID());
 		copyField.neighbors.addAll(neighbors);
 		
 		for(int i = 0; i < neighbors.size(); i++) {
@@ -67,9 +67,9 @@ public class Storage extends Field{
 	}
 	
 	public String toString() {
-		return "name:\t " + Control.getName(this)
-				+ "type:\t storage"
-				+ "virologist:\t " + Control.getName(virologistOnField)
-				+ "equipment" + Control.getName(equipmentOnField);
+		return "name:\t\t" + Control.getName(this)
+		+ "\ntype:\t\tstorage"
+		+ "\nvirologist:\t" + Control.getName(virologistOnField)
+		+ "\nequipment:\t" + Control.getName(equipmentOnField);
 	}
 }

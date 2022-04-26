@@ -1,5 +1,5 @@
 field
-name: fto
-type: shelter
-virologist: virologist
-equipment:
+name:		fto
+type:		shelter
+virologist:	virologist
+equipment:	

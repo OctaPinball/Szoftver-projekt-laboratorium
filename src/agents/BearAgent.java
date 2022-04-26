@@ -52,6 +52,10 @@ public class BearAgent extends Agent{
 	}
 	
 	public String toString() {
-		return "bear_agent:\t " + Control.getName(this);
+		return "bear_agent:\t\t" + Control.getName(this);
+	}
+	
+	public String toStringA() {
+		return "bear_agent:\t" + Control.getName(this) + "\ttimetolive:\t" + this.effecttime + " round(s)";
 	}
 }
