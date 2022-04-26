@@ -1,5 +1,12 @@
 operator v v_1 create
 operator a prot_1 create protection
 operator a prot_1 move v_1 learn
-cast v_1 prot_1
+operator v v_2 create
+operator f f_1 create
+operator f f_2 create
+operator f f_1 move f_2
+operator v v_1 move f_1
+operator v v_2 move f_2
+cast v_2 prot_1_copy
+next turn
 list activeagent

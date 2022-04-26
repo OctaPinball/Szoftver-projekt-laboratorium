@@ -8,6 +8,6 @@ operator v v_2 move f_2
 operator a protection_1 create protection
 operator a protection_1 move v_1 learn
 operator v v_1 fillmaterial
-cast v_2 protection_1 
+cast v_2 protection_1_copy
 next turn
 list activeagent

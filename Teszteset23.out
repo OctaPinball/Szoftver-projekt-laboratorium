@@ -1,2 +1,2 @@
-activeagent
-stun: 		stun_2 timetolive: 2 rounds
+activeagents
+stun:		stun_1_copy_active	timetolive:	0 round(s)

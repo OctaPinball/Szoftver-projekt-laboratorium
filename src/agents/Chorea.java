@@ -57,6 +57,6 @@ public class Chorea extends Agent{
 	}
 	
 	public String toStringA() {
-		return "chorea:\t" + Control.getName(this) + "\ttimetolive:\t" + this.effecttime + " round(s)";
+		return "chorea:\t\t" + Control.getName(this) + "\ttimetolive:\t" + this.effecttime + " round(s)";
 	}
 }

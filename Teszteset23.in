@@ -8,6 +8,6 @@ operator v v_2 move f_2
 operator a stun_1 create stun
 operator a stun_1 move v_1 learn
 operator v v_1 fillmaterial
-cast v_2 stun_1
+cast v_2 stun_1_copy
 next turn
 list activeagent
