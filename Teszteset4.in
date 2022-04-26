@@ -1,7 +1,9 @@
 operator f ffrom create storage
 operator f fto create storage
+operator e s create sack
 operator v virologist create
 operator v virologist move ffrom
+operator e s move virologist
 operator f ffrom move fto
 move fto
 list field

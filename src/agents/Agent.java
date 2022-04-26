@@ -33,15 +33,18 @@ public abstract class Agent {
 		Logger.enter(this, "cast", par);
 		if(owner != null)
 		{
+			
 			if(owner.getAminoacid() - acidcost < 0 || owner.getNucleotide() - nucleotidecost < 0)
 				return;
 			owner.setAminoAcid(owner.getAminoacid() - acidcost);
 			owner.setNucleotide(owner.getNucleotide() - nucleotidecost);
+			
 		}
 		
 		if(!target.getBlock().block(owner, target, this))
 		{
 			Agent copy = this.makeCopy();
+			Control.getHashMap("a").put(Control.getKey(Control.getHashMap("a"), this) + "_active", copy);
 			Logger.register(copy, "agent_copy");
 			target.addActiveAgent(copy);
 		}
