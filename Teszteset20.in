@@ -10,5 +10,5 @@ operator a stunned_1 move v_1 active
 operator e cape_1 create cape
 operator e cape_1 move v_1
 next turn
-stealequipment v_1 cape_1
+stealequipment v_2 cape_1
 list equipment

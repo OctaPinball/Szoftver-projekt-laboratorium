@@ -60,7 +60,7 @@ public abstract class Equipment {
             wearer.loseEquipment(this);
             this.loseEffect();
         }
-        wearer.loseEquipment(this);
+        //wearer.loseEquipment(this);
 
         Logger.exit(this, "dropEquipment", null);
 

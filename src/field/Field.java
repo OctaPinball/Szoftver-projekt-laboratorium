@@ -15,7 +15,7 @@ public class Field {
 	
 	protected int id;
 	protected Virologist virologistOnField;
-	protected Equipment equipmentOnField;
+	protected Equipment equipmentOnField = null;
 
 	protected ArrayList<Field> neighbors;
 

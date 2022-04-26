@@ -225,10 +225,9 @@ public class Virologist implements Steppable{
 		Logger.enter(this, "stealEquipment", par);
 		
 		boolean success = true;
-		
 		e.dropEquipment();
 		
-		if (!v.addEquipment(e))
+		if (!addEquipment(e))
 			success = false;
 			
 		
