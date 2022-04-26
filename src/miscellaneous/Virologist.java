@@ -19,7 +19,7 @@ import beardefense.*;
  * A j�t�kos a virol�gus oszt�ly seg�ts�g�vel tud �genst kenni m�s virol�gusra, �s meg tud tanulni genetikai k�dokat, 
  * illetve el is tudja azokat felejteni.
  */
-public class Virologist implements Steppable{
+public class Virologist{
 	private int aminoacid;
 	private int nucleotide;
 	private int actionpoint;
