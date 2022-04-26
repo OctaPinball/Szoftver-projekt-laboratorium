@@ -42,6 +42,6 @@ public class Sack extends Equipment{
     }
     
     public String toString() {
-		return "sack:\t " + Control.getName(this);
+		return "sack\t " + Control.getName(this);
 	}
 }

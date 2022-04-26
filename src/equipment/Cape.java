@@ -42,6 +42,6 @@ public class Cape extends Equipment{
     }
     
     public String toString() {
-		return "cape:\t " + Control.getName(this);
+		return "cape\t " + Control.getName(this);
 	}
 }

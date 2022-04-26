@@ -417,9 +417,17 @@ public class Virologist implements Steppable{
 		}
 		if(s.equals("equipment"))
 		{
-			
+			String out = "";
+			int i = 0;
+			for(Equipment e : RoundManager.getEntity().getEquipments())
+			{
+				i++;
+				out = "slot_" + i + ":\t" + e.toString() + "\n";
+			}
+			System.out.println("equipment");
+			System.out.println(out);
+			return;
 		}
-		System.out.println("g");
 		return;
 	}
 	

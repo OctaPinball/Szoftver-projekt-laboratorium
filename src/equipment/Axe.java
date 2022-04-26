@@ -49,7 +49,7 @@ public class Axe extends Equipment{
 	}
 	
 	public String toString() {
-		return "axe:\t " + Control.getName(this);
+		return "axe\t " + Control.getName(this);
 	}
 	
 
