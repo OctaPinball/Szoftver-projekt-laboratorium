@@ -19,7 +19,7 @@ import beardefense.*;
  * A j�t�kos a virol�gus oszt�ly seg�ts�g�vel tud �genst kenni m�s virol�gusra, �s meg tud tanulni genetikai k�dokat, 
  * illetve el is tudja azokat felejteni.
  */
-public class Virologist implements Steppable{
+public class Virologist{
 	private int aminoacid;
 	private int nucleotide;
 	private int actionpoint;
@@ -396,23 +396,21 @@ public class Virologist implements Steppable{
 		}
 		if(s.equals("activeagent"))
 		{
-			String out = "";
+			String out = "activeagents";
 			for(Agent a : RoundManager.getEntity().getActiveAgents())
 			{
-				out += a.toStringA() + "\n";
+				out += "\n" + a.toStringA();
 			}
-			System.out.println("activeagents");
 			System.out.println(out);
 			return;
 		}
 		if(s.equals("agent"))
 		{
-			String out = "";
+			String out = "agent";
 			for(Agent a : RoundManager.getEntity().getAgents())
 			{
-				out += a.toString() + "\n";
+				out += "\n" + a.toString();
 			}
-			System.out.println("agent");
 			System.out.println(out);
 			return;
 		}
