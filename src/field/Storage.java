@@ -67,9 +67,9 @@ public class Storage extends Field{
 	}
 	
 	public String toString() {
-		return "name:\t " + Control.getName(this)
-				+ "type:\t storage"
-				+ "virologist:\t " + Control.getName(virologistOnField)
-				+ "equipment" + Control.getName(equipmentOnField);
+		return "name:\t\t" + Control.getName(this)
+		+ "\ntype:\t\tstorage"
+		+ "\nvirologist:\t" + Control.getName(virologistOnField)
+		+ "\nequipment:\t" + Control.getName(equipmentOnField);
 	}
 }

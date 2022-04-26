@@ -29,9 +29,9 @@ public class Shelter extends Field{
 	}
 
 	public String toString() {
-		return "name:\t " + Control.getName(this)
-				+ "type:\t shelter"
-				+ "virologist:\t " + Control.getName(virologistOnField)
-				+ "equipment" + Control.getName(equipmentOnField);
+		return "name:\t\t" + Control.getName(this)
+		+ "\ntype:\t\tshelter"
+		+ "\nvirologist:\t" + Control.getName(virologistOnField)
+		+ "\nequipment:\t" + Control.getName(equipmentOnField);
 	}
 }
