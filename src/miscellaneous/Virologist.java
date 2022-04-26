@@ -103,7 +103,7 @@ public class Virologist implements Steppable{
 				know[3] = true;
 		}
 		
-		if(know[0] == true && know[0] == true && know[0] == true && know[0] == true)
+		if(know[0] == true && know[1] == true && know[2] == true && know[3] == true)
 		{
 			return true;
 		}
