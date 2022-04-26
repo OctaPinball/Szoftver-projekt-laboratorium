@@ -177,6 +177,8 @@ public class Virologist implements Steppable{
 				e.getEffect();
 			}
 		}
+		else
+			found = true;
 		
 			
 		Logger.exit(this, "addEquipment", !found);
