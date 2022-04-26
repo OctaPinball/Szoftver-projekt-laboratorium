@@ -462,9 +462,9 @@ public class Virologist{
 		String[] equipment = null;
 		for(int i = 0; i < equipments.size(); i++) {
 			if(equipments.get(i) == null)
-				equipment[i] = "slot_" + i + ": ";
+				equipment[i] = "slot_" + i + ":";
 			else
-				equipment[i] = "slot_" + i + ": " + equipments.get(i).toString();
+				equipment[i] = "slot_" + i + ":" + equipments.get(i).toString();
 		}
 		return equipment.toString();
 	}
