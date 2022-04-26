@@ -163,19 +163,21 @@ public class Virologist implements Steppable{
 		ArrayList<Object> par = new ArrayList<>(); par.add(e);
 		Logger.enter(this, "addEquipment", par);
 		
-		
 		boolean found = false;
-		for (Equipment i : equipments)
-		{
-			if (i.getClass() == e.getClass()) 
-				found = true;
+		if(equipments.size() < 3) { 
+			for (Equipment i : equipments)
+			{
+				if (i.getClass() == e.getClass()) 
+					found = true;
+			}
+			if(!found)
+			{
+				equipments.add(e);
+				
+				e.getEffect();
+			}
 		}
-		if(!found)
-		{
-			equipments.add(e);
-			
-			e.getEffect();
-		}
+		
 			
 		Logger.exit(this, "addEquipment", !found);
 		return !found;
