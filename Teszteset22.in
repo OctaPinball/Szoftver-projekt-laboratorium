@@ -5,9 +5,9 @@ operator f f_2 create
 operator f f_1 move f_2
 operator v v_1 move f_1
 operator v v_2 move f_2
-operator a forg_1 create forgetting
+operator a forg_1 create forgettingagent
 operator a forg_1 move v_1 learn
-operator a forg_2 create forgetting
+operator a forg_2 create forgettingagent
 operator a forg_2 move v_2 learn
 operator v v_1 fillmaterial
 cast v_2 forg_1
