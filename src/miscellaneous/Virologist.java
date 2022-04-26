@@ -404,6 +404,7 @@ public class Virologist implements Steppable{
 			System.out.println(out);
 			return;
 		}
+		System.out.println("g");
 		return;
 	}
 	
