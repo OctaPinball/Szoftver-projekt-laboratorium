@@ -116,7 +116,9 @@ public class Control {
 			}
 		}
 		else if (cmd[0].equals("cast")) {
-			ArrayList<Field> neighbors = RoundManager.getEntity().getField().getNeighbors();			
+			if(RoundManager.getEntity() != null && RoundManager.getEntity().getField() != null)
+			{
+				ArrayList<Field> neighbors = RoundManager.getEntity().getField().getNeighbors();			
 			if(virologists.get(cmd[1]) != null)
 			{
 				Virologist target = virologists.get(cmd[1]);
@@ -140,6 +142,7 @@ public class Control {
 			{
 				System.out.println("Invalid target name!\n");
 			}
+		}
 		}
 		else if (cmd[0].equals("pickupequipment")) {
 			if(equipments.containsKey(cmd[1]) && RoundManager.getEntity().getEquipments().contains(equipments.get(cmd[1])))
@@ -254,7 +257,12 @@ public class Control {
 					}
 					else
 					{
-						if(checkSafeInheritence(cmd[4], cmd[1]))
+						if(cmd.length < 5)
+						{
+							Object o = createObject(cmd[1]);
+							getHashMap(cmd[1]).put(cmd[2], o);
+						}
+						else if(cmd.length >= 5 && checkSafeInheritence(cmd[4], cmd[1]))
 						{
 							Object o = createObject(cmd[4]);
 							getHashMap(cmd[1]).put(cmd[2], o);
@@ -409,12 +417,12 @@ public class Control {
 				((Laboratory) fields.get(cmd[4])).addAgent(agents.get(cmd[2]));
 				return;
 			}
-			if(virologists.containsKey(cmd[4]) && cmd[5].equals("learn"))
+			if(cmd.length >= 6 && virologists.containsKey(cmd[4]) && cmd[5].equals("learn"))
 			{
 				virologists.get(cmd[4]).learnAgent(agents.get(cmd[2]));
 				return;
 			}
-			if(virologists.containsKey(cmd[4]) && cmd[5].equals("active"))
+			if(cmd.length >= 6 && virologists.containsKey(cmd[4]) && cmd[5].equals("active"))
 			{
 				virologists.get(cmd[4]).addActiveAgent(agents.get(cmd[2]));
 				return;
@@ -495,7 +503,10 @@ public class Control {
 			return new Storage(0);
 		case "shelter":
 			return new Shelter(0);
-			
+		case "v":
+			return new Virologist();
+		case "f":
+			return new Field(0);
 		}
 		return null;
 	}
