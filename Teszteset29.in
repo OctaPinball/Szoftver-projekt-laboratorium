@@ -6,4 +6,4 @@ operator f f_1 move lab_1
 operator v v_1 move f_1
 operator a fa_1 move lab_1
 move lab_1
-list activeagent
+list agent
