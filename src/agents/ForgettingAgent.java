@@ -47,10 +47,10 @@ public class ForgettingAgent extends Agent{
 	}
 	
 	public String toString() {
-		return "forgetting_agent:\t\t " + Control.getName(this);
+		return "forgetting_agent:\t\t" + Control.getName(this);
 	}
 	
 	public String toStringA() {
-		return "forgetting_agent:\t " + Control.getName(this) + "\ttimetolive: " + this.effecttime + " round(s)";
+		return "forgetting_agent:\t" + Control.getName(this) + "\ttimetolive:\t" + this.effecttime + " round(s)";
 	}
 }
