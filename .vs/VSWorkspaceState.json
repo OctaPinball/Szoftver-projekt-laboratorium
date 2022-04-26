@@ -3,6 +3,7 @@
     "",
     "\\src",
     "\\src\\agents",
+    "\\src\\beardefense",
     "\\src\\block",
     "\\src\\equipment",
     "\\src\\field",
@@ -10,6 +11,6 @@
     "\\src\\miscellaneous",
     "\\src\\movement"
   ],
-  "SelectedNode": "\\src\\agents\\Stun.java",
+  "SelectedNode": "\\src\\miscellaneous\\Game.java",
   "PreviewInSolutionExplorer": false
 }
