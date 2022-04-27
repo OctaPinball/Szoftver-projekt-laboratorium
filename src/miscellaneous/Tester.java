@@ -269,7 +269,7 @@ public class Tester {
 		st.cast(v1);
 	}
 
-	public void stealEquipment() {
+	public void stealEquipment() throws IOException {
 		// Inicializáslás
 		Field f1 = new Field(0);
 		Field f2 = new Field(0);

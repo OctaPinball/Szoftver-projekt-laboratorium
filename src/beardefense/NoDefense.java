@@ -12,6 +12,7 @@ public class NoDefense implements BearDefense{
 	public void bearAttack(Virologist bear, Virologist target) throws CloneNotSupportedException, IOException {
 
 		BearAgent ba = new BearAgent();
+		ba.setOwner(bear);
 		
 		ba.cast(target);
 		

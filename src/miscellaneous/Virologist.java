@@ -1,7 +1,9 @@
 package miscellaneous;
 
+import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 
 import agents.*;
@@ -164,7 +166,8 @@ public class Virologist{
 		Logger.enter(this, "addEquipment", par);
 		
 		boolean found = false;
-		if(equipments.size() < 3) { 
+		if(equipments.size() < 3)
+		{ 
 			for (Equipment i : equipments)
 			{
 				if (i.getClass() == e.getClass()) 
@@ -195,7 +198,10 @@ public class Virologist{
 		
 		
 		if(equipments.remove(e))
+		{
 			e.loseEffect();
+			//e.setWearer(null);
+		}
 			
 		
 		Logger.exit(this, "loseEquipment", null);
@@ -217,10 +223,11 @@ public class Virologist{
 	/**
 	 * A param�terk�nt �tvett virol�gust�l a szint�n param�terk�nt �tvett t�rgyat ellopjaa virol�gus.
 	 * @param e		az ellopott felszerel�s
-	 * @param v		a kirabolt virol�gus
+	 * @param v		a rabló virol�gus
 	 * @return		a lop�s sikeress�ge
+	 * @throws IOException 
 	 */
-	public boolean stealEquipment(Equipment e, Virologist v) {
+	public boolean stealEquipment(Equipment e, Virologist v) throws IOException {
 		ArrayList<Object> par = new ArrayList<>(); par.add(e); par.add(v);
 		Logger.enter(this, "stealEquipment", par);
 		
@@ -228,7 +235,45 @@ public class Virologist{
 		e.dropEquipment();
 		
 		if (!addEquipment(e))
-			success = false;
+		{
+			HashMap<String, Equipment> hash = new HashMap<String, Equipment>();
+			for(Equipment eq : equipments)
+			{
+				if(eq.getClass().equals(Cape.class))
+					hash.put("cape", eq);
+				if(eq.getClass().equals(Axe.class))
+					hash.put("axe", eq);
+				if(eq.getClass().equals(Glove.class))
+					hash.put("glove", eq);
+				if(eq.getClass().equals(Sack.class))
+					hash.put("sack", eq);
+			}
+			
+			boolean first = true;
+			String all = "";
+			for(Equipment f : this.equipments)
+			{
+				String name = (String) Control.getKey(Control.getHashMap("e"), f);
+				if(first)
+				{
+					first = false;
+				}
+				else
+				{
+					all += "/";
+				}
+				all += name;
+			}
+			System.out.println(all);
+			Equipment drop = Control.getEquipment(hash);
+			this.loseEquipment(drop);
+			drop.pickupEquipment(v);
+			e.pickupEquipment(this);
+			if(this.equipments.contains(drop))
+			{
+				System.out.println("jej");
+			}
+		}
 			
 		
 		Logger.exit(this, "stealEquipment", success);
@@ -431,7 +476,7 @@ public class Virologist{
 				k++;
 				out += "\nslot_" + k + ":";
 			}
-			out += "\n";
+			//out += "\n";
 			System.out.println(out);
 			return;
 		}
