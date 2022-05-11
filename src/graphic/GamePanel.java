@@ -18,7 +18,7 @@ public class GamePanel extends JPanel implements Const{
 	private GameFrame parent;
 	private ControlInput controls;
 	private ArrayList<JLabel> labels;
-	View view;
+	View view = null;
 	
 	public GamePanel(ControlInput controls_input, GameFrame frame) {
 		parent = frame;
@@ -65,6 +65,9 @@ public class GamePanel extends JPanel implements Const{
 			
 			g2D.drawString(RoundManager.getEntity().getEquipments().get(i).toString(), 40, 592 + 32 * (i+1));
 		}
+		if(view == null)
+			view = new View();
+		view.drawUI(g, RoundManager.getEntity());
 }
 
 }
