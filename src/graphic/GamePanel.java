@@ -70,4 +70,5 @@ public class GamePanel extends JPanel implements Const{
 		view.drawUI(g, RoundManager.getEntity());
 }
 
+	
 }
