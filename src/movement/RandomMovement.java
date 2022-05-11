@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import field.Field;
+import miscellaneous.Control;
+import miscellaneous.Game;
 import miscellaneous.Logger;
 import miscellaneous.Virologist;
 
@@ -30,9 +32,35 @@ public class RandomMovement implements Movement{
 		
 		Field center = v.getField();
 		ArrayList<Field> neighbor = center.getNeighbors();
-		Random rand = new Random();
-		int i = rand.nextInt() % neighbor.size();
-		Field realtarget = neighbor.get(i);
+		
+		Field realtarget = null;
+		if(Game.isRandomEnabled())
+		{
+			Random rand = new Random();
+			int i = rand.nextInt() % neighbor.size();
+			realtarget = neighbor.get(i);
+		}
+		else
+		{
+			boolean first = true;
+			String all = "";
+			for(Field f : neighbor)
+			{
+				String name = (String) Control.getKey(Control.getHashMap("f"), f);
+				if(first)
+				{
+					first = false;
+				}
+				else
+				{
+					all += "/";
+				}
+				all += name;
+			}
+			System.out.println(all);
+			realtarget = Control.getField(neighbor);
+		}
+		
 		
 		v.getField().removeVirologist();
 		realtarget.stepOn(v);

@@ -2,7 +2,6 @@ equipment
 slot_1:		axe		axe_1
 slot_2:		glove		glove_1
 slot_3:		cape		cape_1
-
 field
 name:		f_1
 type:		field

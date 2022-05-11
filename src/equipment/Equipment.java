@@ -65,6 +65,10 @@ public abstract class Equipment {
         Logger.exit(this, "dropEquipment", null);
 
     }
+    
+    public void setWearer(Virologist v) {
+    	wearer = v;
+    }
 
     /**
      * Aktiválja a felszerelés hatását.

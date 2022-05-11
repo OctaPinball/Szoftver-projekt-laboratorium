@@ -15,8 +15,8 @@ public class BearDance extends RandomMovement{
 		super.move(v, target);
 		
 		for(int i = 0; i < v.getField().getNeighbors().size(); i++) {
-			
-			v.getDefense().bearAttack(v, v.getField().getNeighbors().get(i).getVirologist());
+			if(v.getField().getNeighbors().get(i).getVirologist() != null)
+				v.getDefense().bearAttack(v, v.getField().getNeighbors().get(i).getVirologist());
 		}
 		return true;
 	}

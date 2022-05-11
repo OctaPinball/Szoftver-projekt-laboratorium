@@ -6,7 +6,7 @@ operator f f_1 move f_2
 operator v v_1 move f_1
 operator v v_2 move f_2
 operator a stunned_1 create stun
-operator a stunned_1 move v_1
+operator a stunned_1 move v_1 active
 operator e cape_1 create cape
 operator e cape_1 move v_1
 operator e axe_1 create axe
