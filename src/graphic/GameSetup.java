@@ -90,9 +90,12 @@ public class GameSetup extends JFrame{
 	public JFrame f = new JFrame("SwingLab");
 	private JPanel p = new JPanel();
 	private JButton b = new JButton("START GAME");
-	private JTextField playernumber = new JTextField("PlayerNumber");
-	private JTextField fieldwidth = new JTextField("MapWidth");
-	private JTextField fieldheight = new JTextField("MapHeight");
+	//private JTextField playernumber = new JTextField("PlayerNumber");
+	//private JTextField fieldwidth = new JTextField("MapWidth");
+	//private JTextField fieldheight = new JTextField("MapHeight");
+	private JTextField playernumber = new JTextField("2");
+	private JTextField fieldwidth = new JTextField("20");
+	private JTextField fieldheight = new JTextField("20");
 
 	
 	GameSetup(){

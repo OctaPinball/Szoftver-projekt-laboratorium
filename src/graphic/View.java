@@ -1,56 +1,41 @@
 package graphic;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.util.ArrayList;
 
-import javax.swing.ImageIcon;
-
-import field.*;
 import miscellaneous.*;
 
 public class View {
-	private static Position origo;
-	private static ArrayList<Viewable> viewable;
-	private static GamePanel gamepanel;
+	private Position origo;
+	private ArrayList<Viewable> viewable;
 	
-	
-	public static void drawFieldInfo(Field f, Position p) {
+	public void updteDraw() {
 		
 	}
 	
-	public static void updteDraw() {
+	public void drawVisible(Virologist v) {
 		
 	}
 	
-	public static void drawVisible(Virologist v) {
+	public void drawMap() {
 		
 	}
 	
-	public static void drawMap() {
-		
-	}
-	
-	public static void setOrigo(Position o) {
+	public void setOrigo(Position o) {
 		origo = o;
 	}
 	
-	public static void drawUI(Virologist v) {
-		
-	}
+	/*public void paint(Graphics g) {
+		Graphics2D g2D = (Graphics2D)g;
+		g2D.setPaint(Color.red);
+		g2D.setFont(new Font("Arial", Font.BOLD, 30));
+		g2D.drawString("Inventory: ", 200, 30);
+	}*/
 	
-	public static void drawField(Field f) {
-		ImageIcon i = null;
-		
-		Position p = new Position(10,10);
-		//p = CalculateCoordinates();
-		gamepanel.addLabel(p, i);
-	}
 	
-	public static void drawVirologist(Virologist v) {
-		ImageIcon i = null;
-		
-		Position p;
-		p = v.calculateCoordinates();
-		gamepanel.addLabel(p, i);
-	}
+	
 	
 }
