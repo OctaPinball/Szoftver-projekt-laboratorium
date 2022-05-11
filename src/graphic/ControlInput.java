@@ -1,26 +1,56 @@
 package graphic;
 
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
-public class ControlInput implements KeyListener{
+import java.awt.event.MouseEvent;
+
+import javax.swing.event.MouseInputListener;
+
+public class ControlInput implements MouseInputListener{
 
 	@Override
-	public void keyTyped(KeyEvent e) {
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		 MouseInfo.getPointerInfo().getLocation().x - XYZ.getLocationOnScreen().x
+		 MouseInfo.getPointerInfo().getLocation().y - XYZ.getLocationOnScreen().y
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void keyPressed(KeyEvent e) {
+	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void keyReleased(KeyEvent e) {
+	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseDragged(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseMoved(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 
 }

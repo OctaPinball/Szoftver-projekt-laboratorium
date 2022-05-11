@@ -28,7 +28,7 @@ public class GameFrame extends JFrame{
 		pack();
 		setLocationRelativeTo(null);
 		setResizable(false);
-		addKeyListener(controls);
+		//addKeyListener(controls);
 		setVisible(true);
 		setFocusable(true);
 		requestFocus();
