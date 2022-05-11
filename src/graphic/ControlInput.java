@@ -10,8 +10,6 @@ public class ControlInput implements MouseInputListener{
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		 MouseInfo.getPointerInfo().getLocation().x - XYZ.getLocationOnScreen().x
-		 MouseInfo.getPointerInfo().getLocation().y - XYZ.getLocationOnScreen().y
 	}
 
 	@Override
