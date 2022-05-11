@@ -18,6 +18,7 @@ public class GamePanel extends JPanel implements Const{
 	private GameFrame parent;
 	private ControlInput controls;
 	private ArrayList<JLabel> labels;
+	View view;
 	
 	public GamePanel(ControlInput controls_input, GameFrame frame) {
 		parent = frame;
@@ -47,17 +48,7 @@ public class GamePanel extends JPanel implements Const{
 	}
 	
 	public void paint(Graphics g) {
-	Graphics2D g2D = (Graphics2D)g;
-	g2D.setPaint(Color.red);
-	g2D.setFont(new Font("Arial", Font.BOLD, 16));
-	g2D.drawString("Inventory", 40, 592);
-	g2D.drawString("Agent", 194, 592);
-	g2D.drawString("Active agent", 312, 592);
-	g2D.drawString("Materials", 467, 592);
-	g2D.drawLine(144, 576, 144, 768);
-	g2D.drawLine(288, 576, 288, 768);
-	g2D.drawLine(432, 576, 432, 768);
-	
+		view.drawUI(g, RoundManager.getEntity());
 }
 
 }
