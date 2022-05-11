@@ -3,12 +3,15 @@ package graphic;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import miscellaneous.Control;
 
 public class GameSetup extends JFrame{
 
@@ -45,6 +48,23 @@ public class GameSetup extends JFrame{
 					if(isNumeric(height.getText()) && Integer.parseInt(height.getText()) > intplayernumber / 2 + 1)
 					{
 						int intheight = Integer.parseInt(height.getText());
+						for(int i = 0; i < intplayernumber; i++)
+						{
+							int ID = i + 1;
+							try {
+								Control.runCommand("operator v create Player_" + ID); //*****PARANCS
+							} catch (CloneNotSupportedException | IOException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						}
+						try {
+							Control.runCommand("operator g game generaterandommap " + intwidth + "x" + intheight); //*****PARANCS
+						} catch (CloneNotSupportedException | IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						GameFrame gameFrame = new GameFrame();
 					}
 					else
 					{

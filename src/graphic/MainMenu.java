@@ -54,6 +54,9 @@ public class MainMenu {
 		p.add(b_leaderboard, BorderLayout.CENTER);
 		p.add(b_exit, BorderLayout.SOUTH);
 		f.add(p);
+		f.setVisible(true);
+		f.setFocusable(true);
+		f.requestFocus();
 	}
 }
 

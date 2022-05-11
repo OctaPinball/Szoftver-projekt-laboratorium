@@ -97,7 +97,7 @@ public class Control {
 
 	}
 	
-	private static void runCommand(String cmdline) throws CloneNotSupportedException, IOException {
+	public static void runCommand(String cmdline) throws CloneNotSupportedException, IOException {
 		//Ha üres sort kaptunk, ignoráljuk
 		//Emiatt áttekinthetõbb bemeneteket lehet csinálni
 		if (cmdline.equals("")) return;
