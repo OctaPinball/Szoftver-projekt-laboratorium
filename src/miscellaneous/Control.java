@@ -51,8 +51,39 @@ public class Control {
 	
 	private static InputStreamReader isr =	new InputStreamReader(System.in);
 	private static BufferedReader br = new BufferedReader(isr);
+	
+	public static Equipment getEquipment(HashMap<String, Equipment> inhashmap) throws IOException {
+		String line;
+		line = br.readLine();
+		if(inhashmap.containsKey(line))
+		{
+			return inhashmap.get(line);
+		}
+		return null;
+	}
 
-
+	public static boolean getBoolean() throws IOException {
+		String line;
+		line = br.readLine();
+		if(line.equals("true"))
+			return true;
+		if(line.equals("false"))
+			return false;
+		return false;
+	}
+	
+	public static Field getField(ArrayList<Field> cfields) throws IOException {
+		String line;
+		line = br.readLine();
+		for(Field f : cfields)
+		{
+			if(getKey(fields, f).equals(line))
+			{
+				return f;
+			}
+		}
+		return null;
+	}
 	
 	public static void runControl() throws IOException, CloneNotSupportedException {
 		while (true) {
@@ -66,7 +97,7 @@ public class Control {
 
 	}
 	
-	private static void runCommand(String cmdline) throws CloneNotSupportedException {
+	public static void runCommand(String cmdline) throws CloneNotSupportedException, IOException {
 		//Ha üres sort kaptunk, ignoráljuk
 		//Emiatt áttekinthetõbb bemeneteket lehet csinálni
 		if (cmdline.equals("")) return;

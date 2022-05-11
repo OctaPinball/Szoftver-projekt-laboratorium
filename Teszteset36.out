@@ -1,4 +1,4 @@
 block: true/false
 
-activeagent
-stun:		timetolive:	2
+activeagents
+stun:		s_1_copy_active	timetolive:	0 round(s)

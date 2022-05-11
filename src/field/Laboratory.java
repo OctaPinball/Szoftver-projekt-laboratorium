@@ -2,6 +2,7 @@ package field;
 
 import miscellaneous.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import agents.*;
@@ -21,16 +22,21 @@ public class Laboratory extends Field{
 	/**
 	 * A Field osztály stepOn függvényét kiegészíti, azzal hogy megismerteti a virológussal a laboratóriumban található ágens kódját
 	 * @param virologist		a mezõre lépõ virológus
+	 * @throws IOException 
+	 * @throws CloneNotSupportedException 
 	 */
 	@Override
-	public void stepOn(Virologist virologist) {
+	public void stepOn(Virologist virologist) throws CloneNotSupportedException, IOException {
 		ArrayList<Object> par = new ArrayList<Object>();
 		par.add(virologist);
 		Logger.enter(this, "stepOn", par);
 		
 		
 		super.stepOn(virologist);
-		virologist.learnAgent(agentOnField);
+		agentOnField.setOwner(virologist);
+		agentOnField.interact();
+		//virologist.learnAgent(agentOnField);
+		
 		
 		
 		Logger.exit(this, "stepOn", null);

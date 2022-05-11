@@ -1,8 +1,11 @@
 package block;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import agents.Agent;
+import miscellaneous.Control;
+import miscellaneous.Game;
 import miscellaneous.Logger;
 import miscellaneous.Virologist;
 
@@ -20,10 +23,11 @@ public class PartialBlock implements Block{
 	 * @param t, a védekező virológus(target)
 	 * @param a, a támadásnál használt ágens
 	 * @return result
+	 * @throws IOException 
 	 * @throws CloneNotSupportedException
 	 */
 	@Override
-	public boolean block(Virologist s, Virologist t, Agent a) {
+	public boolean block(Virologist s, Virologist t, Agent a) throws IOException {
 		
 		ArrayList<Object> par = new ArrayList<>(); par.add(s); par.add(t); par.add(a);
 		Logger.enter(this, "block", par);
@@ -32,8 +36,16 @@ public class PartialBlock implements Block{
 		
 		double rnd = Math.random();
 		
-		if(rnd < 0.823);
-		else result = false;
+		if(Game.isRandomEnabled())
+		{
+			if(rnd < 0.823);
+			else result = false;
+		}
+		else
+		{
+			System.out.println("block: true/false\n");
+			result = Control.getBoolean();
+		}
 		
 		Logger.exit(this, "block", result);
 		return result;

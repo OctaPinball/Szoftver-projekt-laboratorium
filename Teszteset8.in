@@ -7,7 +7,7 @@ operator f f_1 move f_2
 operator f f_1 move f_3
 operator v v_1 move f_1
 operator a chorea_1 create chorea
-operator a chorea_1 move v_1
+operator a chorea_1 move v_1 active
 move f_2
 f_2
 list field

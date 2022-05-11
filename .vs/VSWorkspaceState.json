@@ -2,9 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\src",
+    "\\src\\agents",
+    "\\src\\beardefense",
+    "\\src\\block",
     "\\src\\equipment",
+    "\\src\\field",
+    "\\src\\fillmaterial",
+    "\\src\\miscellaneous",
     "\\src\\movement"
   ],
-  "SelectedNode": "\\src\\equipment\\Cape.java",
   "PreviewInSolutionExplorer": false
 }

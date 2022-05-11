@@ -1,8 +1,8 @@
 field
-name: 		fto
-type: 		storage
-virologist: 	virologist
-equipment:
+name:		fto
+type:		storage
+virologist:	virologist
+equipment:	
 material
-animoacid: 	20
-nukleoid: 	20
+aminoacid:	125
+nukleotid:	125
