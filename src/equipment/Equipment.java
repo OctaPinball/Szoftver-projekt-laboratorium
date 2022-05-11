@@ -105,5 +105,5 @@ public abstract class Equipment {
 		return "equipment\t\t" + Control.getName(this);
 	}
 
-
+    public Position 
 }

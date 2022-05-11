@@ -12,6 +12,7 @@ import block.*;
 import equipment.*;
 import field.*;
 import fillmaterial.*;
+import graphic.Position;
 import movement.*;
 import beardefense.*;
 
@@ -37,6 +38,7 @@ public class Virologist{
 	private FillMaterial fillmaterial;
 	private Movement movement;
 	private BearDefense defense;
+	//private Position position;
 	
 	/**
 	 * Inicializ�lja a virol�gust, azaz be�ll�tja a mozg�st, anyaggy�jt�k�pess�get, v�dekez�st, nyersanyagk�szletet �s az akci�pontokat alap�llapotokba
@@ -89,6 +91,7 @@ public class Virologist{
 	}
 	
 	
+
 	public boolean learnallAgent() {
 		boolean know[] = {false, false, false, false};
 		
@@ -512,5 +515,9 @@ public class Virologist{
 				equipment[i] = "slot_" + i + ":" + equipments.get(i).toString();
 		}
 		return equipment.toString();
+	}
+	
+	public Position calculateCoordinates() {
+		return field.calculateCoordinates();
 	}
 }
