@@ -3,7 +3,7 @@ package graphic;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Controls implements KeyListener{
+public class ControlInput implements KeyListener{
 
 	@Override
 	public void keyTyped(KeyEvent e) {

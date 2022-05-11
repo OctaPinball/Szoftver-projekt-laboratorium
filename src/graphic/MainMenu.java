@@ -16,7 +16,8 @@ public class MainMenu {
 		public void actionPerformed(ActionEvent ae) {
 			if (ae.getActionCommand().equals("start_game")) 
 			{
-				GameFrame gameFrame = new GameFrame();
+				//GameFrame gameFrame = new GameFrame();
+				GameSetup gamesetup = new GameSetup();
 				//mainFrame.getPanel().initLevel();
 			}
 			if (ae.getActionCommand().equals("leaderboard")) 

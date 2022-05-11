@@ -10,9 +10,9 @@ import miscellaneous.*;
 public class GamePanel extends JPanel implements Const{
 	
 	private GameFrame parent;
-	private Controls controls;
+	private ControlInput controls;
 	
-	public GamePanel(Controls controls_input, GameFrame frame) {
+	public GamePanel(ControlInput controls_input, GameFrame frame) {
 		parent = frame;
 		this.setPreferredSize(new Dimension(PANEL_WIDH,PANEL_HEIGH));
 		this.addKeyListener(controls);

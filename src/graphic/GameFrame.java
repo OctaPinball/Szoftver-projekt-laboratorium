@@ -7,10 +7,10 @@ public class GameFrame extends JFrame{
 
 	private static final long serialVersionUID = 1L;
 	private GamePanel panel;
-	private Controls controls;
+	private ControlInput controls;
 	
 	public GameFrame(){
-		controls = new Controls();
+		controls = new ControlInput();
 		setPanel(new GamePanel(controls, this));
 		
         addWindowListener(new java.awt.event.WindowAdapter() {
