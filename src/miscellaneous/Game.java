@@ -81,7 +81,7 @@ public class Game {
 				f.addNeighbor(allFields.get(f.getID() - width));
 			if(f.getID()+width < width * height)
 				f.addNeighbor(allFields.get(f.getID() + width));
-			if(f.getID() % (width + 1) == 0)
+			if(f.getID() % (width + 1) == 0 && f.getID() != 0)
 				f.addNeighbor(allFields.get(f.getID() - 1));
 			if(f.getID() + 1 % (width + 1) == 1)
 					f.addNeighbor(allFields.get(f.getID() + 1));
