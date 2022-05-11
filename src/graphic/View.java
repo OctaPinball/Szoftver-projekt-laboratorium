@@ -5,26 +5,30 @@ import java.util.ArrayList;
 import miscellaneous.*;
 
 public class View {
-	private Position origo;
-	private ArrayList<Viewable> viewable;
+	private static Position origo;
+	private static ArrayList<Viewable> viewable;
 	
-	public void updteDraw() {
+	public static void drawFieldInfo() {
 		
 	}
 	
-	public void drawVisible(Virologist v) {
+	public static void updteDraw() {
 		
 	}
 	
-	public void drawMap() {
+	public static void drawVisible(Virologist v) {
 		
 	}
 	
-	public void setOrigo(Position o) {
+	public static void drawMap() {
+		
+	}
+	
+	public static void setOrigo(Position o) {
 		origo = o;
 	}
 	
-	public void drawUI(Virologist v) {
+	public static void drawUI(Virologist v) {
 		
 	}
 	
