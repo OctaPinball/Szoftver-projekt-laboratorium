@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import miscellaneous.*;
 import equipment.*;
+import graphic.Position;
 
 /**
  * Egy mezõt reprezentál a játékban, ez az õsosztály ebbõl származnak le a különbözõ mezõ típusok
@@ -199,4 +200,11 @@ public class Field {
 	public int getID() {
 		return id;
 	}
+	
+	public Position calculateCoordinates() {
+		int x =  id % Game.width;
+		int y = id % x;
+		return new Position(x,y);
+	}
+	
 }
