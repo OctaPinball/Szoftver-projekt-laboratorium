@@ -3,7 +3,9 @@ package equipment;
 import java.util.ArrayList;
 
 import field.Field;
+import graphic.Position;
 import miscellaneous.Control;
+import miscellaneous.Game;
 import miscellaneous.Logger;
 import miscellaneous.Virologist;
 
@@ -105,5 +107,7 @@ public abstract class Equipment {
 		return "equipment\t\t" + Control.getName(this);
 	}
 
-    public Position 
+	public Position calculateCoordinates() {
+		return currentField.calculateCoordinates();
+	}
 }
