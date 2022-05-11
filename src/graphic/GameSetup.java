@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import miscellaneous.Control;
+import miscellaneous.RoundManager;
 
 public class GameSetup extends JFrame{
 
@@ -65,6 +66,7 @@ public class GameSetup extends JFrame{
 							e.printStackTrace();
 						}
 						GameFrame gameFrame = new GameFrame();
+						RoundManager.nextRound();
 					}
 					else
 					{

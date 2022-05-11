@@ -18,7 +18,7 @@ public class GamePanel extends JPanel implements Const{
 	private GameFrame parent;
 	private ControlInput controls;
 	private ArrayList<JLabel> labels;
-	View view;
+	View view = null;
 	
 	public GamePanel(ControlInput controls_input, GameFrame frame) {
 		parent = frame;
@@ -44,11 +44,15 @@ public class GamePanel extends JPanel implements Const{
 		j.setIcon(i);
 		j.setBounds(p.getX(),p.getY(),32,32);
 		j.setOpaque(true);
+		j.addMouseListener(new ControlInput());
 		labels.add(j);
 	}
 	
 	public void paint(Graphics g) {
+		if(view == null)
+			view = new View();
 		view.drawUI(g, RoundManager.getEntity());
 }
 
+	
 }
