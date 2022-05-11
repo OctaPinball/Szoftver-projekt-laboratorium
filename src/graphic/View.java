@@ -34,22 +34,39 @@ public class View {
 	}
 	
 	public void drawUI(Graphics g, Virologist v) {
-//		Graphics2D g2D = (Graphics2D)g;
-//		g2D.setPaint(Color.red);
-//		g2D.setFont(new Font("Arial", Font.BOLD, 16));
-//		g2D.drawString("Inventory", 40, 592);
-//		g2D.drawString("Agent", 194, 592);
-//		g2D.drawString("Active agent", 312, 592);
-//		g2D.drawString("Materials", 467, 592);
-//		g2D.drawLine(144, 576, 144, 768);
-//		g2D.drawLine(288, 576, 288, 768);
-//		g2D.drawLine(432, 576, 432, 768);
-//		
-//		for(int i = 0; i < v.getEquipments().size(); i++) {
-//			
-//			g2D.drawString(v.getEquipments().get(i).toString(), 40, 592 + 32 * (i+1));
-//		}
+		Graphics2D g2D = (Graphics2D)g;
+		g2D.setPaint(Color.red);
+		g2D.setFont(new Font("Arial", Font.BOLD, 16));
+		g2D.drawString("Inventory", 40, 592);
+		g2D.drawString("Agent", 194, 592);
+		g2D.drawString("Active agent", 312, 592);
+		g2D.drawString("Materials", 467, 592);
+		g2D.drawLine(144, 576, 144, 768);
+		g2D.drawLine(288, 576, 288, 768);
+		g2D.drawLine(432, 576, 432, 768);
 		
+		if(v.getEquipments() != null) {
+			for(int i = 0; i < v.getEquipments().size(); i++) {
+				g2D.drawString(v.getEquipments().get(i).toString(), 40, 592 + 32 * (i+1));
+			}
+		}
+		
+		if(v.getAgents() != null) {
+			for(int i = 0; i < v.getAgents().size(); i++) {
+				g2D.drawString(v.getAgents().get(i).toString(), 40, 592 + 32 * (i+1));
+			}
+		}
+		
+		if(v.getActiveAgents() != null) {
+			for(int i = 0; i < v.getActiveAgents().size(); i++) {
+				g2D.drawString(v.getActiveAgents().get(i).toString(), 40, 592 + 32 * (i+1));
+			}
+		}
+		
+		if(v.getFillMaterial() != null) {
+			g2D.drawString("Nucleotids: " + v.getNucleotide(), 40, 592 + 32);
+			g2D.drawString("Amino acids: : " + v.getAminoacid(), 40, 592 + 32*2);
+		}	
 	}
 	
 		public static void drawField(Field f) {
