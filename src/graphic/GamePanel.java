@@ -27,8 +27,19 @@ public class GamePanel extends JPanel implements Const{
 		labels = new ArrayList<JLabel>();
 	}
 	
+	public void drawLabels() {
+		for(JLabel l : labels)
+		{
+			this.add(l);
+		}
+	}
+	
 	public void addLabel(Position p, ImageIcon i) {
 		JLabel j = new JLabel();
+		j.setIcon(i);
+		j.setBounds(p.getX(),p.getY(),32,32);
+		j.setOpaque(true);
+		labels.add(j);
 	}
 
 }
