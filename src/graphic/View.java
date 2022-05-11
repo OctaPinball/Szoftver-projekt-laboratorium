@@ -28,12 +28,19 @@ public class View {
 		origo = o;
 	}
 	
-	/*public void paint(Graphics g) {
+	public void drawUI(Graphics g, Virologist v) {
 		Graphics2D g2D = (Graphics2D)g;
 		g2D.setPaint(Color.red);
-		g2D.setFont(new Font("Arial", Font.BOLD, 30));
-		g2D.drawString("Inventory: ", 200, 30);
-	}*/
+		g2D.setFont(new Font("Arial", Font.BOLD, 16));
+		g2D.drawString("Inventory", 40, 592);
+		g2D.drawString("Agent", 194, 592);
+		g2D.drawString("Active agent", 312, 592);
+		g2D.drawString("Materials", 467, 592);
+		g2D.drawLine(144, 576, 144, 768);
+		g2D.drawLine(288, 576, 288, 768);
+		g2D.drawLine(432, 576, 432, 768);
+		
+	}
 	
 	
 	
