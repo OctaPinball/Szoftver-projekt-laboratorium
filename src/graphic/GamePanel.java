@@ -44,6 +44,7 @@ public class GamePanel extends JPanel implements Const{
 		j.setIcon(i);
 		j.setBounds(p.getX(),p.getY(),32,32);
 		j.setOpaque(true);
+		j.addMouseListener(new ControlInput());
 		labels.add(j);
 	}
 	
