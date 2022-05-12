@@ -4,7 +4,9 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.swing.ImageIcon;
 
@@ -12,10 +14,18 @@ import equipment.*;
 import field.*;
 import miscellaneous.*;
 
-public class View {
+public class View implements Const{
 	private Position origo;
 	private ArrayList<Viewable> viewable;
 	private static GamePanel gamepanel;
+	private static HashMap<Class, ImageIcon> images;
+	
+	static {
+		images.put(Axe.class, new ImageIcon("res/Axe.png"));
+		images.put(Cape.class, new ImageIcon("res/Cape.png"));
+		images.put(Glove.class, new ImageIcon("res/Glove.png"));
+		images.put(Sack.class, new ImageIcon("res/Sack.png"));
+	}
 	
 	public void updteDraw() {
 		
@@ -26,8 +36,13 @@ public class View {
 	}
 	
 	public void drawMap() {
-		//if()
-		RoundManager.getEntity().getField().getID();
+		Position entityPos = RoundManager.getEntity().getField().getPos();
+		int diffX = ((PANEL_WIDH / 32) - 1) / 2;
+		int diffY = ((PANEL_HEIGH / 32) - 1) / 2;
+		for(Field f : Game.getAllFields())
+			if(entityPos.getX() - diffX <= f.getPos().getX() || f.getPos().getX() <= entityPos.getX() + diffX)
+				if(entityPos.getY() - diffY <= f.getPos().getY() || f.getPos().getY() <= entityPos.getY() + diffY)
+					f.pickDraw(this);
 	}
 	
 	public void setOrigo(Position o) {

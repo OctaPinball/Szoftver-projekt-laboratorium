@@ -17,7 +17,7 @@ public class Glove extends Equipment{
 	
 	private static int i = 0;
 	private int life = 3;
-	ImageIcon glove = new ImageIcon("res/Glove.png");
+	//ImageIcon glove = new ImageIcon("res/Glove.png");
 	
 	public Glove(){
 		i++;
@@ -67,10 +67,9 @@ public class Glove extends Equipment{
 		return "glove\t\t" + Control.getName(this);
 	}
     
-    public ImageIcon getIMG() {
-		return glove;
-	}
-    
+//    public ImageIcon getIMG() {
+//		return glove;
+//	}
 	@Override
 	public void pickDraw(View v) {
 		v.drawEquipment(this);
