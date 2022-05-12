@@ -5,6 +5,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 import block.*;
+import graphic.View;
 import miscellaneous.Control;
 import miscellaneous.Logger;
 
@@ -68,5 +69,10 @@ public class Glove extends Equipment{
     
     public ImageIcon getIMG() {
 		return glove;
+	}
+    
+	@Override
+	public void pickDraw(View v) {
+		v.drawEquipment(this);
 	}
 }

@@ -6,6 +6,8 @@ import javax.swing.ImageIcon;
 
 import field.Field;
 import graphic.Position;
+import graphic.View;
+import graphic.Viewable;
 import miscellaneous.Control;
 import miscellaneous.Game;
 import miscellaneous.Logger;
@@ -16,7 +18,7 @@ import miscellaneous.Virologist;
  * A játékos felveheti a felszerelést, és ezzel megszerzi a annak hatását, illetve el is dobhatja a felszerelést,
  * ami után elveszti annak hatását.
  */
-public abstract class Equipment {
+public abstract class Equipment implements Viewable{
 	
 	ImageIcon equipment = new ImageIcon();
 
@@ -117,5 +119,10 @@ public abstract class Equipment {
 	
 	public ImageIcon getIMG() {
 		return equipment;
+	}
+	
+	@Override
+	public void pickDraw(View v) {
+		v.drawEquipment(this);
 	}
 }
