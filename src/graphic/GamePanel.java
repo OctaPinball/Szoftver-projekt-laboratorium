@@ -73,6 +73,7 @@ public class GamePanel extends JPanel implements Const{
 		if(RoundManager.getEntity() == null)
 			RoundManager.nextRound();
 		view.drawUI(g, RoundManager.getEntity());
+		view.drawMap();
 }
 
 	
