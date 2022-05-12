@@ -53,7 +53,7 @@ public class GameSetup extends JFrame{
 						{
 							int ID = i + 1;
 							try {
-								Control.runCommand("operator v create Player_" + ID); //*****PARANCS
+								Control.runCommand("operator v Player_" + ID + " create"); //*****PARANCS
 							} catch (CloneNotSupportedException | IOException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
