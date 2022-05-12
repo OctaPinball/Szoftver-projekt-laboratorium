@@ -32,8 +32,8 @@ public class Shelter extends Field{
 	}
 	*/
 	
-	public Shelter(int id) {
-		super(id);
+	public Shelter(int id, int x, int y) {
+		super(id, x, y);
 	}
 
 	public String toString() {

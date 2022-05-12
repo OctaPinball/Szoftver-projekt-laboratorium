@@ -19,8 +19,8 @@ public class Laboratory extends Field{
 	Image lab = new ImageIcon("Field_3.png").getImage();
 	Image darkLab = new ImageIcon("Field_3_dark.png").getImage();
 	
-	public Laboratory(int id) {
-		super(id);
+	public Laboratory(int id, int x, int y) {
+		super(id, x, y);
 	}
 
 	private Agent agentOnField;
