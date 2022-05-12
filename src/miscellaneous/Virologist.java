@@ -540,7 +540,7 @@ public class Virologist implements Viewable{
 	}
 	
 	public Position calculateCoordinates() {
-		return field.getPos();
+		return field.calculateCoordinates();
 	}
 	
 	public ImageIcon getIMG() {

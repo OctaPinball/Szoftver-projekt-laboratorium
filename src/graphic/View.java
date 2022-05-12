@@ -113,7 +113,7 @@ public class View implements Const{
 			}
 		}
 		
-		Position p = f.getPos();
+		Position p = f.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
 		
@@ -133,7 +133,7 @@ public class View implements Const{
 			}
 		}
 		
-		Position p = s.getPos();
+		Position p = s.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
 		
@@ -153,7 +153,7 @@ public class View implements Const{
 			}
 		}
 		
-		Position p = s.getPos();
+		Position p = s.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
 	
@@ -172,7 +172,7 @@ public class View implements Const{
 			}
 		}
 		
-		Position p = l.getPos();
+		Position p = l.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
 		

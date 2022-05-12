@@ -44,7 +44,7 @@ public class GamePanel extends JPanel implements Const{
 		ArrayList<Field> fields = Game.getAllFields();
 		for(Field f : fields)
 		{
-			if(f.getPos().equals(p))
+			if(f.calculateCoordinates().equals(p))
 			{
 				JLabel j = new JLabel();
 				j.setIcon(i);
