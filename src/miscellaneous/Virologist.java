@@ -55,8 +55,19 @@ public class Virologist{
 		activeagents = new ArrayList<Agent>();
 		agents = new ArrayList<Agent>();
 		equipments = new ArrayList<Equipment>();
+		
+		// LEADAS ELOTT VEDD KI
 		equipments.add(new Axe());
 		equipments.add(new Sack());
+		equipments.add(new Glove());
+		
+		agents.add(new Chorea());
+		agents.add(new ForgettingAgent());
+		agents.add(new Protection());
+		agents.add(new Stun());
+		
+		activeagents.add(new Stun());
+		// VEGE
 		
 		setAminoAcid(0);
 		setNucleotide(0);

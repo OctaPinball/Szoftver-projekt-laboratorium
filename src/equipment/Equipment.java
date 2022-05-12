@@ -18,7 +18,7 @@ import miscellaneous.Virologist;
  */
 public abstract class Equipment {
 	
-	ImageIcon equipment = new ImageIcon("res/Axe.png");
+	ImageIcon equipment = new ImageIcon();
 
     /**
      * A felszerelés viselője

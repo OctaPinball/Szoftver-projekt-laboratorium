@@ -49,28 +49,29 @@ public class View {
 		if(v != null) {
 			if(v.getEquipments() != null) {
 				for(int i = 0; i < v.getEquipments().size(); i++) {
-					g2D.drawString(v.getEquipments().get(i).toString(), 40, 592 + 32 * (i+1));
-					g2D.drawImage(v.getEquipments().get(i).getIMG().getImage(), 40, 592 + 32 * (i+2), null);
+					g2D.drawString(v.getEquipments().get(i).toString(), 64, 592 + 32 * (i+1));
+					g2D.drawImage(v.getEquipments().get(i).getIMG().getImage(), 16, 592+10 + 32 * (i), null);
+					
 				}
 			}
 			
 			if(v.getAgents() != null) {
 				for(int i = 0; i < v.getAgents().size(); i++) {
-					g2D.drawString(v.getAgents().get(i).toString(), 40, 592 + 32 * (i+1));
+					g2D.drawString(v.getAgents().get(i).toString(), 160, 592 + 32 * (i+1));
 					//g2D.drawImage(v, 40, 592 + 32 * (i+2), null);
 				}
 			}
 			
 			if(v.getActiveAgents() != null) {
 				for(int i = 0; i < v.getActiveAgents().size(); i++) {
-					g2D.drawString(v.getActiveAgents().get(i).toString(), 40, 592 + 32 * (i+1));
+					g2D.drawString(v.getActiveAgents().get(i).toString(), 304, 592 + 32 * (i+1));
 					//g2D.drawImage(v, 40, 592 + 32 * (i+2), null);
 				}
 			}
 			
 			if(v.getFillMaterial() != null) {
-				g2D.drawString("Nucleotids: " + v.getNucleotide(), 40, 592 + 32);
-				g2D.drawString("Amino acids: : " + v.getAminoacid(), 40, 592 + 32*2);
+				g2D.drawString("Nucleotids: " + v.getNucleotide(), 467, 592 + 32);
+				g2D.drawString("Amino acids: " + v.getAminoacid(), 467, 592 + 32*2);
 			}	
 		}
 		
