@@ -70,6 +70,10 @@ public class Virologist{
 		agents.add(new Stun());
 		
 		activeagents.add(new Stun());
+		activeagents.add(new ForgettingAgent());
+		activeagents.add(new Chorea());
+		activeagents.add(new Protection());
+		activeagents.add(new BearAgent());
 		// VEGE
 		
 		setAminoAcid(0);
@@ -539,5 +543,9 @@ public class Virologist{
 	
 	public ImageIcon getIMG() {
 		return virologist;
+	}
+	
+	public int getActionPoint(){
+		return actionpoint;
 	}
 }

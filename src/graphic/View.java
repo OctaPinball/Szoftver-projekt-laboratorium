@@ -36,42 +36,45 @@ public class View {
 	
 	public void drawUI(Graphics g, Virologist v) {
 		Graphics2D g2D = (Graphics2D)g;
-		g2D.setPaint(Color.red);
+		g2D.setPaint(Color.black);
 		g2D.setFont(new Font("Arial", Font.BOLD, 16));
-		g2D.drawString("Inventory", 40, 592);
-		g2D.drawString("Agent", 194, 592);
-		g2D.drawString("Active agent", 312, 592);
-		g2D.drawString("Materials", 467, 592);
-		g2D.drawLine(144, 576, 144, 768);
-		g2D.drawLine(288, 576, 288, 768);
-		g2D.drawLine(432, 576, 432, 768);
+		g2D.drawString("Inventory", 40, 624);
+		g2D.drawString("Agent", 258, 624);
+		g2D.drawString("Active agent", 453, 624);
+		//g2D.drawString("Materials", 40, 824);
+		g2D.drawString("Action Points: " + v.getActionPoint(), 40, 824);
+		g2D.drawLine(170, 608, 170, 800);
+		g2D.drawLine(389, 608, 389, 800);
+		g2D.drawLine(0, 800, 608, 800);
+		//g2D.drawLine(432, 608, 432, 800);
 		
 		if(v != null) {
 			if(v.getEquipments() != null) {
 				for(int i = 0; i < v.getEquipments().size(); i++) {
-					g2D.drawString(v.getEquipments().get(i).toString(), 64, 592 + 32 * (i+1));
-					g2D.drawImage(v.getEquipments().get(i).getIMG().getImage(), 16, 592+10 + 32 * (i), null);
+					g2D.drawString(v.getEquipments().get(i).toString(), 64, 624 + 32 * (i+1));
+					g2D.drawImage(v.getEquipments().get(i).getIMG().getImage(), 16, 624 + 10 + 32 * (i), null);
 					
 				}
 			}
 			
 			if(v.getAgents() != null) {
 				for(int i = 0; i < v.getAgents().size(); i++) {
-					g2D.drawString(v.getAgents().get(i).toString(), 160, 592 + 32 * (i+1));
+					g2D.drawString(v.getAgents().get(i).toString(), 234, 624 + 32 * (i+1));
 					//g2D.drawImage(v, 40, 592 + 32 * (i+2), null);
 				}
 			}
 			
 			if(v.getActiveAgents() != null) {
 				for(int i = 0; i < v.getActiveAgents().size(); i++) {
-					g2D.drawString(v.getActiveAgents().get(i).toString(), 304, 592 + 32 * (i+1));
+					g2D.drawString(v.getActiveAgents().get(i).toString(), 453, 624 + 32 * (i+1));
 					//g2D.drawImage(v, 40, 592 + 32 * (i+2), null);
 				}
 			}
 			
 			if(v.getFillMaterial() != null) {
-				g2D.drawString("Nucleotids: " + v.getNucleotide(), 467, 592 + 32);
-				g2D.drawString("Amino acids: " + v.getAminoacid(), 467, 592 + 32*2);
+				g2D.drawString("Amino acids: " + v.getAminoacid(), 242, 824);
+				g2D.drawString("Nucleotids: " + v.getNucleotide(), 437, 824);
+				
 			}	
 		}
 		
