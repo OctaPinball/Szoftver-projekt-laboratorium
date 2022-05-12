@@ -46,7 +46,7 @@ public class Storage extends Field{
 	public void copyStorage() {
 		Logger.enter(this, "copyStorage", null);
 		
-		Field copyField = new Field(this.getID(), x, y);
+		Field copyField = new Field(this.getID(), pos.getX(), pos.getY());
 		copyField.neighbors.addAll(neighbors);
 		
 		for(int i = 0; i < neighbors.size(); i++) {

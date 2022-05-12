@@ -534,7 +534,7 @@ public class Virologist{
 	}
 	
 	public Position calculateCoordinates() {
-		return field.calculateCoordinates();
+		return field.getPos();
 	}
 	
 	public ImageIcon getIMG() {

@@ -43,15 +43,15 @@ public class Game {
 		}
 		
 		for(Field f : allFields) {
-			if(0 <= f.getID()-width)
+			if(f.getPos().getY() != 0)
 				f.addNeighbor(allFields.get(f.getID() - width));
-			if(f.getID()+width < width * height)
+			if(f.getID() < width * (height - 1))
 				f.addNeighbor(allFields.get(f.getID() + width));
-			if(f.getID() % (width + 1) == 0)
+			if(f.getPos().getX() % width != 0)
 				f.addNeighbor(allFields.get(f.getID() - 1));
-			if(f.getID() + 1 % (width + 1) == 1)
+			if(f.getPos().getY() % width != width - 1)
 					f.addNeighbor(allFields.get(f.getID() + 1));
-		}
+		} 
 	}
 	
     /**

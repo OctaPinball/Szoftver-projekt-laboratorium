@@ -212,16 +212,7 @@ public class Field {
 	public Position getPos() {
 		return pos;
 	}
-	
-	/*
-	public Position calculateCoordinates() {
-		int x =  id % Game.width;
-		int y = id % Game.height;
-		return new Position(x,y);
-	}	
-	*/
-	}
-	
+
 	public ImageIcon getIMG() {
 		return field;
 	}
