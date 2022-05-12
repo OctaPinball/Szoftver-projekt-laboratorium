@@ -57,5 +57,8 @@ public class Axe extends Equipment{
 		return "axe\t\t" + Control.getName(this);
 	}
 	
+	public ImageIcon getAxeIMG() {
+		return axe;
+	}
 
 }

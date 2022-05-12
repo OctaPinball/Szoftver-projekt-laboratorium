@@ -50,4 +50,8 @@ public class Cape extends Equipment{
     public String toString() {
 		return "cape\t\t" + Control.getName(this);
 	}
+    
+    public ImageIcon getCapeIMG() {
+		return cape;
+	}
 }

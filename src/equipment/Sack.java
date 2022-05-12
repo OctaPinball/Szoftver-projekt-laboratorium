@@ -50,4 +50,8 @@ public class Sack extends Equipment{
     public String toString() {
 		return "sack\t\t" + Control.getName(this);
 	}
+    
+    public ImageIcon getSackIMG() {
+		return sack;
+	}
 }

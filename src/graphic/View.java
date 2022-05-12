@@ -49,6 +49,7 @@ public class View {
 		if(v.getEquipments() != null) {
 			for(int i = 0; i < v.getEquipments().size(); i++) {
 				g2D.drawString(v.getEquipments().get(i).toString(), 40, 592 + 32 * (i+1));
+				g2D.drawImage(v.getEquipments().get(i)., xi-offsetX, yi-offsetY, null);
 			}
 		}
 		
