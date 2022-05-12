@@ -16,8 +16,8 @@ import agents.*;
  */
 public class Laboratory extends Field{
 	
-	Image lab = new ImageIcon("Field_3.png").getImage();
-	Image darkLab = new ImageIcon("Field_3_dark.png").getImage();
+	ImageIcon lab = new ImageIcon("res/Field_3.png");
+	ImageIcon darkLab = new ImageIcon("res/Field_3_dark.png");
 	
 	public Laboratory(int id, int x, int y) {
 		super(id, x, y);
@@ -69,5 +69,13 @@ public class Laboratory extends Field{
 		+ "\ntype:\t\tlaboratory"
 		+ "\nvirologist:\t" + Control.getName(virologistOnField)
 		+ "\nequipment:\t" + Control.getName(equipmentOnField);
+	}
+	
+	public ImageIcon getIMG() {
+		return lab;
+	}
+	
+	public ImageIcon getDarkIMG() {
+		return darkLab;
 	}
 }

@@ -16,7 +16,7 @@ public class Glove extends Equipment{
 	
 	private static int i = 0;
 	private int life = 3;
-	Image glove = new ImageIcon("Glove.png").getImage();
+	ImageIcon glove = new ImageIcon("res/Glove.png");
 	
 	public Glove(){
 		i++;
@@ -64,5 +64,9 @@ public class Glove extends Equipment{
     
     public String toString() {
 		return "glove\t\t" + Control.getName(this);
+	}
+    
+    public ImageIcon getIMG() {
+		return glove;
 	}
 }

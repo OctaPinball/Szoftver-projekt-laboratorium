@@ -46,85 +46,150 @@ public class View {
 		g2D.drawLine(288, 576, 288, 768);
 		g2D.drawLine(432, 576, 432, 768);
 		
-		if(v.getEquipments() != null) {
-			for(int i = 0; i < v.getEquipments().size(); i++) {
-				g2D.drawString(v.getEquipments().get(i).toString(), 40, 592 + 32 * (i+1));
+		if(v != null) {
+			if(v.getEquipments() != null) {
+				for(int i = 0; i < v.getEquipments().size(); i++) {
+					g2D.drawString(v.getEquipments().get(i).toString(), 64, 592 + 32 * (i+1));
+					g2D.drawImage(v.getEquipments().get(i).getIMG().getImage(), 16, 592+10 + 32 * (i), null);
+					
+				}
 			}
+			
+			if(v.getAgents() != null) {
+				for(int i = 0; i < v.getAgents().size(); i++) {
+					g2D.drawString(v.getAgents().get(i).toString(), 160, 592 + 32 * (i+1));
+					//g2D.drawImage(v, 40, 592 + 32 * (i+2), null);
+				}
+			}
+			
+			if(v.getActiveAgents() != null) {
+				for(int i = 0; i < v.getActiveAgents().size(); i++) {
+					g2D.drawString(v.getActiveAgents().get(i).toString(), 304, 592 + 32 * (i+1));
+					//g2D.drawImage(v, 40, 592 + 32 * (i+2), null);
+				}
+			}
+			
+			if(v.getFillMaterial() != null) {
+				g2D.drawString("Nucleotids: " + v.getNucleotide(), 467, 592 + 32);
+				g2D.drawString("Amino acids: " + v.getAminoacid(), 467, 592 + 32*2);
+			}	
 		}
 		
-		if(v.getAgents() != null) {
-			for(int i = 0; i < v.getAgents().size(); i++) {
-				g2D.drawString(v.getAgents().get(i).toString(), 40, 592 + 32 * (i+1));
-			}
-		}
 		
-		if(v.getActiveAgents() != null) {
-			for(int i = 0; i < v.getActiveAgents().size(); i++) {
-				g2D.drawString(v.getActiveAgents().get(i).toString(), 40, 592 + 32 * (i+1));
-			}
-		}
 		
-		if(v.getFillMaterial() != null) {
-			g2D.drawString("Nucleotids: " + v.getNucleotide(), 40, 592 + 32);
-			g2D.drawString("Amino acids: : " + v.getAminoacid(), 40, 592 + 32*2);
-		}	
 	}
 	
-		public static void drawField(Field f) {
-		ImageIcon i = null;
+	public static void drawField(Field f) {
+		
+		ImageIcon i = null;	
+			
+		for(int l = 0; l < f.getNeighbors().size(); l++) {
+			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++) {
+				
+				if(RoundManager.getEntity().getField().getNeighbors().get(k).equals(f.getNeighbors().get(l))) {
+					i = f.getIMG();
+				}
+				else {
+					i = f.getDarkIMG();
+				}
+			}
+		}
+		
 		Position p = f.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
 		
-		public static void drawShelter(Shelter s) {
+	public static void drawShelter(Shelter s) {
+			
 		ImageIcon i = null;
+		
+		for(int l = 0; l < s.getNeighbors().size(); l++) {
+			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++) {
+				
+				if(RoundManager.getEntity().getField().getNeighbors().get(k).equals(s.getNeighbors().get(l))) {
+					i = s.getIMG();
+				}
+				else {
+					i = s.getDarkIMG();
+				}
+			}
+		}
+		
 		Position p = s.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
 		
-		public static void drawStorage(Storage s) {
+	public static void drawStorage(Storage s) {
+			
 		ImageIcon i = null;
+		
+		for(int l = 0; l < s.getNeighbors().size(); l++) {
+			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++) {
+				
+				if(RoundManager.getEntity().getField().getNeighbors().get(k).equals(s.getNeighbors().get(l))) {
+					i = s.getIMG();
+				}
+				else {
+					i = s.getDarkIMG();
+				}
+			}
+		}
+		
 		Position p = s.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
-		public static void drawLaboratory(Laboratory l) {
+	
+	public static void drawLaboratory(Laboratory l) {
 		ImageIcon i = null;
+		
+		for(int n = 0; n < l.getNeighbors().size(); n++) {
+			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++) {
+				
+				if(RoundManager.getEntity().getField().getNeighbors().get(k).equals(l.getNeighbors().get(n))) {
+					i = l.getIMG();
+				}
+				else {
+					i = l.getDarkIMG();
+				}
+			}
+		}
+		
 		Position p = l.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
 		
 	public static void drawVirologist(Virologist v) {
-		ImageIcon i = null;
+		ImageIcon i = v.getIMG();
 		Position p = v.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
 	
 	public static void drawEquipment(Equipment e) {
-		ImageIcon i = null;
+		ImageIcon i = e.getIMG();
 		Position p = e.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
 	
 	public static void drawSack(Sack s) {
-		ImageIcon i = null;
+		ImageIcon i = s.getIMG();
 		Position p = s.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
 	
 	public static void drawAxe(Axe a) {
-		ImageIcon i = null;
+		ImageIcon i = a.getIMG();
 		Position p = a.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
 	
 	public static void drawCape(Cape c) {
-		ImageIcon i = null;
+		ImageIcon i = c.getIMG();
 		Position p = c.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
 	
 	public static void drawGlove(Glove g) {
-		ImageIcon i = null;
+		ImageIcon i = g.getIMG();
 		Position p = g.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}

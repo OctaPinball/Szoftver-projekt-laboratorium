@@ -8,8 +8,14 @@ import javax.swing.event.MouseInputListener;
 public class ControlInput implements MouseInputListener{
 
 	@Override
-	public void mouseClicked(MouseEvent e) {
+	public void mouseClicked(MouseEvent e) { //INTERAKCIÓK KIÍRÁSA
 		// TODO Auto-generated method stub
+	}
+	
+	@Override
+	public void mouseEntered(MouseEvent e) { //ADATOK KIÍRÁSA
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
@@ -21,12 +27,6 @@ public class ControlInput implements MouseInputListener{
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}

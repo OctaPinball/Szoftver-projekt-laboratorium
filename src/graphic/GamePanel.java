@@ -46,10 +46,16 @@ public class GamePanel extends JPanel implements Const{
 		{
 			if(f.calculateCoordinates().equals(p))
 			{
-				
+				JLabel j = new JLabel();
+				j.setIcon(i);
+				j.setBounds(p.getX(),p.getY(),32,32);
+				j.setOpaque(true);
+				JField jf = new JField(j, f);
+				j.addMouseListener(jf);
+				labels.add(j);
 			}
 		}
-		//JField j = new JField()
+
 		
 		/*
 		JLabel j = new JLabel();
@@ -64,6 +70,8 @@ public class GamePanel extends JPanel implements Const{
 	public void paint(Graphics g) {
 		if(view == null)
 			view = new View();
+		if(RoundManager.getEntity() == null)
+			RoundManager.nextRound();
 		view.drawUI(g, RoundManager.getEntity());
 }
 

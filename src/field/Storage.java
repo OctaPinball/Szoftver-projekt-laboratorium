@@ -13,8 +13,8 @@ import miscellaneous.*;
  */
 public class Storage extends Field{
 	
-	Image storage = new ImageIcon("Field_4.png").getImage();
-	Image darkStorage = new ImageIcon("Field_4_dark.png").getImage();
+	ImageIcon storage = new ImageIcon("res/Field_4.png");
+	ImageIcon darkStorage = new ImageIcon("res/Field_4_dark.png");
 	
 	public Storage(int id, int x, int y) {
 		super(id, x, y);
@@ -80,5 +80,13 @@ public class Storage extends Field{
 		+ "\ntype:\t\tstorage"
 		+ "\nvirologist:\t" + Control.getName(virologistOnField)
 		+ "\nequipment:\t" + Control.getName(equipmentOnField);
+	}
+	
+	public ImageIcon getIMG() {
+		return storage;
+	}
+	
+	public ImageIcon getDarkIMG() {
+		return darkStorage;
 	}
 }
