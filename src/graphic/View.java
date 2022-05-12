@@ -38,13 +38,15 @@ public class View implements Const{
 	}
 	
 	public void drawMap() {
-		Position entityPos = RoundManager.getEntity().getField().calculateCoordinates();
-		int diffX = ((PANEL_WIDH / 32) - 1) / 2;
-		int diffY = ((PANEL_HEIGH / 32) - 1) / 2;
-		for(Field f : Game.getAllFields())
-			if(entityPos.getX() - diffX <= f.calculateCoordinates().getX() || f.calculateCoordinates().getX() <= entityPos.getX() + diffX)
-				if(entityPos.getY() - diffY <= f.calculateCoordinates().getY() || f.calculateCoordinates().getY() <= entityPos.getY() + diffY)
-					f.pickDraw(this);
+		if(RoundManager.getEntity().getField() != null) {
+			Position entityPos = RoundManager.getEntity().getField().calculateCoordinates();
+			int diffX = ((PANEL_WIDH / 32) - 1) / 2;
+			int diffY = ((PANEL_HEIGH / 32) - 1) / 2;
+			for(Field f : Game.getAllFields())
+				if(entityPos.getX() - diffX <= f.calculateCoordinates().getX() || f.calculateCoordinates().getX() <= entityPos.getX() + diffX)
+					if(entityPos.getY() - diffY <= f.calculateCoordinates().getY() || f.calculateCoordinates().getY() <= entityPos.getY() + diffY)
+						f.pickDraw(this);
+		}
 	}
 	
 	public void setOrigo(Position o) {
