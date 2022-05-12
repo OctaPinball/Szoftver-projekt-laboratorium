@@ -55,6 +55,8 @@ public class Virologist{
 		activeagents = new ArrayList<Agent>();
 		agents = new ArrayList<Agent>();
 		equipments = new ArrayList<Equipment>();
+		equipments.add(new Axe());
+		equipments.add(new Sack());
 		
 		setAminoAcid(0);
 		setNucleotide(0);
