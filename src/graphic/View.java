@@ -67,7 +67,7 @@ public class View implements Const{
 			if(v.getEquipments() != null) {
 				for(int i = 0; i < v.getEquipments().size(); i++) {
 					g2D.drawString(v.getEquipments().get(i).toString(), 64, 624 + 32 * (i+1));
-					g2D.drawImage(v.getEquipments().get(i).getIMG().getImage(), 16, 624 + 10 + 32 * (i), null);
+					g2D.drawImage(images.get(v.getEquipments().get(i).getClass()).getImage(), 16, 624 + 10 + 32 * (i), null);
 					
 				}
 			}
