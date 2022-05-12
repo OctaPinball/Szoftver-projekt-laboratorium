@@ -22,6 +22,7 @@ public class View implements Const{
 	
 	
 	public View() {
+		images = new HashMap<Class, ImageIcon>();
 		images.put(Axe.class, new ImageIcon("res/Axe.png"));
 		images.put(Cape.class, new ImageIcon("res/Cape.png"));
 		images.put(Glove.class, new ImageIcon("res/Glove.png"));
