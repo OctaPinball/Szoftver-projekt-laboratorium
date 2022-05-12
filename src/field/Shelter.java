@@ -14,8 +14,8 @@ import equipment.*;
  */
 public class Shelter extends Field{
 	
-	Image shelter = new ImageIcon("res/Field_2.png").getImage();
-	Image darkShelter = new ImageIcon("res/Field_2.png").getImage();
+	ImageIcon shelter = new ImageIcon("res/Field_2.png");
+	ImageIcon darkShelter = new ImageIcon("res/Field_2.png");
 	
 	// még most nincs rá szükség, mert lényegében ugyanúgy viselkedik, mint egy sima mezõ
 	/*

@@ -16,7 +16,7 @@ public class Glove extends Equipment{
 	
 	private static int i = 0;
 	private int life = 3;
-	Image glove = new ImageIcon("res/Glove.png").getImage();
+	ImageIcon glove = new ImageIcon("res/Glove.png");
 	
 	public Glove(){
 		i++;
