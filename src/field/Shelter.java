@@ -42,4 +42,12 @@ public class Shelter extends Field{
 		+ "\nvirologist:\t" + Control.getName(virologistOnField)
 		+ "\nequipment:\t" + Control.getName(equipmentOnField);
 	}
+	
+	public ImageIcon getIMG() {
+		return shelter;
+	}
+	
+	public ImageIcon getDarkIMG() {
+		return darkShelter;
+	}
 }

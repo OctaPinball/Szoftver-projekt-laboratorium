@@ -81,4 +81,12 @@ public class Storage extends Field{
 		+ "\nvirologist:\t" + Control.getName(virologistOnField)
 		+ "\nequipment:\t" + Control.getName(equipmentOnField);
 	}
+	
+	public ImageIcon getIMG() {
+		return storage;
+	}
+	
+	public ImageIcon getDarkIMG() {
+		return darkStorage;
+	}
 }
