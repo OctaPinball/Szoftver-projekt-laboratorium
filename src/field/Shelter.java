@@ -1,6 +1,11 @@
 package field;
 
 import miscellaneous.*;
+
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+
 import equipment.*;
 
 /**
@@ -8,6 +13,9 @@ import equipment.*;
  * A játék kezdetekor minden óvóhely tartalmaz egy felszerelést, amit a mezõre lépve a virológus felvehet.
  */
 public class Shelter extends Field{
+	
+	Image shelter = new ImageIcon("res/Field_2.png").getImage();
+	Image darkShelter = new ImageIcon("res/Field_2.png").getImage();
 	
 	// még most nincs rá szükség, mert lényegében ugyanúgy viselkedik, mint egy sima mezõ
 	/*

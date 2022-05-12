@@ -1,7 +1,11 @@
 package field;
 
+import java.awt.Image;
 import java.io.IOException;
 import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
+
 import miscellaneous.*;
 import equipment.*;
 import graphic.Position;
@@ -20,6 +24,9 @@ public class Field {
 	protected Equipment equipmentOnField = null;
 
 	protected ArrayList<Field> neighbors;
+	
+	Image field = new ImageIcon("res/Field_1.png").getImage();
+	Image darkField = new ImageIcon("res/Field_1_dark.png").getImage();
 
 	/**
 	 * A Field osztály konstruktora, területet foglal a mezõ szomszédainak

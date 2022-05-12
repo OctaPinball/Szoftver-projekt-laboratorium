@@ -1,5 +1,9 @@
 package equipment;
 
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+
 import block.PartialBlock;
 import fillmaterial.*;
 import miscellaneous.Control;
@@ -11,6 +15,8 @@ import miscellaneous.Logger;
  */
 public class Sack extends Equipment{
 
+	Image sack = new ImageIcon("res/Sack.png").getImage();
+	
     /**
      * Aktiválja a IncreasedMatter hatást a virológuson
      */

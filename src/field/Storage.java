@@ -1,7 +1,10 @@
 package field;
 
+import java.awt.Image;
 import java.io.IOException;
 import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
 
 import miscellaneous.*;
 
@@ -9,6 +12,9 @@ import miscellaneous.*;
  * A Field osztály leszármazottja, az ilyen típusú mezõkre lépve tudják a virológusok feltölteni készleteiket.
  */
 public class Storage extends Field{
+	
+	Image storage = new ImageIcon("res/Field_4.png").getImage();
+	Image darkStorage = new ImageIcon("res/Field_4_dark.png").getImage();
 	
 	public Storage(int id) {
 		super(id);

@@ -26,7 +26,8 @@ public class View {
 	}
 	
 	public void drawMap() {
-		
+		//if()
+		RoundManager.getEntity().getField().getID();
 	}
 	
 	public void setOrigo(Position o) {
