@@ -15,6 +15,8 @@ import equipment.*;
 import field.*;
 import fillmaterial.*;
 import graphic.Position;
+import graphic.View;
+import graphic.Viewable;
 import movement.*;
 import beardefense.*;
 
@@ -24,7 +26,7 @@ import beardefense.*;
  * A j�t�kos a virol�gus oszt�ly seg�ts�g�vel tud �genst kenni m�s virol�gusra, �s meg tud tanulni genetikai k�dokat, 
  * illetve el is tudja azokat felejteni.
  */
-public class Virologist{
+public class Virologist implements Viewable{
 	private int aminoacid;
 	private int nucleotide;
 	private int actionpoint;
@@ -544,8 +546,14 @@ public class Virologist{
 	public ImageIcon getIMG() {
 		return virologist;
 	}
+
+	@Override
+	public void pickDraw(View v) {
+		v.drawVirologist(this);
+	}
 	
 	public int getActionPoint(){
 		return actionpoint;
+
 	}
 }

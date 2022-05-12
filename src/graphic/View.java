@@ -14,7 +14,7 @@ import equipment.*;
 import field.*;
 import miscellaneous.*;
 
-public class View {
+public class View implements Const{
 	private Position origo;
 	private ArrayList<Viewable> viewable;
 	private static GamePanel gamepanel;
@@ -36,8 +36,13 @@ public class View {
 	}
 	
 	public void drawMap() {
-		//if()
-		RoundManager.getEntity().getField().getID();
+		Position entityPos = RoundManager.getEntity().getField().getPos();
+		int diffX = ((PANEL_WIDH / 32) - 1) / 2;
+		int diffY = ((PANEL_HEIGH / 32) - 1) / 2;
+		for(Field f : Game.getAllFields())
+			if(entityPos.getX() - diffX <= f.getPos().getX() || f.getPos().getX() <= entityPos.getX() + diffX)
+				if(entityPos.getY() - diffY <= f.getPos().getY() || f.getPos().getY() <= entityPos.getY() + diffY)
+					f.pickDraw(this);
 	}
 	
 	public void setOrigo(Position o) {
@@ -100,10 +105,10 @@ public class View {
 			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++) {
 				
 				if(RoundManager.getEntity().getField().getNeighbors().get(k).equals(f.getNeighbors().get(l))) {
-					i = f.getIMG();
+					i = new ImageIcon("res/Field_1.png");
 				}
 				else {
-					i = f.getDarkIMG();
+					i = new ImageIcon("res/Field_1_dark.png");
 				}
 			}
 		}
@@ -120,10 +125,10 @@ public class View {
 			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++) {
 				
 				if(RoundManager.getEntity().getField().getNeighbors().get(k).equals(s.getNeighbors().get(l))) {
-					i = s.getIMG();
+					i = new ImageIcon("res/Field_2.png");
 				}
 				else {
-					i = s.getDarkIMG();
+					i = new ImageIcon("res/Field_2_dark.png");
 				}
 			}
 		}
@@ -140,10 +145,10 @@ public class View {
 			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++) {
 				
 				if(RoundManager.getEntity().getField().getNeighbors().get(k).equals(s.getNeighbors().get(l))) {
-					i = s.getIMG();
+					i = new ImageIcon("res/Field_4.png");
 				}
 				else {
-					i = s.getDarkIMG();
+					i = new ImageIcon("res/Field_4_dark.png");
 				}
 			}
 		}
@@ -159,10 +164,10 @@ public class View {
 			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++) {
 				
 				if(RoundManager.getEntity().getField().getNeighbors().get(k).equals(l.getNeighbors().get(n))) {
-					i = l.getIMG();
+					i = new ImageIcon("res/Field_3.png");
 				}
 				else {
-					i = l.getDarkIMG();
+					i = new ImageIcon("res/Field_3_dark.png");
 				}
 			}
 		}

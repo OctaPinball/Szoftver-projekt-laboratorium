@@ -8,6 +8,7 @@ import beardefense.*;
 import block.BlockAndReturn;
 import block.NoBlock;
 import fillmaterial.IncreasedMatter;
+import graphic.View;
 import miscellaneous.Control;
 import miscellaneous.Logger;
 
@@ -56,9 +57,13 @@ public class Axe extends Equipment{
 	public String toString() {
 		return "axe\t\t" + Control.getName(this);
 	}
-	
+
 //	public ImageIcon getIMG() {
 //		return axe;
 //	}
-
+	
+	@Override
+	public void pickDraw(View v) {
+		v.drawEquipment(this);
+	}
 }
