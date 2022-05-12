@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 import agents.*;
+import graphic.View;
 
 /**
  * A Field osztály leszármazottja, az ilyen típusú mezõkre lépve tudnak a virológusok új ágenseket megismerni.
@@ -77,5 +78,10 @@ public class Laboratory extends Field{
 	
 	public ImageIcon getDarkIMG() {
 		return darkLab;
+	}
+	
+	@Override
+	public void pickDraw(View v) {
+		v.drawLaboratory(this);
 	}
 }

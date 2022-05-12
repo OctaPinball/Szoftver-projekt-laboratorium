@@ -7,6 +7,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 import equipment.*;
+import graphic.View;
 
 /**
  * A Field osztály leszármazottja, az ilyen típusú mezõkön szerezhetõek alap esetben felszerelések.
@@ -49,5 +50,10 @@ public class Shelter extends Field{
 	
 	public ImageIcon getDarkIMG() {
 		return darkShelter;
+	}
+	
+	@Override
+	public void pickDraw(View v) {
+		v.drawShelter(this);
 	}
 }
