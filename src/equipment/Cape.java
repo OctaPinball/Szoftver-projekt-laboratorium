@@ -57,6 +57,6 @@ public class Cape extends Equipment{
 //	}
 	@Override
 	public void pickDraw(View v) {
-		v.drawEquipment(this);
+		v.drawCape(this);
 	}
 }

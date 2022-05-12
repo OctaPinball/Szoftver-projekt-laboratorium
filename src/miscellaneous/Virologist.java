@@ -542,10 +542,10 @@ public class Virologist implements Viewable{
 	public Position calculateCoordinates() {
 		return field.calculateCoordinates();
 	}
-	
+	/*
 	public ImageIcon getIMG() {
 		return virologist;
-	}
+	}*/
 
 	@Override
 	public void pickDraw(View v) {
