@@ -16,6 +16,7 @@ public class Game {
 	private static boolean randomEnabled = true;
 	private static ArrayList<Field> allFields = new ArrayList<Field>();
 	public static int width;
+	public static int height;
 	
     /**
      * A játék elindításáért felelős függvény
@@ -86,7 +87,7 @@ public class Game {
 				f.addNeighbor(allFields.get(f.getID() - 1));
 			if(f.getID() + 1 % (width + 1) == 1)
 					f.addNeighbor(allFields.get(f.getID() + 1));
-		}
+		} 
 	}
 	
     /**
