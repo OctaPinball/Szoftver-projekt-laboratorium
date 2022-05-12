@@ -13,8 +13,8 @@ import miscellaneous.*;
  */
 public class Storage extends Field{
 	
-	Image storage = new ImageIcon("Field_4.png").getImage();
-	Image darkStorage = new ImageIcon("Field_4_dark.png").getImage();
+	Image storage = new ImageIcon("res/Field_4.png").getImage();
+	Image darkStorage = new ImageIcon("res/Field_4_dark.png").getImage();
 	
 	public Storage(int id) {
 		super(id);

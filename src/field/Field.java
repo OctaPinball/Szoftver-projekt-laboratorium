@@ -25,8 +25,8 @@ public class Field {
 
 	protected ArrayList<Field> neighbors;
 	
-	Image field = new ImageIcon("Field_1.png").getImage();
-	Image darkField = new ImageIcon("Field_1_dark.png").getImage();
+	Image field = new ImageIcon("res/Field_1.png").getImage();
+	Image darkField = new ImageIcon("res/Field_1_dark.png").getImage();
 
 	/**
 	 * A Field osztály konstruktora, területet foglal a mezõ szomszédainak

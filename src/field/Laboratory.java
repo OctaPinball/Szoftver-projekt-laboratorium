@@ -16,8 +16,8 @@ import agents.*;
  */
 public class Laboratory extends Field{
 	
-	Image lab = new ImageIcon("Field_3.png").getImage();
-	Image darkLab = new ImageIcon("Field_3_dark.png").getImage();
+	Image lab = new ImageIcon("res/Field_3.png").getImage();
+	Image darkLab = new ImageIcon("res/Field_3_dark.png").getImage();
 	
 	public Laboratory(int id) {
 		super(id);

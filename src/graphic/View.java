@@ -26,7 +26,7 @@ public class View {
 	}
 	
 	public void drawMap() {
-		if()
+		//if()
 		RoundManager.getEntity().getField().getID();
 	}
 	

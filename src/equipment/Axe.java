@@ -14,8 +14,8 @@ import miscellaneous.Logger;
 public class Axe extends Equipment{
 	
 	private int life = 1;
-	Image axe = new ImageIcon("Axe.png").getImage();
-	Image usedAxe = new ImageIcon("Axe_used.png").getImage();
+	Image axe = new ImageIcon("res/Axe.png").getImage();
+	Image usedAxe = new ImageIcon("res/Axe_used.png").getImage();
 	
 	/**
      * Aktiválja a Defense hatást a virológuson

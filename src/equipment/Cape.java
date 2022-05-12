@@ -14,7 +14,7 @@ import miscellaneous.Logger;
  */
 public class Cape extends Equipment{
 	
-	Image cape = new ImageIcon("Cape.png").getImage();
+	Image cape = new ImageIcon("res/Cape.png").getImage();
 
     /**
      * Aktiválja a PartialBlock hatást a virológuson
