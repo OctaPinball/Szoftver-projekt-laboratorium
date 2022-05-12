@@ -19,7 +19,7 @@ import graphic.Viewable;
  * A mezõk ismerik a szomszédos mezõket, ezeket egy tömbben tárolják.
  */
 
-public class Field implements Viewable{
+public class Field implements Viewable, Const{
 	
 	protected int id;
 	protected Position pos;
@@ -212,7 +212,12 @@ public class Field implements Viewable{
 	}
 	
 	public Position calculateCoordinates() {
-		return pos;
+		//RoundManager.getEntity().getField().getPosition();
+		int relativeX = ((PANEL_HEIGH / 2) - 16) / 32;
+		int relativeY = ((PANEL_WIDH / 2) - 16) / 32;
+		
+		Position p = new Position(pos.getX(), pos.getY());
+		return p;
 	}
 
 	public ImageIcon getIMG() {
@@ -221,6 +226,10 @@ public class Field implements Viewable{
 	
 	public ImageIcon getDarkIMG() {
 		return darkField;
+	}
+	
+	public Position getPosition() {
+		return pos;
 	}
 
 	@Override

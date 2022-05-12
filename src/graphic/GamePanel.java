@@ -19,6 +19,9 @@ public class GamePanel extends JPanel implements Const{
 	private GameFrame parent;
 	private ControlInput controls;
 	private ArrayList<JLabel> labels;
+	
+
+
 	View view = null;
 	
 	public GamePanel(ControlInput controls_input, GameFrame frame) {
@@ -36,15 +39,17 @@ public class GamePanel extends JPanel implements Const{
 	public void drawLabels() {
 		for(JLabel l : labels)
 		{
+			l.setOpaque(true);
 			this.add(l);
 		}
+		this.setVisible(true);
 	}
 	
 	public void addLabel(Position p, ImageIcon i) {
 		ArrayList<Field> fields = Game.getAllFields();
 		for(Field f : fields)
 		{
-			if(f.calculateCoordinates().equals(p))
+			if(f.calculateCoordinates().Equals(p))
 			{
 				JLabel j = new JLabel();
 				j.setIcon(i);
@@ -74,8 +79,15 @@ public class GamePanel extends JPanel implements Const{
 			RoundManager.nextRound();
 		view.drawUI(g, RoundManager.getEntity());
 		view.drawMap();
-		drawLabels();
-}
+		//drawLabels();
+		parent.drawLabels();
+		parent.prepareShit();
+		parent.drawShit();
+	}
+	
+	public ArrayList<JLabel> getLabels() {
+		return labels;
+	}
 
 	
 }

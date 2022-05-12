@@ -26,7 +26,7 @@ public class Position {
 	}
 	
 	
-	public boolean equals(Position p) {
+	public boolean Equals(Position p) {
 		return this.x == p.x && this.y == p.y;
 	}
 	
