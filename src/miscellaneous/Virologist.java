@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
+import javax.swing.ImageIcon;
+
 import agents.*;
 import beardefense.*;
 import block.*;
@@ -38,6 +40,7 @@ public class Virologist{
 	private FillMaterial fillmaterial;
 	private Movement movement;
 	private BearDefense defense;
+	private ImageIcon virologist = new ImageIcon("res/Virologist.png");
 	//private Position position;
 	
 	/**
@@ -532,5 +535,9 @@ public class Virologist{
 	
 	public Position calculateCoordinates() {
 		return field.calculateCoordinates();
+	}
+	
+	public ImageIcon getIMG() {
+		return virologist;
 	}
 }

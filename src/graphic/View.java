@@ -159,37 +159,37 @@ public class View {
 	}
 		
 	public static void drawVirologist(Virologist v) {
-		ImageIcon i = null;
+		ImageIcon i = v.getIMG();
 		Position p = v.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
 	
 	public static void drawEquipment(Equipment e) {
-		ImageIcon i = null;
+		ImageIcon i = e.getIMG();
 		Position p = e.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
 	
 	public static void drawSack(Sack s) {
-		ImageIcon i = null;
+		ImageIcon i = s.getIMG();
 		Position p = s.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
 	
 	public static void drawAxe(Axe a) {
-		ImageIcon i = null;
+		ImageIcon i = a.getIMG();
 		Position p = a.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
 	
 	public static void drawCape(Cape c) {
-		ImageIcon i = null;
+		ImageIcon i = c.getIMG();
 		Position p = c.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
 	
 	public static void drawGlove(Glove g) {
-		ImageIcon i = null;
+		ImageIcon i = g.getIMG();
 		Position p = g.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
