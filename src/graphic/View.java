@@ -70,7 +70,21 @@ public class View {
 	}
 	
 		public static void drawField(Field f) {
-		ImageIcon i = null;
+		
+		ImageIcon i = null;	
+			
+		for(int l = 0; l < f.getNeighbors().size(); l++) {
+			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++) {
+				
+				if(RoundManager.getEntity().getField().getNeighbors().get(k).equals(f.getNeighbors().get(l))) {
+					i = new ImageIcon("res/Field_1.png");
+				}
+				else {
+					i = new ImageIcon("res/Field_1_dark.png");
+				}
+			}
+		}
+		
 		Position p = f.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
