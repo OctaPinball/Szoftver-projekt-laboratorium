@@ -112,7 +112,7 @@ public abstract class Equipment {
 	}
 
 	public Position calculateCoordinates() {
-		return currentField.calculateCoordinates();
+		return currentField.getPos();
 	}
 	
 	public ImageIcon getIMG() {

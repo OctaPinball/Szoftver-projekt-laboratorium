@@ -1,25 +1,32 @@
 package graphic;
 
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 
 import javax.swing.JLabel;
 import javax.swing.event.MouseInputListener;
 
-import field.*;
+import field.Field;
+import miscellaneous.Control;
 
-public class JField implements MouseInputListener{
-	
+public class JInteractButton implements MouseInputListener {
+
+	private String command;
 	private JLabel label;
-	private Field field;
 	
-	public JField(JLabel jl, Field f) {
+	public JInteractButton(JLabel jl, String cmd) {
 		label = jl;
-		field = f;
+		command = cmd;
 	}
 	
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
+		try {
+			Control.runCommand(command);
+		} catch (CloneNotSupportedException | IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		
 	}
 
@@ -58,5 +65,5 @@ public class JField implements MouseInputListener{
 		// TODO Auto-generated method stub
 		
 	}
-	
+
 }
