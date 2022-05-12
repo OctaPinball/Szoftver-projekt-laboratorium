@@ -70,4 +70,12 @@ public class Laboratory extends Field{
 		+ "\nvirologist:\t" + Control.getName(virologistOnField)
 		+ "\nequipment:\t" + Control.getName(equipmentOnField);
 	}
+	
+	public ImageIcon getIMG() {
+		return lab;
+	}
+	
+	public ImageIcon getDarkIMG() {
+		return darkLab;
+	}
 }

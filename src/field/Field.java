@@ -214,11 +214,11 @@ public class Field {
 		return new Position(x,y);
 	}
 	
-	public ImageIcon getFieldIMG() {
+	public ImageIcon getIMG() {
 		return field;
 	}
 	
-	public ImageIcon getDarkFieldIMG() {
+	public ImageIcon getDarkIMG() {
 		return darkField;
 	}
 }

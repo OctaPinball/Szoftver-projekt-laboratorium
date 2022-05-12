@@ -70,7 +70,7 @@ public class View {
 		}	
 	}
 	
-		public static void drawField(Field f) {
+	public static void drawField(Field f) {
 		
 		ImageIcon i = null;	
 			
@@ -78,10 +78,10 @@ public class View {
 			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++) {
 				
 				if(RoundManager.getEntity().getField().getNeighbors().get(k).equals(f.getNeighbors().get(l))) {
-					i = f.getFieldIMG();
+					i = f.getIMG();
 				}
 				else {
-					i = f.getDarkFieldIMG();
+					i = f.getDarkIMG();
 				}
 			}
 		}
@@ -90,19 +90,61 @@ public class View {
 		gamepanel.addLabel(p, i);
 	}
 		
-		public static void drawShelter(Shelter s) {
+	public static void drawShelter(Shelter s) {
+			
 		ImageIcon i = null;
+		
+		for(int l = 0; l < s.getNeighbors().size(); l++) {
+			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++) {
+				
+				if(RoundManager.getEntity().getField().getNeighbors().get(k).equals(s.getNeighbors().get(l))) {
+					i = s.getIMG();
+				}
+				else {
+					i = s.getDarkIMG();
+				}
+			}
+		}
+		
 		Position p = s.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
 		
-		public static void drawStorage(Storage s) {
+	public static void drawStorage(Storage s) {
+			
 		ImageIcon i = null;
+		
+		for(int l = 0; l < s.getNeighbors().size(); l++) {
+			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++) {
+				
+				if(RoundManager.getEntity().getField().getNeighbors().get(k).equals(s.getNeighbors().get(l))) {
+					i = s.getIMG();
+				}
+				else {
+					i = s.getDarkIMG();
+				}
+			}
+		}
+		
 		Position p = s.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
-		public static void drawLaboratory(Laboratory l) {
+	
+	public static void drawLaboratory(Laboratory l) {
 		ImageIcon i = null;
+		
+		for(int n = 0; n < l.getNeighbors().size(); n++) {
+			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++) {
+				
+				if(RoundManager.getEntity().getField().getNeighbors().get(k).equals(l.getNeighbors().get(n))) {
+					i = l.getIMG();
+				}
+				else {
+					i = l.getDarkIMG();
+				}
+			}
+		}
+		
 		Position p = l.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
