@@ -4,7 +4,9 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.swing.ImageIcon;
 
@@ -16,6 +18,14 @@ public class View {
 	private Position origo;
 	private ArrayList<Viewable> viewable;
 	private static GamePanel gamepanel;
+	private static HashMap<Class, ImageIcon> images;
+	
+	static {
+		images.put(Axe.class, new ImageIcon("res/Axe.png"));
+		images.put(Cape.class, new ImageIcon("res/Cape.png"));
+		images.put(Glove.class, new ImageIcon("res/Glove.png"));
+		images.put(Sack.class, new ImageIcon("res/Sack.png"));
+	}
 	
 	public void updteDraw() {
 		

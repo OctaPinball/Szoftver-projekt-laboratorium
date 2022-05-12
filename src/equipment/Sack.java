@@ -15,7 +15,7 @@ import miscellaneous.Logger;
  */
 public class Sack extends Equipment{
 
-	ImageIcon sack = new ImageIcon("res/Sack.png");
+	//ImageIcon sack = new ImageIcon("res/Sack.png");
 	
     /**
      * Aktiválja a IncreasedMatter hatást a virológuson
@@ -51,7 +51,7 @@ public class Sack extends Equipment{
 		return "sack\t\t" + Control.getName(this);
 	}
     
-    public ImageIcon getIMG() {
-		return sack;
-	}
+//    public ImageIcon getIMG() {
+//		return sack;
+//	}
 }
