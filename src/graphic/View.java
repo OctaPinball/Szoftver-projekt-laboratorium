@@ -98,7 +98,7 @@ public class View {
 			}
 		}
 		
-		Position p = f.getPos();
+		Position p = f.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
 		
@@ -118,7 +118,7 @@ public class View {
 			}
 		}
 		
-		Position p = s.getPos();
+		Position p = s.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
 		
@@ -138,7 +138,7 @@ public class View {
 			}
 		}
 		
-		Position p = s.getPos();
+		Position p = s.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
 	
@@ -157,7 +157,7 @@ public class View {
 			}
 		}
 		
-		Position p = l.getPos();
+		Position p = l.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
 		

@@ -114,7 +114,7 @@ public abstract class Equipment implements Viewable{
 	}
 
 	public Position calculateCoordinates() {
-		return currentField.getPos();
+		return currentField.calculateCoordinates();
 	}
 	
 	public ImageIcon getIMG() {

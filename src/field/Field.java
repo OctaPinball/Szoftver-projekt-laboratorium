@@ -211,7 +211,7 @@ public class Field implements Viewable{
 		return id;
 	}
 	
-	public Position getPos() {
+	public Position calculateCoordinates() {
 		return pos;
 	}
 

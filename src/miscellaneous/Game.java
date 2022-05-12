@@ -43,13 +43,13 @@ public class Game {
 		}
 		
 		for(Field f : allFields) {
-			if(f.getPos().getY() != 0)
+			if(f.calculateCoordinates().getY() != 0)
 				f.addNeighbor(allFields.get(f.getID() - width));
 			if(f.getID() < width * (height - 1))
 				f.addNeighbor(allFields.get(f.getID() + width));
-			if(f.getPos().getX() % width != 0)
+			if(f.calculateCoordinates().getX() % width != 0)
 				f.addNeighbor(allFields.get(f.getID() - 1));
-			if(f.getPos().getY() % width != width - 1)
+			if(f.calculateCoordinates().getY() % width != width - 1)
 					f.addNeighbor(allFields.get(f.getID() + 1));
 		} 
 	}
@@ -81,13 +81,13 @@ public class Game {
 		}
 		
 		for(Field f : allFields) {
-			if(f.getPos().getY() != 0)
+			if(f.calculateCoordinates().getY() != 0)
 				f.addNeighbor(allFields.get(f.getID() - width));
 			if(f.getID() < width * (height - 1))
 				f.addNeighbor(allFields.get(f.getID() + width));
-			if(f.getPos().getX() % width != 0)
+			if(f.calculateCoordinates().getX() % width != 0)
 				f.addNeighbor(allFields.get(f.getID() - 1));
-			if(f.getPos().getY() % width != width - 1)
+			if(f.calculateCoordinates().getY() % width != width - 1)
 					f.addNeighbor(allFields.get(f.getID() + 1));
 		} 
 	}
