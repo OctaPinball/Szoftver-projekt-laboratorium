@@ -67,6 +67,7 @@ public class GameSetup extends JFrame{
 						}
 						GameFrame gameFrame = new GameFrame();
 						RoundManager.nextRound();
+						f.dispose();
 					}
 					else
 					{
