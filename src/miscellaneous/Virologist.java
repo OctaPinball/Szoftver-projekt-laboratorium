@@ -42,7 +42,7 @@ public class Virologist implements Viewable{
 	private FillMaterial fillmaterial;
 	private Movement movement;
 	private BearDefense defense;
-	private ImageIcon virologist = new ImageIcon("res/Virologist.png");
+	//private ImageIcon virologist = new ImageIcon("res/Virologist.png");
 	//private Position position;
 	
 	/**
@@ -542,10 +542,10 @@ public class Virologist implements Viewable{
 	public Position calculateCoordinates() {
 		return field.calculateCoordinates();
 	}
-	
+	/*
 	public ImageIcon getIMG() {
 		return virologist;
-	}
+	}*/
 
 	@Override
 	public void pickDraw(View v) {

@@ -72,6 +72,6 @@ public class Glove extends Equipment{
 //	}
 	@Override
 	public void pickDraw(View v) {
-		v.drawEquipment(this);
+		v.drawGlove(this);
 	}
 }

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 
+import graphic.View;
 import miscellaneous.*;
 
 /**
@@ -88,5 +89,10 @@ public class Storage extends Field{
 	
 	public ImageIcon getDarkIMG() {
 		return darkStorage;
+	}
+	
+	@Override
+	public void pickDraw(View v) {
+		v.drawStorage(this);
 	}
 }

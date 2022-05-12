@@ -64,6 +64,6 @@ public class Axe extends Equipment{
 	
 	@Override
 	public void pickDraw(View v) {
-		v.drawEquipment(this);
+		v.drawAxe(this);
 	}
 }
