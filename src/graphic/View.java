@@ -18,9 +18,10 @@ public class View implements Const{
 	private Position origo;
 	private ArrayList<Viewable> viewable;
 	private static GamePanel gamepanel;
-	private static HashMap<Class, ImageIcon> images;
+	private HashMap<Class, ImageIcon> images;
 	
-	static {
+	
+	public View() {
 		images.put(Axe.class, new ImageIcon("res/Axe.png"));
 		images.put(Cape.class, new ImageIcon("res/Cape.png"));
 		images.put(Glove.class, new ImageIcon("res/Glove.png"));
