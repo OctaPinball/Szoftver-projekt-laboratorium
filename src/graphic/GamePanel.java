@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import field.*;
 import miscellaneous.*;
 
 public class GamePanel extends JPanel implements Const{
@@ -40,12 +41,24 @@ public class GamePanel extends JPanel implements Const{
 	}
 	
 	public void addLabel(Position p, ImageIcon i) {
+		ArrayList<Field> fields = Game.getAllFields();
+		for(Field f : fields)
+		{
+			if(f.calculateCoordinates().equals(p))
+			{
+				
+			}
+		}
+		//JField j = new JField()
+		
+		/*
 		JLabel j = new JLabel();
 		j.setIcon(i);
 		j.setBounds(p.getX(),p.getY(),32,32);
 		j.setOpaque(true);
 		j.addMouseListener(new ControlInput());
 		labels.add(j);
+		*/
 	}
 	
 	public void paint(Graphics g) {

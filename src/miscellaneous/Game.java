@@ -15,6 +15,8 @@ import beardefense.*;
 public class Game {
 	private static boolean randomEnabled = true;
 	private static ArrayList<Field> allFields = new ArrayList<Field>();
+
+
 	public static int width;
 	public static int height;
 	
@@ -122,5 +124,9 @@ public class Game {
 
 	public static void setRandomEnabled(boolean newrandomEnabled) {
 		randomEnabled = newrandomEnabled;
+	}
+	
+	public static ArrayList<Field> getAllFields() {
+		return allFields;
 	}
 }
