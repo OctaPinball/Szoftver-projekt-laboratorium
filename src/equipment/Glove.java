@@ -66,7 +66,7 @@ public class Glove extends Equipment{
 		return "glove\t\t" + Control.getName(this);
 	}
     
-    public ImageIcon getGloveIMG() {
+    public ImageIcon getIMG() {
 		return glove;
 	}
 }

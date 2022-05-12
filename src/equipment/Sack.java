@@ -51,7 +51,7 @@ public class Sack extends Equipment{
 		return "sack\t\t" + Control.getName(this);
 	}
     
-    public ImageIcon getSackIMG() {
+    public ImageIcon getIMG() {
 		return sack;
 	}
 }

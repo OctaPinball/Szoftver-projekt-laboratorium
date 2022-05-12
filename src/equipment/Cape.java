@@ -51,7 +51,7 @@ public class Cape extends Equipment{
 		return "cape\t\t" + Control.getName(this);
 	}
     
-    public ImageIcon getCapeIMG() {
+    public ImageIcon getIMG() {
 		return cape;
 	}
 }
