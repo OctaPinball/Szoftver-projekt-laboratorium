@@ -177,19 +177,19 @@ public class View implements Const{
 	}
 		
 	public static void drawVirologist(Virologist v) {
-		ImageIcon i = v.getIMG();
+		ImageIcon i = new ImageIcon("res/Virologist.png");
 		Position p = v.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
 	
 	public static void drawEquipment(Equipment e) {
-		ImageIcon i = e.getIMG();
+		ImageIcon i = null;
 		Position p = e.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}
 	
 	public static void drawSack(Sack s) {
-		ImageIcon i = s.getIMG();
+		ImageIcon i = new ImageIcon("res/Sack.png");
 		Position p = s.calculateCoordinates();
 		gamepanel.addLabel(p, i);
 	}

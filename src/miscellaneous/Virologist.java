@@ -42,7 +42,7 @@ public class Virologist implements Viewable{
 	private FillMaterial fillmaterial;
 	private Movement movement;
 	private BearDefense defense;
-	private ImageIcon virologist = new ImageIcon("res/Virologist.png");
+	//private ImageIcon virologist = new ImageIcon("res/Virologist.png");
 	//private Position position;
 	
 	/**
