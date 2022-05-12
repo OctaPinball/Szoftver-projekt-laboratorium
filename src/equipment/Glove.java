@@ -65,4 +65,8 @@ public class Glove extends Equipment{
     public String toString() {
 		return "glove\t\t" + Control.getName(this);
 	}
+    
+    public ImageIcon getIMG() {
+		return glove;
+	}
 }

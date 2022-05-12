@@ -2,6 +2,8 @@ package equipment;
 
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
+
 import field.Field;
 import graphic.Position;
 import miscellaneous.Control;
@@ -15,6 +17,8 @@ import miscellaneous.Virologist;
  * ami után elveszti annak hatását.
  */
 public abstract class Equipment {
+	
+	ImageIcon equipment = new ImageIcon("res/Axe.png");
 
     /**
      * A felszerelés viselője
@@ -109,5 +113,9 @@ public abstract class Equipment {
 
 	public Position calculateCoordinates() {
 		return currentField.calculateCoordinates();
+	}
+	
+	public ImageIcon getIMG() {
+		return equipment;
 	}
 }
