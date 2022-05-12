@@ -25,8 +25,8 @@ public class Field {
 
 	protected ArrayList<Field> neighbors;
 	
-	Image field = new ImageIcon("res/Field_1.png").getImage();
-	Image darkField = new ImageIcon("res/Field_1_dark.png").getImage();
+	ImageIcon field = new ImageIcon("res/Field_1.png");
+	ImageIcon darkField = new ImageIcon("res/Field_1_dark.png");
 
 	/**
 	 * A Field osztály konstruktora, területet foglal a mezõ szomszédainak
@@ -214,4 +214,11 @@ public class Field {
 		return new Position(x,y);
 	}
 	
+	public ImageIcon getFieldIMG() {
+		return field;
+	}
+	
+	public ImageIcon getDarkFieldIMG() {
+		return darkField;
+	}
 }
