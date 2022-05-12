@@ -6,6 +6,7 @@ import javax.swing.ImageIcon;
 
 import block.PartialBlock;
 import fillmaterial.*;
+import graphic.View;
 import miscellaneous.Control;
 import miscellaneous.Logger;
 
@@ -53,5 +54,10 @@ public class Sack extends Equipment{
     
     public ImageIcon getIMG() {
 		return sack;
+	}
+    
+	@Override
+	public void pickDraw(View v) {
+		v.drawEquipment(this);
 	}
 }

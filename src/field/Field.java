@@ -9,6 +9,8 @@ import javax.swing.ImageIcon;
 import miscellaneous.*;
 import equipment.*;
 import graphic.Position;
+import graphic.View;
+import graphic.Viewable;
 
 /**
  * Egy mezõt reprezentál a játékban, ez az õsosztály ebbõl származnak le a különbözõ mezõ típusok
@@ -17,7 +19,7 @@ import graphic.Position;
  * A mezõk ismerik a szomszédos mezõket, ezeket egy tömbben tárolják.
  */
 
-public class Field {
+public class Field implements Viewable{
 	
 	protected int id;
 	protected Position pos;
@@ -219,5 +221,10 @@ public class Field {
 	
 	public ImageIcon getDarkIMG() {
 		return darkField;
+	}
+
+	@Override
+	public void pickDraw(View v) {
+		v.drawField(this);
 	}
 }
