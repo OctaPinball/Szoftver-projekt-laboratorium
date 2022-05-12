@@ -1,5 +1,9 @@
 package equipment;
 
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+
 import block.*;
 import miscellaneous.Control;
 import miscellaneous.Logger;
@@ -9,6 +13,8 @@ import miscellaneous.Logger;
  * akkor megkapja a PartialBlock tulajdonságot, amely 82,3%-os védelmet nyújt minden vírus ellen.
  */
 public class Cape extends Equipment{
+	
+	Image cape = new ImageIcon("Cape.png").getImage();
 
     /**
      * Aktiválja a PartialBlock hatást a virológuson

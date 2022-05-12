@@ -2,8 +2,11 @@ package field;
 
 import miscellaneous.*;
 
+import java.awt.Image;
 import java.io.IOException;
 import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
 
 import agents.*;
 
@@ -12,6 +15,9 @@ import agents.*;
  * Minden laboratóriumban található egy ágens, amit a mezõre lépõ virológus egybõl megtanul.
  */
 public class Laboratory extends Field{
+	
+	Image lab = new ImageIcon("Field_3.png").getImage();
+	Image darkLab = new ImageIcon("Field_3_dark.png").getImage();
 	
 	public Laboratory(int id) {
 		super(id);

@@ -1,5 +1,9 @@
 package equipment;
 
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+
 import block.*;
 import miscellaneous.Control;
 import miscellaneous.Logger;
@@ -12,6 +16,7 @@ public class Glove extends Equipment{
 	
 	private static int i = 0;
 	private int life = 3;
+	Image glove = new ImageIcon("Glove.png").getImage();
 	
 	public Glove(){
 		i++;
