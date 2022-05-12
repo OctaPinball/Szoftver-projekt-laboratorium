@@ -527,17 +527,17 @@ public class Control {
 		case "glove":
 			return new Glove();
 		case "field":
-			return new Field(0);
+			return new Field(0, 0, 0);
 		case "laboratory":
-			return new Laboratory(0);
+			return new Laboratory(0, 0, 0);
 		case "storage":
-			return new Storage(0);
+			return new Storage(0, 0, 0);
 		case "shelter":
-			return new Shelter(0);
+			return new Shelter(0, 0, 0);
 		case "v":
 			return new Virologist();
 		case "f":
-			return new Field(0);
+			return new Field(0, 0, 0);
 		}
 		return null;
 	}

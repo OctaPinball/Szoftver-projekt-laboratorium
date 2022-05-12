@@ -22,6 +22,7 @@ import graphic.Viewable;
 public class Field implements Viewable{
 	
 	protected int id;
+	protected Position pos;
 	protected Virologist virologistOnField;
 	protected Equipment equipmentOnField = null;
 
@@ -33,9 +34,10 @@ public class Field implements Viewable{
 	/**
 	 * A Field osztály konstruktora, területet foglal a mezõ szomszédainak
 	 */
-	public Field(int id) {
+	public Field(int id, int x, int y) {
 		neighbors = new ArrayList<Field>();
 		this.id = id;
+		pos = new Position(x, y);
 	}
 
 	/**
@@ -202,20 +204,17 @@ public class Field implements Viewable{
 			string[i] = "Neighbor " + (i+1) + ": \t" + f.neighbors.get(i).printName() + "\n";
 			i++;
 		}
-		return "name:\t " + Control.getName(this) + "\n"
-				+ string.toString();
+		return "name:\t " + Control.getName(this) + "\n" + string.toString();
 	}
 	
 	public int getID() {
 		return id;
 	}
 	
-	public Position calculateCoordinates() {
-		int x =  id % Game.width;
-		int y = id % x;
-		return new Position(x,y);
+	public Position getPos() {
+		return pos;
 	}
-	
+
 	public ImageIcon getIMG() {
 		return field;
 	}

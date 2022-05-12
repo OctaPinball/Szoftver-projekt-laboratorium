@@ -60,8 +60,23 @@ public class Virologist implements Viewable{
 		activeagents = new ArrayList<Agent>();
 		agents = new ArrayList<Agent>();
 		equipments = new ArrayList<Equipment>();
+		
+		// LEADAS ELOTT VEDD KI
 		equipments.add(new Axe());
 		equipments.add(new Sack());
+		equipments.add(new Glove());
+		
+		agents.add(new Chorea());
+		agents.add(new ForgettingAgent());
+		agents.add(new Protection());
+		agents.add(new Stun());
+		
+		activeagents.add(new Stun());
+		activeagents.add(new ForgettingAgent());
+		activeagents.add(new Chorea());
+		activeagents.add(new Protection());
+		activeagents.add(new BearAgent());
+		// VEGE
 		
 		setAminoAcid(0);
 		setNucleotide(0);
@@ -525,7 +540,7 @@ public class Virologist implements Viewable{
 	}
 	
 	public Position calculateCoordinates() {
-		return field.calculateCoordinates();
+		return field.getPos();
 	}
 	
 	public ImageIcon getIMG() {
@@ -535,5 +550,10 @@ public class Virologist implements Viewable{
 	@Override
 	public void pickDraw(View v) {
 		v.drawVirologist(this);
+	}
+	
+	public int getActionPoint(){
+		return actionpoint;
+
 	}
 }

@@ -16,8 +16,8 @@ public class Storage extends Field{
 	ImageIcon storage = new ImageIcon("res/Field_4.png");
 	ImageIcon darkStorage = new ImageIcon("res/Field_4_dark.png");
 	
-	public Storage(int id) {
-		super(id);
+	public Storage(int id, int x, int y) {
+		super(id, x, y);
 	}
 
 	/**
@@ -46,7 +46,7 @@ public class Storage extends Field{
 	public void copyStorage() {
 		Logger.enter(this, "copyStorage", null);
 		
-		Field copyField = new Field(this.getID());
+		Field copyField = new Field(this.getID(), pos.getX(), pos.getY());
 		copyField.neighbors.addAll(neighbors);
 		
 		for(int i = 0; i < neighbors.size(); i++) {

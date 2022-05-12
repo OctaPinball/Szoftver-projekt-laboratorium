@@ -38,20 +38,20 @@ public class Game {
 	public static void generateFieldMap(int width, int height) {
 		for(int i = 0; i < height; i++) {
 			for(int j = 0; j < width; j++) {
-				allFields.add(new Field(i*width + j));
+				allFields.add(new Field(i*width + j, j, i));
 			}
 		}
 		
 		for(Field f : allFields) {
-			if(0 <= f.getID()-width)
+			if(f.getPos().getY() != 0)
 				f.addNeighbor(allFields.get(f.getID() - width));
-			if(f.getID()+width < width * height)
+			if(f.getID() < width * (height - 1))
 				f.addNeighbor(allFields.get(f.getID() + width));
-			if(f.getID() % (width + 1) == 0)
+			if(f.getPos().getX() % width != 0)
 				f.addNeighbor(allFields.get(f.getID() - 1));
-			if(f.getID() + 1 % (width + 1) == 1)
+			if(f.getPos().getY() % width != width - 1)
 					f.addNeighbor(allFields.get(f.getID() + 1));
-		}
+		} 
 	}
 	
     /**
@@ -64,30 +64,30 @@ public class Game {
 				int fieldType = rand.nextInt(4);
 				
 				switch(fieldType) {
-					case 0: allFields.add(new Field(i*width + j));
+					case 0: allFields.add(new Field(i*width + j, j, i));
 						break;
 						
-					case 1: allFields.add(new Laboratory(i*width + j));
+					case 1: allFields.add(new Laboratory(i*width + j, j, i));
 						break;
 						
-					case 2: allFields.add(new Shelter(i*width + j));
+					case 2: allFields.add(new Shelter(i*width + j, j, i));
 						break;
 						
-					case 3: allFields.add(new Storage(i*width + j));
+					case 3: allFields.add(new Storage(i*width + j, j, i));
 						break;
 				}
-				allFields.add(new Field(i*width + j));
+				allFields.add(new Field(i*width + j, j, i));
 			}
 		}
 		
 		for(Field f : allFields) {
-			if(0 <= f.getID()-width)
+			if(f.getPos().getY() != 0)
 				f.addNeighbor(allFields.get(f.getID() - width));
-			if(f.getID()+width < width * height)
+			if(f.getID() < width * (height - 1))
 				f.addNeighbor(allFields.get(f.getID() + width));
-			if(f.getID() % (width + 1) == 0 && f.getID() != 0)
+			if(f.getPos().getX() % width != 0)
 				f.addNeighbor(allFields.get(f.getID() - 1));
-			if(f.getID() + 1 % (width + 1) == 1)
+			if(f.getPos().getY() % width != width - 1)
 					f.addNeighbor(allFields.get(f.getID() + 1));
 		} 
 	}
