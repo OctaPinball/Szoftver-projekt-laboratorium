@@ -76,7 +76,7 @@ public class Game {
 					case 3: allFields.add(new Storage(i*width + j, j, i));
 						break;
 				}
-				allFields.add(new Field(i*width + j, j, i));
+				//allFields.add(new Field(i*width + j, j, i));
 			}
 		}
 		
@@ -88,7 +88,7 @@ public class Game {
 			if(f.getPosition().getX() % width != 0)
 				f.addNeighbor(allFields.get(f.getID() - 1));
 			if(f.getPosition().getY() % width != width - 1)
-					f.addNeighbor(allFields.get(f.getID() + 1));
+				f.addNeighbor(allFields.get(f.getID() + 1));
 		} 
 	}
 	

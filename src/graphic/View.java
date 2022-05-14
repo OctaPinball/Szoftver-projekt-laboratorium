@@ -7,6 +7,8 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.util.ArrayList;
 import java.util.HashMap;
+import javax.imageio.ImageIO;
+import javax.swing.*;
 
 import javax.swing.ImageIcon;
 
@@ -104,7 +106,14 @@ public class View implements Const{
 	
 	public static void drawField(Field f) {
 		
-		ImageIcon i = new ImageIcon("res/Field_1_dark.png");;	
+		ImageIcon i = new ImageIcon("res/Field_1_dark.png");
+		
+		if(RoundManager.getEntity().getField().PosEquals(f))
+		{
+			i = new ImageIcon("res/Field_1.png");
+			gamepanel.addLabel(f, i);
+			return;
+		}
 			
 			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++)
 			{
@@ -121,6 +130,12 @@ public class View implements Const{
 	public static void drawShelter(Shelter s) {
 			
 		ImageIcon i = new ImageIcon("res/Field_2_dark.png");
+		if(RoundManager.getEntity().getField().PosEquals(s))
+		{
+			i = new ImageIcon("res/Field_2.png");
+			gamepanel.addLabel(s, i);
+			return;
+		}
 		
 			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++) {
 				
@@ -137,6 +152,13 @@ public class View implements Const{
 			
 		ImageIcon i = new ImageIcon("res/Field_4_dark.png");
 		
+		if(RoundManager.getEntity().getField().PosEquals(s))
+		{
+			i = new ImageIcon("res/Field_4.png");
+			gamepanel.addLabel(s, i);
+			return;
+		}
+		
 			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++) {
 				
 				if(RoundManager.getEntity().getField().getNeighbors().get(k).PosEquals(s)) {
@@ -151,6 +173,13 @@ public class View implements Const{
 	public static void drawLaboratory(Laboratory l) {
 		ImageIcon i = new ImageIcon("res/Field_3_dark.png");
 		
+		if(RoundManager.getEntity().getField().PosEquals(l))
+		{
+			i = new ImageIcon("res/Field_3.png");
+			gamepanel.addLabel(l, i);
+			return;
+		}
+		
 			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++) {
 				
 				if(RoundManager.getEntity().getField().getNeighbors().get(k).PosEquals(l)) {
@@ -163,7 +192,15 @@ public class View implements Const{
 	}
 		
 	public static void drawVirologist(Virologist v) {
-		ImageIcon i = new ImageIcon("res/Virologist.png");
+		ImageIcon i = new ImageIcon("res/Virologist.png");	
+		if(v.getField().getClass() == Field.class)
+			i = new ImageIcon("res/v_field_1.png");
+		if(v.getField().getClass() == Shelter.class)
+			i = new ImageIcon("res/v_field_2.png");
+		if(v.getField().getClass() == Laboratory.class)
+			i = new ImageIcon("res/v_field_3.png");
+		if(v.getField().getClass() == Storage.class)
+			i = new ImageIcon("res/v_field_4.png");
 		Position p = v.calculateCoordinates();
 		gamepanel.addLabel(v.getField(), i);
 	}
