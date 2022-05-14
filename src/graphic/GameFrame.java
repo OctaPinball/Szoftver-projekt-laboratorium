@@ -110,12 +110,12 @@ public class GameFrame extends JFrame{
 		label2.setBounds(50, 50, 100, 100);
 		label2.setBackground(Color.red);
 		label2.setOpaque(true);
-		label2.addMouseListener(new JField(label2, null));
+		label2.addMouseListener(new JField(label2, null, null));
 		
 		label.setBounds(0, 0, 200, 200);
 		label.setBackground(Color.blue);
 		label.setOpaque(true);
-		label.addMouseListener(new JField(label, null));
+		label.addMouseListener(new JField(label, null, null));
 		
 	}
 	

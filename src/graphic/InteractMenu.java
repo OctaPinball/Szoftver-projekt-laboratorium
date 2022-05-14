@@ -2,6 +2,8 @@ package graphic;
 
 import java.util.ArrayList;
 
+import javax.swing.JLabel;
+
 import agents.*;
 import equipment.*;
 import field.*;
@@ -12,46 +14,49 @@ public class InteractMenu {
 	
 	private ArrayList<JInteractButton> buttons = new ArrayList<JInteractButton>();
 	
-	public InteractMenu(Field f) {
+	public InteractMenu(JField f) {
+		int height = 0;
+
 		
-		Position relativepos = f.calculateCoordinates();
+		Position relativepos = f.getField().calculateCoordinates();
 		
-		if(f.equals(RoundManager.getEntity().getField()))
+		if(f.getField().equals(RoundManager.getEntity().getField()))
 		{
 			for(Equipment e : RoundManager.getEntity().getEquipments())//Drop
 			{
-				if(e.getClass() == Axe.class && f.getEquipment() == null)
+				if(e.getClass() == Axe.class && f.getField().getEquipment() == null)
 				{
 					//Drop Axe
+					
 				}
-				if(e.getClass() == Cape.class && f.getEquipment() == null)
+				if(e.getClass() == Cape.class && f.getField().getEquipment() == null)
 				{
 					//Drop Cape
 				}
-				if(e.getClass() == Glove.class && f.getEquipment() == null)
+				if(e.getClass() == Glove.class && f.getField().getEquipment() == null)
 				{
 					//Drop Glove
 				}
-				if(e.getClass() == Sack.class && f.getEquipment() == null)
+				if(e.getClass() == Sack.class && f.getField().getEquipment() == null)
 				{
 					//Drop Sack
 				}
 			}
-			if(f.getEquipment() != null)//Pickup
+			if(f.getField().getEquipment() != null)//Pickup
 			{
-				if(f.getEquipment().getClass() == Axe.class)
+				if(f.getField().getEquipment().getClass() == Axe.class)
 				{
 					//Pickup Axe
 				}
-				if(f.getEquipment().getClass() == Cape.class)
+				if(f.getField().getEquipment().getClass() == Cape.class)
 				{
 					//Pickup Cape
 				}
-				if(f.getEquipment().getClass() == Glove.class)
+				if(f.getField().getEquipment().getClass() == Glove.class)
 				{
 					//Pickup Glove
 				}
-				if(f.getEquipment().getClass() == Sack.class)
+				if(f.getField().getEquipment().getClass() == Sack.class)
 				{
 					//Pickup Sack
 				}
@@ -80,13 +85,13 @@ public class InteractMenu {
 		{
 			for(Field field : RoundManager.getEntity().getField().getNeighbors())
 			{
-				if(field.equals(f))
+				if(field.equals(f.getField()))
 				{
-					if(f.getVirologist() == null)//Move
+					if(f.getField().getVirologist() == null)//Move
 					{
 						//Move
 					}
-					else if(!f.getVirologist().equals(RoundManager.getEntity()))
+					else if(!f.getField().getVirologist().equals(RoundManager.getEntity()))
 					{
 						
 						for(int i = 0; i < RoundManager.getEntity().getAgents().size(); i++)//Cast
@@ -108,23 +113,23 @@ public class InteractMenu {
 								//Cast Stun
 							}
 						}
-						if(f.getVirologist().getMovement().getClass() == Stunned.class)//Steal
+						if(f.getField().getVirologist().getMovement().getClass() == Stunned.class)//Steal
 						{
-							for(int i = 0; i < f.getVirologist().getEquipments().size(); i++)
+							for(int i = 0; i < f.getField().getVirologist().getEquipments().size(); i++)
 							{
-								if(f.getVirologist().getEquipments().get(i).getClass() == Axe.class)
+								if(f.getField().getVirologist().getEquipments().get(i).getClass() == Axe.class)
 								{
 									//Steal Axe
 								}
-								if(f.getVirologist().getEquipments().get(i).getClass() == Cape.class)
+								if(f.getField().getVirologist().getEquipments().get(i).getClass() == Cape.class)
 								{
 									//Steal Cape
 								}
-								if(f.getVirologist().getEquipments().get(i).getClass() == Glove.class)
+								if(f.getField().getVirologist().getEquipments().get(i).getClass() == Glove.class)
 								{
 									//Steal Glove
 								}
-								if(f.getVirologist().getEquipments().get(i).getClass() == Sack.class)
+								if(f.getField().getVirologist().getEquipments().get(i).getClass() == Sack.class)
 								{
 									//Steal Sack
 								}
@@ -134,5 +139,11 @@ public class InteractMenu {
 				}
 			}
 		}
+		JLabel j = new JLabel();
+		j.setBounds(0,0,96,height);
+		j.setOpaque(true);
+		JInteractButton base = new JInteractButton(j, "none");
+		f.getParent().getGamepanel().setActivemenu(this);
 	}
+	
 }

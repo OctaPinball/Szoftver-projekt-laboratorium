@@ -20,6 +20,7 @@ public class View implements Const{
 	private Position origo;
 	private ArrayList<Viewable> viewable;
 	private static GamePanel gamepanel;
+
 	private HashMap<Class, ImageIcon> images;
 	
 	
@@ -235,4 +236,8 @@ public class View implements Const{
 		gamepanel.addLabel(g.getCurrentField(), i);
 	}
 	
+	public static GamePanel getGamepanel() {
+		return gamepanel;
+	}
+
 }

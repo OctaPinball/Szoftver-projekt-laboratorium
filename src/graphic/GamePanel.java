@@ -19,6 +19,7 @@ public class GamePanel extends JPanel implements Const{
 	private GameFrame parent;
 	private ControlInput controls;
 	private ArrayList<JLabel> labels;
+	private InteractMenu activemenu = null;
 	
 
 
@@ -52,7 +53,7 @@ public class GamePanel extends JPanel implements Const{
 				j.setIcon(i);
 				j.setBounds(f.calculateCoordinates().getX(),f.calculateCoordinates().getY(),32,32);
 				j.setOpaque(true);
-				JField jf = new JField(j, f);
+				JField jf = new JField(j, f, view);
 				j.addMouseListener(jf);
 				labels.add(j);
 			}
@@ -75,14 +76,26 @@ public class GamePanel extends JPanel implements Const{
 		view.drawUI(g, RoundManager.getEntity());
 		RoundManager.getEntity().pickDraw(view);
 		view.drawMap();
+		if(activemenu != null)
+		{
+			//Menu kirajzolása
+		}
 		//drawLabels();
-		parent.drawLabels();
+		parent.drawLabels(); //FINAL DRAW CALL******
 		//parent.prepareShit();
 		//parent.drawShit();
 	}
 	
 	public ArrayList<JLabel> getLabels() {
 		return labels;
+	}
+
+	public InteractMenu getActivemenu() {
+		return activemenu;
+	}
+
+	public void setActivemenu(InteractMenu activemenu) {
+		this.activemenu = activemenu;
 	}
 
 	

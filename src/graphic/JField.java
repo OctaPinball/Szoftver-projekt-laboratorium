@@ -11,8 +11,10 @@ public class JField implements MouseInputListener{
 	
 	private JLabel label;
 	private Field field;
+	private View parent;
 	
-	public JField(JLabel jl, Field f) {
+	public JField(JLabel jl, Field f, View p) {
+		parent = p;
 		label = jl;
 		field = f;
 	}
@@ -20,7 +22,7 @@ public class JField implements MouseInputListener{
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("jej");
+		InteractMenu menu = new InteractMenu(this);
 		
 	}
 
@@ -58,6 +60,14 @@ public class JField implements MouseInputListener{
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public Field getField() {
+		return field;
+	}
+
+	public View getParent() {
+		return parent;
 	}
 	
 }
