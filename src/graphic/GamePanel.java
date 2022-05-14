@@ -45,21 +45,17 @@ public class GamePanel extends JPanel implements Const{
 		this.setVisible(true);
 	}
 	
-	public void addLabel(Position p, ImageIcon i) {
+	public void addLabel(Field f, ImageIcon i) {
 		ArrayList<Field> fields = Game.getAllFields();
-		for(Field f : fields)
-		{
-			if(f.calculateCoordinates().Equals(p))
-			{
+
 				JLabel j = new JLabel();
 				j.setIcon(i);
-				j.setBounds(p.getX(),p.getY(),32,32);
+				j.setBounds(f.calculateCoordinates().getX(),f.calculateCoordinates().getY(),32,32);
 				j.setOpaque(true);
 				JField jf = new JField(j, f);
 				j.addMouseListener(jf);
 				labels.add(j);
 			}
-		}
 
 		
 		/*
@@ -70,19 +66,18 @@ public class GamePanel extends JPanel implements Const{
 		j.addMouseListener(new ControlInput());
 		labels.add(j);
 		*/
-	}
 	
 	public void paint(Graphics g) {
 		if(view == null)
-			view = new View();
+			view = new View(this);
 		if(RoundManager.getEntity() == null)
 			RoundManager.nextRound();
 		view.drawUI(g, RoundManager.getEntity());
 		view.drawMap();
 		//drawLabels();
 		parent.drawLabels();
-		parent.prepareShit();
-		parent.drawShit();
+		//parent.prepareShit();
+		//parent.drawShit();
 	}
 	
 	public ArrayList<JLabel> getLabels() {

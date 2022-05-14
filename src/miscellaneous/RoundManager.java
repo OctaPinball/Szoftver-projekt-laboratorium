@@ -3,31 +3,35 @@ package miscellaneous;
 import java.util.ArrayList;
 
 public class RoundManager {
-	private static ArrayList<Virologist> entity = new ArrayList<Virologist>();
+	private static ArrayList<Virologist> entities = new ArrayList<Virologist>();
 	private static Virologist currentEntity;
 	
 	
 	public static void nextRound() {
-		if(currentEntity == null && !entity.isEmpty())
+		if(currentEntity == null && !entities.isEmpty())
 		{
-			currentEntity = entity.get(0);
+			currentEntity = entities.get(0);
 			return;
 		}
 		if(currentEntity == null)
 		{
 			return;
 		}
-		int currentIndex = entity.indexOf(currentEntity);
-		if(currentIndex == entity.size() - 1)
+		int currentIndex = entities.indexOf(currentEntity);
+		if(currentIndex == entities.size() - 1)
 		{
-			currentEntity = entity.get(0);
+			currentEntity = entities.get(0);
 			return;
 		}
-		currentEntity = entity.get(currentIndex + 1);
+		currentEntity = entities.get(currentIndex + 1);
 	}
 	
 	public static void addEntity(Virologist s) {
-		entity.add(s);
+		entities.add(s);
+	}
+	
+	public static ArrayList<Virologist> getVriologists(){
+		return entities;
 	}
 	
 	public static Virologist getEntity() {

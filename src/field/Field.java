@@ -212,12 +212,19 @@ public class Field implements Viewable, Const{
 	}
 	
 	public Position calculateCoordinates() {
-		//RoundManager.getEntity().getField().getPosition();
-		int relativeX = ((PANEL_HEIGH / 2) - 16) / 32;
-		int relativeY = ((PANEL_WIDH / 2) - 16) / 32;
-		
-		Position p = new Position(pos.getX(), pos.getY());
-		return p;
+		if(RoundManager.getEntity() != null && RoundManager.getEntity().getField() != null)
+		{
+			Position origo = RoundManager.getEntity().getField().getPosition();
+			int deltaX = this.getPosition().getX() - origo.getX();
+			int deltaY = this.getPosition().getY() - origo.getY();
+			
+			int relativeX = ((PANEL_WIDH / 2) - 16);
+			int relativeY = ((MAP_HEIGHT / 2) - 16);
+			
+			return new Position(relativeX + deltaX * 32, relativeY + deltaY * 32);
+			
+		}
+		return null;
 	}
 
 	public ImageIcon getIMG() {
@@ -230,6 +237,10 @@ public class Field implements Viewable, Const{
 	
 	public Position getPosition() {
 		return pos;
+	}
+	
+	public boolean PosEquals(Field f) {
+		return this.getPosition().Equals(f.getPosition());
 	}
 
 	@Override

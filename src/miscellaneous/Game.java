@@ -81,13 +81,13 @@ public class Game {
 		}
 		
 		for(Field f : allFields) {
-			if(f.calculateCoordinates().getY() != 0)
+			if(f.getPosition().getY() != 0)
 				f.addNeighbor(allFields.get(f.getID() - width));
 			if(f.getID() < width * (height - 1))
 				f.addNeighbor(allFields.get(f.getID() + width));
-			if(f.calculateCoordinates().getX() % width != 0)
+			if(f.getPosition().getX() % width != 0)
 				f.addNeighbor(allFields.get(f.getID() - 1));
-			if(f.calculateCoordinates().getY() % width != width - 1)
+			if(f.getPosition().getY() % width != width - 1)
 					f.addNeighbor(allFields.get(f.getID() + 1));
 		} 
 	}
@@ -115,7 +115,44 @@ public class Game {
 						break;
 				}
 			}
+			if(allFields.get(i).getClass() == Laboratory.class)
+			{
+				Random rand = new Random();
+				int equipmentType = rand.nextInt(5);
+				
+				switch(equipmentType) {
+					case 0: ((Laboratory) allFields.get(i)).addAgent(new BearAgent());
+						break;
+						
+					case 1: ((Laboratory) allFields.get(i)).addAgent(new Chorea());
+						break;
+						
+					case 2: ((Laboratory) allFields.get(i)).addAgent(new ForgettingAgent());
+						break;
+						
+					case 3: ((Laboratory) allFields.get(i)).addAgent(new Protection());
+						break;
+						
+					case 4: ((Laboratory) allFields.get(i)).addAgent(new Stun());
+						break;
+				}
+			}
 		}
+		int i = 0;
+		while(i < RoundManager.getVriologists().size())
+		{
+			RoundManager.getVriologists().get(i);
+			Random rand = new Random();
+			int fieldrandom = rand.nextInt(allFields.size());
+			if(allFields.get(fieldrandom).getVirologist() == null)
+			{
+				allFields.get(fieldrandom).addVirologist(RoundManager.getVriologists().get(i));
+				RoundManager.getVriologists().get(i).changeField(allFields.get(fieldrandom));
+				i++;
+			}
+			
+		}
+		
 	}
 
 	public static boolean isRandomEnabled() {
