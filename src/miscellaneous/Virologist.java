@@ -62,6 +62,7 @@ public class Virologist implements Viewable, Const{
 		equipments = new ArrayList<Equipment>();
 		
 		// LEADAS ELOTT VEDD KI
+		/*
 		equipments.add(new Axe());
 		equipments.add(new Sack());
 		equipments.add(new Glove());
@@ -76,6 +77,7 @@ public class Virologist implements Viewable, Const{
 		activeagents.add(new Chorea());
 		activeagents.add(new Protection());
 		activeagents.add(new BearAgent());
+		*/
 		// VEGE
 		
 		setAminoAcid(0);

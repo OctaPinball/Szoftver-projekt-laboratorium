@@ -15,6 +15,7 @@ import javax.swing.ImageIcon;
 import equipment.*;
 import field.*;
 import miscellaneous.*;
+import movement.BearDance;
 
 public class View implements Const{
 	private Position origo;
@@ -204,6 +205,8 @@ public class View implements Const{
 			i = new ImageIcon("res/v_field_3.png");
 		if(v.getField().getClass() == Storage.class)
 			i = new ImageIcon("res/v_field_4.png");
+		if(v.getMovement().getClass() == BearDance.class)
+			i = new ImageIcon("res/Bear.png");
 		Position p = v.calculateCoordinates();
 		gamepanel.addLabel(v.getField(), i);
 	}

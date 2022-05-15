@@ -21,7 +21,6 @@ public class JField implements MouseInputListener{
 	
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		System.out.println("jej");
 		if(parent.getGamepanel().getActivemenu().getJfield() != null && parent.getGamepanel().getActivemenu().getJfield().equals(this))
 		{
 			parent.getGamepanel().setMenupriority(false);
