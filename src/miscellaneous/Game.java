@@ -196,7 +196,7 @@ public class Game {
 							e.printStackTrace();
 						}
 						try {
-							Control.runCommand("operator a a_" + a_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
+							Control.runCommand("operator a a_" + a_ID + " move " + Control.getKey(Control.fields, allFields.get(i)));
 						} catch (CloneNotSupportedException | IOException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -211,7 +211,7 @@ public class Game {
 								e.printStackTrace();
 							}
 							try {
-								Control.runCommand("operator a a_" + a_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
+								Control.runCommand("operator a a_" + a_ID + " move " + Control.getKey(Control.fields, allFields.get(i)));
 							} catch (CloneNotSupportedException | IOException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
@@ -226,7 +226,7 @@ public class Game {
 								e.printStackTrace();
 							}
 							try {
-								Control.runCommand("operator a a_" + a_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
+								Control.runCommand("operator a a_" + a_ID + " move " + Control.getKey(Control.fields, allFields.get(i)));
 							} catch (CloneNotSupportedException | IOException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
@@ -241,7 +241,7 @@ public class Game {
 								e.printStackTrace();
 							}
 							try {
-								Control.runCommand("operator a a_" + a_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
+								Control.runCommand("operator a a_" + a_ID + " move " + Control.getKey(Control.fields, allFields.get(i)));
 							} catch (CloneNotSupportedException | IOException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
@@ -256,7 +256,7 @@ public class Game {
 								e.printStackTrace();
 							}
 							try {
-								Control.runCommand("operator a a_" + a_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
+								Control.runCommand("operator a a_" + a_ID + " move " + Control.getKey(Control.fields, allFields.get(i)));
 							} catch (CloneNotSupportedException | IOException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
