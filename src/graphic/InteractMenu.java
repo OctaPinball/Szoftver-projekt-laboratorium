@@ -137,7 +137,7 @@ public class InteractMenu implements Menu {
 			}
 			for(int i = 0; i < RoundManager.getEntity().getAgents().size(); i++) //SelfCast
 			{
-				if(RoundManager.getEntity().getAgents().get(i).getClass() == Chorea.class)
+				if(RoundManager.getEntity().getAgents().get(i).getClass() == Chorea.class && RoundManager.getEntity().canBeCasted(RoundManager.getEntity().getAgents().get(i)) && RoundManager.getEntity().hasActionPoint())
 				{
 					ImageIcon im = new ImageIcon("res/b_selfcast_chorea.png");
 					JLabel j = new JLabel();
@@ -150,7 +150,7 @@ public class InteractMenu implements Menu {
 					j.addMouseListener(jf);
 					buttons.add(jf);
 				}
-				if(RoundManager.getEntity().getAgents().get(i).getClass() == ForgettingAgent.class)
+				if(RoundManager.getEntity().getAgents().get(i).getClass() == ForgettingAgent.class && RoundManager.getEntity().canBeCasted(RoundManager.getEntity().getAgents().get(i)) && RoundManager.getEntity().hasActionPoint())
 				{
 					ImageIcon im = new ImageIcon("res/b_selfcast_forget.png");
 					JLabel j = new JLabel();
@@ -163,7 +163,7 @@ public class InteractMenu implements Menu {
 					j.addMouseListener(jf);
 					buttons.add(jf);
 				}
-				if(RoundManager.getEntity().getAgents().get(i).getClass() == Protection.class)
+				if(RoundManager.getEntity().getAgents().get(i).getClass() == Protection.class && RoundManager.getEntity().canBeCasted(RoundManager.getEntity().getAgents().get(i)) && RoundManager.getEntity().hasActionPoint())
 				{
 					ImageIcon im = new ImageIcon("res/b_selfcast_protect.png");
 					JLabel j = new JLabel();
@@ -176,7 +176,7 @@ public class InteractMenu implements Menu {
 					j.addMouseListener(jf);
 					buttons.add(jf);
 				}
-				if(RoundManager.getEntity().getAgents().get(i).getClass() == Stun.class)
+				if(RoundManager.getEntity().getAgents().get(i).getClass() == Stun.class && RoundManager.getEntity().canBeCasted(RoundManager.getEntity().getAgents().get(i)) && RoundManager.getEntity().hasActionPoint())
 				{
 					ImageIcon im = new ImageIcon("res/b_selfcast_stun.png");
 					JLabel j = new JLabel();
@@ -197,7 +197,7 @@ public class InteractMenu implements Menu {
 			{
 				if(field.equals(f.getField()))
 				{
-					if(f.getField().getVirologist() == null)//Move
+					if(f.getField().getVirologist() == null && RoundManager.getEntity().hasActionPoint())//Move
 					{
 						ImageIcon i = new ImageIcon("res/b_move.png");
 						JLabel j = new JLabel();
@@ -210,12 +210,12 @@ public class InteractMenu implements Menu {
 						j.addMouseListener(jf);
 						buttons.add(jf);
 					}
-					else if(!f.getField().getVirologist().equals(RoundManager.getEntity()))
+					else if(f.getField().getVirologist() != null && !f.getField().getVirologist().equals(RoundManager.getEntity()))
 					{
 						
 						for(int i = 0; i < RoundManager.getEntity().getAgents().size(); i++)//Cast
 						{
-							if(RoundManager.getEntity().getAgents().get(i).getClass() == Chorea.class) //Material Check Need!!!!!!
+							if(RoundManager.getEntity().getAgents().get(i).getClass() == Chorea.class && RoundManager.getEntity().canBeCasted(RoundManager.getEntity().getAgents().get(i)) && RoundManager.getEntity().hasActionPoint())
 							{
 								ImageIcon im = new ImageIcon("res/b_castchorea.png");
 								JLabel j = new JLabel();
@@ -228,7 +228,7 @@ public class InteractMenu implements Menu {
 								j.addMouseListener(jf);
 								buttons.add(jf);
 							}
-							if(RoundManager.getEntity().getAgents().get(i).getClass() == ForgettingAgent.class)
+							if(RoundManager.getEntity().getAgents().get(i).getClass() == ForgettingAgent.class && RoundManager.getEntity().canBeCasted(RoundManager.getEntity().getAgents().get(i)) && RoundManager.getEntity().hasActionPoint())
 							{
 								ImageIcon im = new ImageIcon("res/b_castforget.png");
 								JLabel j = new JLabel();
@@ -241,7 +241,7 @@ public class InteractMenu implements Menu {
 								j.addMouseListener(jf);
 								buttons.add(jf);
 							}
-							if(RoundManager.getEntity().getAgents().get(i).getClass() == Protection.class)
+							if(RoundManager.getEntity().getAgents().get(i).getClass() == Protection.class && RoundManager.getEntity().canBeCasted(RoundManager.getEntity().getAgents().get(i)) && RoundManager.getEntity().hasActionPoint())
 							{
 								ImageIcon im = new ImageIcon("res/b_castprotect.png");
 								JLabel j = new JLabel();
@@ -254,7 +254,7 @@ public class InteractMenu implements Menu {
 								j.addMouseListener(jf);
 								buttons.add(jf);
 							}
-							if(RoundManager.getEntity().getAgents().get(i).getClass() == Stun.class)
+							if(RoundManager.getEntity().getAgents().get(i).getClass() == Stun.class && RoundManager.getEntity().canBeCasted(RoundManager.getEntity().getAgents().get(i)) && RoundManager.getEntity().hasActionPoint())
 							{
 								ImageIcon im = new ImageIcon("res/b_caststun.png");
 								JLabel j = new JLabel();
@@ -272,7 +272,7 @@ public class InteractMenu implements Menu {
 						{
 							for(int i = 0; i < f.getField().getVirologist().getEquipments().size(); i++)
 							{
-								if(f.getField().getVirologist().getEquipments().get(i).getClass() == Axe.class)
+								if(f.getField().getVirologist().getEquipments().get(i).getClass() == Axe.class && RoundManager.getEntity().hasActionPoint())
 								{
 									ImageIcon im = new ImageIcon("res/b_stealaxe.png");
 									JLabel j = new JLabel();
@@ -285,7 +285,7 @@ public class InteractMenu implements Menu {
 									j.addMouseListener(jf);
 									buttons.add(jf);
 								}
-								if(f.getField().getVirologist().getEquipments().get(i).getClass() == Cape.class)
+								if(f.getField().getVirologist().getEquipments().get(i).getClass() == Cape.class && RoundManager.getEntity().hasActionPoint())
 								{
 									ImageIcon im = new ImageIcon("res/b_stealcape.png");
 									JLabel j = new JLabel();
@@ -298,7 +298,7 @@ public class InteractMenu implements Menu {
 									j.addMouseListener(jf);
 									buttons.add(jf);
 								}
-								if(f.getField().getVirologist().getEquipments().get(i).getClass() == Glove.class)
+								if(f.getField().getVirologist().getEquipments().get(i).getClass() == Glove.class && RoundManager.getEntity().hasActionPoint())
 								{
 									ImageIcon im = new ImageIcon("res/b_stealglove.png");
 									JLabel j = new JLabel();
@@ -311,7 +311,7 @@ public class InteractMenu implements Menu {
 									j.addMouseListener(jf);
 									buttons.add(jf);
 								}
-								if(f.getField().getVirologist().getEquipments().get(i).getClass() == Sack.class)
+								if(f.getField().getVirologist().getEquipments().get(i).getClass() == Sack.class && RoundManager.getEntity().hasActionPoint())
 								{
 									ImageIcon im = new ImageIcon("res/b_stealsack.png");
 									JLabel j = new JLabel();

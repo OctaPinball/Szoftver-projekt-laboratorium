@@ -11,8 +11,15 @@ import movement.BearDance;
 import movement.Movement;
 
 public class BearAgent extends Agent{
+	
+	public BearAgent() {
+		effecttime = -1;
+		acidcost = 0;
+		nucleotidecost = 0;
+	}
+	
 	/**
-	 * Aktiválja az ágens hatását a virológuson, ezzel megadva neki a BearDance tulajdonságot.
+	 * Aktivï¿½lja az ï¿½gens hatï¿½sï¿½t a virolï¿½guson, ezzel megadva neki a BearDance tulajdonsï¿½got.
 	 */
 	public void activate() {
 		Logger.enter(this, "activate", null);
@@ -26,7 +33,7 @@ public class BearAgent extends Agent{
 	}
 	
 	/**
-	 * Deaktiválja az ágens hatását a virológuson, ezzel elvéve tõle a BearDance tulajdonságot.
+	 * Deaktivï¿½lja az ï¿½gens hatï¿½sï¿½t a virolï¿½guson, ezzel elvï¿½ve tï¿½le a BearDance tulajdonsï¿½got.
 	 */
 	public void deactivate() {
 		Logger.enter(this, "deactivate", null);
@@ -38,15 +45,15 @@ public class BearAgent extends Agent{
 	}
 
 	/**
-	 * Másolatot készít az ágensrõl
-	 * @return		az ágens másolata
+	 * Mï¿½solatot kï¿½szï¿½t az ï¿½gensrï¿½l
+	 * @return		az ï¿½gens mï¿½solata
 	 */
 	public Agent makeCopy() {
 		return (Agent) new BearAgent();
 	}
 	
 	/**
-	 * Aktiválódik a BearAgent.
+	 * Aktivï¿½lï¿½dik a BearAgent.
 	 * @throws CloneNotSupportedException 
 	 * @throws IOException 
 	 */

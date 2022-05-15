@@ -98,12 +98,12 @@ public class Control {
 	}
 	
 	public static void runCommand(String cmdline) throws CloneNotSupportedException, IOException {
-		//Ha üres sort kaptunk, ignoráljuk
-		//Emiatt áttekinthetõbb bemeneteket lehet csinálni
+		//Ha ï¿½res sort kaptunk, ignorï¿½ljuk
+		//Emiatt ï¿½ttekinthetï¿½bb bemeneteket lehet csinï¿½lni
 		if (cmdline.equals("")) return;
 		
 		
-		//Parancs részekgre tördelése
+		//Parancs rï¿½szekgre tï¿½rdelï¿½se
 		String cmd[];
 		cmd = cmdline.split(" ");
 		
@@ -112,16 +112,20 @@ public class Control {
 			RoundManager.nextRound();
 		}
 		
-		//Parancs értelmezés, és a szükséges függvény meghívása
+		//Parancs ï¿½rtelmezï¿½s, ï¿½s a szï¿½ksï¿½ges fï¿½ggvï¿½ny meghï¿½vï¿½sa
 		if (cmd[0].equals("operator")) {			
 			runOperatorCommand(cmdline);
 		}
 		else if (cmd[0].equals("move")) {
 			if(fields.containsKey(cmd[1]))
 			{
-				if(!RoundManager.getEntity().getMovement().move(RoundManager.getEntity(), fields.get(cmd[1])))
+				if(RoundManager.getEntity().getMovement().move(RoundManager.getEntity(), fields.get(cmd[1])))
 				{
-					System.out.println("Invalid target field name!\n");
+					RoundManager.getEntity().commitAction();
+				}
+				else
+				{
+					System.out.println("Invalid target field name!\n");					
 				}
 			}
 			else
@@ -157,6 +161,7 @@ public class Control {
 				{
 					if(agents.containsKey(cmd[2]) && RoundManager.getEntity().getAgents().contains(agents.get(cmd[2])))
 					{
+						RoundManager.getEntity().commitAction();
 						agents.get(cmd[2]).cast(target);
 					}
 					else
@@ -191,7 +196,11 @@ public class Control {
 				Virologist target = virologists.get(cmd[1]);
 				if(equipments.containsKey(cmd[2]) && target.getEquipments().contains(equipments.get(cmd[2])))
 				{
-					if(!RoundManager.getEntity().stealEquipment(equipments.get(cmd[2]), target))
+					if(RoundManager.getEntity().stealEquipment(equipments.get(cmd[2]), target))
+					{
+						RoundManager.getEntity().commitAction();
+					}
+					else
 					{
 						System.out.println("Equipment stealing failed!\n");
 					}

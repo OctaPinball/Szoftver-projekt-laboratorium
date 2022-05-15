@@ -26,7 +26,7 @@ import beardefense.*;
  * A j�t�kos a virol�gus oszt�ly seg�ts�g�vel tud �genst kenni m�s virol�gusra, �s meg tud tanulni genetikai k�dokat, 
  * illetve el is tudja azokat felejteni.
  */
-public class Virologist implements Viewable{
+public class Virologist implements Viewable, Const{
 	private int aminoacid;
 	private int nucleotide;
 	private int actionpoint;
@@ -554,6 +554,26 @@ public class Virologist implements Viewable{
 	
 	public int getActionPoint(){
 		return actionpoint;
-
+	}
+	
+	public void newRound() {
+		actionpoint = START_ACTION_POINTS;
+		step();
+	}
+	
+	public boolean hasActionPoint() {
+		if(actionpoint > 0)
+		{
+			return true;
+		}
+		return false;
+	}
+	
+	public void commitAction() {
+		actionpoint--;
+	}
+	
+	public boolean canBeCasted(Agent a) {
+		return a.getAcidcost() <= aminoacid && a.getNucleotidecost() <= nucleotide;
 	}
 }

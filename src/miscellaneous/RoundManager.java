@@ -11,6 +11,7 @@ public class RoundManager {
 		if(currentEntity == null && !entities.isEmpty())
 		{
 			currentEntity = entities.get(0);
+			currentEntity.newRound();
 			return;
 		}
 		if(currentEntity == null)
@@ -21,9 +22,11 @@ public class RoundManager {
 		if(currentIndex == entities.size() - 1)
 		{
 			currentEntity = entities.get(0);
+			currentEntity.newRound();
 			return;
 		}
 		currentEntity = entities.get(currentIndex + 1);
+		currentEntity.newRound();
 	}
 	
 	public static void addEntity(Virologist s) {
