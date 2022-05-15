@@ -19,7 +19,8 @@ public class GamePanel extends JPanel implements Const{
 	private GameFrame parent;
 	private ControlInput controls;
 	private ArrayList<JLabel> labels;
-	private InteractMenu activemenu = null;
+	private Menu activemenu = null;
+	private boolean menupriority = false;
 	
 
 
@@ -94,12 +95,21 @@ public class GamePanel extends JPanel implements Const{
 		return labels;
 	}
 
-	public InteractMenu getActivemenu() {
+	public Menu getActivemenu() {
 		return activemenu;
 	}
 
-	public void setActivemenu(InteractMenu activemenu) {
-		this.activemenu = activemenu;
+	public void setActivemenu(Menu infoMenu) {
+		this.activemenu = infoMenu;
+	}
+	
+
+	public boolean isMenupriority() {
+		return menupriority;
+	}
+
+	public void setMenupriority(boolean menupriority) {
+		this.menupriority = menupriority;
 	}
 
 	

@@ -11,16 +11,16 @@ import field.*;
 import miscellaneous.*;
 import movement.*;
 
-public class InteractMenu {
+public class InteractMenu implements Menu {
 	
 	private ArrayList<JInteractButton> buttons = new ArrayList<JInteractButton>();
 	
-
+	private JField jfield;
 
 	public InteractMenu(JField f) {
 		int height = 0;
 
-		
+		jfield = f;
 		Position relativepos = f.getField().calculateCoordinates();
 		
 		if(f.getField().equals(RoundManager.getEntity().getField()))
@@ -217,19 +217,55 @@ public class InteractMenu {
 						{
 							if(RoundManager.getEntity().getAgents().get(i).getClass() == Chorea.class) //Material Check Need!!!!!!
 							{
-								//Cast Chorea	
+								ImageIcon im = new ImageIcon("res/b_castchorea.png");
+								JLabel j = new JLabel();
+								j.setIcon(im);
+								j.setBounds(0,height,96,32);
+								height += 32;
+								j.setOpaque(true);
+								String cmd = "cast " + Control.getKey(Control.virologists, f.getField().getVirologist()) + " " + Control.getKey(Control.agents, RoundManager.getEntity().getAgents().get(i));
+								JInteractButton jf = new JInteractButton(j, cmd, f);
+								j.addMouseListener(jf);
+								buttons.add(jf);
 							}
 							if(RoundManager.getEntity().getAgents().get(i).getClass() == ForgettingAgent.class)
 							{
-								//Cast Forgetting
+								ImageIcon im = new ImageIcon("res/b_castforget.png");
+								JLabel j = new JLabel();
+								j.setIcon(im);
+								j.setBounds(0,height,96,32);
+								height += 32;
+								j.setOpaque(true);
+								String cmd = "cast " + Control.getKey(Control.virologists, f.getField().getVirologist()) + " " + Control.getKey(Control.agents, RoundManager.getEntity().getAgents().get(i));
+								JInteractButton jf = new JInteractButton(j, cmd, f);
+								j.addMouseListener(jf);
+								buttons.add(jf);
 							}
 							if(RoundManager.getEntity().getAgents().get(i).getClass() == Protection.class)
 							{
-								//Cast Protection
+								ImageIcon im = new ImageIcon("res/b_castprotect.png");
+								JLabel j = new JLabel();
+								j.setIcon(im);
+								j.setBounds(0,height,96,32);
+								height += 32;
+								j.setOpaque(true);
+								String cmd = "cast " + Control.getKey(Control.virologists, f.getField().getVirologist()) + " " + Control.getKey(Control.agents, RoundManager.getEntity().getAgents().get(i));
+								JInteractButton jf = new JInteractButton(j, cmd, f);
+								j.addMouseListener(jf);
+								buttons.add(jf);
 							}
 							if(RoundManager.getEntity().getAgents().get(i).getClass() == Stun.class)
 							{
-								//Cast Stun
+								ImageIcon im = new ImageIcon("res/b_caststun.png");
+								JLabel j = new JLabel();
+								j.setIcon(im);
+								j.setBounds(0,height,96,32);
+								height += 32;
+								j.setOpaque(true);
+								String cmd = "cast " + Control.getKey(Control.virologists, f.getField().getVirologist()) + " " + Control.getKey(Control.agents, RoundManager.getEntity().getAgents().get(i));
+								JInteractButton jf = new JInteractButton(j, cmd, f);
+								j.addMouseListener(jf);
+								buttons.add(jf);
 							}
 						}
 						if(f.getField().getVirologist().getMovement().getClass() == Stunned.class)//Steal
@@ -238,19 +274,55 @@ public class InteractMenu {
 							{
 								if(f.getField().getVirologist().getEquipments().get(i).getClass() == Axe.class)
 								{
-									//Steal Axe
+									ImageIcon im = new ImageIcon("res/b_stealaxe.png");
+									JLabel j = new JLabel();
+									j.setIcon(im);
+									j.setBounds(0,height,96,32);
+									height += 32;
+									j.setOpaque(true);
+									String cmd = "stealequipment " + Control.getKey(Control.virologists, f.getField().getVirologist()) + " " + Control.getKey(Control.equipments, f.getField().getVirologist().getEquipments().get(i));
+									JInteractButton jf = new JInteractButton(j, cmd, f);
+									j.addMouseListener(jf);
+									buttons.add(jf);
 								}
 								if(f.getField().getVirologist().getEquipments().get(i).getClass() == Cape.class)
 								{
-									//Steal Cape
+									ImageIcon im = new ImageIcon("res/b_stealcape.png");
+									JLabel j = new JLabel();
+									j.setIcon(im);
+									j.setBounds(0,height,96,32);
+									height += 32;
+									j.setOpaque(true);
+									String cmd = "stealequipment " + Control.getKey(Control.virologists, f.getField().getVirologist()) + " " + Control.getKey(Control.equipments, f.getField().getVirologist().getEquipments().get(i));
+									JInteractButton jf = new JInteractButton(j, cmd, f);
+									j.addMouseListener(jf);
+									buttons.add(jf);
 								}
 								if(f.getField().getVirologist().getEquipments().get(i).getClass() == Glove.class)
 								{
-									//Steal Glove
+									ImageIcon im = new ImageIcon("res/b_stealglove.png");
+									JLabel j = new JLabel();
+									j.setIcon(im);
+									j.setBounds(0,height,96,32);
+									height += 32;
+									j.setOpaque(true);
+									String cmd = "stealequipment " + Control.getKey(Control.virologists, f.getField().getVirologist()) + " " + Control.getKey(Control.equipments, f.getField().getVirologist().getEquipments().get(i));
+									JInteractButton jf = new JInteractButton(j, cmd, f);
+									j.addMouseListener(jf);
+									buttons.add(jf);
 								}
 								if(f.getField().getVirologist().getEquipments().get(i).getClass() == Sack.class)
 								{
-									//Steal Sack
+									ImageIcon im = new ImageIcon("res/b_stealsack.png");
+									JLabel j = new JLabel();
+									j.setIcon(im);
+									j.setBounds(0,height,96,32);
+									height += 32;
+									j.setOpaque(true);
+									String cmd = "stealequipment " + Control.getKey(Control.virologists, f.getField().getVirologist()) + " " + Control.getKey(Control.equipments, f.getField().getVirologist().getEquipments().get(i));
+									JInteractButton jf = new JInteractButton(j, cmd, f);
+									j.addMouseListener(jf);
+									buttons.add(jf);
 								}
 							}
 						}
@@ -258,15 +330,32 @@ public class InteractMenu {
 				}
 			}
 		}
+		ImageIcon im = new ImageIcon("res/b_nextturn.png");
+		JLabel jnext = new JLabel();
+		jnext.setIcon(im);
+		jnext.setBounds(0,height,96,32);
+		height += 32;
+		jnext.setOpaque(true);
+		String cmd = "next turn";
+		JInteractButton jf = new JInteractButton(jnext, cmd, f);
+		jnext.addMouseListener(jf);
+		buttons.add(jf);
+		
+		
 		JLabel j = new JLabel();
 		j.setBounds(0,0,96,height);
 		j.setOpaque(true);
-		JInteractButton base = new JInteractButton(j, "none", f);
+		JInteractButton base = new JInteractButton(j, "", f);
 		f.getParent().getGamepanel().setActivemenu(this);
+
 	}
 	
 	public ArrayList<JInteractButton> getButtons() {
 		return buttons;
+	}
+
+	public JField getJfield() {
+		return jfield;
 	}
 	
 }

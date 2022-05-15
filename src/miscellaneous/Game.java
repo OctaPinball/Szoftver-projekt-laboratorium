@@ -102,9 +102,9 @@ public class Game {
 				f.addNeighbor(allFields.get(f.getID() + width));
 			if(f.getPosition().getX() % width != 0)
 				f.addNeighbor(allFields.get(f.getID() - 1));
-			if(f.getPosition().getY() % width != width - 1)
+			if(f.getPosition().getX() % width != width - 1)
 				f.addNeighbor(allFields.get(f.getID() + 1));
-		} 
+		}
 	}
 	
     /**

@@ -30,6 +30,7 @@ public class JInteractButton implements MouseInputListener {
 			e1.printStackTrace();
 		}
 		f.getParent().getGamepanel().setActivemenu(null);
+		f.getParent().getGamepanel().setMenupriority(false);
 	}
 
 	@Override

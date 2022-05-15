@@ -109,16 +109,16 @@ public class View implements Const{
 		
 		ImageIcon i = new ImageIcon("res/Field_1_dark.png");
 		
-		if(RoundManager.getEntity().getField().PosEquals(f))
-		{
-			i = new ImageIcon("res/Field_1.png");
-			gamepanel.addLabel(f, i);
-			return;
-		}
 			
 			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++)
 			{
 				if(RoundManager.getEntity().getField().getNeighbors().get(k).PosEquals(f)) {
+					if(RoundManager.getEntity().getField().getNeighbors().get(k).getVirologist() != null)
+					{
+						i = new ImageIcon("res/v_field_1.png");
+						gamepanel.addLabel(f, i);
+						return;
+					}
 					i = new ImageIcon("res/Field_1.png");
 				}
 			}
@@ -131,16 +131,17 @@ public class View implements Const{
 	public void drawShelter(Shelter s) {
 			
 		ImageIcon i = new ImageIcon("res/Field_2_dark.png");
-		if(RoundManager.getEntity().getField().PosEquals(s))
-		{
-			i = new ImageIcon("res/Field_2.png");
-			gamepanel.addLabel(s, i);
-			return;
-		}
+
 		
 			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++) {
 				
 				if(RoundManager.getEntity().getField().getNeighbors().get(k).PosEquals(s)) {
+					if(RoundManager.getEntity().getField().getNeighbors().get(k).getVirologist() != null)
+					{
+						i = new ImageIcon("res/v_field_2.png");
+						gamepanel.addLabel(s, i);
+						return;
+					}
 					i = new ImageIcon("res/Field_2.png");
 				}
 			}
@@ -153,16 +154,16 @@ public class View implements Const{
 			
 		ImageIcon i = new ImageIcon("res/Field_4_dark.png");
 		
-		if(RoundManager.getEntity().getField().PosEquals(s))
-		{
-			i = new ImageIcon("res/Field_4.png");
-			gamepanel.addLabel(s, i);
-			return;
-		}
 		
 			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++) {
 				
 				if(RoundManager.getEntity().getField().getNeighbors().get(k).PosEquals(s)) {
+					if(RoundManager.getEntity().getField().getNeighbors().get(k).getVirologist() != null)
+					{
+						i = new ImageIcon("res/v_field_4.png");
+						gamepanel.addLabel(s, i);
+						return;
+					}
 					i = new ImageIcon("res/Field_4.png");
 				}
 			}
@@ -174,16 +175,17 @@ public class View implements Const{
 	public void drawLaboratory(Laboratory l) {
 		ImageIcon i = new ImageIcon("res/Field_3_dark.png");
 		
-		if(RoundManager.getEntity().getField().PosEquals(l))
-		{
-			i = new ImageIcon("res/Field_3.png");
-			gamepanel.addLabel(l, i);
-			return;
-		}
+
 		
 			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++) {
 				
 				if(RoundManager.getEntity().getField().getNeighbors().get(k).PosEquals(l)) {
+					if(RoundManager.getEntity().getField().getNeighbors().get(k).getVirologist() != null)
+					{
+						i = new ImageIcon("res/v_field_4.png");
+						gamepanel.addLabel(l, i);
+						return;
+					}
 					i = new ImageIcon("res/Field_3.png");
 				}
 			}

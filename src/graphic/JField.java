@@ -21,9 +21,16 @@ public class JField implements MouseInputListener{
 	
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
 		System.out.println("jej");
-		InteractMenu menu = new InteractMenu(this);
+		if(parent.getGamepanel().getActivemenu().getJfield() != null && parent.getGamepanel().getActivemenu().getJfield().equals(this))
+		{
+			parent.getGamepanel().setMenupriority(false);
+		}
+		else
+		{
+			InteractMenu menu = new InteractMenu(this);
+			parent.getGamepanel().setMenupriority(true);
+		}
 		
 	}
 
@@ -41,8 +48,10 @@ public class JField implements MouseInputListener{
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
+		if(!parent.getGamepanel().isMenupriority())
+		{
+			InfoMenu menu = new InfoMenu(this);
+		}
 	}
 
 	@Override
