@@ -121,27 +121,63 @@ public class Game {
 				
 				switch(equipmentType) {
 					case 0:
-					Axe na = new Axe();
-					allFields.get(i).spawnEquipment(na);
-					Control.equipments.put("e_" + e_ID, na);
+						try {
+							Control.runCommand("operator e e_" + e_ID + " create axe");
+						} catch (CloneNotSupportedException | IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						try {
+							Control.runCommand("operator e e_" + e_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
+						} catch (CloneNotSupportedException | IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						break;
 						
 					case 1:
-					Cape nc = new Cape();
-					allFields.get(i).spawnEquipment(nc);
-					Control.equipments.put("e_" + e_ID, nc);
+						try {
+							Control.runCommand("operator e e_" + e_ID + " create cape");
+						} catch (CloneNotSupportedException | IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						try {
+							Control.runCommand("operator e e_" + e_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
+						} catch (CloneNotSupportedException | IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						break;
 						
 					case 2:
-					Glove ng = new Glove();
-					allFields.get(i).spawnEquipment(ng);
-					Control.equipments.put("e_" + e_ID, ng);
+						try {
+							Control.runCommand("operator e e_" + e_ID + " create glove");
+						} catch (CloneNotSupportedException | IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						try {
+							Control.runCommand("operator e e_" + e_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
+						} catch (CloneNotSupportedException | IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						break;
 						
 					case 3:
-					Sack ns = new Sack();
-					allFields.get(i).spawnEquipment(ns);
-					Control.equipments.put("e_" + e_ID, ns);
+						try {
+							Control.runCommand("operator e e_" + e_ID + " create sack");
+						} catch (CloneNotSupportedException | IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						try {
+							Control.runCommand("operator e e_" + e_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
+						} catch (CloneNotSupportedException | IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						break;
 				}
 			}
@@ -153,78 +189,78 @@ public class Game {
 				
 				switch(equipmentType) {
 					case 0:
-					try {
-						Control.runCommand("operator a a_" + a_ID + " create bearagent");
-					} catch (CloneNotSupportedException | IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					try {
-						Control.runCommand("operator a a_" + a_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
-					} catch (CloneNotSupportedException | IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
+						try {
+							Control.runCommand("operator a a_" + a_ID + " create bearagent");
+						} catch (CloneNotSupportedException | IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						try {
+							Control.runCommand("operator a a_" + a_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
+						} catch (CloneNotSupportedException | IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						break;
 						
 					case 1:
-						try {
-							Control.runCommand("operator a a_" + a_ID + " create chorea");
-						} catch (CloneNotSupportedException | IOException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-						try {
-							Control.runCommand("operator a a_" + a_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
-						} catch (CloneNotSupportedException | IOException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
+							try {
+								Control.runCommand("operator a a_" + a_ID + " create chorea");
+							} catch (CloneNotSupportedException | IOException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+							try {
+								Control.runCommand("operator a a_" + a_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
+							} catch (CloneNotSupportedException | IOException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
 							break;
 						
 					case 2:
-						try {
-							Control.runCommand("operator a a_" + a_ID + " create forgettingagent");
-						} catch (CloneNotSupportedException | IOException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-						try {
-							Control.runCommand("operator a a_" + a_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
-						} catch (CloneNotSupportedException | IOException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
+							try {
+								Control.runCommand("operator a a_" + a_ID + " create forgettingagent");
+							} catch (CloneNotSupportedException | IOException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+							try {
+								Control.runCommand("operator a a_" + a_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
+							} catch (CloneNotSupportedException | IOException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
 							break;
 						
 					case 3:
-						try {
-							Control.runCommand("operator a a_" + a_ID + " create stun");
-						} catch (CloneNotSupportedException | IOException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-						try {
-							Control.runCommand("operator a a_" + a_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
-						} catch (CloneNotSupportedException | IOException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
+							try {
+								Control.runCommand("operator a a_" + a_ID + " create stun");
+							} catch (CloneNotSupportedException | IOException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+							try {
+								Control.runCommand("operator a a_" + a_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
+							} catch (CloneNotSupportedException | IOException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
 							break;
 						
 					case 4:
-						try {
-							Control.runCommand("operator a a_" + a_ID + " create protection");
-						} catch (CloneNotSupportedException | IOException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-						try {
-							Control.runCommand("operator a a_" + a_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
-						} catch (CloneNotSupportedException | IOException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
+							try {
+								Control.runCommand("operator a a_" + a_ID + " create protection");
+							} catch (CloneNotSupportedException | IOException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+							try {
+								Control.runCommand("operator a a_" + a_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
+							} catch (CloneNotSupportedException | IOException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
 							break;
 				}
 			}

@@ -84,38 +84,110 @@ public class InteractMenu {
 			{
 				if(f.getField().getEquipment().getClass() == Axe.class)
 				{
-					//Pickup Axe
+					ImageIcon i = new ImageIcon("res/b_pickupaxe.png");
+					JLabel j = new JLabel();
+					j.setIcon(i);
+					j.setBounds(0,height,96,32);
+					height += 32;
+					j.setOpaque(true);
+					String cmd = "pickupequipment " + Control.getKey(Control.equipments,f.getField().getEquipment());
+					JInteractButton jf = new JInteractButton(j, cmd, f);
+					j.addMouseListener(jf);
+					buttons.add(jf);
 				}
 				if(f.getField().getEquipment().getClass() == Cape.class)
 				{
-					//Pickup Cape
+					ImageIcon i = new ImageIcon("res/b_pickupcape.png");
+					JLabel j = new JLabel();
+					j.setIcon(i);
+					j.setBounds(0,height,96,32);
+					height += 32;
+					j.setOpaque(true);
+					String cmd = "pickupequipment " + Control.getKey(Control.equipments,f.getField().getEquipment());
+					JInteractButton jf = new JInteractButton(j, cmd, f);
+					j.addMouseListener(jf);
+					buttons.add(jf);
 				}
 				if(f.getField().getEquipment().getClass() == Glove.class)
 				{
-					//Pickup Glove
+					ImageIcon i = new ImageIcon("res/b_pickupglove.png");
+					JLabel j = new JLabel();
+					j.setIcon(i);
+					j.setBounds(0,height,96,32);
+					height += 32;
+					j.setOpaque(true);
+					String cmd = "pickupequipment " + Control.getKey(Control.equipments,f.getField().getEquipment());
+					JInteractButton jf = new JInteractButton(j, cmd, f);
+					j.addMouseListener(jf);
+					buttons.add(jf);
 				}
 				if(f.getField().getEquipment().getClass() == Sack.class)
 				{
-					//Pickup Sack
+					ImageIcon i = new ImageIcon("res/b_pickupsack.png");
+					JLabel j = new JLabel();
+					j.setIcon(i);
+					j.setBounds(0,height,96,32);
+					height += 32;
+					j.setOpaque(true);
+					String cmd = "pickupequipment " + Control.getKey(Control.equipments,f.getField().getEquipment());
+					JInteractButton jf = new JInteractButton(j, cmd, f);
+					j.addMouseListener(jf);
+					buttons.add(jf);
 				}
 			}
 			for(int i = 0; i < RoundManager.getEntity().getAgents().size(); i++) //SelfCast
 			{
 				if(RoundManager.getEntity().getAgents().get(i).getClass() == Chorea.class)
 				{
-					//SelfCast Chorea	
+					ImageIcon im = new ImageIcon("res/b_selfcast_chorea.png");
+					JLabel j = new JLabel();
+					j.setIcon(im);
+					j.setBounds(0,height,96,32);
+					height += 32;
+					j.setOpaque(true);
+					String cmd = "cast " + Control.getKey(Control.virologists, RoundManager.getEntity()) + " " + Control.getKey(Control.agents, RoundManager.getEntity().getAgents().get(i));
+					JInteractButton jf = new JInteractButton(j, cmd, f);
+					j.addMouseListener(jf);
+					buttons.add(jf);
 				}
 				if(RoundManager.getEntity().getAgents().get(i).getClass() == ForgettingAgent.class)
 				{
-					//SelfCast Forgetting
+					ImageIcon im = new ImageIcon("res/b_selfcast_forget.png");
+					JLabel j = new JLabel();
+					j.setIcon(im);
+					j.setBounds(0,height,96,32);
+					height += 32;
+					j.setOpaque(true);
+					String cmd = "cast " + Control.getKey(Control.virologists, RoundManager.getEntity()) + " " + Control.getKey(Control.agents, RoundManager.getEntity().getAgents().get(i));
+					JInteractButton jf = new JInteractButton(j, cmd, f);
+					j.addMouseListener(jf);
+					buttons.add(jf);
 				}
 				if(RoundManager.getEntity().getAgents().get(i).getClass() == Protection.class)
 				{
-					//SelfCast Protection
+					ImageIcon im = new ImageIcon("res/b_selfcast_protect.png");
+					JLabel j = new JLabel();
+					j.setIcon(im);
+					j.setBounds(0,height,96,32);
+					height += 32;
+					j.setOpaque(true);
+					String cmd = "cast " + Control.getKey(Control.virologists, RoundManager.getEntity()) + " " + Control.getKey(Control.agents, RoundManager.getEntity().getAgents().get(i));
+					JInteractButton jf = new JInteractButton(j, cmd, f);
+					j.addMouseListener(jf);
+					buttons.add(jf);
 				}
 				if(RoundManager.getEntity().getAgents().get(i).getClass() == Stun.class)
 				{
-					//SelfCast Stun
+					ImageIcon im = new ImageIcon("res/b_selfcast_stun.png");
+					JLabel j = new JLabel();
+					j.setIcon(im);
+					j.setBounds(0,height,96,32);
+					height += 32;
+					j.setOpaque(true);
+					String cmd = "cast " + Control.getKey(Control.virologists, RoundManager.getEntity()) + " " + Control.getKey(Control.agents, RoundManager.getEntity().getAgents().get(i));
+					JInteractButton jf = new JInteractButton(j, cmd, f);
+					j.addMouseListener(jf);
+					buttons.add(jf);
 				}
 			}
 		}
