@@ -47,8 +47,6 @@ public class GamePanel extends JPanel implements Const{
 	}
 	
 	public void addLabel(Field f, ImageIcon i) {
-		ArrayList<Field> fields = Game.getAllFields();
-
 				JLabel j = new JLabel();
 				j.setIcon(i);
 				j.setBounds(f.calculateCoordinates().getX(),f.calculateCoordinates().getY(),32,32);
@@ -56,7 +54,7 @@ public class GamePanel extends JPanel implements Const{
 				JField jf = new JField(j, f, view);
 				j.addMouseListener(jf);
 				labels.add(j);
-			}
+	}
 
 		
 		/*
@@ -67,8 +65,10 @@ public class GamePanel extends JPanel implements Const{
 		j.addMouseListener(new ControlInput());
 		labels.add(j);
 		*/
-	
+	public JLabel safe = null;
 	public void paint(Graphics g) {
+		//super.paint(g);
+		labels = new ArrayList<JLabel>();
 		if(view == null)
 			view = new View(this);
 		if(RoundManager.getEntity() == null)
@@ -78,7 +78,11 @@ public class GamePanel extends JPanel implements Const{
 		view.drawMap();
 		if(activemenu != null)
 		{
-			//Menu kirajzolása
+			for(JInteractButton j : activemenu.getButtons())
+			{
+				labels.add(j.getLabel());
+				safe = j.getLabel();
+			}
 		}
 		//drawLabels();
 		parent.drawLabels(); //FINAL DRAW CALL******

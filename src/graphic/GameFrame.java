@@ -1,6 +1,8 @@
 package graphic;
 
 import java.awt.Color;
+import java.awt.Component;
+import java.util.ArrayList;
 
 import javax.swing.*;
 
@@ -10,6 +12,7 @@ public class GameFrame extends JFrame{
 	private static final long serialVersionUID = 1L;
 	private GamePanel panel;
 	private ControlInput controls;
+	private ArrayList<JLabel> removeable = new ArrayList<JLabel>();
 	
 	public GameFrame(){
 		controls = new ControlInput();
@@ -28,7 +31,7 @@ public class GameFrame extends JFrame{
 		
 
 		add(getPanel());
-		setTitle("Világtalan Virológusok");
+		setTitle("Vilï¿½gtalan Virolï¿½gusok");
 		pack();
 		setLocationRelativeTo(null);
 		setResizable(false);
@@ -75,7 +78,7 @@ public class GameFrame extends JFrame{
 
 		
 		//add(getPanel());
-		//setTitle("Világtalan Virológusok");
+		//setTitle("Vilï¿½gtalan Virolï¿½gusok");
 		//pack();
 		//setLocationRelativeTo(null);
 		setResizable(false);
@@ -120,14 +123,24 @@ public class GameFrame extends JFrame{
 	}
 	
 	public void drawLabels() {
+
+		for (JLabel jl : removeable) {
+			jl.setVisible(false);
+			panel.remove(jl);  
+		}
+		removeable = new ArrayList<JLabel>();
+
+		revalidate();
+		repaint();
+		
 		setResizable(false);
 		this.setLayout(null);
-		if(panel.getLabels().isEmpty())
-			System.out.println("jej");
 		for(JLabel l : panel.getLabels())
 		{
 			//l.setOpaque(true);
+			l.setVisible(true);
 			this.add(l);
+			removeable.add(l);
 		}
 		this.setVisible(true);
 	}

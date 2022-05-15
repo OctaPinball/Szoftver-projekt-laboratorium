@@ -2,6 +2,7 @@ package graphic;
 
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 import agents.*;
@@ -14,6 +15,8 @@ public class InteractMenu {
 	
 	private ArrayList<JInteractButton> buttons = new ArrayList<JInteractButton>();
 	
+
+
 	public InteractMenu(JField f) {
 		int height = 0;
 
@@ -26,20 +29,55 @@ public class InteractMenu {
 			{
 				if(e.getClass() == Axe.class && f.getField().getEquipment() == null)
 				{
-					//Drop Axe
-					
+					ImageIcon i = new ImageIcon("res/b_dropaxe.png");
+					JLabel j = new JLabel();
+					j.setIcon(i);
+					j.setBounds(0,height,96,32);
+					height += 32;
+					j.setOpaque(true);
+					String cmd = "dropequipment " + Control.getKey(Control.equipments,e);
+					JInteractButton jf = new JInteractButton(j, cmd, f);
+					j.addMouseListener(jf);
+					buttons.add(jf);
 				}
 				if(e.getClass() == Cape.class && f.getField().getEquipment() == null)
 				{
-					//Drop Cape
+					ImageIcon i = new ImageIcon("res/b_dropcape.png");
+					JLabel j = new JLabel();
+					j.setIcon(i);
+					j.setBounds(0,height,96,32);
+					height += 32;
+					j.setOpaque(true);
+					String cmd = "dropequipment " + Control.getKey(Control.equipments,e);
+					JInteractButton jf = new JInteractButton(j, cmd, f);
+					j.addMouseListener(jf);
+					buttons.add(jf);
 				}
 				if(e.getClass() == Glove.class && f.getField().getEquipment() == null)
 				{
-					//Drop Glove
+					ImageIcon i = new ImageIcon("res/b_dropglove.png");
+					JLabel j = new JLabel();
+					j.setIcon(i);
+					j.setBounds(0,height,96,32);
+					height += 32;
+					j.setOpaque(true);
+					String cmd = "dropequipment " + Control.getKey(Control.equipments,e);
+					JInteractButton jf = new JInteractButton(j, cmd, f);
+					j.addMouseListener(jf);
+					buttons.add(jf);
 				}
 				if(e.getClass() == Sack.class && f.getField().getEquipment() == null)
 				{
-					//Drop Sack
+					ImageIcon i = new ImageIcon("res/b_dropsack.png");
+					JLabel j = new JLabel();
+					j.setIcon(i);
+					j.setBounds(0,height,96,32);
+					height += 32;
+					j.setOpaque(true);
+					String cmd = "dropequipment " + Control.getKey(Control.equipments,e);
+					JInteractButton jf = new JInteractButton(j, cmd, f);
+					j.addMouseListener(jf);
+					buttons.add(jf);
 				}
 			}
 			if(f.getField().getEquipment() != null)//Pickup
@@ -89,7 +127,16 @@ public class InteractMenu {
 				{
 					if(f.getField().getVirologist() == null)//Move
 					{
-						//Move
+						ImageIcon i = new ImageIcon("res/b_move.png");
+						JLabel j = new JLabel();
+						j.setIcon(i);
+						j.setBounds(0,height,96,32);
+						height += 32;
+						j.setOpaque(true);
+						String cmd = "move " + Control.getKey(Control.fields,f.getField());
+						JInteractButton jf = new JInteractButton(j, cmd, f);
+						j.addMouseListener(jf);
+						buttons.add(jf);
 					}
 					else if(!f.getField().getVirologist().equals(RoundManager.getEntity()))
 					{
@@ -142,8 +189,12 @@ public class InteractMenu {
 		JLabel j = new JLabel();
 		j.setBounds(0,0,96,height);
 		j.setOpaque(true);
-		JInteractButton base = new JInteractButton(j, "none");
+		JInteractButton base = new JInteractButton(j, "none", f);
 		f.getParent().getGamepanel().setActivemenu(this);
+	}
+	
+	public ArrayList<JInteractButton> getButtons() {
+		return buttons;
 	}
 	
 }

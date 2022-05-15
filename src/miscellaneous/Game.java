@@ -11,6 +11,7 @@ import field.*;
 import fillmaterial.*;
 import movement.*;
 import beardefense.*;
+import miscellaneous.*;
 
 public class Game {
 	private static boolean randomEnabled = true;
@@ -62,18 +63,31 @@ public class Game {
 			for(int j = 0; j < width; j++) {
 				Random rand = new Random();
 				int fieldType = rand.nextInt(4);
+				int ID = i*width + j;
 				
 				switch(fieldType) {
-					case 0: allFields.add(new Field(i*width + j, j, i));
+					case 0:
+						Field f0 = new Field(i*width + j, j, i);
+						Control.fields.put("f_" + ID, f0);
+						allFields.add(f0);
 						break;
 						
-					case 1: allFields.add(new Laboratory(i*width + j, j, i));
+					case 1: 
+						Laboratory f1 = new Laboratory(i*width + j, j, i);
+						Control.fields.put("f_" + ID, f1);
+						allFields.add(f1);
 						break;
 						
-					case 2: allFields.add(new Shelter(i*width + j, j, i));
+					case 2: 
+						Shelter f2 = new Shelter(i*width + j, j, i);
+						Control.fields.put("f_" + ID, f2);
+						allFields.add(f2);
 						break;
 						
-					case 3: allFields.add(new Storage(i*width + j, j, i));
+					case 3: 
+						Storage f3 = new Storage(i*width + j, j, i);
+						Control.fields.put("f_" + ID, f3);
+						allFields.add(f3);
 						break;
 				}
 				//allFields.add(new Field(i*width + j, j, i));
@@ -96,50 +110,81 @@ public class Game {
      * Szétszór mindenféle különböző tárgyat és megtanulható genetikai kódot a játéktér megfelelő mezőire
      */
 	public static void scatterObjects() {
+		int e_ID = 0;
+		int a_ID = 0;
 		for(int i = 0; i < allFields.size(); i++) {
 			if(allFields.get(i).getClass() == Shelter.class) {
 				Random rand = new Random();
+				e_ID++;
 				int equipmentType = rand.nextInt(4);
 				
 				switch(equipmentType) {
-					case 0: allFields.get(i).spawnEquipment(new Axe());
+					case 0:
+					Axe na = new Axe();
+					allFields.get(i).spawnEquipment(na);
+					Control.equipments.put("e_" + e_ID, na);
 						break;
 						
-					case 1: allFields.get(i).spawnEquipment(new Cape());
+					case 1:
+					Cape nc = new Cape();
+					allFields.get(i).spawnEquipment(nc);
+					Control.equipments.put("e_" + e_ID, nc);
 						break;
 						
-					case 2: allFields.get(i).spawnEquipment(new Glove());
+					case 2:
+					Glove ng = new Glove();
+					allFields.get(i).spawnEquipment(ng);
+					Control.equipments.put("e_" + e_ID, ng);
 						break;
 						
-					case 3: allFields.get(i).spawnEquipment(new Sack());
+					case 3:
+					Sack ns = new Sack();
+					allFields.get(i).spawnEquipment(ns);
+					Control.equipments.put("e_" + e_ID, ns);
 						break;
 				}
 			}
 			if(allFields.get(i).getClass() == Laboratory.class)
 			{
 				Random rand = new Random();
+				a_ID++;
 				int equipmentType = rand.nextInt(5);
 				
 				switch(equipmentType) {
-					case 0: ((Laboratory) allFields.get(i)).addAgent(new BearAgent());
+					case 0:
+						BearAgent nb = new BearAgent();
+						((Laboratory) allFields.get(i)).addAgent(nb);
+						Control.agents.put("a_" + a_ID, nb);
 						break;
 						
-					case 1: ((Laboratory) allFields.get(i)).addAgent(new Chorea());
+					case 1:
+						Chorea nc = new Chorea();
+						((Laboratory) allFields.get(i)).addAgent(nc);
+						Control.agents.put("a_" + a_ID, nc);
 						break;
 						
-					case 2: ((Laboratory) allFields.get(i)).addAgent(new ForgettingAgent());
+					case 2:
+						ForgettingAgent nf = new ForgettingAgent();
+						((Laboratory) allFields.get(i)).addAgent(nf);
+						Control.agents.put("a_" + a_ID, nf);
 						break;
 						
-					case 3: ((Laboratory) allFields.get(i)).addAgent(new Protection());
+					case 3:
+						Protection np = new Protection();
+						((Laboratory) allFields.get(i)).addAgent(np);
+						Control.agents.put("a_" + a_ID, np);
 						break;
 						
-					case 4: ((Laboratory) allFields.get(i)).addAgent(new Stun());
+					case 4:
+						Stun ns = new Stun();
+						((Laboratory) allFields.get(i)).addAgent(ns);
+						Control.agents.put("a_" + a_ID, ns);
 						break;
 				}
 			}
 		}
 		int i = 0;
-		while(i < RoundManager.getVriologists().size())
+		while(i < RoundManager.getVriologists().size()) //Virológusok elhelyezése
 		{
 			RoundManager.getVriologists().get(i);
 			Random rand = new Random();

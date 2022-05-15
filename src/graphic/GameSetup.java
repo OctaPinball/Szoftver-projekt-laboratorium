@@ -97,8 +97,8 @@ public class GameSetup extends JFrame{
 	//private JTextField fieldwidth = new JTextField("MapWidth");
 	//private JTextField fieldheight = new JTextField("MapHeight");
 	private JTextField playernumber = new JTextField("2");
-	private JTextField fieldwidth = new JTextField("20");
-	private JTextField fieldheight = new JTextField("20");
+	private JTextField fieldwidth = new JTextField("5");
+	private JTextField fieldheight = new JTextField("5");
 
 	
 	GameSetup(){

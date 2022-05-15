@@ -105,7 +105,7 @@ public class View implements Const{
 		
 	}
 	
-	public static void drawField(Field f) {
+	public  void drawField(Field f) {
 		
 		ImageIcon i = new ImageIcon("res/Field_1_dark.png");
 		
@@ -128,7 +128,7 @@ public class View implements Const{
 		gamepanel.addLabel(f, i);
 	}
 		
-	public static void drawShelter(Shelter s) {
+	public void drawShelter(Shelter s) {
 			
 		ImageIcon i = new ImageIcon("res/Field_2_dark.png");
 		if(RoundManager.getEntity().getField().PosEquals(s))
@@ -149,7 +149,7 @@ public class View implements Const{
 		gamepanel.addLabel(s, i);
 	}
 		
-	public static void drawStorage(Storage s) {
+	public void drawStorage(Storage s) {
 			
 		ImageIcon i = new ImageIcon("res/Field_4_dark.png");
 		
@@ -171,7 +171,7 @@ public class View implements Const{
 		gamepanel.addLabel(s, i);
 	}
 	
-	public static void drawLaboratory(Laboratory l) {
+	public void drawLaboratory(Laboratory l) {
 		ImageIcon i = new ImageIcon("res/Field_3_dark.png");
 		
 		if(RoundManager.getEntity().getField().PosEquals(l))
@@ -192,7 +192,7 @@ public class View implements Const{
 		gamepanel.addLabel(l, i);
 	}
 		
-	public static void drawVirologist(Virologist v) {
+	public void drawVirologist(Virologist v) {
 		ImageIcon i = new ImageIcon("res/Virologist.png");	
 		if(v.getField().getClass() == Field.class)
 			i = new ImageIcon("res/v_field_1.png");
@@ -206,37 +206,37 @@ public class View implements Const{
 		gamepanel.addLabel(v.getField(), i);
 	}
 	
-	public static void drawEquipment(Equipment e) {
+	public void drawEquipment(Equipment e) {
 		ImageIcon i = null;
 		Position p = e.calculateCoordinates();
 		gamepanel.addLabel(e.getCurrentField(), i);
 	}
 	
-	public static void drawSack(Sack s) {
+	public void drawSack(Sack s) {
 		ImageIcon i = new ImageIcon("res/Sack.png");
 		Position p = s.calculateCoordinates();
 		gamepanel.addLabel(s.getCurrentField(), i);
 	}
 	
-	public static void drawAxe(Axe a) {
+	public void drawAxe(Axe a) {
 		ImageIcon i = a.getIMG();
 		Position p = a.calculateCoordinates();
 		gamepanel.addLabel(a.getCurrentField(), i);
 	}
 	
-	public static void drawCape(Cape c) {
+	public void drawCape(Cape c) {
 		ImageIcon i = c.getIMG();
 		Position p = c.calculateCoordinates();
 		gamepanel.addLabel(c.getCurrentField(), i);
 	}
 	
-	public static void drawGlove(Glove g) {
+	public void drawGlove(Glove g) {
 		ImageIcon i = g.getIMG();
 		Position p = g.calculateCoordinates();
 		gamepanel.addLabel(g.getCurrentField(), i);
 	}
 	
-	public static GamePanel getGamepanel() {
+	public GamePanel getGamepanel() {
 		return gamepanel;
 	}
 

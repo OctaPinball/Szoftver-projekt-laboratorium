@@ -12,10 +12,10 @@ import equipment.*;
 import field.*;
 
 public class Control {
-	private static HashMap<String, Virologist> virologists;
-	private static HashMap<String, Field> fields;
-	private static HashMap<String, Equipment> equipments;
-	private static HashMap<String, Agent> agents;
+	public static HashMap<String, Virologist> virologists;
+	public static HashMap<String, Field> fields;
+	public static HashMap<String, Equipment> equipments;
+	public static HashMap<String, Agent> agents;
 	private static HashMap<String, HashMap> hashmaps;
 	private static HashMap<String, String> safety = new HashMap<String, String>();
 	

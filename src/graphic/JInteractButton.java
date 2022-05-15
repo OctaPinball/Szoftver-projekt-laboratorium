@@ -13,10 +13,12 @@ public class JInteractButton implements MouseInputListener {
 
 	private String command;
 	private JLabel label;
+	private JField f;
 	
-	public JInteractButton(JLabel jl, String cmd) {
+	public JInteractButton(JLabel jl, String cmd, JField f_in) {
 		label = jl;
 		command = cmd;
+		f = f_in;
 	}
 	
 	@Override
@@ -27,7 +29,7 @@ public class JInteractButton implements MouseInputListener {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
+		f.getParent().getGamepanel().setActivemenu(null);
 	}
 
 	@Override
@@ -64,6 +66,10 @@ public class JInteractButton implements MouseInputListener {
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public JLabel getLabel() {
+		return label;
 	}
 
 }

@@ -22,6 +22,7 @@ public class JField implements MouseInputListener{
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
+		System.out.println("jej");
 		InteractMenu menu = new InteractMenu(this);
 		
 	}
