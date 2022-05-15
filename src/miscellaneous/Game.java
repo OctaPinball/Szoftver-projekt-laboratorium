@@ -1,5 +1,6 @@
 package miscellaneous;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -152,34 +153,79 @@ public class Game {
 				
 				switch(equipmentType) {
 					case 0:
-						BearAgent nb = new BearAgent();
-						((Laboratory) allFields.get(i)).addAgent(nb);
-						Control.agents.put("a_" + a_ID, nb);
+					try {
+						Control.runCommand("operator a a_" + a_ID + " create bearagent");
+					} catch (CloneNotSupportedException | IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					try {
+						Control.runCommand("operator a a_" + a_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
+					} catch (CloneNotSupportedException | IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 						break;
 						
 					case 1:
-						Chorea nc = new Chorea();
-						((Laboratory) allFields.get(i)).addAgent(nc);
-						Control.agents.put("a_" + a_ID, nc);
-						break;
+						try {
+							Control.runCommand("operator a a_" + a_ID + " create chorea");
+						} catch (CloneNotSupportedException | IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						try {
+							Control.runCommand("operator a a_" + a_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
+						} catch (CloneNotSupportedException | IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+							break;
 						
 					case 2:
-						ForgettingAgent nf = new ForgettingAgent();
-						((Laboratory) allFields.get(i)).addAgent(nf);
-						Control.agents.put("a_" + a_ID, nf);
-						break;
+						try {
+							Control.runCommand("operator a a_" + a_ID + " create forgettingagent");
+						} catch (CloneNotSupportedException | IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						try {
+							Control.runCommand("operator a a_" + a_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
+						} catch (CloneNotSupportedException | IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+							break;
 						
 					case 3:
-						Protection np = new Protection();
-						((Laboratory) allFields.get(i)).addAgent(np);
-						Control.agents.put("a_" + a_ID, np);
-						break;
+						try {
+							Control.runCommand("operator a a_" + a_ID + " create stun");
+						} catch (CloneNotSupportedException | IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						try {
+							Control.runCommand("operator a a_" + a_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
+						} catch (CloneNotSupportedException | IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+							break;
 						
 					case 4:
-						Stun ns = new Stun();
-						((Laboratory) allFields.get(i)).addAgent(ns);
-						Control.agents.put("a_" + a_ID, ns);
-						break;
+						try {
+							Control.runCommand("operator a a_" + a_ID + " create protection");
+						} catch (CloneNotSupportedException | IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						try {
+							Control.runCommand("operator a a_" + a_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
+						} catch (CloneNotSupportedException | IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+							break;
 				}
 			}
 		}
