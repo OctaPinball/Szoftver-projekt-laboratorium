@@ -1,8 +1,15 @@
 package graphic;
 
+/**
+ * Position osztály, a poziciók tárolására
+ */
 public class Position {
 	private int x;
 	private int y;
+	
+	/**
+	 * Position konstruktora, beállítja a megadott pozicíót
+	 */
 	
 	public Position(int x_in, int y_in){
 		setX(x_in);
