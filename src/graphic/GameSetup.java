@@ -14,12 +14,19 @@ import javax.swing.JTextField;
 import miscellaneous.Control;
 import miscellaneous.RoundManager;
 
+/**
+ * A steup menüt megvalósító osztály, bekéri a játékosok számát méretét
+ */
 public class GameSetup extends JFrame{
 
 	public class OkButtonActionListener implements ActionListener{
 		JTextField player;
 		JTextField width;
 		JTextField height;
+		
+		/**
+		 * Az OK gomb megvalósítása
+		 */
 		public OkButtonActionListener(JTextField player_in, JTextField width_in, JTextField height_in) {
 			player = player_in;
 			width = width_in;
@@ -37,7 +44,10 @@ public class GameSetup extends JFrame{
 		    }
 		    return true;
 		}
-		
+
+		/**
+		 * Az action kezelése
+		 */
 		public void actionPerformed(ActionEvent ae) {
 		if (ae.getActionCommand().equals("pushed")) {
 			if(isNumeric(player.getText()) && Integer.parseInt(player.getText()) > 1)
@@ -97,7 +107,9 @@ public class GameSetup extends JFrame{
 	private JTextField fieldwidth = new JTextField("3");
 	private JTextField fieldheight = new JTextField("3");
 
-	
+	/**
+	 * GameSetup konstruktora
+	 */
 	GameSetup(){
 		
 		f.setSize(400,150);

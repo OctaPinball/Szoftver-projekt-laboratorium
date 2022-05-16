@@ -10,11 +10,18 @@ import field.*;
 import miscellaneous.Control;
 import miscellaneous.RoundManager;
 
+/**
+ * InfoMenu megvalósítása
+ */
 public class InfoMenu implements Menu{
 	private ArrayList<JInteractButton> buttons = new ArrayList<JInteractButton>();
 	
 	private JField jfield;
 
+	/**
+	 * Amennyiben a felhasználó ráviszi az egér kurzort a virológus karakterére,
+	 * megjelenik az InfoMenu, ami különbözõ információkat jelenít meg a képernyõn
+	 */
 	public InfoMenu(JField f) {
 		int height = 0;
 		
@@ -222,10 +229,18 @@ public class InfoMenu implements Menu{
 
 	}
 	
+	/**
+	 * A buttons gettere
+	 * @return buttons
+	 */
 	public ArrayList<JInteractButton> getButtons() {
 		return buttons;
 	}
 	
+	/**
+	 * A jfield gettere
+	 * @return jfield
+	 */
 	public JField getJfield() {
 		return jfield;
 	}
