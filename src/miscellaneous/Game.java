@@ -128,7 +128,7 @@ public class Game {
 							e.printStackTrace();
 						}
 						try {
-							Control.runCommand("operator e e_" + e_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
+							Control.runCommand("operator e e_" + e_ID + " move " + Control.getKey(Control.fields, allFields.get(i)));
 						} catch (CloneNotSupportedException | IOException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -143,7 +143,7 @@ public class Game {
 							e.printStackTrace();
 						}
 						try {
-							Control.runCommand("operator e e_" + e_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
+							Control.runCommand("operator e e_" + e_ID + " move " + Control.getKey(Control.fields, allFields.get(i)));
 						} catch (CloneNotSupportedException | IOException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -158,7 +158,7 @@ public class Game {
 							e.printStackTrace();
 						}
 						try {
-							Control.runCommand("operator e e_" + e_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
+							Control.runCommand("operator e e_" + e_ID + " move " + Control.getKey(Control.fields, allFields.get(i)));
 						} catch (CloneNotSupportedException | IOException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -173,7 +173,7 @@ public class Game {
 							e.printStackTrace();
 						}
 						try {
-							Control.runCommand("operator e e_" + e_ID + " move" + Control.getKey(Control.fields, allFields.get(i)));
+							Control.runCommand("operator e e_" + e_ID + " move " + Control.getKey(Control.fields, allFields.get(i)));
 						} catch (CloneNotSupportedException | IOException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();

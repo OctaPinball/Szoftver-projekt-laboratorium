@@ -183,7 +183,7 @@ public class View implements Const{
 				if(RoundManager.getEntity().getField().getNeighbors().get(k).PosEquals(l)) {
 					if(RoundManager.getEntity().getField().getNeighbors().get(k).getVirologist() != null)
 					{
-						i = new ImageIcon("res/v_field_4.png");
+						i = new ImageIcon("res/v_field_3.png");
 						gamepanel.addLabel(l, i);
 						return;
 					}

@@ -164,9 +164,9 @@ public class Virologist implements Viewable, Const{
 		
 		
 		boolean found = false;
-		for (Agent i : activeagents)
+		for (int i = 0; i < activeagents.size(); i++)
 		{
-			if (i.getClass() == a.getClass()) 
+			if (activeagents.get(i).getClass() == a.getClass()) 
 			{
 				activeagents.remove(i);
 				found = true;
@@ -374,9 +374,9 @@ public class Virologist implements Viewable, Const{
      */
 	public void step() {
 		Logger.enter(this, "step", null);
-		for(Agent a : activeagents)
+		for(int i = 0; i < activeagents.size(); i++)
 		{
-			a.stepEffectTime();
+			activeagents.get(i).stepEffectTime();
 		}
 		Logger.exit(this, "step", null);
 	}
