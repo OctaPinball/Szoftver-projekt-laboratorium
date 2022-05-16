@@ -18,6 +18,7 @@ public class NormalMovement implements Movement{
      * A paraméterként kapott virológus szeretne átlépni a paraméterként kapott mezőre
      * @param v, a virológus, aki szeretne ellépni
      * @param target, a mező, ahova lépni szeretne
+     * @return boolean, a lépés sikerességét adja vissza
      * @throws IOException 
      * @throws CloneNotSupportedException 
      */
@@ -37,6 +38,11 @@ public class NormalMovement implements Movement{
 		Logger.exit(this, "move", true);
 		return true;
 	}
+	
+	/**
+	 * A mozgás prioritási számát adja vissza
+	 * @return int, a prioritás száma
+	 */
 	
 	public int getPriority() {
 		return priority;

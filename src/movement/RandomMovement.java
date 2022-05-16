@@ -21,6 +21,7 @@ public class RandomMovement implements Movement{
      * A paraméterként kapott virológus átlép egy random sorsolt szomszédos mezőre
      * @param v, a virológus, aki szeretne ellépni
      * @param target, itt nincs jelentősége
+     * @return boolean, a lépés sikerességét adja vissza
      * @throws CloneNotSupportedException 
      * @throws IOException 
      */
@@ -86,6 +87,11 @@ public class RandomMovement implements Movement{
 		Logger.exit(this, "move", null);
 		return true;
 	}
+	
+	/**
+	 * A mozgás prioritási számát adja vissza
+	 * @return int, a prioritás száma
+	 */
 	
 	public int getPriority() {
 		return priority;

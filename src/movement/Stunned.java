@@ -17,6 +17,7 @@ public class Stunned implements Movement{
      * A paraméterként kapott virológus nem tud megmozdulni a jelenlegi mezőjéről
      * @param v, a virológus, aki szeretne ellépni
      * @param target, a mező, ahova lépni szeretne
+     * @return boolean, a lépés sikerességét adja vissza
      */
 	
 	public boolean move(Virologist v, Field target) {
@@ -28,6 +29,11 @@ public class Stunned implements Movement{
 		Logger.exit(this, "move", null);
 		return true;
 	}
+	
+	/**
+	 * A mozgás prioritási számát adja vissza
+	 * @return int, a prioritás száma
+	 */
 	
 	public int getPriority() {
 		return priority;
