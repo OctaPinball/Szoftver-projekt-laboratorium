@@ -47,7 +47,7 @@ public class MainMenu {
 	/**
 	 * MainMenu default konstruktora, beállítja a főmenü szükséges paramétereit
 	 */
-	
+
 	public MainMenu(){
 		f.setSize(400,220);
 		f.setResizable(true);

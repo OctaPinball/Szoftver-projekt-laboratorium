@@ -2,6 +2,9 @@ package miscellaneous;
 
 import java.util.ArrayList;
 
+/**
+ * A játék köreinek kezeléséért felelõs osztály
+ */
 public class RoundManager {
 	private static ArrayList<Virologist> entities = new ArrayList<Virologist>();
 	private static Virologist currentEntity;
@@ -29,14 +32,26 @@ public class RoundManager {
 		currentEntity.newRound();
 	}
 	
+	/**
+	 * A entities listához új elemet ad
+	 * @param s
+	 */
 	public static void addEntity(Virologist s) {
 		entities.add(s);
 	}
 	
+	/**
+	 * A entities gettere
+	 * @return entities
+	 */
 	public static ArrayList<Virologist> getVriologists(){
 		return entities;
 	}
 	
+	/**
+	 * A currentEntity gettere
+	 * @return currentEntity
+	 */
 	public static Virologist getEntity() {
 		return currentEntity;
 	}

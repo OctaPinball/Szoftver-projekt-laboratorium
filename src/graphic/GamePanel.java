@@ -14,6 +14,10 @@ import javax.swing.JPanel;
 import field.*;
 import miscellaneous.*;
 
+
+/**
+ * 
+ */
 public class GamePanel extends JPanel implements Const{
 	
 	private GameFrame parent;
@@ -33,6 +37,7 @@ public class GamePanel extends JPanel implements Const{
 		controls = controls_input;
 		labels = new ArrayList<JLabel>();
 	}
+	
 	
 	public void clearLabels() {
 		labels = new ArrayList<JLabel>();
@@ -57,15 +62,6 @@ public class GamePanel extends JPanel implements Const{
 				labels.add(j);
 	}
 
-		
-		/*
-		JLabel j = new JLabel();
-		j.setIcon(i);
-		j.setBounds(p.getX(),p.getY(),32,32);
-		j.setOpaque(true);
-		j.addMouseListener(new ControlInput());
-		labels.add(j);
-		*/
 	public JLabel safe = null;
 	public void paint(Graphics g) {
 		//super.paint(g);
@@ -85,10 +81,7 @@ public class GamePanel extends JPanel implements Const{
 				safe = j.getLabel();
 			}
 		}
-		//drawLabels();
 		parent.drawLabels(); //FINAL DRAW CALL******
-		//parent.prepareShit();
-		//parent.drawShit();
 	}
 	
 	public ArrayList<JLabel> getLabels() {
