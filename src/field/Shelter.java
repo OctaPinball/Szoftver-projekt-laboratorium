@@ -37,6 +37,11 @@ public class Shelter extends Field{
 		super(id, x, y);
 	}
 
+	/**
+	 * Visszaadja stringként a mezõn tartózkodó virológust, 
+	 * felszerelést és a mezõ típusát
+	 * @return		az említett adatok stringként
+	 */
 	public String toString() {
 		return "name:\t\t" + Control.getName(this)
 		+ "\ntype:\t\tshelter"
@@ -44,14 +49,25 @@ public class Shelter extends Field{
 		+ "\nequipment:\t" + Control.getName(equipmentOnField);
 	}
 	
+	/**
+	 * Visszaadja a világos óvóhely mezõ képét
+	 * @return		világos óvóhely mezõ ImageIcon-ja
+	 */
 	public ImageIcon getIMG() {
 		return shelter;
 	}
 	
+	/**
+	 * Visszaadja a sötét mezõ képét
+	 * @return		sötét mezõ ImageIcon-ja
+	 */
 	public ImageIcon getDarkIMG() {
 		return darkShelter;
 	}
-	
+
+	/**
+     *  Kiválasztja az shelter-hoz szükséges rajzolást
+     */
 	@Override
 	public void pickDraw(View v) {
 		v.drawShelter(this);

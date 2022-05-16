@@ -173,6 +173,10 @@ public class Field implements Viewable, Const{
 		return neighbors;
 	}
 	
+	/**
+	 * Visszaadja a mezõn tartózkodó virológust
+	 * @return		a mezõn tartózkodó virológus
+	 */
 	public Virologist getVirologist() {
 		return virologistOnField;
 	}
@@ -185,6 +189,11 @@ public class Field implements Viewable, Const{
 		
 	}
 
+	/**
+	 * Visszaadja stringként a mezõn tartózkodó virológust, 
+	 * felszerelést és a mezõ típusát
+	 * @return		az említett adatok stringként
+	 */
 	public String toString() {
 		return "name:\t\t" + Control.getName(this)
 				+ "\ntype:\t\tfield"
@@ -192,10 +201,18 @@ public class Field implements Viewable, Const{
 				+ "\nequipment:\t" + Control.getName(equipmentOnField);
 	}
 	
+	/**
+	 * Visszaadja stringként a mezõt
+	 * @return		a mezõ
+	 */
 	public String printName() {
 		return Control.getName(this);
 	}
 	
+	/**
+	 * Visszaadja egy mezõ szomszédjait stringként
+	 * @return		a mezõ szomszédai
+	 */
 	public String nToString() {
 		int n = this.neighbors.size();
 		String[] string = null;
@@ -207,10 +224,18 @@ public class Field implements Viewable, Const{
 		return "name:\t " + Control.getName(this) + "\n" + string.toString();
 	}
 	
+	/**
+	 * Visszaadja a mezõ azonosítóját
+	 * @return		azonosító
+	 */
 	public int getID() {
 		return id;
 	}
 	
+	/**
+	 * Kiszámolja egy mezõ x és y koordinátáit
+	 * @return		a mezõ pozíciója
+	 */
 	public Position calculateCoordinates() {
 		if(RoundManager.getEntity() != null && RoundManager.getEntity().getField() != null)
 		{
@@ -227,22 +252,42 @@ public class Field implements Viewable, Const{
 		return null;
 	}
 
+	/**
+	 * Visszaadja a világos mezõ képét
+	 * @return		világos mezõ ImageIcon-ja
+	 */
 	public ImageIcon getIMG() {
 		return field;
 	}
 	
+	/**
+	 * Visszaadja a sötét mezõ képét
+	 * @return		sötét mezõ ImageIcon-ja
+	 */
 	public ImageIcon getDarkIMG() {
 		return darkField;
 	}
-	
+
+	/**
+	 * Visszaadja a mezõ pozícióját
+	 * @return		pozíció
+	 */
 	public Position getPosition() {
 		return pos;
 	}
 	
+	/**
+	 * Összehasinlítja a mezõ pozícióját egy paraméterben átvett másik mezõével
+	 * @param 		a másik mezõ
+	 * @return		igazzal vagy hamissal tér vissza
+	 */
 	public boolean PosEquals(Field f) {
 		return this.getPosition().Equals(f.getPosition());
 	}
 
+	/**
+     *  Kiválasztja az field-hez szükséges rajzolást
+     */
 	@Override
 	public void pickDraw(View v) {
 		v.drawField(this);

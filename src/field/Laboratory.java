@@ -65,6 +65,11 @@ public class Laboratory extends Field{
 		Logger.exit(this, "addAgent", null);
 	}
 	
+	/**
+	 * Visszaadja stringként a mezõn tartózkodó virológust, 
+	 * felszerelést és a mezõ típusát
+	 * @return		az említett adatok stringként
+	 */
 	public String toString() {
 		return "name:\t\t" + Control.getName(this)
 		+ "\ntype:\t\tlaboratory"
@@ -72,14 +77,26 @@ public class Laboratory extends Field{
 		+ "\nequipment:\t" + Control.getName(equipmentOnField);
 	}
 	
+	/**
+	 * Visszaadja a világos laboratórium mezõ képét
+	 * @return		laboratórium mezõ ImageIcon-ja
+	 */
 	public ImageIcon getIMG() {
 		return lab;
 	}
 	
+	/**
+	 * Visszaadja a sötét laboratórium mezõ képét
+	 * @return		laboratórium mezõ ImageIcon-ja
+	 */
 	public ImageIcon getDarkIMG() {
 		return darkLab;
 	}
 	
+
+	/**
+     *  Kiválasztja az laboratory-hoz szükséges rajzolást
+     */
 	@Override
 	public void pickDraw(View v) {
 		v.drawLaboratory(this);

@@ -76,6 +76,11 @@ public class Storage extends Field{
 		Logger.exit(this, "destroy", null);
 	}
 	
+	/**
+	 * Visszaadja stringként a mezõn tartózkodó virológust, 
+	 * felszerelést és a mezõ típusát
+	 * @return		az említett adatok stringként
+	 */
 	public String toString() {
 		return "name:\t\t" + Control.getName(this)
 		+ "\ntype:\t\tstorage"
@@ -83,14 +88,25 @@ public class Storage extends Field{
 		+ "\nequipment:\t" + Control.getName(equipmentOnField);
 	}
 	
+	/**
+	 * Visszaadja a világos raktár mezõ képét
+	 * @return		világos raktár ImageIcon-ja
+	 */
 	public ImageIcon getIMG() {
 		return storage;
 	}
 	
+	/**
+	 * Visszaadja a sötét mezõ képét
+	 * @return		sötét mezõ ImageIcon-ja
+	 */
 	public ImageIcon getDarkIMG() {
 		return darkStorage;
 	}
-	
+
+	/**
+     *  Kiválasztja az storage-hez szükséges rajzolást
+     */
 	@Override
 	public void pickDraw(View v) {
 		v.drawStorage(this);
