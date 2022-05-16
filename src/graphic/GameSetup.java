@@ -93,9 +93,6 @@ public class GameSetup extends JFrame{
 	public JFrame f = new JFrame("SwingLab");
 	private JPanel p = new JPanel();
 	private JButton b = new JButton("START GAME");
-	//private JTextField playernumber = new JTextField("PlayerNumber");
-	//private JTextField fieldwidth = new JTextField("MapWidth");
-	//private JTextField fieldheight = new JTextField("MapHeight");
 	private JTextField playernumber = new JTextField("2");
 	private JTextField fieldwidth = new JTextField("3");
 	private JTextField fieldheight = new JTextField("3");
@@ -103,12 +100,8 @@ public class GameSetup extends JFrame{
 	
 	GameSetup(){
 		
-
-		
-	    //f.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		f.setSize(400,150);
 		f.setResizable(false);
-		//f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		fieldwidth.setEditable(true);
 		fieldheight.setEditable(true);
 		playernumber.setSize(20, 50);
