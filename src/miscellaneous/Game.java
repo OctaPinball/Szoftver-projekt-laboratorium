@@ -14,6 +14,9 @@ import movement.*;
 import beardefense.*;
 import miscellaneous.*;
 
+/**
+ * A játékért felelős osztály
+ */
 public class Game {
 	private static boolean randomEnabled = true;
 	private static ArrayList<Field> allFields = new ArrayList<Field>();
@@ -282,14 +285,26 @@ public class Game {
 		
 	}
 
+	/**
+	 * A randomEnabled gettere
+	 * @return randomEnabled
+	 */
 	public static boolean isRandomEnabled() {
 		return randomEnabled;
 	}
 
+	/**
+	 * A randomEnabled settere
+	 * @param newrandomEnabled
+	 */
 	public static void setRandomEnabled(boolean newrandomEnabled) {
 		randomEnabled = newrandomEnabled;
 	}
 	
+	/**
+	 * A allFields gettere
+	 * @return allFields
+	 */
 	public static ArrayList<Field> getAllFields() {
 		return allFields;
 	}
