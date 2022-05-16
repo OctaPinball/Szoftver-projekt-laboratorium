@@ -109,18 +109,33 @@ public abstract class Equipment implements Viewable{
     	
     }
     
+    /**
+     *  Visszatér az axe nevével
+     *  @return "equipment" string
+     */
     public String toString() {
 		return "equipment\t\t" + Control.getName(this);
 	}
 
+    /**
+     *  Kisámolja a koordinátákat
+     *  @return koordináták
+     */
 	public Position calculateCoordinates() {
 		return currentField.calculateCoordinates();
 	}
 	
+	/**
+     *  Visszatér a felszerelés képével
+     *  @return a felszerelés ImageIcon-ja
+     */
 	public ImageIcon getIMG() {
 		return equipment;
 	}
 	
+	/**
+     *  Kiválasztja az equipment-hez szükséges rajzolást
+     */
 	@Override
 	public void pickDraw(View v) {
 		v.drawEquipment(this);

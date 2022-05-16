@@ -48,6 +48,10 @@ public class Sack extends Equipment{
 
     }
     
+    /**
+     *  Visszatér az axe nevével
+     *  @return "sack" string
+     */
     public String toString() {
 		return "sack\t\t" + Control.getName(this);
 	}
@@ -56,6 +60,10 @@ public class Sack extends Equipment{
 //		return sack;
 //	}
     
+    
+    /**
+     *  Kiválasztja az sack-hez szükséges rajzolást
+     */
 	@Override
 	public void pickDraw(View v) {
 		v.drawSack(this);

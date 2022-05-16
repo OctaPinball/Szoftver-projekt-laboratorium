@@ -66,7 +66,7 @@ public class View implements Const{
 		g2D.drawString("Agent", 258, 624);
 		g2D.drawString("Active agent", 453, 624);
 		//g2D.drawString("Materials", 40, 824);
-		g2D.drawString("Action Points: " + v.getActionPoint(), 40, 824);
+		g2D.drawString("Action Points: " + v.getActionPoint(), 40, 822);
 		g2D.drawLine(170, 608, 170, 800);
 		g2D.drawLine(389, 608, 389, 800);
 		g2D.drawLine(0, 800, 608, 800);
@@ -96,8 +96,8 @@ public class View implements Const{
 			}
 			
 			if(v.getFillMaterial() != null) {
-				g2D.drawString("Amino acids: " + v.getAminoacid(), 242, 824);
-				g2D.drawString("Nucleotids: " + v.getNucleotide(), 437, 824);
+				g2D.drawString("Amino acids: " + v.getAminoacid(), 242, 822);
+				g2D.drawString("Nucleotids: " + v.getNucleotide(), 437, 822);
 				
 			}	
 		}
