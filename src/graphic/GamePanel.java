@@ -15,13 +15,14 @@ import field.*;
 import miscellaneous.*;
 
 
+
 /**
- * Megvalósítja a játék grafikus felületét
+ * Megvalï¿½sï¿½tja a jï¿½tï¿½k grafikus felï¿½letï¿½t
  */
 public class GamePanel extends JPanel implements Const{
 	
 	private GameFrame parent;
-	private ControlInput controls;
+	//private ControlInput controls;
 	private ArrayList<JLabel> labels;
 	private Menu activemenu = null;
 	private boolean menupriority = false;
@@ -33,23 +34,23 @@ public class GamePanel extends JPanel implements Const{
 	/**
 	 * GamePanel konstruktora
 	 */
-	public GamePanel(ControlInput controls_input, GameFrame frame) {
+	public GamePanel(GameFrame frame) {
 		parent = frame;
 		this.setPreferredSize(new Dimension(PANEL_WIDH,PANEL_HEIGH));
 		//this.addKeyListener(controls);
-		controls = controls_input;
+		//controls = controls_input;
 		labels = new ArrayList<JLabel>();
 	}
 	
 	/**
-	 * Törli a képernyõn lévõ dolgokat
+	 * Tï¿½rli a kï¿½pernyï¿½n lï¿½vï¿½ dolgokat
 	 */
 	public void clearLabels() {
 		labels = new ArrayList<JLabel>();
 	}
 	
 	/**
-	 * Kirajzolja a bufferben lévõ dolgokat
+	 * Kirajzolja a bufferben lï¿½vï¿½ dolgokat
 	 */
 	public void drawLabels() {
 		for(JLabel l : labels)
@@ -61,7 +62,7 @@ public class GamePanel extends JPanel implements Const{
 	}
 	
 	/**
-	 * Hozzáad a bufferbe egy kirajzolandó objektumot
+	 * Hozzï¿½ad a bufferbe egy kirajzolandï¿½ objektumot
 	 */
 	public void addLabel(Field f, ImageIcon i) {
 				JLabel j = new JLabel();
@@ -76,7 +77,7 @@ public class GamePanel extends JPanel implements Const{
 	public JLabel safe = null;
 	
 	/**
-	 * Minden rajzolást meghív
+	 * Minden rajzolï¿½st meghï¿½v
 	 */
 	public void paint(Graphics g) {
 		//super.paint(g);
