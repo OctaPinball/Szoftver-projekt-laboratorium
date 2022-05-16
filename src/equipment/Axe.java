@@ -12,6 +12,10 @@ import graphic.View;
 import miscellaneous.Control;
 import miscellaneous.Logger;
 
+/**
+ * Egy olyan felszerelést reprezentál a programban, amelyet ha felvesz egy játékos,
+ * akkor megtudja vele ölni a medveágens hatása alatt álló virológust.
+ */
 public class Axe extends Equipment{
 	
 	private int life = 1;

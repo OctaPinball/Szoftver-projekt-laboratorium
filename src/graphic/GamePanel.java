@@ -14,6 +14,10 @@ import javax.swing.JPanel;
 import field.*;
 import miscellaneous.*;
 
+
+/**
+ * Megvalósítja a játék grafikus felületét
+ */
 public class GamePanel extends JPanel implements Const{
 	
 	private GameFrame parent;
@@ -26,6 +30,9 @@ public class GamePanel extends JPanel implements Const{
 
 	View view = null;
 	
+	/**
+	 * GamePanel konstruktora
+	 */
 	public GamePanel(ControlInput controls_input, GameFrame frame) {
 		parent = frame;
 		this.setPreferredSize(new Dimension(PANEL_WIDH,PANEL_HEIGH));
@@ -34,10 +41,16 @@ public class GamePanel extends JPanel implements Const{
 		labels = new ArrayList<JLabel>();
 	}
 	
+	/**
+	 * Törli a képernyõn lévõ dolgokat
+	 */
 	public void clearLabels() {
 		labels = new ArrayList<JLabel>();
 	}
 	
+	/**
+	 * Kirajzolja a bufferben lévõ dolgokat
+	 */
 	public void drawLabels() {
 		for(JLabel l : labels)
 		{
@@ -47,6 +60,9 @@ public class GamePanel extends JPanel implements Const{
 		this.setVisible(true);
 	}
 	
+	/**
+	 * Hozzáad a bufferbe egy kirajzolandó objektumot
+	 */
 	public void addLabel(Field f, ImageIcon i) {
 				JLabel j = new JLabel();
 				j.setIcon(i);
@@ -57,16 +73,11 @@ public class GamePanel extends JPanel implements Const{
 				labels.add(j);
 	}
 
-		
-		/*
-		JLabel j = new JLabel();
-		j.setIcon(i);
-		j.setBounds(p.getX(),p.getY(),32,32);
-		j.setOpaque(true);
-		j.addMouseListener(new ControlInput());
-		labels.add(j);
-		*/
 	public JLabel safe = null;
+	
+	/**
+	 * Minden rajzolást meghív
+	 */
 	public void paint(Graphics g) {
 		//super.paint(g);
 		labels = new ArrayList<JLabel>();
@@ -85,29 +96,45 @@ public class GamePanel extends JPanel implements Const{
 				safe = j.getLabel();
 			}
 		}
-		//drawLabels();
 		parent.drawLabels(); //FINAL DRAW CALL******
-		//parent.prepareShit();
-		//parent.drawShit();
 	}
 	
+	/**
+	 * A labels gettere
+	 * @return labels
+	 */
 	public ArrayList<JLabel> getLabels() {
 		return labels;
 	}
 
+	/**
+	 * A activemenu gettere
+	 * @return activemenu
+	 */
 	public Menu getActivemenu() {
 		return activemenu;
 	}
 
+	/**
+	 * A activemenu settere
+	 * @param infoMenu
+	 */
 	public void setActivemenu(Menu infoMenu) {
 		this.activemenu = infoMenu;
 	}
 	
-
+	/**
+	 * A menupriority gettere
+	 * @return menupriority
+	 */
 	public boolean isMenupriority() {
 		return menupriority;
 	}
 
+	/**
+	 * A menupriority settere
+	 * @param menupriority
+	 */
 	public void setMenupriority(boolean menupriority) {
 		this.menupriority = menupriority;
 	}

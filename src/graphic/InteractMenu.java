@@ -11,12 +11,19 @@ import field.*;
 import miscellaneous.*;
 import movement.*;
 
+/**
+ * InteractMenu megvalósítása
+ */
 public class InteractMenu implements Menu {
 	
 	private ArrayList<JInteractButton> buttons = new ArrayList<JInteractButton>();
 	
 	private JField jfield;
 
+	/**
+	 * Amennyiben a felhasználó rákattint egy mezõre, megjelenik az InteractMenu,
+	 * ami megmutatja, milyen akciók végrehajtására van lehetõség
+	 */
 	public InteractMenu(JField f) {
 		int height = 0;
 
@@ -374,10 +381,18 @@ public class InteractMenu implements Menu {
 
 	}
 	
+	/**
+	 * A buttons gettere
+	 * @return buttons
+	 */
 	public ArrayList<JInteractButton> getButtons() {
 		return buttons;
 	}
-
+	
+	/**
+	 * A jfield gettere
+	 * @return jfield
+	 */
 	public JField getJfield() {
 		return jfield;
 	}

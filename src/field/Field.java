@@ -181,10 +181,16 @@ public class Field implements Viewable, Const{
 		return virologistOnField;
 	}
 	
+	/**
+	 * Lemásolja Field-ként a Storage osztályon hívott példányt, lemásolja az összes átruházható attribútumát
+	 */
 	public void copyStorage() {
 		
 	}
 	
+	/**
+	 * Megszünteti a mezõ létezését, a megfelelõ kapcsolatok elvágásával
+	 */
 	public void destroy() {
 		
 	}

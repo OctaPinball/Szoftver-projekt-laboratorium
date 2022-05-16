@@ -14,12 +14,19 @@ import javax.swing.JTextField;
 import miscellaneous.Control;
 import miscellaneous.RoundManager;
 
+/**
+ * A steup menüt megvalósító osztály, bekéri a játékosok számát és a pálya méretét
+ */
 public class GameSetup extends JFrame{
 
 	public class OkButtonActionListener implements ActionListener{
 		JTextField player;
 		JTextField width;
 		JTextField height;
+		
+		/**
+		 * Az OK gomb megvalósítása
+		 */
 		public OkButtonActionListener(JTextField player_in, JTextField width_in, JTextField height_in) {
 			player = player_in;
 			width = width_in;
@@ -37,7 +44,10 @@ public class GameSetup extends JFrame{
 		    }
 		    return true;
 		}
-		
+
+		/**
+		 * Az action kezelése
+		 */
 		public void actionPerformed(ActionEvent ae) {
 		if (ae.getActionCommand().equals("pushed")) {
 			if(isNumeric(player.getText()) && Integer.parseInt(player.getText()) > 1)
@@ -93,22 +103,17 @@ public class GameSetup extends JFrame{
 	public JFrame f = new JFrame("SwingLab");
 	private JPanel p = new JPanel();
 	private JButton b = new JButton("START GAME");
-	//private JTextField playernumber = new JTextField("PlayerNumber");
-	//private JTextField fieldwidth = new JTextField("MapWidth");
-	//private JTextField fieldheight = new JTextField("MapHeight");
 	private JTextField playernumber = new JTextField("2");
 	private JTextField fieldwidth = new JTextField("3");
 	private JTextField fieldheight = new JTextField("3");
 
-	
+	/**
+	 * GameSetup konstruktora
+	 */
 	GameSetup(){
 		
-
-		
-	    //f.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		f.setSize(400,150);
 		f.setResizable(false);
-		//f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		fieldwidth.setEditable(true);
 		fieldheight.setEditable(true);
 		playernumber.setSize(20, 50);
