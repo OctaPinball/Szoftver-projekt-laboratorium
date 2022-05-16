@@ -3,13 +3,15 @@ package miscellaneous;
 import java.util.ArrayList;
 
 /**
- * A játék köreinek kezeléséért felelõs osztály
+ *	A játék köreinek kezeléséért felelõs osztály, tárolja a játékban lévõ virológusokat
  */
 public class RoundManager {
 	private static ArrayList<Virologist> entities = new ArrayList<Virologist>();
 	private static Virologist currentEntity;
 	
-	
+	/**
+	 * Elindítja a soron következõ virológus körét, ha már mindenki volt megint az elsõ virológus következik
+	 */
 	public static void nextRound() {
 		if(currentEntity == null && !entities.isEmpty())
 		{
@@ -33,24 +35,22 @@ public class RoundManager {
 	}
 	
 	/**
-	 * A entities listához új elemet ad
-	 * @param s
+	 * Hozzáad egy virológust a virológusok tömbjéhez
+	 * @param s		A hozzáadandó virológus
 	 */
 	public static void addEntity(Virologist s) {
 		entities.add(s);
 	}
 	
 	/**
-	 * A entities gettere
-	 * @return entities
+	 * @return		Visszaadja a virológusok tömbjét
 	 */
 	public static ArrayList<Virologist> getVriologists(){
 		return entities;
 	}
 	
 	/**
-	 * A currentEntity gettere
-	 * @return currentEntity
+	 * @return		Visszadja az éppen soron lévõ virológust
 	 */
 	public static Virologist getEntity() {
 		return currentEntity;

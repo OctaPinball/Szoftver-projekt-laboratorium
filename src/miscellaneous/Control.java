@@ -52,6 +52,12 @@ public class Control {
 	private static InputStreamReader isr =	new InputStreamReader(System.in);
 	private static BufferedReader br = new BufferedReader(isr);
 	
+	/**
+	 * 
+	 * @param inhashmap
+	 * @return
+	 * @throws IOException
+	 */
 	public static Equipment getEquipment(HashMap<String, Equipment> inhashmap) throws IOException {
 		String line;
 		line = br.readLine();

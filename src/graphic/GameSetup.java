@@ -15,7 +15,7 @@ import miscellaneous.Control;
 import miscellaneous.RoundManager;
 
 /**
- * A steup menüt megvalósító osztály, bekéri a játékosok számát méretét
+ * A steup menüt megvalósító osztály, bekéri a játékosok számát és a pálya méretét
  */
 public class GameSetup extends JFrame{
 

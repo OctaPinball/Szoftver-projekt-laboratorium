@@ -12,7 +12,7 @@ import miscellaneous.Virologist;
 public interface Block {
 
 	/**
-	 *Egy másik játékostól származó ágenses kenést követően végrehajtandó művelet, mely a virológus védekezését írja le.
+	 * Egy másik játékostól származó ágenses kenést követően végrehajtandó művelet, mely a virológus védekezését írja le.
 	 * @param s, a támadó virológus(sender)
 	 * @param t, a védekező virológus(target)
 	 * @param a, a támadásnál használt ágens
@@ -22,6 +22,9 @@ public interface Block {
 	 */
 	public abstract boolean block(Virologist s, Virologist t, Agent a) throws CloneNotSupportedException, IOException;
 
+	/**
+	 * @return	Visszaadja az ágens védekezés prioritását
+	 */
 	public abstract int getPriority();
 	
 }

@@ -19,6 +19,10 @@ public class JField implements MouseInputListener{
 		field = f;
 	}
 	
+	/**
+	 * Érzékeli ha rákattintanak egy mezõre
+	 * @param e
+	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		if(parent.getGamepanel().getActivemenu().getJfield() != null && parent.getGamepanel().getActivemenu().getJfield().equals(this))
@@ -45,6 +49,10 @@ public class JField implements MouseInputListener{
 		
 	}
 
+	/**
+	 * Érzékeli ha ráviszik az egeret egy mezõre
+	 * @param e
+	 */
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		if(!parent.getGamepanel().isMenupriority())
@@ -71,10 +79,18 @@ public class JField implements MouseInputListener{
 		
 	}
 	
+	/**
+	 * A field gettere
+	 * @return field
+	 */
 	public Field getField() {
 		return field;
 	}
 
+	/**
+	 * A parent gettere
+	 * @return parent
+	 */
 	public View getParent() {
 		return parent;
 	}

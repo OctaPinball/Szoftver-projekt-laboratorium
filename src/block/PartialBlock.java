@@ -51,6 +51,9 @@ public class PartialBlock implements Block{
 		return result;
 	}
 
+	/**
+	 * @return	Visszaadja a PartialBlock prioritását
+	 */
 	public int getPriority() {
 		return priority;
 	}

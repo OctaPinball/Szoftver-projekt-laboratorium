@@ -10,6 +10,9 @@ import field.*;
 import fillmaterial.*;
 import movement.*;
 
+/**
+ * A szkeleton teszteléséhez szükséges korábban használt osztály
+ */
 public class Tester {
 
 	public void runTest() throws CloneNotSupportedException, IOException{

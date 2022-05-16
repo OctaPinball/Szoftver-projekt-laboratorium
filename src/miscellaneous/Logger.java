@@ -7,6 +7,9 @@ import java.util.Map;
 
 import agents.Agent;
 
+/**
+ * A szkeleton fázisnál a függvényhívásokat monitorozta
+ */
 public class Logger {
 	private static Map<Object, String> map=new HashMap<Object, String>();
 	private static int depth=0;

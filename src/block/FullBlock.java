@@ -32,6 +32,9 @@ public class FullBlock implements Block{
 		return true;
 	}
 	
+	/**
+	 * @return	Visszaadja a FullBlock prioritását
+	 */
 	public int getPriority() {
 		return priority;
 	}
