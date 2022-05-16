@@ -36,9 +36,26 @@ public class RandomMovement implements Movement{
 		Field realtarget = null;
 		if(Game.isRandomEnabled())
 		{
-			Random rand = new Random();
-			int i = rand.nextInt() % neighbor.size();
-			realtarget = neighbor.get(i);
+			boolean hasFreePos = false;
+			for(int j = 0; j < neighbor.size(); j++)
+			{
+				if(neighbor.get(j).getVirologist() != null)
+				{
+					hasFreePos = true;
+				}
+			}
+			if(!hasFreePos)
+			{
+				return false;
+			}
+			while(true)
+			{
+				Random rand = new Random();
+				int i = rand.nextInt() % neighbor.size();
+				realtarget = neighbor.get(i);
+				if(realtarget.getVirologist() == null)
+					break;
+			}
 		}
 		else
 		{

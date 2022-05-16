@@ -117,6 +117,8 @@ public class View implements Const{
 					if(RoundManager.getEntity().getField().getNeighbors().get(k).getVirologist() != null)
 					{
 						i = new ImageIcon("res/v_field_1.png");
+						if(RoundManager.getEntity().getMovement().getClass() == BearDance.class)
+							i = new ImageIcon("res/vb_field_1.png");
 						gamepanel.addLabel(f, i);
 						return;
 					}
@@ -140,6 +142,8 @@ public class View implements Const{
 					if(RoundManager.getEntity().getField().getNeighbors().get(k).getVirologist() != null)
 					{
 						i = new ImageIcon("res/v_field_2.png");
+						if(RoundManager.getEntity().getMovement().getClass() == BearDance.class)
+							i = new ImageIcon("res/vb_field_2.png");
 						gamepanel.addLabel(s, i);
 						return;
 					}
@@ -162,6 +166,8 @@ public class View implements Const{
 					if(RoundManager.getEntity().getField().getNeighbors().get(k).getVirologist() != null)
 					{
 						i = new ImageIcon("res/v_field_4.png");
+						if(RoundManager.getEntity().getMovement().getClass() == BearDance.class)
+							i = new ImageIcon("res/vb_field_4.png");
 						gamepanel.addLabel(s, i);
 						return;
 					}
@@ -184,6 +190,8 @@ public class View implements Const{
 					if(RoundManager.getEntity().getField().getNeighbors().get(k).getVirologist() != null)
 					{
 						i = new ImageIcon("res/v_field_3.png");
+						if(RoundManager.getEntity().getMovement().getClass() == BearDance.class)
+							i = new ImageIcon("res/vb_field_3.png");
 						gamepanel.addLabel(l, i);
 						return;
 					}
@@ -198,15 +206,25 @@ public class View implements Const{
 	public void drawVirologist(Virologist v) {
 		ImageIcon i = new ImageIcon("res/Virologist.png");	
 		if(v.getField().getClass() == Field.class)
-			i = new ImageIcon("res/v_field_1.png");
+			if(v.getMovement().getClass() == BearDance.class)
+				i = new ImageIcon("res/vb_field_1.png");
+			else
+				i = new ImageIcon("res/v_field_1.png");
 		if(v.getField().getClass() == Shelter.class)
-			i = new ImageIcon("res/v_field_2.png");
+			if(v.getMovement().getClass() == BearDance.class)
+				i = new ImageIcon("res/vb_field_2.png");
+			else
+				i = new ImageIcon("res/v_field_2.png");
 		if(v.getField().getClass() == Laboratory.class)
-			i = new ImageIcon("res/v_field_3.png");
+			if(v.getMovement().getClass() == BearDance.class)
+				i = new ImageIcon("res/vb_field_3.png");
+			else
+				i = new ImageIcon("res/v_field_3.png");
 		if(v.getField().getClass() == Storage.class)
-			i = new ImageIcon("res/v_field_4.png");
-		if(v.getMovement().getClass() == BearDance.class)
-			i = new ImageIcon("res/Bear.png");
+			if(v.getMovement().getClass() == BearDance.class)
+				i = new ImageIcon("res/vb_field_4.png");
+			else
+				i = new ImageIcon("res/v_field_4.png");
 		Position p = v.calculateCoordinates();
 		gamepanel.addLabel(v.getField(), i);
 	}
