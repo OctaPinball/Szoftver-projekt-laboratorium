@@ -79,10 +79,18 @@ public class JField implements MouseInputListener{
 		
 	}
 	
+	/**
+	 * A field gettere
+	 * @return field
+	 */
 	public Field getField() {
 		return field;
 	}
 
+	/**
+	 * A parent gettere
+	 * @return parent
+	 */
 	public View getParent() {
 		return parent;
 	}

@@ -21,6 +21,10 @@ public class JInteractButton implements MouseInputListener {
 		f = f_in;
 	}
 	
+	/**
+	 * Érzékeli ha rákattintanak egy mezõre
+	 * @param e
+	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		try {
@@ -69,6 +73,10 @@ public class JInteractButton implements MouseInputListener {
 		
 	}
 
+	/**
+	 * A label gettere
+	 * @return label
+	 */
 	public JLabel getLabel() {
 		return label;
 	}
