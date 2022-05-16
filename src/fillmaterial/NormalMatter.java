@@ -31,6 +31,10 @@ public class NormalMatter implements FillMaterial{
 		Logger.exit(this, "move", null);
 	}
 	
+	/**
+     * Visszatér a prioritással
+     * @return prioritás
+     */
 	public int getPriority() {
 		return priority;
 	}

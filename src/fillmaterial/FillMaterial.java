@@ -15,6 +15,10 @@ public interface FillMaterial {
 
 	public abstract void fillMaterial(Virologist v);
 
+	/**
+     * Visszatér a prioritással
+     * @return prioritás
+     */
 	public abstract int getPriority();
 	
 }
