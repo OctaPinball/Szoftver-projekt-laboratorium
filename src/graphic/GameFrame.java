@@ -6,7 +6,9 @@ import java.util.ArrayList;
 
 import javax.swing.*;
 
-
+/**
+ * A játék keretét megvalósító osztály
+ */
 public class GameFrame extends JFrame{
 
 	private static final long serialVersionUID = 1L;
@@ -14,6 +16,9 @@ public class GameFrame extends JFrame{
 	private ControlInput controls;
 	private ArrayList<JLabel> removeable = new ArrayList<JLabel>();
 	
+	/**
+	 * GameFrame konstruktora
+	 */
 	public GameFrame(){
 		controls = new ControlInput();
 		panel = new GamePanel(controls, this);
@@ -43,6 +48,9 @@ public class GameFrame extends JFrame{
 	JLabel label;
 	JLabel label2;
 	
+	/**
+	 * Kirajzolja a framere a szükséges komponenseket
+	 */
 	public void drawLabels() {
 
 		for (JLabel jl : removeable) {

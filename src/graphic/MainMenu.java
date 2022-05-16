@@ -38,7 +38,9 @@ public class MainMenu {
 	private JButton b_leaderboard = new JButton("LEADERBOARD");
 
 
-	
+	/**
+	 * A menut megvalósító függvény
+	 */
 	public MainMenu(){
 		f.setSize(400,220);
 		f.setResizable(true);

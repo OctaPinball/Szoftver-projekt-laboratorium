@@ -14,6 +14,10 @@ import javax.swing.JPanel;
 import field.*;
 import miscellaneous.*;
 
+
+/**
+ * 
+ */
 public class GamePanel extends JPanel implements Const{
 	
 	private GameFrame parent;
@@ -33,6 +37,7 @@ public class GamePanel extends JPanel implements Const{
 		controls = controls_input;
 		labels = new ArrayList<JLabel>();
 	}
+	
 	
 	public void clearLabels() {
 		labels = new ArrayList<JLabel>();
