@@ -52,10 +52,16 @@ public class Stun extends Agent{
 		owner.learnAgent(this);
 	}
 	
+	/**
+	 * @return Visszaadja a Chorea egyed nevét és a hátralevõ effekt idõt
+	 */
 	public String toString() {
 		return "stun:\t\t" + Control.getName(this);
 	}
 	
+	/**
+	 * @return Visszaadja a Stun egyed nevét és a hátralevõ effekt idõt
+	 */
 	public String toStringA() {
 		return "stun:\t\t" + Control.getName(this) + "\ttimetolive:\t" + this.effecttime + " round(s)";
 	}

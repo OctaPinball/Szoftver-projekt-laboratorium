@@ -48,16 +48,22 @@ public class Protection extends Agent{
 	}
 	
 	/**
-	 * Megtanulja az �genst.
+	 * Megtanulja az ágenst.
 	 */
 	public void interact() {
 		owner.learnAgent(this);
 	}
 	
+	/**
+	 * @return Visszaadja a Protection egyedi nevét
+	 */
 	public String toString() {
 		return "protection:\t\t" + Control.getName(this);
 	}
 	
+	/**
+	 * @return Visszaadja a Protection egyedi nevét és hogy meddig aktív még az ágens
+	 */
 	public String toStringA() {
 		return "protection:\t" + Control.getName(this) + "\ttimetolive:\t" + this.effecttime + " round(s)";
 	}

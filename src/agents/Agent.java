@@ -7,9 +7,9 @@ import miscellaneous.*;
 
 
 /**
- * Egy ágenst reprezentál a játékban, absztrakt osztály, tehát ebbõl származnak le a különféle ágens típusok
- * minden ágens elkészítéséhez szükség van adott mennyiségû aminosavra/nukleotidra és csak egy bizonyos ideig hatásosak.
- * Típustól függõen alkalmazható önmagunkon vagy egy másik virológuson is.
+ * Egy Ã¡genst reprezentÃ¡l a jÃ¡tÃ©kban, absztrakt osztÃ¡ly, tehÃ¡t ebbÃµl szÃ¡rmaznak le a kÃ¼lÃ¶nfÃ©le Ã¡gens tÃ­pusok
+ * minden Ã¡gens elkÃ©szÃ­tÃ©sÃ©hez szÃ¼ksÃ©g van adott mennyisÃ©gÃ» aminosavra/nukleotidra Ã©s csak egy bizonyos ideig hatÃ¡sosak.
+ * TÃ­pustÃ³l fÃ¼ggÃµen alkalmazhatÃ³ Ã¶nmagunkon vagy egy mÃ¡sik virolÃ³guson is.
  */
 public abstract class Agent implements Const{
 	protected int acidcost;
@@ -27,10 +27,10 @@ public abstract class Agent implements Const{
 	}
 	
 	/**
-	 * Ez a metódus fogja végrehajtani az ágens kenéseket virológusokon, amelyek különbözõ tulajdonságokat fognak megváltoztatni a virológuson.
-	 * Elkészítéséhez szükséges a megfelelõ ágens ismerete és a szükséges mennyiségû aminosav/nukleotid.
-	 * @param target		a célpont virológus
-	 * @param i				az ágens kenésének száma (a visszakenésnél van szerepe, mert csak egyszer lehet visszakenni a kesztyûvel)
+	 * Ez a metÃ³dus fogja vÃ©grehajtani az Ã¡gens kenÃ©seket virolÃ³gusokon, amelyek kÃ¼lÃ¶nbÃ¶zÃµ tulajdonsÃ¡gokat fognak megvÃ¡ltoztatni a virolÃ³guson.
+	 * ElkÃ©szÃ­tÃ©sÃ©hez szÃ¼ksÃ©ges a megfelelÃµ Ã¡gens ismerete Ã©s a szÃ¼ksÃ©ges mennyisÃ©gÃ» aminosav/nukleotid.
+	 * @param target		a cÃ©lpont virolÃ³gus
+	 * @param i				az Ã¡gens kenÃ©sÃ©nek szÃ¡ma (a visszakenÃ©snÃ©l van szerepe, mert csak egyszer lehet visszakenni a kesztyÃ»vel)
 	 * @throws IOException 
 	 */
 	public void cast(Virologist target) throws CloneNotSupportedException, IOException {
@@ -57,27 +57,30 @@ public abstract class Agent implements Const{
 		Logger.exit(this, "cast", null);
 	}
 	
+	/**
+	 * @return Visszaadja hogy meddig aktÃ­v mÃ©g az Ã¡gens
+	 */
 	public int getEffectTime() {
 		return effecttime;
 	}
 	
 	/**
-	 * Absztrakt metódus, mely aktiválja az ágens hatását a virológuson, ezzel megváltoztatva valamely tulajdonságát.
+	 * Absztrakt metÃ³dus, mely aktivÃ¡lja az Ã¡gens hatÃ¡sÃ¡t a virolÃ³guson, ezzel megvÃ¡ltoztatva valamely tulajdonsÃ¡gÃ¡t.
 	 */
 	public abstract void activate();
 	
 	/**
-	 * Absztrakt metódus, mely deaktiválja az ágens hatását a virológuson, ezzel visszaváltoztatva valamely tulajdonságát.
+	 * Absztrakt metÃ³dus, mely deaktivÃ¡lja az Ã¡gens hatÃ¡sÃ¡t a virolÃ³guson, ezzel visszavÃ¡ltoztatva valamely tulajdonsÃ¡gÃ¡t.
 	 */
 	public abstract void deactivate();
 	
 	/**
-	 * Absztrakt metódus, mely másolatot készít az ágensrõl.
+	 * Absztrakt metÃ³dus, mely mÃ¡solatot kÃ©szÃ­t az Ã¡gensrÃµl.
 	 */
 	public abstract Agent makeCopy();
 	
 	/**
-	 * Eggyel csökkenti az ágens effectTime értékét. Ha lejár a hatás ideje megszünteti a hatását.
+	 * Eggyel csÃ¶kkenti az Ã¡gens effectTime Ã©rtÃ©kÃ©t. Ha lejÃ¡r a hatÃ¡s ideje megszÃ¼nteti a hatÃ¡sÃ¡t.
 	 */
 	public void stepEffectTime() {
 		Logger.enter(this, "stepEffectTime", null);
@@ -91,31 +94,43 @@ public abstract class Agent implements Const{
 	}
 
 	/**
-	 * Beállítja az ágens birtokosát.
+	 * BeÃ¡llÃ­tja az Ã¡gens birtokosÃ¡t.
 	 */
 	public void setOwner(Virologist owner) {
 		this.owner = owner;
 	}
 	
 	/**
-	 * Absztrakt metódus, amely megvizsgálja, hogy medvetánc "megtanulásáról" van-e szó. Azaz a BearAgent egybõl aktiválódik.
+	 * Absztrakt metÃ³dus, amely megvizsgÃ¡lja, hogy medvetÃ¡nc "megtanulÃ¡sÃ¡rÃ³l" van-e szÃ³. Azaz a BearAgent egybÃµl aktivÃ¡lÃ³dik.
 	 * @throws CloneNotSupportedException 
 	 * @throws IOException 
 	 */
 	public abstract void interact() throws CloneNotSupportedException, IOException;
 	
+	/**
+	 * @return Visszaadja az Ãgens nevÃ©t
+	 */
 	public String toString() {
 		return "agent:\t\t" + Control.getName(this);
 	}
 	
+	/**
+	 * @return Visszaadja az Agent nevÃ©t Ã©s a hÃ¡tralevÅ‘ effekt idÅ‘t
+	 */
 	public String toStringA() {
 		return "agent:\t" + Control.getName(this) + "\ttimetolive:\t" + this.effecttime + " round(s)";
 	}
 	
+	/**
+	 * @return Visszaadja az Ã¡gens elkÃ©szÃ­tÃ©sÃ©hez szÃ¼ksÃ©ges acid mennyisÃ©gÃ©t.
+	 */
 	public int getAcidcost() {
 		return acidcost;
 	}
 
+	/**
+	 * @return Visszaadja az Ã¡gens elkÃ©szÃ­tÃ©sÃ©hez szÃ¼ksÃ©ges nukleotid mennyisÃ©gÃ©t.
+	 */
 	public int getNucleotidecost() {
 		return nucleotidecost;
 	}

@@ -10,6 +10,9 @@ import movement.Stunned;
 import movement.BearDance;
 import movement.Movement;
 
+/**
+ * Az Agent osztály leszármazottja, egy olyan vírust, mely az elszenvedõjét medvévé változtatja.
+ */
 public class BearAgent extends Agent{
 	
 	public BearAgent() {
@@ -61,10 +64,16 @@ public class BearAgent extends Agent{
 		this.cast(owner);
 	}
 	
+	/**
+	 * @return Visszaadja a BearAgent egyedi nevét
+	 */
 	public String toString() {
 		return "bear_agent:\t\t" + Control.getName(this);
 	}
 	
+	/**
+	 * @return Visszaadja a BearAgent egyedi nevét és hogy meddig aktív még az ágens
+	 */
 	public String toStringA() {
 		return "bear_agent:\t" + Control.getName(this) + "\ttimetolive:\t" + this.effecttime + " round(s)";
 	}
