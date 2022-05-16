@@ -17,6 +17,9 @@ import field.*;
 import miscellaneous.*;
 import movement.BearDance;
 
+/**
+ * A Const interfészt megvalósító, grafikus felület kezeléséért felelős singleton osztály. Tárolja az összes kirajzolható objektumot.
+ */
 public class View implements Const{
 	private Position origo;
 	private ArrayList<Viewable> viewable;
@@ -24,6 +27,10 @@ public class View implements Const{
 
 	private HashMap<Class, ImageIcon> images;
 	
+	/**
+	 * A View osztály default konstruktora.
+	 * @param p, átveszi a GamePanel-t
+	 */
 	
 	public View(GamePanel p) {
 		gamepanel = p;
@@ -34,13 +41,26 @@ public class View implements Const{
 		images.put(Sack.class, new ImageIcon("res/Sack.png"));
 	}
 	
+	/**
+	 * Frissítí a kirajzolást.
+	 */
+	
 	public void updateDraw() {
 		
 	}
 	
+	/**
+	 * A kirajzolás láthatóságát állítja.
+	 * @param v, átveszi a virológust
+	 */
+	
 	public void drawVisible(Virologist v) {
 		
 	}
+	
+	/**
+	 * Kirajzolja a pályát a képernyőre.
+	 */
 	
 	public void drawMap() {
 		if(RoundManager.getEntity().getField() != null) {
@@ -54,9 +74,20 @@ public class View implements Const{
 		}
 	}
 	
+	/**
+	 * Beállítja a rajzolás origóját az átvett pozícióra.
+	 * @param o, átveszi az origó pozícióját
+	 */
+	
 	public void setOrigo(Position o) {
 		origo = o;
 	}
+	
+	/**
+	 * Kiírja a képernyőre a felhasználói interfész elemeit (birtokolt felszerelések, megtanult/aktív ágensek, akciópontok, nyersanyag mennyiségek).
+	 * @param g, a Graphics-ot veszi át
+	 * @param v, a virológust veszi át
+	 */
 	
 	public void drawUI(Graphics g, Virologist v) {
 		Graphics2D g2D = (Graphics2D)g;
@@ -101,10 +132,12 @@ public class View implements Const{
 				
 			}	
 		}
-		
-		
-		
 	}
+	
+	/**
+	 * Kirajzolja a paraméterként átvett mezőt a képernyőre.
+	 * @param f, a kirajzolni kívánt Field
+	 */
 	
 	public  void drawField(Field f) {
 		
@@ -130,6 +163,11 @@ public class View implements Const{
 		//Position p = f.calculateCoordinates();
 		gamepanel.addLabel(f, i);
 	}
+	
+	/**
+	 * Kirajzolja a paraméterként átvett óvóhelyet a képernyőre.
+	 * @param s, a kirajzolni kívánt Shelter
+	 */
 		
 	public void drawShelter(Shelter s) {
 			
@@ -154,6 +192,11 @@ public class View implements Const{
 		Position p = s.calculateCoordinates();
 		gamepanel.addLabel(s, i);
 	}
+	
+	/**
+	 * Kirajzolja a paraméterként átvett raktárat a képernyőre.
+	 * @param s, a kirajzolni kívánt Storage
+	 */
 		
 	public void drawStorage(Storage s) {
 			
@@ -179,6 +222,11 @@ public class View implements Const{
 		gamepanel.addLabel(s, i);
 	}
 	
+	/**
+	 * Kirajzolja a paraméterként átvett laboratóriumot a képernyőre.
+	 * @param l, a kirajzolni kívánt Laboratory
+	 */
+	
 	public void drawLaboratory(Laboratory l) {
 		ImageIcon i = new ImageIcon("res/Field_3_dark.png");
 		
@@ -202,6 +250,11 @@ public class View implements Const{
 		Position p = l.calculateCoordinates();
 		gamepanel.addLabel(l, i);
 	}
+	
+	/**
+	 * Kirajzolja a paraméterként átvett virológust a képernyőre.
+	 * @param v, a kirajzolni kívánt virológus
+	 */
 		
 	public void drawVirologist(Virologist v) {
 		ImageIcon i = new ImageIcon("res/Virologist.png");	
@@ -229,11 +282,21 @@ public class View implements Const{
 		gamepanel.addLabel(v.getField(), i);
 	}
 	
+	/**
+	 * Kirajzolja a paraméterként átvett eszközt a képernyőre.
+	 * @param e, a kirajzolni kívánt eszköz
+	 */
+	
 	public void drawEquipment(Equipment e) {
 		ImageIcon i = null;
 		Position p = e.calculateCoordinates();
 		gamepanel.addLabel(e.getCurrentField(), i);
 	}
+	
+	/**
+	 * Kirajzolja a paraméterként átvett zsákot a képernyőre.
+	 * @param s, a kirajzolni kívánt zsák
+	 */
 	
 	public void drawSack(Sack s) {
 		ImageIcon i = new ImageIcon("res/Sack.png");
@@ -241,11 +304,21 @@ public class View implements Const{
 		gamepanel.addLabel(s.getCurrentField(), i);
 	}
 	
+	/**
+	 * Kirajzolja a paraméterként átvett fejszét a képernyőre.
+	 * @param a, a kirajzolni kívánt fejsze
+	 */
+	
 	public void drawAxe(Axe a) {
 		ImageIcon i = a.getIMG();
 		Position p = a.calculateCoordinates();
 		gamepanel.addLabel(a.getCurrentField(), i);
 	}
+	
+	/**
+	 * Kirajzolja a paraméterként átvett köpenyt a képernyőre.
+	 * @param c, a kirajzolni kívánt köpeny
+	 */
 	
 	public void drawCape(Cape c) {
 		ImageIcon i = c.getIMG();
@@ -253,11 +326,21 @@ public class View implements Const{
 		gamepanel.addLabel(c.getCurrentField(), i);
 	}
 	
+	/**
+	 * Kirajzolja a paraméterként átvett kesztyűt a képernyőre.
+	 * @param g, a kirajzolni kívánt kesztyű
+	 */
+	
 	public void drawGlove(Glove g) {
 		ImageIcon i = g.getIMG();
 		Position p = g.calculateCoordinates();
 		gamepanel.addLabel(g.getCurrentField(), i);
 	}
+	
+	/**
+	 * Visszatér a gamepanel értékével
+	 * return GamePanel, a gamepanel értéke
+	 */
 	
 	public GamePanel getGamepanel() {
 		return gamepanel;
