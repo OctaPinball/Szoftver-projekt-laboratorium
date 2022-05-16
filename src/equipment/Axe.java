@@ -54,14 +54,18 @@ public class Axe extends Equipment{
 			this.dropEquipment();
 	}
 	
+	/**
+     *  Visszatér az axe nevével
+     *  @return "axe" string
+     */
 	public String toString() {
 		return "axe\t\t" + Control.getName(this);
 	}
 
-//	public ImageIcon getIMG() {
-//		return axe;
-//	}
-	
+
+	/**
+     *  Kiválasztja az axe-hoz szükséges rajzolást
+     */
 	@Override
 	public void pickDraw(View v) {
 		v.drawAxe(this);

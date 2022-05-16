@@ -48,13 +48,18 @@ public class Cape extends Equipment{
 
     }
     
+    /**
+     *  Visszatér az axe nevével
+     *  @return "cape" string
+     */
     public String toString() {
 		return "cape\t\t" + Control.getName(this);
 	}
     
-//    public ImageIcon getIMG() {
-//		return cape;
-//	}
+    
+    /**
+     *  Kiválasztja az cape-hez szükséges rajzolást
+     */
 	@Override
 	public void pickDraw(View v) {
 		v.drawCape(this);

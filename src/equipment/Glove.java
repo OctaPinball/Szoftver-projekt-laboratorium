@@ -63,6 +63,10 @@ public class Glove extends Equipment{
 			this.dropEquipment();
 	}
     
+    /**
+     *  Visszatér az axe nevével
+     *  @return "glove" string
+     */
     public String toString() {
 		return "glove\t\t" + Control.getName(this);
 	}
@@ -70,6 +74,10 @@ public class Glove extends Equipment{
 //    public ImageIcon getIMG() {
 //		return glove;
 //	}
+    
+    /**
+     *  Kiválasztja az glove-hoz szükséges rajzolást
+     */
 	@Override
 	public void pickDraw(View v) {
 		v.drawGlove(this);
