@@ -14,10 +14,12 @@ import movement.*;
 import beardefense.*;
 import miscellaneous.*;
 
+/**
+ * A játék elindításáért, pálya generálásért és a játék befejezéséért felelős osztály
+ */
 public class Game {
 	private static boolean randomEnabled = true;
 	private static ArrayList<Field> allFields = new ArrayList<Field>();
-
 
 	public static int width;
 	public static int height;
@@ -37,6 +39,11 @@ public class Game {
 		
 	}
 	
+	/**
+	 * A prototípushoz használt függvény, ami csak sima fieldekből generálja le a pályát
+	 * @param width		A pálya szélessége
+	 * @param height	A pálya magassága
+	 */
 	public static void generateFieldMap(int width, int height) {
 		for(int i = 0; i < height; i++) {
 			for(int j = 0; j < width; j++) {
@@ -58,6 +65,8 @@ public class Game {
 	
     /**
      * A pálya legenerálásáért felelős: létrehozza a mezőket és beállítja azok szomszédait
+     * @param width		A pálya szélessége
+	 * @param height	A pálya magassága
      */
 	public static void generateMap(int width, int height) {
 		for(int i = 0; i < height; i++) {
@@ -91,7 +100,6 @@ public class Game {
 						allFields.add(f3);
 						break;
 				}
-				//allFields.add(new Field(i*width + j, j, i));
 			}
 		}
 		
@@ -282,15 +290,24 @@ public class Game {
 		
 	}
 
+	/**
+	 * @return		Visszaadja a játéktér összes mezőjét tartalmazó tömböt
+	 */
+	public static ArrayList<Field> getAllFields() {
+		return allFields;
+	}
+
+	/**
+	 * @return		Visszaadja hogy a véletlenszerűség engedélyezve van-e
+	 */
 	public static boolean isRandomEnabled() {
 		return randomEnabled;
 	}
 
-	public static void setRandomEnabled(boolean newrandomEnabled) {
-		randomEnabled = newrandomEnabled;
-	}
-	
-	public static ArrayList<Field> getAllFields() {
-		return allFields;
+	/**
+	 * @param randomEnabled		A randomizáció új értéke
+	 */
+	public static void setRandomEnabled(boolean randomEnabled) {
+		Game.randomEnabled = randomEnabled;
 	}
 }

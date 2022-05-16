@@ -44,6 +44,9 @@ public class BlockAndReturn implements Block{
 		return true;
 	}
 	
+	/**
+	 * @return	Visszaadja a BlockAndReturn prioritását
+	 */
 	public int getPriority() {
 		return priority;
 	}

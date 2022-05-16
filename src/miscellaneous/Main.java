@@ -4,6 +4,9 @@ import java.io.IOException;
 
 import graphic.MainMenu;
 
+/**
+ * A program elindításáért felelős osztály, létrehozza a menüt
+ */
 public class Main {
 	public static void main(String[] args) throws CloneNotSupportedException, IOException {
 		//Tester tester = new Tester();

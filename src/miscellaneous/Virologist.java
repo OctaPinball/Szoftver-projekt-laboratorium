@@ -96,7 +96,10 @@ public class Virologist implements Viewable, Const{
 	}
 	
 	
-
+	/**
+	 * Megvizsgálja, hogy a virológus megtanult-e minden megtanulható ágenst
+	 * @return	Igazat ad, ha megtanulta mindet
+	 */
 	public boolean learnallAgent() {
 		boolean know[] = {false, false, false, false};
 		
@@ -290,7 +293,7 @@ public class Virologist implements Viewable, Const{
 
     /**
      * Getter a virológus blokkolásánakk kiderítésére
-     * @return block
+     * @return		A blokkolás típus
      */
 	public Block getBlock() {
 		return block;
@@ -298,7 +301,7 @@ public class Virologist implements Viewable, Const{
 
     /**
      * Setter a virológus blokkolásának beállítására
-     * @param block
+     * @param block	Az új blokkolás típus
      */
 	public void setBlock(Block block) {
 		this.block = block;
@@ -306,7 +309,7 @@ public class Virologist implements Viewable, Const{
 
     /**
      * Getter a virológus maximálisan felvehető anyagmennyisének kiderítésére
-     * @return fillmaterial
+     * @return		Az anyagtöltő képesség
      */
 	public FillMaterial getFillMaterial() {
 		return fillmaterial;
@@ -314,7 +317,7 @@ public class Virologist implements Viewable, Const{
 
     /**
      * Setter a virológus maximálisan felvehető anyagmennyisének beállítására
-     * @param fillmaterial
+     * @param fillmaterial	Az új anyagtöltő képesség
      */
 	public void setFillMaterial(FillMaterial fillMaterial) {
 		this.fillmaterial = fillMaterial;
@@ -322,7 +325,7 @@ public class Virologist implements Viewable, Const{
 
     /**
      * Getter a virológus mozgásának kiderítésére
-     * @return movement
+     * @return		A mozgás típusa
      */
 	public Movement getMovement() {
 		return movement;
@@ -330,21 +333,33 @@ public class Virologist implements Viewable, Const{
 
     /**
      * Setter a virológus mozgásának beállítására
-     * @param movement
+     * @param movement	Az új mozgás típus
      */
 	public void setMovement(Movement movement) {
 		this.movement = movement;
 	}
 	
 	
+	/**
+     * Setter a virológus medve támadás elleni védekezés beállítására
+     * @param bd	Az új védekezés típusa
+     */
 	public void setBearDefense(BearDefense bd) {
 		defense = bd;
 	}
 	
+	/**
+     * Getter a virológus medve támadás elleni védekezése kiderítéséhez
+     * @return		A védekezés típusa
+     */
 	public BearDefense getDefense() {
 		return defense;
 	}
 	
+	/**
+     * Setter a virológus ágensek elleni védekezésének beállítására
+     * @param defense	Az új védekezés típus
+     */
 	public void setDefense(BearDefense defense) {
 		this.defense = defense;
 	}
@@ -362,6 +377,9 @@ public class Virologist implements Viewable, Const{
 		Logger.exit(this, "step", null);
 	}
 	
+	/**
+	 * Aktiválja a virológuson az összes ágensből és felszerelésből származó effektust
+	 */
 	public void getAllEffect() {
 		for(Agent a : activeagents) {
 			a.activate();
@@ -372,14 +390,18 @@ public class Virologist implements Viewable, Const{
 		}
 	}
 	
+	/**
+	 * A virológus meghal, ezért kiveszi a virológusok tömbjéből és elindítja a következő játékos körét
+	 */
 	public void Die() {
 		field.removeVirologist();
-		// TODO steppable tombbol kivenni
+		RoundManager.nextRound();
+		RoundManager.getVriologists().remove(this);
 	}
 
     /**
      * Getter a virológus aminosavának jelenlegi mennyiségének kiderítésére
-     * @return aminoacid
+     * @return		Az aminoacid értéke
      */
 	public int getAminoacid() {
 		return aminoacid;
@@ -387,7 +409,7 @@ public class Virologist implements Viewable, Const{
 
     /**
      * Setter a virológus aminosavának jelenlegi mennyiségének beállítására
-     * @param aminoacid
+     * @param aminoacid	Az aminoacid új értéke
      */
 	public void setAminoAcid(int aminoacid) {
 		this.aminoacid = aminoacid;
@@ -395,7 +417,7 @@ public class Virologist implements Viewable, Const{
 
     /**
      * Getter a virológus nukleotidának jelenlegi mennyiségének kiderítésére
-     * @return nucleotide
+     * @return		A nukleotid értéke
      */
 	public int getNucleotide() {
 		return nucleotide;
@@ -403,7 +425,7 @@ public class Virologist implements Viewable, Const{
 
     /**
      * Setter a virológus nukleotidának jelenlegi mennyiségének beállítására
-     * @param nucleotide
+     * @param nucleotide	A nukleotid új értéke
      */
 	public void setNucleotide(int nucleotide) {
 		this.nucleotide = nucleotide;
@@ -411,37 +433,48 @@ public class Virologist implements Viewable, Const{
 
     /**
      * Getter a virológus jelenlegi mezőjének kiderítésére
-     * @return field
+     * @return		A mező, amin a virológus áll
      */
 	public Field getField() {
 		return field;
 	}
 	
+	/**
+	 * Getter a virológusnál jelenleg lévő felszerelésekhez
+	 * @return		A virológusnál lévő összes felszerelés
+	 */
 	public ArrayList<Equipment> getEquipments(){
 		return equipments;
 	}
 	
+	/**
+	 * Getter a virológus megtanult ágenseihez
+	 * @return		A virológusnál által megtanult összes ágens
+	 */
 	public ArrayList<Agent> getAgents(){
 		return agents;
 	}
 	
     /**
      * Getter a virológuson jelenleg hatást kifejtő ágensek kiderítésére
-     * @return activeagents
+     * @return		A virológuson aktív ágensek
      */
 	public ArrayList<Agent> getActiveAgents(){
 		return activeagents;
 	}
 	
+	/**
+	 * @return		Visszaad egy üres stringet
+	 */
 	public String listV() {
 		return "";
 	}
 	
+	/**
+	 * Kilistázza a virológus adatait
+	 * @param s		Meghatározza, hogy mit és mennyit listázzon ki a függvény
+	 */
 	public void list(String s) {
-		if(s == null)
-		{
-			System.out.println("jezj"); // ????
-		}
 		if(s.equals("field"))
 		{
 
@@ -495,6 +528,10 @@ public class Virologist implements Viewable, Const{
 		return;
 	}
 	
+	/**
+	 * A virológus által megtanult ágensekből stringet készít
+	 * @return		A megtanult ágensek
+	 */
 	public String agentsToString() {
 		String[] agent = null;
 		for(int i = 0; i < agents.size(); i++) {
@@ -503,6 +540,10 @@ public class Virologist implements Viewable, Const{
 		return agent.toString();
 	}
 	
+	/**
+	 * A virológuson aktív ágensekből stringet készít
+	 * @return		Az aktív ágensek
+	 */
 	public String activeAgentsToString() {
 		String[] activeAgent = null;
 		for(int i = 0; i < activeagents.size(); i++) {
@@ -511,6 +552,10 @@ public class Virologist implements Viewable, Const{
 		return activeAgent.toString();
 	}
 	
+	/**
+	 * A virológusnál lévő felszerelésekből stringet készít
+	 * @return		A birtokolt felszerelések
+	 */
 	public String equipmentsToString() {
 		String[] equipment = null;
 		for(int i = 0; i < equipments.size(); i++) {
@@ -522,6 +567,9 @@ public class Virologist implements Viewable, Const{
 		return equipment.toString();
 	}
 	
+	/**
+	 * @return		A virológus pozíciója
+	 */
 	public Position calculateCoordinates() {
 		return field.calculateCoordinates();
 	}
@@ -530,20 +578,33 @@ public class Virologist implements Viewable, Const{
 		return virologist;
 	}*/
 
+	/**
+	 * Kiválasztja a virológushoz tartozó rajzoló függvényt
+	 * @param	v
+	 */
 	@Override
 	public void pickDraw(View v) {
 		v.drawVirologist(this);
 	}
 	
+	/**
+	 * @return		A virológus akciópontjai
+	 */
 	public int getActionPoint(){
 		return actionpoint;
 	}
 	
+	/**
+	 * Feltölti a virológus akciópontjait és lépteti az effektek aktív idejét
+	 */
 	public void newRound() {
 		actionpoint = START_ACTION_POINTS;
 		step();
 	}
 	
+	/**
+	 * @return		Megmondja, hogy a virológusnak maradtak-e még akciópontjai.
+	 */
 	public boolean hasActionPoint() {
 		if(actionpoint > 0)
 		{
@@ -552,10 +613,18 @@ public class Virologist implements Viewable, Const{
 		return false;
 	}
 	
+	/**
+	 * A virológus elhasznált egy akciópontot
+	 */
 	public void commitAction() {
 		actionpoint--;
 	}
 	
+	/**
+	 * Megadja hogy a kijelölt ágens elkészíthető-e
+	 * @param a		Az elkészítendő ágens
+	 * @return		Elkészíthető-e az ágens
+	 */
 	public boolean canBeCasted(Agent a) {
 		return a.getAcidcost() <= aminoacid && a.getNucleotidecost() <= nucleotide;
 	}

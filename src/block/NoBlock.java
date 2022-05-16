@@ -32,6 +32,9 @@ public class NoBlock implements Block{
 		return false;
 	}
 
+	/**
+	 * @return	Visszaadja a NoBlock prioritását
+	 */
 	public int getPriority() {
 		return priority;
 	}
