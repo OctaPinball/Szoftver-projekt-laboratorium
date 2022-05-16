@@ -19,6 +19,11 @@ public class GamePanel extends JPanel implements Const{
 	private GameFrame parent;
 	private ControlInput controls;
 	private ArrayList<JLabel> labels;
+	private Menu activemenu = null;
+	private boolean menupriority = false;
+	
+
+
 	View view = null;
 	
 	public GamePanel(ControlInput controls_input, GameFrame frame) {
@@ -36,25 +41,21 @@ public class GamePanel extends JPanel implements Const{
 	public void drawLabels() {
 		for(JLabel l : labels)
 		{
+			l.setOpaque(true);
 			this.add(l);
 		}
+		this.setVisible(true);
 	}
 	
-	public void addLabel(Position p, ImageIcon i) {
-		ArrayList<Field> fields = Game.getAllFields();
-		for(Field f : fields)
-		{
-			if(f.calculateCoordinates().equals(p))
-			{
+	public void addLabel(Field f, ImageIcon i) {
 				JLabel j = new JLabel();
 				j.setIcon(i);
-				j.setBounds(p.getX(),p.getY(),32,32);
+				j.setBounds(f.calculateCoordinates().getX(),f.calculateCoordinates().getY(),32,32);
 				j.setOpaque(true);
-				JField jf = new JField(j, f);
+				JField jf = new JField(j, f, view);
 				j.addMouseListener(jf);
 				labels.add(j);
-			}
-		}
+	}
 
 		
 		/*
@@ -65,17 +66,51 @@ public class GamePanel extends JPanel implements Const{
 		j.addMouseListener(new ControlInput());
 		labels.add(j);
 		*/
-	}
-	
+	public JLabel safe = null;
 	public void paint(Graphics g) {
+		//super.paint(g);
+		labels = new ArrayList<JLabel>();
 		if(view == null)
-			view = new View();
+			view = new View(this);
 		if(RoundManager.getEntity() == null)
 			RoundManager.nextRound();
 		view.drawUI(g, RoundManager.getEntity());
+		RoundManager.getEntity().pickDraw(view);
 		view.drawMap();
-		drawLabels();
-}
+		if(activemenu != null)
+		{
+			for(JInteractButton j : activemenu.getButtons())
+			{
+				labels.add(j.getLabel());
+				safe = j.getLabel();
+			}
+		}
+		//drawLabels();
+		parent.drawLabels(); //FINAL DRAW CALL******
+		//parent.prepareShit();
+		//parent.drawShit();
+	}
+	
+	public ArrayList<JLabel> getLabels() {
+		return labels;
+	}
+
+	public Menu getActivemenu() {
+		return activemenu;
+	}
+
+	public void setActivemenu(Menu infoMenu) {
+		this.activemenu = infoMenu;
+	}
+	
+
+	public boolean isMenupriority() {
+		return menupriority;
+	}
+
+	public void setMenupriority(boolean menupriority) {
+		this.menupriority = menupriority;
+	}
 
 	
 }

@@ -26,7 +26,7 @@ import beardefense.*;
  * A j�t�kos a virol�gus oszt�ly seg�ts�g�vel tud �genst kenni m�s virol�gusra, �s meg tud tanulni genetikai k�dokat, 
  * illetve el is tudja azokat felejteni.
  */
-public class Virologist implements Viewable{
+public class Virologist implements Viewable, Const{
 	private int aminoacid;
 	private int nucleotide;
 	private int actionpoint;
@@ -62,6 +62,7 @@ public class Virologist implements Viewable{
 		equipments = new ArrayList<Equipment>();
 		
 		// LEADAS ELOTT VEDD KI
+		/*
 		equipments.add(new Axe());
 		equipments.add(new Sack());
 		equipments.add(new Glove());
@@ -76,6 +77,7 @@ public class Virologist implements Viewable{
 		activeagents.add(new Chorea());
 		activeagents.add(new Protection());
 		activeagents.add(new BearAgent());
+		*/
 		// VEGE
 		
 		setAminoAcid(0);
@@ -162,9 +164,9 @@ public class Virologist implements Viewable{
 		
 		
 		boolean found = false;
-		for (Agent i : activeagents)
+		for (int i = 0; i < activeagents.size(); i++)
 		{
-			if (i.getClass() == a.getClass()) 
+			if (activeagents.get(i).getClass() == a.getClass()) 
 			{
 				activeagents.remove(i);
 				found = true;
@@ -372,9 +374,9 @@ public class Virologist implements Viewable{
      */
 	public void step() {
 		Logger.enter(this, "step", null);
-		for(Agent a : activeagents)
+		for(int i = 0; i < activeagents.size(); i++)
 		{
-			a.stepEffectTime();
+			activeagents.get(i).stepEffectTime();
 		}
 		Logger.exit(this, "step", null);
 	}
@@ -554,6 +556,26 @@ public class Virologist implements Viewable{
 	
 	public int getActionPoint(){
 		return actionpoint;
-
+	}
+	
+	public void newRound() {
+		actionpoint = START_ACTION_POINTS;
+		step();
+	}
+	
+	public boolean hasActionPoint() {
+		if(actionpoint > 0)
+		{
+			return true;
+		}
+		return false;
+	}
+	
+	public void commitAction() {
+		actionpoint--;
+	}
+	
+	public boolean canBeCasted(Agent a) {
+		return a.getAcidcost() <= aminoacid && a.getNucleotidecost() <= nucleotide;
 	}
 }

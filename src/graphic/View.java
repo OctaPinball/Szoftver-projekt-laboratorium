@@ -7,21 +7,26 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.util.ArrayList;
 import java.util.HashMap;
+import javax.imageio.ImageIO;
+import javax.swing.*;
 
 import javax.swing.ImageIcon;
 
 import equipment.*;
 import field.*;
 import miscellaneous.*;
+import movement.BearDance;
 
 public class View implements Const{
 	private Position origo;
 	private ArrayList<Viewable> viewable;
 	private static GamePanel gamepanel;
+
 	private HashMap<Class, ImageIcon> images;
 	
 	
-	public View() {
+	public View(GamePanel p) {
+		gamepanel = p;
 		images = new HashMap<Class, ImageIcon>();
 		images.put(Axe.class, new ImageIcon("res/Axe.png"));
 		images.put(Cape.class, new ImageIcon("res/Cape.png"));
@@ -29,7 +34,7 @@ public class View implements Const{
 		images.put(Sack.class, new ImageIcon("res/Sack.png"));
 	}
 	
-	public void updteDraw() {
+	public void updateDraw() {
 		
 	}
 	
@@ -39,12 +44,12 @@ public class View implements Const{
 	
 	public void drawMap() {
 		if(RoundManager.getEntity().getField() != null) {
-			Position entityPos = RoundManager.getEntity().getField().calculateCoordinates();
+			Position entityPos = RoundManager.getEntity().getField().getPosition();
 			int diffX = ((PANEL_WIDH / 32) - 1) / 2;
-			int diffY = ((PANEL_HEIGH / 32) - 1) / 2;
+			int diffY = ((MAP_HEIGHT / 32) - 1) / 2;
 			for(Field f : Game.getAllFields())
-				if(entityPos.getX() - diffX <= f.calculateCoordinates().getX() || f.calculateCoordinates().getX() <= entityPos.getX() + diffX)
-					if(entityPos.getY() - diffY <= f.calculateCoordinates().getY() || f.calculateCoordinates().getY() <= entityPos.getY() + diffY)
+				if(entityPos.getX() - diffX <= f.getPosition().getX() || f.getPosition().getX() <= entityPos.getX() + diffX)
+					if(entityPos.getY() - diffY <= f.getPosition().getY() || f.getPosition().getY() <= entityPos.getY() + diffY)
 						f.pickDraw(this);
 		}
 	}
@@ -101,119 +106,161 @@ public class View implements Const{
 		
 	}
 	
-	public static void drawField(Field f) {
+	public  void drawField(Field f) {
 		
-		ImageIcon i = null;	
+		ImageIcon i = new ImageIcon("res/Field_1_dark.png");
+		
 			
-		for(int l = 0; l < f.getNeighbors().size(); l++) {
-			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++) {
-				
-				if(RoundManager.getEntity().getField().getNeighbors().get(k).equals(f.getNeighbors().get(l))) {
+			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++)
+			{
+				if(RoundManager.getEntity().getField().getNeighbors().get(k).PosEquals(f)) {
+					if(RoundManager.getEntity().getField().getNeighbors().get(k).getVirologist() != null)
+					{
+						i = new ImageIcon("res/v_field_1.png");
+						if(RoundManager.getEntity().getMovement().getClass() == BearDance.class)
+							i = new ImageIcon("res/vb_field_1.png");
+						gamepanel.addLabel(f, i);
+						return;
+					}
 					i = new ImageIcon("res/Field_1.png");
 				}
-				else {
-					i = new ImageIcon("res/Field_1_dark.png");
-				}
 			}
-		}
+
 		
-		Position p = f.calculateCoordinates();
-		gamepanel.addLabel(p, i);
+		//Position p = f.calculateCoordinates();
+		gamepanel.addLabel(f, i);
 	}
 		
-	public static void drawShelter(Shelter s) {
+	public void drawShelter(Shelter s) {
 			
-		ImageIcon i = null;
+		ImageIcon i = new ImageIcon("res/Field_2_dark.png");
+
 		
-		for(int l = 0; l < s.getNeighbors().size(); l++) {
 			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++) {
 				
-				if(RoundManager.getEntity().getField().getNeighbors().get(k).equals(s.getNeighbors().get(l))) {
+				if(RoundManager.getEntity().getField().getNeighbors().get(k).PosEquals(s)) {
+					if(RoundManager.getEntity().getField().getNeighbors().get(k).getVirologist() != null)
+					{
+						i = new ImageIcon("res/v_field_2.png");
+						if(RoundManager.getEntity().getMovement().getClass() == BearDance.class)
+							i = new ImageIcon("res/vb_field_2.png");
+						gamepanel.addLabel(s, i);
+						return;
+					}
 					i = new ImageIcon("res/Field_2.png");
 				}
-				else {
-					i = new ImageIcon("res/Field_2_dark.png");
-				}
 			}
-		}
 		
 		Position p = s.calculateCoordinates();
-		gamepanel.addLabel(p, i);
+		gamepanel.addLabel(s, i);
 	}
 		
-	public static void drawStorage(Storage s) {
+	public void drawStorage(Storage s) {
 			
-		ImageIcon i = null;
+		ImageIcon i = new ImageIcon("res/Field_4_dark.png");
 		
-		for(int l = 0; l < s.getNeighbors().size(); l++) {
+		
 			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++) {
 				
-				if(RoundManager.getEntity().getField().getNeighbors().get(k).equals(s.getNeighbors().get(l))) {
+				if(RoundManager.getEntity().getField().getNeighbors().get(k).PosEquals(s)) {
+					if(RoundManager.getEntity().getField().getNeighbors().get(k).getVirologist() != null)
+					{
+						i = new ImageIcon("res/v_field_4.png");
+						if(RoundManager.getEntity().getMovement().getClass() == BearDance.class)
+							i = new ImageIcon("res/vb_field_4.png");
+						gamepanel.addLabel(s, i);
+						return;
+					}
 					i = new ImageIcon("res/Field_4.png");
 				}
-				else {
-					i = new ImageIcon("res/Field_4_dark.png");
-				}
 			}
-		}
 		
 		Position p = s.calculateCoordinates();
-		gamepanel.addLabel(p, i);
+		gamepanel.addLabel(s, i);
 	}
 	
-	public static void drawLaboratory(Laboratory l) {
-		ImageIcon i = null;
+	public void drawLaboratory(Laboratory l) {
+		ImageIcon i = new ImageIcon("res/Field_3_dark.png");
 		
-		for(int n = 0; n < l.getNeighbors().size(); n++) {
+
+		
 			for(int k = 0; k < RoundManager.getEntity().getField().getNeighbors().size(); k++) {
 				
-				if(RoundManager.getEntity().getField().getNeighbors().get(k).equals(l.getNeighbors().get(n))) {
+				if(RoundManager.getEntity().getField().getNeighbors().get(k).PosEquals(l)) {
+					if(RoundManager.getEntity().getField().getNeighbors().get(k).getVirologist() != null)
+					{
+						i = new ImageIcon("res/v_field_3.png");
+						if(RoundManager.getEntity().getMovement().getClass() == BearDance.class)
+							i = new ImageIcon("res/vb_field_3.png");
+						gamepanel.addLabel(l, i);
+						return;
+					}
 					i = new ImageIcon("res/Field_3.png");
 				}
-				else {
-					i = new ImageIcon("res/Field_3_dark.png");
-				}
 			}
-		}
 		
 		Position p = l.calculateCoordinates();
-		gamepanel.addLabel(p, i);
+		gamepanel.addLabel(l, i);
 	}
 		
-	public static void drawVirologist(Virologist v) {
-		ImageIcon i = new ImageIcon("res/Virologist.png");
+	public void drawVirologist(Virologist v) {
+		ImageIcon i = new ImageIcon("res/Virologist.png");	
+		if(v.getField().getClass() == Field.class)
+			if(v.getMovement().getClass() == BearDance.class)
+				i = new ImageIcon("res/vb_field_1.png");
+			else
+				i = new ImageIcon("res/v_field_1.png");
+		if(v.getField().getClass() == Shelter.class)
+			if(v.getMovement().getClass() == BearDance.class)
+				i = new ImageIcon("res/vb_field_2.png");
+			else
+				i = new ImageIcon("res/v_field_2.png");
+		if(v.getField().getClass() == Laboratory.class)
+			if(v.getMovement().getClass() == BearDance.class)
+				i = new ImageIcon("res/vb_field_3.png");
+			else
+				i = new ImageIcon("res/v_field_3.png");
+		if(v.getField().getClass() == Storage.class)
+			if(v.getMovement().getClass() == BearDance.class)
+				i = new ImageIcon("res/vb_field_4.png");
+			else
+				i = new ImageIcon("res/v_field_4.png");
 		Position p = v.calculateCoordinates();
-		gamepanel.addLabel(p, i);
+		gamepanel.addLabel(v.getField(), i);
 	}
 	
-	public static void drawEquipment(Equipment e) {
+	public void drawEquipment(Equipment e) {
 		ImageIcon i = null;
 		Position p = e.calculateCoordinates();
-		gamepanel.addLabel(p, i);
+		gamepanel.addLabel(e.getCurrentField(), i);
 	}
 	
-	public static void drawSack(Sack s) {
+	public void drawSack(Sack s) {
 		ImageIcon i = new ImageIcon("res/Sack.png");
 		Position p = s.calculateCoordinates();
-		gamepanel.addLabel(p, i);
+		gamepanel.addLabel(s.getCurrentField(), i);
 	}
 	
-	public static void drawAxe(Axe a) {
+	public void drawAxe(Axe a) {
 		ImageIcon i = a.getIMG();
 		Position p = a.calculateCoordinates();
-		gamepanel.addLabel(p, i);
+		gamepanel.addLabel(a.getCurrentField(), i);
 	}
 	
-	public static void drawCape(Cape c) {
+	public void drawCape(Cape c) {
 		ImageIcon i = c.getIMG();
 		Position p = c.calculateCoordinates();
-		gamepanel.addLabel(p, i);
+		gamepanel.addLabel(c.getCurrentField(), i);
 	}
 	
-	public static void drawGlove(Glove g) {
+	public void drawGlove(Glove g) {
 		ImageIcon i = g.getIMG();
 		Position p = g.calculateCoordinates();
-		gamepanel.addLabel(p, i);
+		gamepanel.addLabel(g.getCurrentField(), i);
 	}
 	
+	public GamePanel getGamepanel() {
+		return gamepanel;
+	}
+
 }

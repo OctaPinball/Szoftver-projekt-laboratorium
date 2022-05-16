@@ -3,24 +3,27 @@ package agents;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import miscellaneous.Control;
-import miscellaneous.Logger;
-import miscellaneous.Virologist;
+import miscellaneous.*;
+
 
 /**
  * Egy ágenst reprezentál a játékban, absztrakt osztály, tehát ebbõl származnak le a különféle ágens típusok
  * minden ágens elkészítéséhez szükség van adott mennyiségû aminosavra/nukleotidra és csak egy bizonyos ideig hatásosak.
  * Típustól függõen alkalmazható önmagunkon vagy egy másik virológuson is.
  */
-public abstract class Agent {
-	private int acidcost;
-	private int nucleotidecost;
+public abstract class Agent implements Const{
+	protected int acidcost;
+	protected int nucleotidecost;
+
+
 	protected int effecttime;
 	protected Virologist owner;
 	
 
 	Agent(){
-		
+		effecttime = START_ACTION_POINTS;
+		acidcost = AGENT_COST;
+		nucleotidecost = AGENT_COST;
 	}
 	
 	/**
@@ -79,8 +82,9 @@ public abstract class Agent {
 	public void stepEffectTime() {
 		Logger.enter(this, "stepEffectTime", null);
 		
+		
 		effecttime = effecttime - 1;
-		if (effecttime <= 0)
+		if (effecttime == 0)
 			this.deactivate();
 		
 		Logger.exit(this, "stepEffectTime", null);
@@ -106,6 +110,14 @@ public abstract class Agent {
 	
 	public String toStringA() {
 		return "agent:\t" + Control.getName(this) + "\ttimetolive:\t" + this.effecttime + " round(s)";
+	}
+	
+	public int getAcidcost() {
+		return acidcost;
+	}
+
+	public int getNucleotidecost() {
+		return nucleotidecost;
 	}
 
 	
