@@ -61,25 +61,6 @@ public class Virologist implements Viewable, Const{
 		agents = new ArrayList<Agent>();
 		equipments = new ArrayList<Equipment>();
 		
-		// LEADAS ELOTT VEDD KI
-		/*
-		equipments.add(new Axe());
-		equipments.add(new Sack());
-		equipments.add(new Glove());
-		
-		agents.add(new Chorea());
-		agents.add(new ForgettingAgent());
-		agents.add(new Protection());
-		agents.add(new Stun());
-		
-		activeagents.add(new Stun());
-		activeagents.add(new ForgettingAgent());
-		activeagents.add(new Chorea());
-		activeagents.add(new Protection());
-		activeagents.add(new BearAgent());
-		*/
-		// VEGE
-		
 		setAminoAcid(0);
 		setNucleotide(0);
 		actionpoint = 0;

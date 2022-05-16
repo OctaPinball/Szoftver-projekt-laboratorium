@@ -52,10 +52,16 @@ public class Chorea extends Agent{
 		owner.learnAgent(this);
 	}
 	
+	/**
+	 * @return Visszaadja a Chorea egyed nevét
+	 */
 	public String toString() {
 		return "chorea:\t\t" + Control.getName(this);
 	}
 	
+	/**
+	 * @return Visszaadja a Chorea egyed nevét és a hátralevõ effekt idõt
+	 */
 	public String toStringA() {
 		return "chorea:\t\t" + Control.getName(this) + "\ttimetolive:\t" + this.effecttime + " round(s)";
 	}

@@ -46,10 +46,16 @@ public class ForgettingAgent extends Agent{
 		owner.learnAgent(this);
 	}
 	
+	/**
+	 * @return Visszaadja a ForgettingAgent egyedi nevét
+	 */
 	public String toString() {
 		return "forgetting_agent:\t\t" + Control.getName(this);
 	}
 	
+	/**
+	 * @return Visszaadja a ForgettingAgent egyedi nevét és hogy meddig aktív még az ágens
+	 */
 	public String toStringA() {
 		return "forgetting_agent:\t" + Control.getName(this) + "\ttimetolive:\t" + this.effecttime + " round(s)";
 	}
