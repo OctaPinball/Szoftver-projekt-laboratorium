@@ -1,3 +1,3 @@
 # Szoftver-projekt-laboratorium
 
-[a relative link](Dokumentacio.pdf)
+[Dokumentáció](Dokumentacio.pdf)
